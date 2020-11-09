@@ -3,6 +3,7 @@ package pDataBasePrisasdb;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -18,24 +19,28 @@ public class ManipulaDBAdmins implements Serializable
 {
 
     private static final long serialVersionUID = 1L;
-    
+
     private Connection vConexion = null;
     private Statement vStatement = null;
     private ResultSet vResultSet = null;
+    //Variables utilizadas para cifrar informacion
+    private String query = null;
+    private PreparedStatement sentencia = null;
 
     /**
-     * Constructor para la Clase ManipulaDBAdmins, aqui se conectara a la base de
-     * datos.
+     * Constructor para la Clase ManipulaDBAdmins, aqui se conectara a la base
+     * de datos.
      */
     public ManipulaDBAdmins()
     {
         try
         {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-            vConexion = DriverManager.getConnection("jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1");
+            Class.forName("com.mysql.jdbc.Driver");
+            vConexion = DriverManager.getConnection("jdbc:mysql://localhost/prisasbd", "root", ""); //localhost/prisasbd
         } catch (Exception e)
         {
-            System.err.println("¡ERROR! No se puede conectar a la base de datos.");        }
+            System.err.println("¡ERROR! No se puede conectar a la base de datos.");
+        }
     }
 
     /**
@@ -56,12 +61,10 @@ public class ManipulaDBAdmins implements Serializable
     //Insetar, eliminar, consultar, modificar
 
     ////////////////////////Insertar////////////////////////
-    
     /**
      * Metodo para poder insertar dentro de la base de datos "Admins".
      *
-     * @param vInsertarAdmins Información que es alamcenada en la clase
-     * Admins.
+     * @param vInsertarAdmins Información que es alamcenada en la clase Admins.
      * @return true o false, true: La petición fue realizada, false: La petición
      * no fue realizada.
      */
@@ -70,7 +73,7 @@ public class ManipulaDBAdmins implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-            vStatement.executeQuery("INSERT INTO `admins`(`usuario`, `contraseña`) VALUES ("+"\""+vInsertarAdmins.getUsuario() + "\", \"" + "\""+vInsertarAdmins.getContraseña() + "\""+")");
+            vStatement.executeQuery("INSERT INTO `admins`(`usuario`, `contraseña`) VALUES (" + "\"" + vInsertarAdmins.getUsuario() + "\", \"" + "\"" + vInsertarAdmins.getContraseña() + "\"" + ")");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -81,7 +84,6 @@ public class ManipulaDBAdmins implements Serializable
     }
 
     ////////////////////////Consulta General////////////////////////
-    
     /**
      * Metodo para sacar toda la información que se encuentra en la tabla
      * "Admins".
@@ -102,7 +104,6 @@ public class ManipulaDBAdmins implements Serializable
                 String usuario = ((String) vResultSet.getObject(0));
                 String contraseña = ((String) vResultSet.getObject(0));
 
-
                 vAdminsList.add(new Admins(usuario, contraseña));
             }
             vStatement.close();
@@ -116,10 +117,9 @@ public class ManipulaDBAdmins implements Serializable
     }
 
     ////////////////////////Consulta por variable////////////////////////
-
     /**
-     * Metodo para buscar en "usuario" en la tabla "Admins". La información
-     * sera de acuerdo a las coincidencia del parametro a buscar.
+     * Metodo para buscar en "usuario" en la tabla "Admins". La información sera
+     * de acuerdo a las coincidencia del parametro a buscar.
      *
      * @param vBuscar Lo que se queire buscar.
      * @return Un ArrayList<Admins> donde contendra la información
@@ -137,7 +137,6 @@ public class ManipulaDBAdmins implements Serializable
             {
                 String usuario = ((String) vResultSet.getObject(1));
                 String contraseña = ((String) vResultSet.getObject(2));
-
 
                 vAdminsList.add(new Admins(usuario, contraseña));
             }
@@ -172,7 +171,6 @@ public class ManipulaDBAdmins implements Serializable
                 String usuario = ((String) vResultSet.getObject(1));
                 String contraseña = ((String) vResultSet.getObject(2));
 
-
                 vAdminsList.add(new Admins(usuario, contraseña));
             }
             vStatement.close();
@@ -185,9 +183,39 @@ public class ManipulaDBAdmins implements Serializable
         }
     }
 
+    /**
+     * Método para realizar la consulta de un administrador si su usuario y
+     * contraseña existen
+     *
+     * @param usr
+     * @param pss
+     * @return
+     */
+    public ResultSet mConsulta_contraseña_DBAdmins(String usr, String pss)
+    {
+        try
+        {
+            vStatement = vConexion.createStatement();
+            vResultSet = vStatement.executeQuery("SELECT * FROM admins WHERE usuario = '" + usr + "' AND contraseña = '" + pss + "'");
+            System.out.println(vResultSet.getString(1));
+            if (vResultSet.next())
+            {
+                System.out.println("AJA");
+                return vResultSet;
+                
+            }
+            vStatement.close();
+            
+
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(ManipulaDBAdmins.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.toString());
+        }
+        return null;
+    }
 
     ////////////////////////Eliminar tabla////////////////////////
-    
     /**
      * Metodo para eliminar todo el contendio de la tabla "Admins". ¡Alerta!
      * Esta operación no tiene forma para regresar la información eliminada.
@@ -211,12 +239,11 @@ public class ManipulaDBAdmins implements Serializable
     }
 
     ////////////////////////Eliminar por variable////////////////////////
-
     /**
-     * Metodo para buscar en "usuario" de la tabla "Admins". La eliminación
-     * sera de acuerdo a las coincidencia del parametro a buscar, Cada fila
-     * donde coincida con el parametro dado sera eliminada. ¡Alerta! Esta
-     * operación no tiene forma para regresar la información eliminada.
+     * Metodo para buscar en "usuario" de la tabla "Admins". La eliminación sera
+     * de acuerdo a las coincidencia del parametro a buscar, Cada fila donde
+     * coincida con el parametro dado sera eliminada. ¡Alerta! Esta operación no
+     * tiene forma para regresar la información eliminada.
      *
      * @param vBuscar Lo que se queire buscar para eliminar la fila.
      * @return true o false, true: La petición fue realizada, false: La
@@ -227,7 +254,7 @@ public class ManipulaDBAdmins implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `admins` WHERE `usuario`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `admins` WHERE `usuario`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -252,7 +279,7 @@ public class ManipulaDBAdmins implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `admins` WHERE `contraseña`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `admins` WHERE `contraseña`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -263,7 +290,6 @@ public class ManipulaDBAdmins implements Serializable
     }
 
     ////////////////////////Modificar por variale////////////////////////
-
     /**
      * Metodo para modificar en la tabla "Admins" donde se buscara en "usuario",
      * la fila que coincida con la busqueda sera cambiada por la información
@@ -281,7 +307,7 @@ public class ManipulaDBAdmins implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `admins` SET ``usuario`=\"" + vAdmins.getUsuario() + "\",`contraseña`=\"" + vAdmins.getContraseña() + "\" WHERE `usuario`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `admins` SET ``usuario`=\"" + vAdmins.getUsuario() + "\",`contraseña`=\"" + vAdmins.getContraseña() + "\" WHERE `usuario`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -291,11 +317,10 @@ public class ManipulaDBAdmins implements Serializable
         return true;
     }
 
-
     /**
-     * Metodo para modificar en la tabla "Admins" donde se buscara en "contraseña",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Admins" donde se buscara en
+     * "contraseña", la fila que coincida con la busqueda sera cambiada por la
+     * información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
@@ -309,7 +334,7 @@ public class ManipulaDBAdmins implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `admins` SET ``usuario`=\"" + vAdmins.getUsuario() + "\",`contraseña`=\"" + vAdmins.getContraseña() + "\" WHERE `contraseña`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `admins` SET ``usuario`=\"" + vAdmins.getUsuario() + "\",`contraseña`=\"" + vAdmins.getContraseña() + "\" WHERE `contraseña`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -319,7 +344,5 @@ public class ManipulaDBAdmins implements Serializable
         return true;
     }
 
-
     ////////////////////////////////////////////////////////////////////////////
 }
-

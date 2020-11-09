@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.MetodosBD;
+import pDataBasePrisasdb.ManipulaDBAdmins;
 
 /**
  *
@@ -26,7 +27,7 @@ public class LoginAdmin extends javax.swing.JFrame
 
     public static Window vtn;
     
-    private static Connection conexionBD = null; //Obtiene la conexion
+    ManipulaDBAdmins mani = new ManipulaDBAdmins();
 
     /**
      * Creates new form LoginAdmin
