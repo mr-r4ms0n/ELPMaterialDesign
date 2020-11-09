@@ -5,7 +5,7 @@
  */
 package ejecutar;
 
-import controlador.administrador_ctrl;
+import vista.LoginAdmin;
 
 /**
  *
@@ -22,7 +22,7 @@ public class inicioPrisas
         /*
         Desde aqui indicamos que la primera ventana que se abrira sera la del login
         */
-        new administrador_ctrl().iniciosys();
+        new LoginAdmin().iniciosys();
     }
 
 }

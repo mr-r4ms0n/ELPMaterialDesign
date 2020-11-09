@@ -19,6 +19,7 @@ public class Menu extends javax.swing.JFrame
      * Creates new form Menu
      */
     public static Window vtn;
+    
     public Menu(String user)
     {
         initComponents();
@@ -46,9 +47,12 @@ public class Menu extends javax.swing.JFrame
 
         jPanel1 = new javax.swing.JPanel();
         rSPanelMaterial1 = new RSMaterialComponent.RSPanelMaterial();
-        rSButtonMaterialIconShadow1 = new RSMaterialComponent.RSButtonMaterialIconShadow();
         rSPanelBorderImage1 = new RSMaterialComponent.RSPanelBorderImage();
         LblBienvenida = new javax.swing.JLabel();
+        JBInicio = new RSMaterialComponent.RSButtonMaterialIconShadow();
+        JBPaquetes = new RSMaterialComponent.RSButtonMaterialIconShadow();
+        JBPaquetes1 = new RSMaterialComponent.RSButtonMaterialIconShadow();
+        JBPaquetes2 = new RSMaterialComponent.RSButtonMaterialIconShadow();
         rSPanelMaterial2 = new RSMaterialComponent.RSPanelMaterial();
         jLabel1 = new javax.swing.JLabel();
         rSLabelIcon1 = new RSMaterialComponent.RSLabelIcon();
@@ -66,11 +70,6 @@ public class Menu extends javax.swing.JFrame
         rSPanelMaterial1.setShadowBottom(false);
         rSPanelMaterial1.setShadowLeft(false);
         rSPanelMaterial1.setShadowTop(false);
-
-        rSButtonMaterialIconShadow1.setBackground(new java.awt.Color(255, 255, 255));
-        rSButtonMaterialIconShadow1.setForeground(new java.awt.Color(51, 51, 51));
-        rSButtonMaterialIconShadow1.setText("Inicio");
-        rSButtonMaterialIconShadow1.setForegroundText(new java.awt.Color(102, 102, 102));
 
         rSPanelBorderImage1.setBackground(new java.awt.Color(255, 255, 255));
         rSPanelBorderImage1.setImagen(new javax.swing.ImageIcon(getClass().getResource("/recursos/logo_login.png"))); // NOI18N
@@ -90,6 +89,41 @@ public class Menu extends javax.swing.JFrame
         LblBienvenida.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         LblBienvenida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        JBInicio.setBackground(new java.awt.Color(255, 255, 255));
+        JBInicio.setForeground(new java.awt.Color(51, 51, 51));
+        JBInicio.setText("Inicio");
+        JBInicio.setBackgroundHover(new java.awt.Color(103, 177, 202));
+        JBInicio.setForegroundText(new java.awt.Color(51, 51, 51));
+        JBInicio.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.HOME);
+
+        JBPaquetes.setBackground(new java.awt.Color(255, 255, 255));
+        JBPaquetes.setForeground(new java.awt.Color(51, 51, 51));
+        JBPaquetes.setText("Paquetes Recibidos");
+        JBPaquetes.setBackgroundHover(new java.awt.Color(103, 177, 202));
+        JBPaquetes.setForegroundText(new java.awt.Color(51, 51, 51));
+        JBPaquetes.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LOCAL_POST_OFFICE);
+
+        JBPaquetes1.setBackground(new java.awt.Color(255, 255, 255));
+        JBPaquetes1.setForeground(new java.awt.Color(51, 51, 51));
+        JBPaquetes1.setText("Paquetes Enviados");
+        JBPaquetes1.setBackgroundHover(new java.awt.Color(103, 177, 202));
+        JBPaquetes1.setForegroundText(new java.awt.Color(51, 51, 51));
+        JBPaquetes1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.MOTORCYCLE);
+
+        JBPaquetes2.setBackground(new java.awt.Color(255, 255, 255));
+        JBPaquetes2.setForeground(new java.awt.Color(51, 51, 51));
+        JBPaquetes2.setText("Acerca De");
+        JBPaquetes2.setBackgroundHover(new java.awt.Color(103, 177, 202));
+        JBPaquetes2.setForegroundText(new java.awt.Color(51, 51, 51));
+        JBPaquetes2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.NEW_RELEASES);
+        JBPaquetes2.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                JBPaquetes2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout rSPanelMaterial1Layout = new javax.swing.GroupLayout(rSPanelMaterial1);
         rSPanelMaterial1.setLayout(rSPanelMaterial1Layout);
         rSPanelMaterial1Layout.setHorizontalGroup(
@@ -105,7 +139,10 @@ public class Menu extends javax.swing.JFrame
                                 .addContainerGap()
                                 .addComponent(LblBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 10, Short.MAX_VALUE))
-                    .addComponent(rSButtonMaterialIconShadow1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(JBInicio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JBPaquetes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JBPaquetes1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JBPaquetes2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         rSPanelMaterial1Layout.setVerticalGroup(
@@ -116,7 +153,13 @@ public class Menu extends javax.swing.JFrame
                 .addGap(19, 19, 19)
                 .addComponent(LblBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSButtonMaterialIconShadow1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JBInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(JBPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(JBPaquetes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(JBPaquetes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -228,6 +271,11 @@ public class Menu extends javax.swing.JFrame
         vtn.setVisible(true);
     }//GEN-LAST:event_BtnCerrarActionPerformed
 
+    private void JBPaquetes2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBPaquetes2ActionPerformed
+    {//GEN-HEADEREND:event_JBPaquetes2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JBPaquetes2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -275,11 +323,14 @@ public class Menu extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private RSMaterialComponent.RSButtonIconOne BtnCerrar;
+    private RSMaterialComponent.RSButtonMaterialIconShadow JBInicio;
+    private RSMaterialComponent.RSButtonMaterialIconShadow JBPaquetes;
+    private RSMaterialComponent.RSButtonMaterialIconShadow JBPaquetes1;
+    private RSMaterialComponent.RSButtonMaterialIconShadow JBPaquetes2;
     private javax.swing.JLabel LblBienvenida;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private RSMaterialComponent.RSButtonMaterialIconShadow rSButtonMaterialIconShadow1;
     private RSMaterialComponent.RSLabelIcon rSLabelIcon1;
     private RSMaterialComponent.RSPanelBorderImage rSPanelBorderImage1;
     private newscomponents.RSPanelEffect rSPanelEffect1;

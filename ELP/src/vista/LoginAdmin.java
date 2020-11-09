@@ -6,11 +6,16 @@
 package vista;
 
 import configuracion.Alertas;
-import controlador.administrador_ctrl;
 import java.awt.Color;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import modelo.MetodosBD;
 
 /**
  *
@@ -20,7 +25,8 @@ public class LoginAdmin extends javax.swing.JFrame
 {
 
     public static Window vtn;
-    public administrador_ctrl admin_control;
+    
+    private static Connection conexionBD = null; //Obtiene la conexion
 
     /**
      * Creates new form LoginAdmin
@@ -33,7 +39,6 @@ public class LoginAdmin extends javax.swing.JFrame
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
         vtn.setShape(forma);
         lblError();
-        admin_control = new administrador_ctrl();
     }
 
     public void lblError()
@@ -44,6 +49,31 @@ public class LoginAdmin extends javax.swing.JFrame
         JFContraseña.setText(null);
         JLErrorInicio.setText(null);
     }
+
+    public void iniciosys()
+    {
+        new LoginAdmin().setVisible(true);
+    }
+
+    public boolean checkInicio(String usr, String ctr)
+    {
+        try
+        {
+            ResultSet rs = MetodosBD.getUsuario(usr, ctr);
+            if (rs.next())
+            {
+                if (rs.getString(2).equals(ctr))
+                {
+                    return true;
+                }
+            }
+        } catch (SQLException ex)
+        {
+            System.out.println("Error al obtener la informacion");
+        }
+        return false;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -276,7 +306,7 @@ public class LoginAdmin extends javax.swing.JFrame
         if (!(JFUsuario.getText().isEmpty() && JFContraseña.getText().isEmpty()))
         {
             Alertas al = new Alertas();
-            if (admin_control.checkInicio(JFUsuario.getText(), JFContraseña.getText()))
+            if (checkInicio(JFUsuario.getText(), JFContraseña.getText()))
             {
 
                 al.incorrect(2);
@@ -303,7 +333,6 @@ public class LoginAdmin extends javax.swing.JFrame
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    
     /**
      * @param args the command line arguments
      */
