@@ -70,7 +70,7 @@ public class LoginAdmin extends javax.swing.JFrame
             }
         } catch (SQLException ex)
         {
-            System.out.println("Error al obtener la informacion");
+            System.out.println("Error al obtener la informacion" + ex);
         }
         return false;
     }
@@ -110,28 +110,23 @@ public class LoginAdmin extends javax.swing.JFrame
 
         PanelComponentes.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setBackground(new java.awt.Color(240, 240, 240));
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("El Prisas Logistic");
 
-        jLabel2.setBackground(new java.awt.Color(240, 240, 240));
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Inicio de sesion");
 
-        jLabel3.setBackground(new java.awt.Color(240, 240, 240));
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/logo_login.png"))); // NOI18N
 
-        JLErrorCtr.setBackground(new java.awt.Color(240, 240, 240));
         JLErrorCtr.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         JLErrorCtr.setForeground(new java.awt.Color(204, 0, 51));
         JLErrorCtr.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JLErrorCtr.setText("Campo requerido");
 
-        JLErrorUsr.setBackground(new java.awt.Color(240, 240, 240));
         JLErrorUsr.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         JLErrorUsr.setForeground(new java.awt.Color(204, 0, 51));
         JLErrorUsr.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -139,7 +134,6 @@ public class LoginAdmin extends javax.swing.JFrame
 
         jLabel4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
 
-        JLErrorInicio.setBackground(new java.awt.Color(240, 240, 240));
         JLErrorInicio.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         JLErrorInicio.setForeground(new java.awt.Color(204, 0, 51));
         JLErrorInicio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -273,13 +267,13 @@ public class LoginAdmin extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 548, Short.MAX_VALUE)
+            .addGap(0, 556, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(PanelMaterialImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 593, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(PanelMaterialImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -318,7 +312,6 @@ public class LoginAdmin extends javax.swing.JFrame
                 dispose();
             } else
             {
-
                 al.incorrect(1);
                 JLErrorInicio.setForeground(Color.red);
                 JLErrorInicio.setText("Las credenciales no son validas");
