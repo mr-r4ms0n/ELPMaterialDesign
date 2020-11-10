@@ -23,7 +23,7 @@ public class ConexionBD
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1");
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"); //jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"
             return conexion;
         } catch (ClassNotFoundException | SQLException ex)
         {
