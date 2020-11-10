@@ -117,7 +117,7 @@ public class ManipulaDBPaquetes implements Serializable
         {
             vStatement = vConexion.createStatement();
             //vResultSet = vStatement.executeQuery("SELECT * FROM `paquetes` WHERE 1");
-            String consulta = "SELECT ?,?,?,?,?,?,?,? WHERE ?";
+            String consulta = "SELECT ?,?,?,?,?,?,?,? FROM ?";
             sentencia = vConexion.prepareStatement(consulta);
             sentencia.setString(1, "num_guia");
             sentencia.setString(2, "fecha_ent");
