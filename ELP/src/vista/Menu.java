@@ -58,6 +58,7 @@ public class Menu extends javax.swing.JFrame
         JBPaquetes = new RSMaterialComponent.RSButtonMaterialIconShadow();
         JBPaquetes1 = new RSMaterialComponent.RSButtonMaterialIconShadow();
         JBPaquetes2 = new RSMaterialComponent.RSButtonMaterialIconShadow();
+        jLabel2 = new javax.swing.JLabel();
         rSPanelEffect1 = new newscomponents.RSPanelEffect();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -152,6 +153,7 @@ public class Menu extends javax.swing.JFrame
         JBInicio.setBackgroundHover(new java.awt.Color(103, 177, 202));
         JBInicio.setForegroundText(new java.awt.Color(51, 51, 51));
         JBInicio.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.HOME);
+        JBInicio.setSelected(true);
 
         JBPaquetes.setBackground(new java.awt.Color(255, 255, 255));
         JBPaquetes.setForeground(new java.awt.Color(51, 51, 51));
@@ -181,6 +183,8 @@ public class Menu extends javax.swing.JFrame
             }
         });
 
+        jLabel2.setText("Navegación");
+
         javax.swing.GroupLayout rSPanelMaterial1Layout = new javax.swing.GroupLayout(rSPanelMaterial1);
         rSPanelMaterial1.setLayout(rSPanelMaterial1Layout);
         rSPanelMaterial1Layout.setHorizontalGroup(
@@ -197,16 +201,17 @@ public class Menu extends javax.swing.JFrame
             .addGroup(rSPanelMaterial1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(rSPanelMaterial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(rSPanelMaterial1Layout.createSequentialGroup()
-                        .addGroup(rSPanelMaterial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JBInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JBPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 3, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterial1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 4, Short.MAX_VALUE)
                         .addGroup(rSPanelMaterial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JBPaquetes1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JBPaquetes2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(JBPaquetes2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(rSPanelMaterial1Layout.createSequentialGroup()
+                        .addGroup(rSPanelMaterial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(JBInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                            .addComponent(JBPaquetes, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         rSPanelMaterial1Layout.setVerticalGroup(
@@ -216,7 +221,9 @@ public class Menu extends javax.swing.JFrame
                 .addComponent(rSPanelBorderImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
                 .addComponent(LblBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JBInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(JBPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -224,7 +231,7 @@ public class Menu extends javax.swing.JFrame
                 .addComponent(JBPaquetes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(JBPaquetes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
 
         rSPanelEffect1.setBackground(new java.awt.Color(255, 255, 255));
@@ -334,6 +341,7 @@ public class Menu extends javax.swing.JFrame
     private RSMaterialComponent.RSButtonMaterialIconShadow JBPaquetes2;
     private javax.swing.JLabel LblBienvenida;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private RSMaterialComponent.RSLabelIcon rSLabelIcon1;
     private RSMaterialComponent.RSPanelBorderImage rSPanelBorderImage1;
     private newscomponents.RSPanelEffect rSPanelEffect1;
