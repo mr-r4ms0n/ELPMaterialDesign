@@ -116,7 +116,27 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-            vResultSet = vStatement.executeQuery("SELECT * FROM `paquetes` WHERE 1");
+            //vResultSet = vStatement.executeQuery("SELECT * FROM `paquetes` WHERE 1");
+            String consulta = "SELECT ?,?,?,?,?,?,?,? WHERE ?";
+            sentencia = vConexion.prepareStatement(consulta);
+            sentencia.setString(1, "num_guia");
+            sentencia.setString(2, "fecha_ent");
+            sentencia.setString(3, "fecha_rcp");
+            sentencia.setString(4, "peso");
+            sentencia.setString(5, "altura");
+            sentencia.setString(6, "ancho");
+            sentencia.setString(7, "profundidad");
+            sentencia.setString(8, "precio");
+            sentencia.setString(9, "paquetes");
+            int i = sentencia.executeUpdate();
+            
+            if (i > 0)
+            {
+                System.out.println("Si se encontraron resultados");
+            }else
+            {
+                System.out.println("No hay resultados");
+            }
             
             while (vResultSet.next())
             {
@@ -132,6 +152,7 @@ public class ManipulaDBPaquetes implements Serializable
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
+            vConexion.close();
             return vPaquetesList;
             
         } catch (SQLException ex)
