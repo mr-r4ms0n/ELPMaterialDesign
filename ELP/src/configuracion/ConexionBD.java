@@ -23,7 +23,9 @@ public class ConexionBD
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"); //jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"
+            //CONEXION REMOTA = "jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"
+            //CONEXION LOCAL =  "jdbc:mysql://localhost/prisasdb", "root", ""
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"); 
             return conexion;
         } catch (ClassNotFoundException | SQLException ex)
         {
