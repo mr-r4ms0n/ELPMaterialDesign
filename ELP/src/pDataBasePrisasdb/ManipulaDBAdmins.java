@@ -35,7 +35,9 @@ public class ManipulaDBAdmins implements Serializable
     {
         try
         {
-            Class.forName("com.mysql.jdbc.Driver");
+
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+
             vConexion = DriverManager.getConnection("jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Sb1"); //localhost/prisasbd
         } catch (Exception e)
         {
@@ -202,10 +204,9 @@ public class ManipulaDBAdmins implements Serializable
             {
                 System.out.println("AJA");
                 return vResultSet;
-                
+
             }
             vStatement.close();
-            
 
         } catch (SQLException ex)
         {
