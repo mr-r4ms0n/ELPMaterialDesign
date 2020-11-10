@@ -3,6 +3,7 @@ package pDataBasePrisasdb;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,10 +17,11 @@ import java.util.logging.Logger;
  */
 public class ManipulaDBPaquetes implements Serializable
 {
-
+    
     private static final long serialVersionUID = 1L;
-
+    
     private Connection vConexion = null;
+    PreparedStatement sentencia;
     private Statement vStatement = null;
     private ResultSet vResultSet = null;
 
@@ -70,13 +72,33 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-            vStatement.executeQuery("INSERT INTO `paquetes`(`num_guia`, `fecha_recp`, `fecha_ent`, `peso`, `altura`, `ancho`, `profundidad`, `precio`) VALUES (" + "\"" + vInsertarPaquetes.getNum_guia() + "\", \"" + "\"" + vInsertarPaquetes.getFecha_recp() + "\", \"" + "\"" + vInsertarPaquetes.getFecha_ent() + "\", \"" + "\"" + vInsertarPaquetes.getPeso() + "\", \"" + "\"" + vInsertarPaquetes.getAltura() + "\", \"" + "\"" + vInsertarPaquetes.getAncho() + "\", \"" + "\"" + vInsertarPaquetes.getProfundidad() + "\", \"" + "\"" + vInsertarPaquetes.getPrecio() + "\"" + ")");
-            vStatement.close();
+            String consulta = "INSERT INTO paquetes (num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio) VALUES (?,?,?,?,?,?,?,?)";
+            sentencia = vConexion.prepareStatement(consulta);
+            sentencia.setString(1, vInsertarPaquetes.getNum_guia());
+            sentencia.setString(2, vInsertarPaquetes.getFecha_recp());
+            sentencia.setString(3, vInsertarPaquetes.getFecha_ent());
+            sentencia.setFloat(4, vInsertarPaquetes.getPeso());
+            sentencia.setFloat(5, vInsertarPaquetes.getAltura());
+            sentencia.setFloat(6, vInsertarPaquetes.getAncho());
+            sentencia.setFloat(7, vInsertarPaquetes.getProfundidad());
+            sentencia.setFloat(8, vInsertarPaquetes.getPrecio());
+            //vStatement.executeQuery("INSERT INTO `paquetes`(`num_guia`, `fecha_recp`, `fecha_ent`, `peso`, `altura`, `ancho`, `profundidad`, `precio`) VALUES (" + "\"" + vInsertarPaquetes.getNum_guia() + "\", \"" + "\"" +  vInsertarPaquetes.getFecha_recp() + "\", \"" + "\"" + vInsertarPaquetes.getFecha_ent() + "\", \"" + "\"" + vInsertarPaquetes.getPeso() + "\", \"" + "\"" + vInsertarPaquetes.getAltura() + "\", \"" + "\"" + vInsertarPaquetes.getAncho() + "\", \"" + "\"" + vInsertarPaquetes.getProfundidad() + "\", \"" + "\"" + vInsertarPaquetes.getPrecio() + "\"" + ")");
+            int i = sentencia.executeUpdate();
+            //Esta parte la pueden borrar inges.
+            if (i > 0)
+            {
+                System.out.println("Datos guardados correctamente c:");
+            } else
+            {
+                System.out.println("No se guardo nada :c");
+            }
+            vConexion.close();
+            //vStatement.close();
         } catch (SQLException ex)
         {
             Logger.getLogger(ManipulaDBPaquetes.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
         return true;
     }
 
@@ -90,12 +112,32 @@ public class ManipulaDBPaquetes implements Serializable
     public ArrayList<Paquetes> mConsultaGeneralDBPaquetes()
     {
         ArrayList<Paquetes> vPaquetesList = new ArrayList<>();
-
+        
         try
         {
             vStatement = vConexion.createStatement();
-            vResultSet = vStatement.executeQuery("SELECT * FROM `paquetes` WHERE 1");
-
+            //vResultSet = vStatement.executeQuery("SELECT * FROM `paquetes` WHERE 1");
+            String consulta = "SELECT ?,?,?,?,?,?,?,? FROM ?";
+            sentencia = vConexion.prepareStatement(consulta);
+            sentencia.setString(1, "num_guia");
+            sentencia.setString(2, "fecha_ent");
+            sentencia.setString(3, "fecha_rcp");
+            sentencia.setString(4, "peso");
+            sentencia.setString(5, "altura");
+            sentencia.setString(6, "ancho");
+            sentencia.setString(7, "profundidad");
+            sentencia.setString(8, "precio");
+            sentencia.setString(9, "paquetes");
+            int i = sentencia.executeUpdate();
+            
+            if (i > 0)
+            {
+                System.out.println("Si se encontraron resultados");
+            }else
+            {
+                System.out.println("No hay resultados");
+            }
+            
             while (vResultSet.next())
             {
                 String num_guia = ((String) vResultSet.getObject(0));
@@ -106,12 +148,13 @@ public class ManipulaDBPaquetes implements Serializable
                 float ancho = ((float) vResultSet.getObject(0));
                 float profundidad = ((float) vResultSet.getObject(0));
                 float precio = ((float) vResultSet.getObject(0));
-
+                
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
+            vConexion.close();
             return vPaquetesList;
-
+            
         } catch (SQLException ex)
         {
             Logger.getLogger(ManipulaDBPaquetes.class.getName()).log(Level.SEVERE, null, ex);
@@ -130,12 +173,12 @@ public class ManipulaDBPaquetes implements Serializable
     public ArrayList<Paquetes> mConsulta_num_guia_DBPaquetes(String vBuscar)
     {
         ArrayList<Paquetes> vPaquetesList = new ArrayList<>();
-
+        
         try
         {
             vStatement = vConexion.createStatement();
             vResultSet = vStatement.executeQuery("SELECT * FROM `paquetes` WHERE `num_guia`=\"" + vBuscar + "\"");
-
+            
             while (vResultSet.next())
             {
                 String num_guia = ((String) vResultSet.getObject(1));
@@ -146,12 +189,12 @@ public class ManipulaDBPaquetes implements Serializable
                 float ancho = ((float) vResultSet.getObject(6));
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
-
+                
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
             return vPaquetesList;
-
+            
         } catch (SQLException ex)
         {
             Logger.getLogger(ManipulaDBPaquetes.class.getName()).log(Level.SEVERE, null, ex);
@@ -169,12 +212,12 @@ public class ManipulaDBPaquetes implements Serializable
     public ArrayList<Paquetes> mConsulta_fecha_recp_DBPaquetes(String vBuscar)
     {
         ArrayList<Paquetes> vPaquetesList = new ArrayList<>();
-
+        
         try
         {
             vStatement = vConexion.createStatement();
             vResultSet = vStatement.executeQuery("SELECT * FROM `paquetes` WHERE `fecha_recp`=\"" + vBuscar + "\"");
-
+            
             while (vResultSet.next())
             {
                 String num_guia = ((String) vResultSet.getObject(1));
@@ -185,12 +228,12 @@ public class ManipulaDBPaquetes implements Serializable
                 float ancho = ((float) vResultSet.getObject(6));
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
-
+                
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
             return vPaquetesList;
-
+            
         } catch (SQLException ex)
         {
             Logger.getLogger(ManipulaDBPaquetes.class.getName()).log(Level.SEVERE, null, ex);
@@ -208,12 +251,12 @@ public class ManipulaDBPaquetes implements Serializable
     public ArrayList<Paquetes> mConsulta_fecha_ent_DBPaquetes(String vBuscar)
     {
         ArrayList<Paquetes> vPaquetesList = new ArrayList<>();
-
+        
         try
         {
             vStatement = vConexion.createStatement();
             vResultSet = vStatement.executeQuery("SELECT * FROM `paquetes` WHERE `fecha_ent`=\"" + vBuscar + "\"");
-
+            
             while (vResultSet.next())
             {
                 String num_guia = ((String) vResultSet.getObject(1));
@@ -224,12 +267,12 @@ public class ManipulaDBPaquetes implements Serializable
                 float ancho = ((float) vResultSet.getObject(6));
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
-
+                
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
             return vPaquetesList;
-
+            
         } catch (SQLException ex)
         {
             Logger.getLogger(ManipulaDBPaquetes.class.getName()).log(Level.SEVERE, null, ex);
@@ -247,12 +290,12 @@ public class ManipulaDBPaquetes implements Serializable
     public ArrayList<Paquetes> mConsulta_peso_DBPaquetes(String vBuscar)
     {
         ArrayList<Paquetes> vPaquetesList = new ArrayList<>();
-
+        
         try
         {
             vStatement = vConexion.createStatement();
             vResultSet = vStatement.executeQuery("SELECT * FROM `paquetes` WHERE `peso`=\"" + vBuscar + "\"");
-
+            
             while (vResultSet.next())
             {
                 String num_guia = ((String) vResultSet.getObject(1));
@@ -263,12 +306,12 @@ public class ManipulaDBPaquetes implements Serializable
                 float ancho = ((float) vResultSet.getObject(6));
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
-
+                
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
             return vPaquetesList;
-
+            
         } catch (SQLException ex)
         {
             Logger.getLogger(ManipulaDBPaquetes.class.getName()).log(Level.SEVERE, null, ex);
@@ -286,12 +329,12 @@ public class ManipulaDBPaquetes implements Serializable
     public ArrayList<Paquetes> mConsulta_altura_DBPaquetes(String vBuscar)
     {
         ArrayList<Paquetes> vPaquetesList = new ArrayList<>();
-
+        
         try
         {
             vStatement = vConexion.createStatement();
             vResultSet = vStatement.executeQuery("SELECT * FROM `paquetes` WHERE `altura`=\"" + vBuscar + "\"");
-
+            
             while (vResultSet.next())
             {
                 String num_guia = ((String) vResultSet.getObject(1));
@@ -302,12 +345,12 @@ public class ManipulaDBPaquetes implements Serializable
                 float ancho = ((float) vResultSet.getObject(6));
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
-
+                
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
             return vPaquetesList;
-
+            
         } catch (SQLException ex)
         {
             Logger.getLogger(ManipulaDBPaquetes.class.getName()).log(Level.SEVERE, null, ex);
@@ -325,12 +368,12 @@ public class ManipulaDBPaquetes implements Serializable
     public ArrayList<Paquetes> mConsulta_ancho_DBPaquetes(String vBuscar)
     {
         ArrayList<Paquetes> vPaquetesList = new ArrayList<>();
-
+        
         try
         {
             vStatement = vConexion.createStatement();
             vResultSet = vStatement.executeQuery("SELECT * FROM `paquetes` WHERE `ancho`=\"" + vBuscar + "\"");
-
+            
             while (vResultSet.next())
             {
                 String num_guia = ((String) vResultSet.getObject(1));
@@ -341,12 +384,12 @@ public class ManipulaDBPaquetes implements Serializable
                 float ancho = ((float) vResultSet.getObject(6));
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
-
+                
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
             return vPaquetesList;
-
+            
         } catch (SQLException ex)
         {
             Logger.getLogger(ManipulaDBPaquetes.class.getName()).log(Level.SEVERE, null, ex);
@@ -364,12 +407,12 @@ public class ManipulaDBPaquetes implements Serializable
     public ArrayList<Paquetes> mConsulta_profundidad_DBPaquetes(String vBuscar)
     {
         ArrayList<Paquetes> vPaquetesList = new ArrayList<>();
-
+        
         try
         {
             vStatement = vConexion.createStatement();
             vResultSet = vStatement.executeQuery("SELECT * FROM `paquetes` WHERE `profundidad`=\"" + vBuscar + "\"");
-
+            
             while (vResultSet.next())
             {
                 String num_guia = ((String) vResultSet.getObject(1));
@@ -380,12 +423,12 @@ public class ManipulaDBPaquetes implements Serializable
                 float ancho = ((float) vResultSet.getObject(6));
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
-
+                
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
             return vPaquetesList;
-
+            
         } catch (SQLException ex)
         {
             Logger.getLogger(ManipulaDBPaquetes.class.getName()).log(Level.SEVERE, null, ex);
@@ -403,12 +446,12 @@ public class ManipulaDBPaquetes implements Serializable
     public ArrayList<Paquetes> mConsulta_precio_DBPaquetes(String vBuscar)
     {
         ArrayList<Paquetes> vPaquetesList = new ArrayList<>();
-
+        
         try
         {
             vStatement = vConexion.createStatement();
             vResultSet = vStatement.executeQuery("SELECT * FROM `paquetes` WHERE `precio`=\"" + vBuscar + "\"");
-
+            
             while (vResultSet.next())
             {
                 String num_guia = ((String) vResultSet.getObject(1));
@@ -419,12 +462,12 @@ public class ManipulaDBPaquetes implements Serializable
                 float ancho = ((float) vResultSet.getObject(6));
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
-
+                
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
             return vPaquetesList;
-
+            
         } catch (SQLException ex)
         {
             Logger.getLogger(ManipulaDBPaquetes.class.getName()).log(Level.SEVERE, null, ex);
@@ -673,7 +716,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-
+            
             vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `num_guia`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
@@ -700,7 +743,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-
+            
             vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `fecha_recp`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
@@ -727,7 +770,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-
+            
             vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `fecha_ent`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
@@ -754,7 +797,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-
+            
             vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `peso`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
@@ -781,7 +824,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-
+            
             vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `altura`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
@@ -808,7 +851,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-
+            
             vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `ancho`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
@@ -835,7 +878,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-
+            
             vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `profundidad`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
@@ -862,7 +905,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-
+            
             vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `precio`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
