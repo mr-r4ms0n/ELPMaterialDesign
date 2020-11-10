@@ -39,4 +39,20 @@ public class MetodosBD
         }
         return null;
     }
+    
+    public static ResultSet getPaquetesRec()
+    {
+        try
+        {
+            conexionBD = ConexionBD.getConection();
+            query = "SELECT * FROM paquetes ORDER BY num_guia";
+            sentencia = conexionBD.prepareStatement(query);
+            ResultSet rs = sentencia.executeQuery();
+            return rs;
+        } catch (SQLException e)
+        {
+            System.out.println("Error al obtener los paquetes");
+        }
+        return null;
+    }
 }

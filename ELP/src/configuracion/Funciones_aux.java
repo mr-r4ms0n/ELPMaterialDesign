@@ -5,7 +5,12 @@
  */
 package configuracion;
 
+import RSMaterialComponent.RSTableMetroCustom;
 import java.awt.Component;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
@@ -31,54 +36,83 @@ public class Funciones_aux
 
     public void limpiarFormulario(Component[] componentes)
     {
-
-        for (int i = 0; i < componentes.length; i++)
+        for (Component componente : componentes)
         {
-            if (componentes[i] instanceof JPanel)
+            if (componente instanceof JPanel)
             {
-                limpiarFormulario(((JPanel) componentes[i]).getComponents());
-            } else if (componentes[i] instanceof JViewport)
+                limpiarFormulario(((JPanel) componente).getComponents());
+            } else if (componente instanceof JViewport)
             {
-                limpiarFormulario(((JViewport) componentes[i]).getComponents());
-            } else if (componentes[i] instanceof JScrollPane)
+                limpiarFormulario(((JViewport) componente).getComponents());
+            } else if (componente instanceof JScrollPane)
             {
-                limpiarFormulario(((JScrollPane) componentes[i]).getComponents());
-            } else if (componentes[i] instanceof JTextField)
+                limpiarFormulario(((JScrollPane) componente).getComponents());
+            } else if (componente instanceof JTextField)
             {
-                ((JTextField) componentes[i]).setText("");
-            } else if (componentes[i] instanceof JTextArea)
+                ((JTextField) componente).setText("");
+            } else if (componente instanceof JTextArea)
             {
-                ((JTextArea) componentes[i]).setText("");
-            } else if (componentes[i] instanceof JPasswordField)
+                ((JTextArea) componente).setText("");
+            } else if (componente instanceof JPasswordField)
             {
-                ((JPasswordField) componentes[i]).setText("");
-            } else if (componentes[i] instanceof JCheckBox)
+                ((JPasswordField) componente).setText("");
+            } else if (componente instanceof JCheckBox)
             {
-                ((JCheckBox) componentes[i]).setSelected(false);
-            } else if (componentes[i] instanceof JRadioButton)
+                ((JCheckBox) componente).setSelected(false);
+            } else if (componente instanceof JRadioButton)
             {
-                ((JRadioButton) componentes[i]).setSelected(false);
-            } else if (componentes[i] instanceof JToggleButton)
+                ((JRadioButton) componente).setSelected(false);
+            } else if (componente instanceof JToggleButton)
             {
-                ((JToggleButton) componentes[i]).setSelected(false);
-            } else if (componentes[i] instanceof JComboBox)
+                ((JToggleButton) componente).setSelected(false);
+            } else if (componente instanceof JComboBox)
             {
-                ((JComboBox) componentes[i]).setSelectedIndex(0);
-            } else if (componentes[i] instanceof JSlider)
+                ((JComboBox) componente).setSelectedIndex(0);
+            } else if (componente instanceof JSlider)
             {
-
-                ((JSlider) componentes[i]).setValue(((JSlider) componentes[i]).getMinimum());
-            } else if (componentes[i] instanceof JSpinner)
+                ((JSlider) componente).setValue(((JSlider) componente).getMinimum());
+            } else if (componente instanceof JSpinner)
             {
-                ((JSpinner) componentes[i]).setValue(0);
-            } else if (componentes[i] instanceof JFormattedTextField)
+                ((JSpinner) componente).setValue(0);
+            } else if (componente instanceof JFormattedTextField)
             {
-                ((JFormattedTextField) componentes[i]).setText("");
-            } else if (componentes[i] instanceof JTable)
+                ((JFormattedTextField) componente).setText("");
+            } else if (componente instanceof JTable)
             {
-                ((DefaultTableModel) (((JTable) componentes[i]).getModel())).setRowCount(0);
+                ((DefaultTableModel) (((JTable) componente).getModel())).setRowCount(0);
             }
         }
-
+    }
+    /**
+     * Funcion general para poder listar cualquier tabla
+     * @param rs
+     * @param tabla
+     * @param columnas 
+     */
+    public static void getTable(ResultSet rs, RSTableMetroCustom tabla,String columnas[])
+    {
+        DefaultTableModel tablamdl = (DefaultTableModel) tabla.getModel();
+        //Vaciamos la tabla primero
+        while (tablamdl.getRowCount()>0)
+        {
+            tablamdl.removeRow(0);
+        }
+        try
+        {
+            //Creamos arreglo de objetos
+            Object arr[] = new Object[columnas.length];
+            //Mientras se encuentren resultados llenamos el arreglo de objetos con un for y agregamos ese objeto (fila) a la tabla
+            while (rs.next())
+            {
+                for (int i = 0; i < columnas.length; i++)
+                {
+                    arr[i] = rs.getObject(columnas[i]);
+                }
+                tablamdl.addRow(arr);
+            }
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(Funciones_aux.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

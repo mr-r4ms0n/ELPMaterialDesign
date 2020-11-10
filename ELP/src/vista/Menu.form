@@ -51,15 +51,22 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Component id="rSPanelMaterial2" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Component id="rSPanelMaterial1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="rSPanelEffect1" pref="0" max="32767" attributes="0"/>
+                          <Component id="panelRecibidos" min="-2" pref="1012" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="rSPanelMaterial2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="273" max="32767" attributes="0"/>
+                      <Component id="panelEnviados" min="-2" pref="1018" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -71,9 +78,16 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="rSPanelMaterial1" max="32767" attributes="0"/>
-                      <Component id="rSPanelEffect1" max="32767" attributes="0"/>
+                      <Component id="panelRecibidos" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="12" max="32767" attributes="0"/>
+                  <EmptySpace pref="16" max="32767" attributes="0"/>
+              </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+                      <Component id="panelEnviados" min="-2" pref="743" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -204,21 +218,20 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="JBPaquetes2" alignment="0" min="-2" pref="238" max="-2" attributes="0"/>
+                                  <Component id="JBAbout" alignment="0" min="-2" pref="238" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="101" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="JBPaquetes1" min="-2" pref="238" max="-2" attributes="0"/>
+                              <Component id="JBServicios" min="-2" pref="238" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="JBPaquetes3" min="-2" pref="238" max="-2" attributes="0"/>
+                              <Component id="JBPaquetesEnv" min="-2" pref="238" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
@@ -245,13 +258,13 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="JBPaquetes" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="JBPaquetes3" min="-2" max="-2" attributes="0"/>
+                      <Component id="JBPaquetesEnv" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="JBPaquetes1" min="-2" max="-2" attributes="0"/>
+                      <Component id="JBServicios" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Component id="jLabel5" min="-2" pref="27" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="JBPaquetes2" min="-2" max="-2" attributes="0"/>
+                      <Component id="JBAbout" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="151" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -316,6 +329,9 @@
                 </Property>
                 <Property name="selected" type="boolean" value="true"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBInicioActionPerformed"/>
+              </Events>
             </Component>
             <Component class="RSMaterialComponent.RSButtonMaterialIconShadow" name="JBPaquetes">
               <Properties>
@@ -336,8 +352,11 @@
                   <Value id="LOCAL_POST_OFFICE"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBPaquetesActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="RSMaterialComponent.RSButtonMaterialIconShadow" name="JBPaquetes1">
+            <Component class="RSMaterialComponent.RSButtonMaterialIconShadow" name="JBServicios">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -356,8 +375,11 @@
                   <Value id="PLACE"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBServiciosActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="RSMaterialComponent.RSButtonMaterialIconShadow" name="JBPaquetes2">
+            <Component class="RSMaterialComponent.RSButtonMaterialIconShadow" name="JBAbout">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -377,7 +399,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBPaquetes2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBAboutActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
@@ -408,7 +430,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="RSMaterialComponent.RSButtonMaterialIconShadow" name="JBPaquetes3">
+            <Component class="RSMaterialComponent.RSButtonMaterialIconShadow" name="JBPaquetesEnv">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -427,6 +449,9 @@
                   <Value id="MOTORCYCLE"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JBPaquetesEnvActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="LblBienvenida1">
               <Properties>
@@ -442,7 +467,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="newscomponents.RSPanelEffect" name="rSPanelEffect1">
+        <Container class="newscomponents.RSPanelEffect" name="panelRecibidos">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -452,6 +477,24 @@
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
           <SubComponents>
             <Component class="vista.paquetes.Principal" name="principal1">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                  <CardConstraints cardName="card2"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="newscomponents.RSPanelEffect" name="panelEnviados">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
+          <SubComponents>
+            <Component class="vista.enviados.Principal" name="principal3">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
                   <CardConstraints cardName="card2"/>

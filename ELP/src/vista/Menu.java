@@ -8,6 +8,8 @@ package vista;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
+import java.util.Arrays;
+import newscomponents.RSPanelEffect;
 
 /**
  *
@@ -15,11 +17,12 @@ import java.awt.geom.RoundRectangle2D;
  */
 public class Menu extends javax.swing.JFrame
 {
+
     /**
      * Creates new form Menu
      */
     public static Window vtn;
-    
+
     public Menu(String user)
     {
         initComponents();
@@ -27,13 +30,14 @@ public class Menu extends javax.swing.JFrame
         vtn = this;
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
         vtn.setShape(forma);
-        rSPanelMaterial1.setOpaque(true);
-        LblBienvenida1.setText("Bienvenido/a "+user);
+        panelRecibidos.setVisible(false);
+        panelEnviados.setVisible(false);
+
     }
 
-    private Menu()
+    public Menu()
     {
-        
+
     }
 
     /**
@@ -56,14 +60,16 @@ public class Menu extends javax.swing.JFrame
         LblBienvenida = new javax.swing.JLabel();
         JBInicio = new RSMaterialComponent.RSButtonMaterialIconShadow();
         JBPaquetes = new RSMaterialComponent.RSButtonMaterialIconShadow();
-        JBPaquetes1 = new RSMaterialComponent.RSButtonMaterialIconShadow();
-        JBPaquetes2 = new RSMaterialComponent.RSButtonMaterialIconShadow();
+        JBServicios = new RSMaterialComponent.RSButtonMaterialIconShadow();
+        JBAbout = new RSMaterialComponent.RSButtonMaterialIconShadow();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        JBPaquetes3 = new RSMaterialComponent.RSButtonMaterialIconShadow();
+        JBPaquetesEnv = new RSMaterialComponent.RSButtonMaterialIconShadow();
         LblBienvenida1 = new javax.swing.JLabel();
-        rSPanelEffect1 = new newscomponents.RSPanelEffect();
+        panelRecibidos = new newscomponents.RSPanelEffect();
         principal1 = new vista.paquetes.Principal();
+        panelEnviados = new newscomponents.RSPanelEffect();
+        principal3 = new vista.enviados.Principal();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -158,6 +164,13 @@ public class Menu extends javax.swing.JFrame
         JBInicio.setForegroundText(new java.awt.Color(51, 51, 51));
         JBInicio.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.HOME);
         JBInicio.setSelected(true);
+        JBInicio.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                JBInicioActionPerformed(evt);
+            }
+        });
 
         JBPaquetes.setBackground(new java.awt.Color(255, 255, 255));
         JBPaquetes.setForeground(new java.awt.Color(51, 51, 51));
@@ -165,25 +178,39 @@ public class Menu extends javax.swing.JFrame
         JBPaquetes.setBackgroundHover(new java.awt.Color(103, 177, 202));
         JBPaquetes.setForegroundText(new java.awt.Color(51, 51, 51));
         JBPaquetes.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LOCAL_POST_OFFICE);
-
-        JBPaquetes1.setBackground(new java.awt.Color(255, 255, 255));
-        JBPaquetes1.setForeground(new java.awt.Color(51, 51, 51));
-        JBPaquetes1.setText("Servicios");
-        JBPaquetes1.setBackgroundHover(new java.awt.Color(103, 177, 202));
-        JBPaquetes1.setForegroundText(new java.awt.Color(51, 51, 51));
-        JBPaquetes1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PLACE);
-
-        JBPaquetes2.setBackground(new java.awt.Color(255, 255, 255));
-        JBPaquetes2.setForeground(new java.awt.Color(51, 51, 51));
-        JBPaquetes2.setText("Acerca De");
-        JBPaquetes2.setBackgroundHover(new java.awt.Color(103, 177, 202));
-        JBPaquetes2.setForegroundText(new java.awt.Color(51, 51, 51));
-        JBPaquetes2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.NEW_RELEASES);
-        JBPaquetes2.addActionListener(new java.awt.event.ActionListener()
+        JBPaquetes.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                JBPaquetes2ActionPerformed(evt);
+                JBPaquetesActionPerformed(evt);
+            }
+        });
+
+        JBServicios.setBackground(new java.awt.Color(255, 255, 255));
+        JBServicios.setForeground(new java.awt.Color(51, 51, 51));
+        JBServicios.setText("Servicios");
+        JBServicios.setBackgroundHover(new java.awt.Color(103, 177, 202));
+        JBServicios.setForegroundText(new java.awt.Color(51, 51, 51));
+        JBServicios.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.PLACE);
+        JBServicios.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                JBServiciosActionPerformed(evt);
+            }
+        });
+
+        JBAbout.setBackground(new java.awt.Color(255, 255, 255));
+        JBAbout.setForeground(new java.awt.Color(51, 51, 51));
+        JBAbout.setText("Acerca De");
+        JBAbout.setBackgroundHover(new java.awt.Color(103, 177, 202));
+        JBAbout.setForegroundText(new java.awt.Color(51, 51, 51));
+        JBAbout.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.NEW_RELEASES);
+        JBAbout.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                JBAboutActionPerformed(evt);
             }
         });
 
@@ -197,12 +224,19 @@ public class Menu extends javax.swing.JFrame
         jLabel5.setText("Extras");
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        JBPaquetes3.setBackground(new java.awt.Color(255, 255, 255));
-        JBPaquetes3.setForeground(new java.awt.Color(51, 51, 51));
-        JBPaquetes3.setText("Paquetes Enviados");
-        JBPaquetes3.setBackgroundHover(new java.awt.Color(103, 177, 202));
-        JBPaquetes3.setForegroundText(new java.awt.Color(51, 51, 51));
-        JBPaquetes3.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.MOTORCYCLE);
+        JBPaquetesEnv.setBackground(new java.awt.Color(255, 255, 255));
+        JBPaquetesEnv.setForeground(new java.awt.Color(51, 51, 51));
+        JBPaquetesEnv.setText("Paquetes Enviados");
+        JBPaquetesEnv.setBackgroundHover(new java.awt.Color(103, 177, 202));
+        JBPaquetesEnv.setForegroundText(new java.awt.Color(51, 51, 51));
+        JBPaquetesEnv.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.MOTORCYCLE);
+        JBPaquetesEnv.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                JBPaquetesEnvActionPerformed(evt);
+            }
+        });
 
         LblBienvenida1.setFont(new java.awt.Font("Segoe UI Semibold", 2, 14)); // NOI18N
         LblBienvenida1.setForeground(new java.awt.Color(0, 0, 0));
@@ -235,17 +269,16 @@ public class Menu extends javax.swing.JFrame
                     .addGroup(rSPanelMaterial1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(rSPanelMaterial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JBPaquetes2, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JBAbout, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(rSPanelMaterial1Layout.createSequentialGroup()
                                 .addGap(94, 94, 94)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jLabel5))))
                     .addGroup(rSPanelMaterial1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(JBPaquetes1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(JBServicios, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(rSPanelMaterial1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(JBPaquetes3, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(JBPaquetesEnv, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(rSPanelMaterial1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(LblBienvenida1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -267,18 +300,21 @@ public class Menu extends javax.swing.JFrame
                 .addGap(18, 18, 18)
                 .addComponent(JBPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(JBPaquetes3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JBPaquetesEnv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(JBPaquetes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JBServicios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JBPaquetes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JBAbout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(151, Short.MAX_VALUE))
         );
 
-        rSPanelEffect1.setBackground(new java.awt.Color(255, 255, 255));
-        rSPanelEffect1.add(principal1, "card2");
+        panelRecibidos.setBackground(new java.awt.Color(255, 255, 255));
+        panelRecibidos.add(principal1, "card2");
+
+        panelEnviados.setBackground(new java.awt.Color(255, 255, 255));
+        panelEnviados.add(principal3, "card2");
 
         javax.swing.GroupLayout rSPanelMaterialImage1Layout = new javax.swing.GroupLayout(rSPanelMaterialImage1);
         rSPanelMaterialImage1.setLayout(rSPanelMaterialImage1Layout);
@@ -287,13 +323,18 @@ public class Menu extends javax.swing.JFrame
             .addGroup(rSPanelMaterialImage1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rSPanelMaterial2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(rSPanelMaterialImage1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(rSPanelMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSPanelEffect1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(rSPanelMaterial2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(panelRecibidos, javax.swing.GroupLayout.PREFERRED_SIZE, 1012, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterialImage1Layout.createSequentialGroup()
+                    .addContainerGap(273, Short.MAX_VALUE)
+                    .addComponent(panelEnviados, javax.swing.GroupLayout.PREFERRED_SIZE, 1018, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)))
         );
         rSPanelMaterialImage1Layout.setVerticalGroup(
             rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -303,8 +344,13 @@ public class Menu extends javax.swing.JFrame
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(rSPanelMaterial1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rSPanelEffect1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addComponent(panelRecibidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
+            .addGroup(rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(rSPanelMaterialImage1Layout.createSequentialGroup()
+                    .addGap(119, 119, 119)
+                    .addComponent(panelEnviados, javax.swing.GroupLayout.PREFERRED_SIZE, 743, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -321,10 +367,19 @@ public class Menu extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void JBPaquetes2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBPaquetes2ActionPerformed
-    {//GEN-HEADEREND:event_JBPaquetes2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JBPaquetes2ActionPerformed
+    private void JBAboutActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBAboutActionPerformed
+    {//GEN-HEADEREND:event_JBAboutActionPerformed
+        if (!JBAbout.isSelected())
+        {
+            JBAbout.setSelected(true);
+            JBInicio.setSelected(false);
+            JBServicios.setSelected(false);
+            JBPaquetes.setSelected(false);
+            JBPaquetesEnv.setSelected(false);
+        }
+        panelRecibidos.setVisible(false);
+        panelEnviados.setVisible(false);
+    }//GEN-LAST:event_JBAboutActionPerformed
 
     private void BtnCerrarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BtnCerrarActionPerformed
     {//GEN-HEADEREND:event_BtnCerrarActionPerformed
@@ -332,6 +387,67 @@ public class Menu extends javax.swing.JFrame
         LoginAdmin vtn = new LoginAdmin();
         vtn.setVisible(true);
     }//GEN-LAST:event_BtnCerrarActionPerformed
+
+    private void JBPaquetesActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBPaquetesActionPerformed
+    {//GEN-HEADEREND:event_JBPaquetesActionPerformed
+        if (!JBPaquetes.isSelected())
+        {
+
+            JBPaquetes.setSelected(true);
+            JBInicio.setSelected(false);
+            JBServicios.setSelected(false);
+            JBAbout.setSelected(false);
+            JBPaquetesEnv.setSelected(false);
+        }
+
+        panelRecibidos.setVisible(true);
+        panelEnviados.setVisible(false);
+    }//GEN-LAST:event_JBPaquetesActionPerformed
+
+    private void JBInicioActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBInicioActionPerformed
+    {//GEN-HEADEREND:event_JBInicioActionPerformed
+        if (!JBInicio.isSelected())
+        {
+            JBInicio.setSelected(true);
+            JBPaquetes.setSelected(false);
+            JBServicios.setSelected(false);
+            JBAbout.setSelected(false);
+            JBPaquetesEnv.setSelected(false);
+
+        }
+        panelRecibidos.setVisible(false);
+        panelEnviados.setVisible(false);
+    }//GEN-LAST:event_JBInicioActionPerformed
+
+    private void JBPaquetesEnvActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBPaquetesEnvActionPerformed
+    {//GEN-HEADEREND:event_JBPaquetesEnvActionPerformed
+        if (!JBPaquetesEnv.isSelected())
+        {
+            JBPaquetesEnv.setSelected(true);
+            JBPaquetes.setSelected(false);
+            JBServicios.setSelected(false);
+            JBInicio.setSelected(false);
+            JBAbout.setSelected(false);
+
+        }
+        panelRecibidos.setVisible(false);
+        panelEnviados.setVisible(true);
+    }//GEN-LAST:event_JBPaquetesEnvActionPerformed
+
+    private void JBServiciosActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBServiciosActionPerformed
+    {//GEN-HEADEREND:event_JBServiciosActionPerformed
+        if (!JBServicios.isSelected())
+        {
+            JBServicios.setSelected(true);
+            JBPaquetes.setSelected(false);
+            JBPaquetesEnv.setSelected(false);
+            JBInicio.setSelected(false);
+            JBAbout.setSelected(false);
+
+        }
+        panelRecibidos.setVisible(false);
+        panelEnviados.setVisible(false);
+    }//GEN-LAST:event_JBServiciosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -380,20 +496,22 @@ public class Menu extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private RSMaterialComponent.RSButtonIconOne BtnCerrar;
+    private RSMaterialComponent.RSButtonMaterialIconShadow JBAbout;
     private RSMaterialComponent.RSButtonMaterialIconShadow JBInicio;
     private RSMaterialComponent.RSButtonMaterialIconShadow JBPaquetes;
-    private RSMaterialComponent.RSButtonMaterialIconShadow JBPaquetes1;
-    private RSMaterialComponent.RSButtonMaterialIconShadow JBPaquetes2;
-    private RSMaterialComponent.RSButtonMaterialIconShadow JBPaquetes3;
+    private RSMaterialComponent.RSButtonMaterialIconShadow JBPaquetesEnv;
+    private RSMaterialComponent.RSButtonMaterialIconShadow JBServicios;
     private javax.swing.JLabel LblBienvenida;
     private javax.swing.JLabel LblBienvenida1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private newscomponents.RSPanelEffect panelEnviados;
+    private newscomponents.RSPanelEffect panelRecibidos;
     private vista.paquetes.Principal principal1;
+    private vista.enviados.Principal principal3;
     private RSMaterialComponent.RSLabelIcon rSLabelIcon1;
     private RSMaterialComponent.RSPanelBorderImage rSPanelBorderImage1;
-    private newscomponents.RSPanelEffect rSPanelEffect1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial2;
     private RSMaterialComponent.RSPanelMaterialImage rSPanelMaterialImage1;
