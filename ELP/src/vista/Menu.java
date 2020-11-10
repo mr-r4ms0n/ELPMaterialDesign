@@ -63,6 +63,7 @@ public class Menu extends javax.swing.JFrame
         JBPaquetes3 = new RSMaterialComponent.RSButtonMaterialIconShadow();
         LblBienvenida1 = new javax.swing.JLabel();
         rSPanelEffect1 = new newscomponents.RSPanelEffect();
+        principal1 = new vista.paquetes.Principal();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -277,6 +278,7 @@ public class Menu extends javax.swing.JFrame
         );
 
         rSPanelEffect1.setBackground(new java.awt.Color(255, 255, 255));
+        rSPanelEffect1.add(principal1, "card2");
 
         javax.swing.GroupLayout rSPanelMaterialImage1Layout = new javax.swing.GroupLayout(rSPanelMaterialImage1);
         rSPanelMaterialImage1.setLayout(rSPanelMaterialImage1Layout);
@@ -289,7 +291,7 @@ public class Menu extends javax.swing.JFrame
                         .addGap(6, 6, 6)
                         .addComponent(rSPanelMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSPanelEffect1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(rSPanelEffect1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addComponent(rSPanelMaterial2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -388,6 +390,7 @@ public class Menu extends javax.swing.JFrame
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private vista.paquetes.Principal principal1;
     private RSMaterialComponent.RSLabelIcon rSLabelIcon1;
     private RSMaterialComponent.RSPanelBorderImage rSPanelBorderImage1;
     private newscomponents.RSPanelEffect rSPanelEffect1;
