@@ -23,7 +23,7 @@ public class ManipulaDBAdmins implements Serializable
     private Connection vConexion = null;
     private Statement vStatement = null;
     private ResultSet vResultSet = null;
-    //Variables utilizadas para cifrar informacion
+    //Variables utilizadas para cifrar informacion xd
     private String query = null;
     private PreparedStatement sentencia = null;
 
