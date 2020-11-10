@@ -18,14 +18,14 @@ public class ManipulaDBPaquetes implements Serializable
 {
 
     private static final long serialVersionUID = 1L;
-    
+
     private Connection vConexion = null;
     private Statement vStatement = null;
     private ResultSet vResultSet = null;
 
     /**
-     * Constructor para la Clase ManipulaDBPaquetes, aqui se conectara a la base de
-     * datos.
+     * Constructor para la Clase ManipulaDBPaquetes, aqui se conectara a la base
+     * de datos.
      */
     public ManipulaDBPaquetes()
     {
@@ -35,7 +35,8 @@ public class ManipulaDBPaquetes implements Serializable
             vConexion = DriverManager.getConnection("jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1");
         } catch (Exception e)
         {
-            System.err.println("¡ERROR! No se puede conectar a la base de datos.");        }
+            System.err.println("¡ERROR! No se puede conectar a la base de datos.");
+        }
     }
 
     /**
@@ -56,7 +57,6 @@ public class ManipulaDBPaquetes implements Serializable
     //Insetar, eliminar, consultar, modificar
 
     ////////////////////////Insertar////////////////////////
-    
     /**
      * Metodo para poder insertar dentro de la base de datos "Paquetes".
      *
@@ -70,7 +70,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-            vStatement.executeQuery("INSERT INTO `paquetes`(`num_guia`, `fecha_recp`, `fecha_ent`, `peso`, `altura`, `ancho`, `profundidad`, `precio`) VALUES ("+"\""+vInsertarPaquetes.getNum_guia() + "\", \"" + "\""+vInsertarPaquetes.getFecha_recp() + "\", \"" + "\""+vInsertarPaquetes.getFecha_ent() + "\", \"" + "\""+vInsertarPaquetes.getPeso() + "\", \"" + "\""+vInsertarPaquetes.getAltura() + "\", \"" + "\""+vInsertarPaquetes.getAncho() + "\", \"" + "\""+vInsertarPaquetes.getProfundidad() + "\", \"" + "\""+vInsertarPaquetes.getPrecio() + "\""+")");
+            vStatement.executeQuery("INSERT INTO `paquetes`(`num_guia`, `fecha_recp`, `fecha_ent`, `peso`, `altura`, `ancho`, `profundidad`, `precio`) VALUES (" + "\"" + vInsertarPaquetes.getNum_guia() + "\", \"" + "\"" + vInsertarPaquetes.getFecha_recp() + "\", \"" + "\"" + vInsertarPaquetes.getFecha_ent() + "\", \"" + "\"" + vInsertarPaquetes.getPeso() + "\", \"" + "\"" + vInsertarPaquetes.getAltura() + "\", \"" + "\"" + vInsertarPaquetes.getAncho() + "\", \"" + "\"" + vInsertarPaquetes.getProfundidad() + "\", \"" + "\"" + vInsertarPaquetes.getPrecio() + "\"" + ")");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -81,7 +81,6 @@ public class ManipulaDBPaquetes implements Serializable
     }
 
     ////////////////////////Consulta General////////////////////////
-    
     /**
      * Metodo para sacar toda la información que se encuentra en la tabla
      * "Paquetes".
@@ -108,7 +107,6 @@ public class ManipulaDBPaquetes implements Serializable
                 float profundidad = ((float) vResultSet.getObject(0));
                 float precio = ((float) vResultSet.getObject(0));
 
-
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
@@ -122,7 +120,6 @@ public class ManipulaDBPaquetes implements Serializable
     }
 
     ////////////////////////Consulta por variable////////////////////////
-
     /**
      * Metodo para buscar en "num_guia" en la tabla "Paquetes". La información
      * sera de acuerdo a las coincidencia del parametro a buscar.
@@ -149,7 +146,6 @@ public class ManipulaDBPaquetes implements Serializable
                 float ancho = ((float) vResultSet.getObject(6));
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
-
 
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
@@ -190,7 +186,6 @@ public class ManipulaDBPaquetes implements Serializable
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
 
-
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
@@ -230,7 +225,6 @@ public class ManipulaDBPaquetes implements Serializable
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
 
-
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
@@ -244,8 +238,8 @@ public class ManipulaDBPaquetes implements Serializable
     }
 
     /**
-     * Metodo para buscar en "peso" en la tabla "Paquetes". La información
-     * sera de acuerdo a las coincidencia del parametro a buscar.
+     * Metodo para buscar en "peso" en la tabla "Paquetes". La información sera
+     * de acuerdo a las coincidencia del parametro a buscar.
      *
      * @param vBuscar Lo que se queire buscar.
      * @return Un ArrayList<Paquetes> donde contendra la información
@@ -269,7 +263,6 @@ public class ManipulaDBPaquetes implements Serializable
                 float ancho = ((float) vResultSet.getObject(6));
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
-
 
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
@@ -310,7 +303,6 @@ public class ManipulaDBPaquetes implements Serializable
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
 
-
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
@@ -324,8 +316,8 @@ public class ManipulaDBPaquetes implements Serializable
     }
 
     /**
-     * Metodo para buscar en "ancho" en la tabla "Paquetes". La información
-     * sera de acuerdo a las coincidencia del parametro a buscar.
+     * Metodo para buscar en "ancho" en la tabla "Paquetes". La información sera
+     * de acuerdo a las coincidencia del parametro a buscar.
      *
      * @param vBuscar Lo que se queire buscar.
      * @return Un ArrayList<Paquetes> donde contendra la información
@@ -350,7 +342,6 @@ public class ManipulaDBPaquetes implements Serializable
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
 
-
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
@@ -364,8 +355,8 @@ public class ManipulaDBPaquetes implements Serializable
     }
 
     /**
-     * Metodo para buscar en "profundidad" en la tabla "Paquetes". La información
-     * sera de acuerdo a las coincidencia del parametro a buscar.
+     * Metodo para buscar en "profundidad" en la tabla "Paquetes". La
+     * información sera de acuerdo a las coincidencia del parametro a buscar.
      *
      * @param vBuscar Lo que se queire buscar.
      * @return Un ArrayList<Paquetes> donde contendra la información
@@ -389,7 +380,6 @@ public class ManipulaDBPaquetes implements Serializable
                 float ancho = ((float) vResultSet.getObject(6));
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
-
 
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
@@ -430,7 +420,6 @@ public class ManipulaDBPaquetes implements Serializable
                 float profundidad = ((float) vResultSet.getObject(7));
                 float precio = ((float) vResultSet.getObject(8));
 
-
                 vPaquetesList.add(new Paquetes(num_guia, fecha_recp, fecha_ent, peso, altura, ancho, profundidad, precio));
             }
             vStatement.close();
@@ -443,9 +432,7 @@ public class ManipulaDBPaquetes implements Serializable
         }
     }
 
-
     ////////////////////////Eliminar tabla////////////////////////
-    
     /**
      * Metodo para eliminar todo el contendio de la tabla "Paquetes". ¡Alerta!
      * Esta operación no tiene forma para regresar la información eliminada.
@@ -469,7 +456,6 @@ public class ManipulaDBPaquetes implements Serializable
     }
 
     ////////////////////////Eliminar por variable////////////////////////
-
     /**
      * Metodo para buscar en "num_guia" de la tabla "Paquetes". La eliminación
      * sera de acuerdo a las coincidencia del parametro a buscar, Cada fila
@@ -485,7 +471,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `paquetes` WHERE `num_guia`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `paquetes` WHERE `num_guia`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -510,7 +496,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `paquetes` WHERE `fecha_recp`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `paquetes` WHERE `fecha_recp`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -535,7 +521,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `paquetes` WHERE `fecha_ent`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `paquetes` WHERE `fecha_ent`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -546,10 +532,10 @@ public class ManipulaDBPaquetes implements Serializable
     }
 
     /**
-     * Metodo para buscar en "peso" de la tabla "Paquetes". La eliminación
-     * sera de acuerdo a las coincidencia del parametro a buscar, Cada fila
-     * donde coincida con el parametro dado sera eliminada. ¡Alerta! Esta
-     * operación no tiene forma para regresar la información eliminada.
+     * Metodo para buscar en "peso" de la tabla "Paquetes". La eliminación sera
+     * de acuerdo a las coincidencia del parametro a buscar, Cada fila donde
+     * coincida con el parametro dado sera eliminada. ¡Alerta! Esta operación no
+     * tiene forma para regresar la información eliminada.
      *
      * @param vBuscar Lo que se queire buscar para eliminar la fila.
      * @return true o false, true: La petición fue realizada, false: La
@@ -560,7 +546,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `paquetes` WHERE `peso`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `paquetes` WHERE `peso`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -585,7 +571,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `paquetes` WHERE `altura`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `paquetes` WHERE `altura`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -596,10 +582,10 @@ public class ManipulaDBPaquetes implements Serializable
     }
 
     /**
-     * Metodo para buscar en "ancho" de la tabla "Paquetes". La eliminación
-     * sera de acuerdo a las coincidencia del parametro a buscar, Cada fila
-     * donde coincida con el parametro dado sera eliminada. ¡Alerta! Esta
-     * operación no tiene forma para regresar la información eliminada.
+     * Metodo para buscar en "ancho" de la tabla "Paquetes". La eliminación sera
+     * de acuerdo a las coincidencia del parametro a buscar, Cada fila donde
+     * coincida con el parametro dado sera eliminada. ¡Alerta! Esta operación no
+     * tiene forma para regresar la información eliminada.
      *
      * @param vBuscar Lo que se queire buscar para eliminar la fila.
      * @return true o false, true: La petición fue realizada, false: La
@@ -610,7 +596,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `paquetes` WHERE `ancho`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `paquetes` WHERE `ancho`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -621,10 +607,10 @@ public class ManipulaDBPaquetes implements Serializable
     }
 
     /**
-     * Metodo para buscar en "profundidad" de la tabla "Paquetes". La eliminación
-     * sera de acuerdo a las coincidencia del parametro a buscar, Cada fila
-     * donde coincida con el parametro dado sera eliminada. ¡Alerta! Esta
-     * operación no tiene forma para regresar la información eliminada.
+     * Metodo para buscar en "profundidad" de la tabla "Paquetes". La
+     * eliminación sera de acuerdo a las coincidencia del parametro a buscar,
+     * Cada fila donde coincida con el parametro dado sera eliminada. ¡Alerta!
+     * Esta operación no tiene forma para regresar la información eliminada.
      *
      * @param vBuscar Lo que se queire buscar para eliminar la fila.
      * @return true o false, true: La petición fue realizada, false: La
@@ -635,7 +621,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `paquetes` WHERE `profundidad`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `paquetes` WHERE `profundidad`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -660,7 +646,7 @@ public class ManipulaDBPaquetes implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `paquetes` WHERE `precio`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `paquetes` WHERE `precio`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -671,11 +657,10 @@ public class ManipulaDBPaquetes implements Serializable
     }
 
     ////////////////////////Modificar por variale////////////////////////
-
     /**
-     * Metodo para modificar en la tabla "Paquetes" donde se buscara en "num_guia",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Paquetes" donde se buscara en
+     * "num_guia", la fila que coincida con la busqueda sera cambiada por la
+     * información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
@@ -689,7 +674,7 @@ public class ManipulaDBPaquetes implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `num_guia`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `num_guia`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -699,11 +684,10 @@ public class ManipulaDBPaquetes implements Serializable
         return true;
     }
 
-
     /**
-     * Metodo para modificar en la tabla "Paquetes" donde se buscara en "fecha_recp",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Paquetes" donde se buscara en
+     * "fecha_recp", la fila que coincida con la busqueda sera cambiada por la
+     * información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
@@ -717,7 +701,7 @@ public class ManipulaDBPaquetes implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `fecha_recp`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `fecha_recp`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -727,11 +711,10 @@ public class ManipulaDBPaquetes implements Serializable
         return true;
     }
 
-
     /**
-     * Metodo para modificar en la tabla "Paquetes" donde se buscara en "fecha_ent",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Paquetes" donde se buscara en
+     * "fecha_ent", la fila que coincida con la busqueda sera cambiada por la
+     * información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
@@ -745,7 +728,7 @@ public class ManipulaDBPaquetes implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `fecha_ent`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `fecha_ent`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -754,7 +737,6 @@ public class ManipulaDBPaquetes implements Serializable
         }
         return true;
     }
-
 
     /**
      * Metodo para modificar en la tabla "Paquetes" donde se buscara en "peso",
@@ -773,7 +755,7 @@ public class ManipulaDBPaquetes implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `peso`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `peso`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -783,11 +765,10 @@ public class ManipulaDBPaquetes implements Serializable
         return true;
     }
 
-
     /**
-     * Metodo para modificar en la tabla "Paquetes" donde se buscara en "altura",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Paquetes" donde se buscara en
+     * "altura", la fila que coincida con la busqueda sera cambiada por la
+     * información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
@@ -801,7 +782,7 @@ public class ManipulaDBPaquetes implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `altura`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `altura`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -810,7 +791,6 @@ public class ManipulaDBPaquetes implements Serializable
         }
         return true;
     }
-
 
     /**
      * Metodo para modificar en la tabla "Paquetes" donde se buscara en "ancho",
@@ -829,7 +809,7 @@ public class ManipulaDBPaquetes implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `ancho`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `ancho`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -839,11 +819,10 @@ public class ManipulaDBPaquetes implements Serializable
         return true;
     }
 
-
     /**
-     * Metodo para modificar en la tabla "Paquetes" donde se buscara en "profundidad",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Paquetes" donde se buscara en
+     * "profundidad", la fila que coincida con la busqueda sera cambiada por la
+     * información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
@@ -857,7 +836,7 @@ public class ManipulaDBPaquetes implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `profundidad`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `profundidad`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -867,11 +846,10 @@ public class ManipulaDBPaquetes implements Serializable
         return true;
     }
 
-
     /**
-     * Metodo para modificar en la tabla "Paquetes" donde se buscara en "precio",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Paquetes" donde se buscara en
+     * "precio", la fila que coincida con la busqueda sera cambiada por la
+     * información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
@@ -885,7 +863,7 @@ public class ManipulaDBPaquetes implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `precio`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `paquetes` SET ``num_guia`=\"" + vPaquetes.getNum_guia() + "\",`fecha_recp`=\"" + vPaquetes.getFecha_recp() + "\",`fecha_ent`=\"" + vPaquetes.getFecha_ent() + "\",`peso`=\"" + vPaquetes.getPeso() + "\",`altura`=\"" + vPaquetes.getAltura() + "\",`ancho`=\"" + vPaquetes.getAncho() + "\",`profundidad`=\"" + vPaquetes.getProfundidad() + "\",`precio`=\"" + vPaquetes.getPrecio() + "\" WHERE `precio`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -895,7 +873,5 @@ public class ManipulaDBPaquetes implements Serializable
         return true;
     }
 
-
     ////////////////////////////////////////////////////////////////////////////
 }
-

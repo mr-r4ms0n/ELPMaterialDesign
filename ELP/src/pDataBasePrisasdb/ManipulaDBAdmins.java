@@ -39,7 +39,7 @@ public class ManipulaDBAdmins implements Serializable
             vConexion = DriverManager.getConnection("jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1");//localhost/prisasbd
         } catch (Exception e)
         {
-            System.err.println("¡ERROR! No se puede conectar a la base de datos.\n"+e);
+            System.err.println("¡ERROR! No se puede conectar a la base de datos.\n" + e);
         }
     }
 
@@ -202,10 +202,9 @@ public class ManipulaDBAdmins implements Serializable
             {
                 System.out.println("AJA");
                 return vResultSet;
-                
+
             }
             vStatement.close();
-            
 
         } catch (SQLException ex)
         {

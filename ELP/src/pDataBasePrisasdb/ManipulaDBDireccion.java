@@ -18,14 +18,14 @@ public class ManipulaDBDireccion implements Serializable
 {
 
     private static final long serialVersionUID = 1L;
-    
+
     private Connection vConexion = null;
     private Statement vStatement = null;
     private ResultSet vResultSet = null;
 
     /**
-     * Constructor para la Clase ManipulaDBDireccion, aqui se conectara a la base de
-     * datos.
+     * Constructor para la Clase ManipulaDBDireccion, aqui se conectara a la
+     * base de datos.
      */
     public ManipulaDBDireccion()
     {
@@ -35,7 +35,8 @@ public class ManipulaDBDireccion implements Serializable
             vConexion = DriverManager.getConnection("jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1");
         } catch (Exception e)
         {
-            System.err.println("¡ERROR! No se puede conectar a la base de datos.");        }
+            System.err.println("¡ERROR! No se puede conectar a la base de datos.");
+        }
     }
 
     /**
@@ -56,7 +57,6 @@ public class ManipulaDBDireccion implements Serializable
     //Insetar, eliminar, consultar, modificar
 
     ////////////////////////Insertar////////////////////////
-    
     /**
      * Metodo para poder insertar dentro de la base de datos "Direccion".
      *
@@ -70,7 +70,7 @@ public class ManipulaDBDireccion implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-            vStatement.executeQuery("INSERT INTO `direccion`(`clave_domicilio`, `calle`, `localidad`, `codigo_postal`, `ciudad`) VALUES ("+"\""+vInsertarDireccion.getClave_domicilio() + "\", \"" + "\""+vInsertarDireccion.getCalle() + "\", \"" + "\""+vInsertarDireccion.getLocalidad() + "\", \"" + "\""+vInsertarDireccion.getCodigo_postal() + "\", \"" + "\""+vInsertarDireccion.getCiudad() + "\""+")");
+            vStatement.executeQuery("INSERT INTO `direccion`(`clave_domicilio`, `calle`, `localidad`, `codigo_postal`, `ciudad`) VALUES (" + "\"" + vInsertarDireccion.getClave_domicilio() + "\", \"" + "\"" + vInsertarDireccion.getCalle() + "\", \"" + "\"" + vInsertarDireccion.getLocalidad() + "\", \"" + "\"" + vInsertarDireccion.getCodigo_postal() + "\", \"" + "\"" + vInsertarDireccion.getCiudad() + "\"" + ")");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -81,7 +81,6 @@ public class ManipulaDBDireccion implements Serializable
     }
 
     ////////////////////////Consulta General////////////////////////
-    
     /**
      * Metodo para sacar toda la información que se encuentra en la tabla
      * "Direccion".
@@ -105,7 +104,6 @@ public class ManipulaDBDireccion implements Serializable
                 int codigo_postal = ((int) vResultSet.getObject(0));
                 String ciudad = ((String) vResultSet.getObject(0));
 
-
                 vDireccionList.add(new Direccion(clave_domicilio, calle, localidad, codigo_postal, ciudad));
             }
             vStatement.close();
@@ -119,10 +117,9 @@ public class ManipulaDBDireccion implements Serializable
     }
 
     ////////////////////////Consulta por variable////////////////////////
-
     /**
-     * Metodo para buscar en "clave_domicilio" en la tabla "Direccion". La información
-     * sera de acuerdo a las coincidencia del parametro a buscar.
+     * Metodo para buscar en "clave_domicilio" en la tabla "Direccion". La
+     * información sera de acuerdo a las coincidencia del parametro a buscar.
      *
      * @param vBuscar Lo que se queire buscar.
      * @return Un ArrayList<Direccion> donde contendra la información
@@ -143,7 +140,6 @@ public class ManipulaDBDireccion implements Serializable
                 String localidad = ((String) vResultSet.getObject(3));
                 int codigo_postal = ((int) vResultSet.getObject(4));
                 String ciudad = ((String) vResultSet.getObject(5));
-
 
                 vDireccionList.add(new Direccion(clave_domicilio, calle, localidad, codigo_postal, ciudad));
             }
@@ -181,7 +177,6 @@ public class ManipulaDBDireccion implements Serializable
                 int codigo_postal = ((int) vResultSet.getObject(4));
                 String ciudad = ((String) vResultSet.getObject(5));
 
-
                 vDireccionList.add(new Direccion(clave_domicilio, calle, localidad, codigo_postal, ciudad));
             }
             vStatement.close();
@@ -218,7 +213,6 @@ public class ManipulaDBDireccion implements Serializable
                 int codigo_postal = ((int) vResultSet.getObject(4));
                 String ciudad = ((String) vResultSet.getObject(5));
 
-
                 vDireccionList.add(new Direccion(clave_domicilio, calle, localidad, codigo_postal, ciudad));
             }
             vStatement.close();
@@ -232,8 +226,8 @@ public class ManipulaDBDireccion implements Serializable
     }
 
     /**
-     * Metodo para buscar en "codigo_postal" en la tabla "Direccion". La información
-     * sera de acuerdo a las coincidencia del parametro a buscar.
+     * Metodo para buscar en "codigo_postal" en la tabla "Direccion". La
+     * información sera de acuerdo a las coincidencia del parametro a buscar.
      *
      * @param vBuscar Lo que se queire buscar.
      * @return Un ArrayList<Direccion> donde contendra la información
@@ -254,7 +248,6 @@ public class ManipulaDBDireccion implements Serializable
                 String localidad = ((String) vResultSet.getObject(3));
                 int codigo_postal = ((int) vResultSet.getObject(4));
                 String ciudad = ((String) vResultSet.getObject(5));
-
 
                 vDireccionList.add(new Direccion(clave_domicilio, calle, localidad, codigo_postal, ciudad));
             }
@@ -292,7 +285,6 @@ public class ManipulaDBDireccion implements Serializable
                 int codigo_postal = ((int) vResultSet.getObject(4));
                 String ciudad = ((String) vResultSet.getObject(5));
 
-
                 vDireccionList.add(new Direccion(clave_domicilio, calle, localidad, codigo_postal, ciudad));
             }
             vStatement.close();
@@ -305,9 +297,7 @@ public class ManipulaDBDireccion implements Serializable
         }
     }
 
-
     ////////////////////////Eliminar tabla////////////////////////
-    
     /**
      * Metodo para eliminar todo el contendio de la tabla "Direccion". ¡Alerta!
      * Esta operación no tiene forma para regresar la información eliminada.
@@ -331,12 +321,11 @@ public class ManipulaDBDireccion implements Serializable
     }
 
     ////////////////////////Eliminar por variable////////////////////////
-
     /**
-     * Metodo para buscar en "clave_domicilio" de la tabla "Direccion". La eliminación
-     * sera de acuerdo a las coincidencia del parametro a buscar, Cada fila
-     * donde coincida con el parametro dado sera eliminada. ¡Alerta! Esta
-     * operación no tiene forma para regresar la información eliminada.
+     * Metodo para buscar en "clave_domicilio" de la tabla "Direccion". La
+     * eliminación sera de acuerdo a las coincidencia del parametro a buscar,
+     * Cada fila donde coincida con el parametro dado sera eliminada. ¡Alerta!
+     * Esta operación no tiene forma para regresar la información eliminada.
      *
      * @param vBuscar Lo que se queire buscar para eliminar la fila.
      * @return true o false, true: La petición fue realizada, false: La
@@ -347,7 +336,7 @@ public class ManipulaDBDireccion implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `direccion` WHERE `clave_domicilio`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `direccion` WHERE `clave_domicilio`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -372,7 +361,7 @@ public class ManipulaDBDireccion implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `direccion` WHERE `calle`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `direccion` WHERE `calle`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -397,7 +386,7 @@ public class ManipulaDBDireccion implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `direccion` WHERE `localidad`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `direccion` WHERE `localidad`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -408,10 +397,10 @@ public class ManipulaDBDireccion implements Serializable
     }
 
     /**
-     * Metodo para buscar en "codigo_postal" de la tabla "Direccion". La eliminación
-     * sera de acuerdo a las coincidencia del parametro a buscar, Cada fila
-     * donde coincida con el parametro dado sera eliminada. ¡Alerta! Esta
-     * operación no tiene forma para regresar la información eliminada.
+     * Metodo para buscar en "codigo_postal" de la tabla "Direccion". La
+     * eliminación sera de acuerdo a las coincidencia del parametro a buscar,
+     * Cada fila donde coincida con el parametro dado sera eliminada. ¡Alerta!
+     * Esta operación no tiene forma para regresar la información eliminada.
      *
      * @param vBuscar Lo que se queire buscar para eliminar la fila.
      * @return true o false, true: La petición fue realizada, false: La
@@ -422,7 +411,7 @@ public class ManipulaDBDireccion implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `direccion` WHERE `codigo_postal`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `direccion` WHERE `codigo_postal`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -447,7 +436,7 @@ public class ManipulaDBDireccion implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `direccion` WHERE `ciudad`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `direccion` WHERE `ciudad`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -458,11 +447,10 @@ public class ManipulaDBDireccion implements Serializable
     }
 
     ////////////////////////Modificar por variale////////////////////////
-
     /**
-     * Metodo para modificar en la tabla "Direccion" donde se buscara en "clave_domicilio",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Direccion" donde se buscara en
+     * "clave_domicilio", la fila que coincida con la busqueda sera cambiada por
+     * la información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
@@ -476,7 +464,7 @@ public class ManipulaDBDireccion implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `direccion` SET ``clave_domicilio`=\"" + vDireccion.getClave_domicilio() + "\",`calle`=\"" + vDireccion.getCalle() + "\",`localidad`=\"" + vDireccion.getLocalidad() + "\",`codigo_postal`=\"" + vDireccion.getCodigo_postal() + "\",`ciudad`=\"" + vDireccion.getCiudad() + "\" WHERE `clave_domicilio`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `direccion` SET ``clave_domicilio`=\"" + vDireccion.getClave_domicilio() + "\",`calle`=\"" + vDireccion.getCalle() + "\",`localidad`=\"" + vDireccion.getLocalidad() + "\",`codigo_postal`=\"" + vDireccion.getCodigo_postal() + "\",`ciudad`=\"" + vDireccion.getCiudad() + "\" WHERE `clave_domicilio`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -486,11 +474,10 @@ public class ManipulaDBDireccion implements Serializable
         return true;
     }
 
-
     /**
-     * Metodo para modificar en la tabla "Direccion" donde se buscara en "calle",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Direccion" donde se buscara en
+     * "calle", la fila que coincida con la busqueda sera cambiada por la
+     * información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
@@ -504,7 +491,7 @@ public class ManipulaDBDireccion implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `direccion` SET ``clave_domicilio`=\"" + vDireccion.getClave_domicilio() + "\",`calle`=\"" + vDireccion.getCalle() + "\",`localidad`=\"" + vDireccion.getLocalidad() + "\",`codigo_postal`=\"" + vDireccion.getCodigo_postal() + "\",`ciudad`=\"" + vDireccion.getCiudad() + "\" WHERE `calle`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `direccion` SET ``clave_domicilio`=\"" + vDireccion.getClave_domicilio() + "\",`calle`=\"" + vDireccion.getCalle() + "\",`localidad`=\"" + vDireccion.getLocalidad() + "\",`codigo_postal`=\"" + vDireccion.getCodigo_postal() + "\",`ciudad`=\"" + vDireccion.getCiudad() + "\" WHERE `calle`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -514,11 +501,10 @@ public class ManipulaDBDireccion implements Serializable
         return true;
     }
 
-
     /**
-     * Metodo para modificar en la tabla "Direccion" donde se buscara en "localidad",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Direccion" donde se buscara en
+     * "localidad", la fila que coincida con la busqueda sera cambiada por la
+     * información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
@@ -532,7 +518,7 @@ public class ManipulaDBDireccion implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `direccion` SET ``clave_domicilio`=\"" + vDireccion.getClave_domicilio() + "\",`calle`=\"" + vDireccion.getCalle() + "\",`localidad`=\"" + vDireccion.getLocalidad() + "\",`codigo_postal`=\"" + vDireccion.getCodigo_postal() + "\",`ciudad`=\"" + vDireccion.getCiudad() + "\" WHERE `localidad`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `direccion` SET ``clave_domicilio`=\"" + vDireccion.getClave_domicilio() + "\",`calle`=\"" + vDireccion.getCalle() + "\",`localidad`=\"" + vDireccion.getLocalidad() + "\",`codigo_postal`=\"" + vDireccion.getCodigo_postal() + "\",`ciudad`=\"" + vDireccion.getCiudad() + "\" WHERE `localidad`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -542,11 +528,10 @@ public class ManipulaDBDireccion implements Serializable
         return true;
     }
 
-
     /**
-     * Metodo para modificar en la tabla "Direccion" donde se buscara en "codigo_postal",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Direccion" donde se buscara en
+     * "codigo_postal", la fila que coincida con la busqueda sera cambiada por
+     * la información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
@@ -560,7 +545,7 @@ public class ManipulaDBDireccion implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `direccion` SET ``clave_domicilio`=\"" + vDireccion.getClave_domicilio() + "\",`calle`=\"" + vDireccion.getCalle() + "\",`localidad`=\"" + vDireccion.getLocalidad() + "\",`codigo_postal`=\"" + vDireccion.getCodigo_postal() + "\",`ciudad`=\"" + vDireccion.getCiudad() + "\" WHERE `codigo_postal`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `direccion` SET ``clave_domicilio`=\"" + vDireccion.getClave_domicilio() + "\",`calle`=\"" + vDireccion.getCalle() + "\",`localidad`=\"" + vDireccion.getLocalidad() + "\",`codigo_postal`=\"" + vDireccion.getCodigo_postal() + "\",`ciudad`=\"" + vDireccion.getCiudad() + "\" WHERE `codigo_postal`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -570,11 +555,10 @@ public class ManipulaDBDireccion implements Serializable
         return true;
     }
 
-
     /**
-     * Metodo para modificar en la tabla "Direccion" donde se buscara en "ciudad",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Direccion" donde se buscara en
+     * "ciudad", la fila que coincida con la busqueda sera cambiada por la
+     * información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
@@ -588,7 +572,7 @@ public class ManipulaDBDireccion implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `direccion` SET ``clave_domicilio`=\"" + vDireccion.getClave_domicilio() + "\",`calle`=\"" + vDireccion.getCalle() + "\",`localidad`=\"" + vDireccion.getLocalidad() + "\",`codigo_postal`=\"" + vDireccion.getCodigo_postal() + "\",`ciudad`=\"" + vDireccion.getCiudad() + "\" WHERE `ciudad`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `direccion` SET ``clave_domicilio`=\"" + vDireccion.getClave_domicilio() + "\",`calle`=\"" + vDireccion.getCalle() + "\",`localidad`=\"" + vDireccion.getLocalidad() + "\",`codigo_postal`=\"" + vDireccion.getCodigo_postal() + "\",`ciudad`=\"" + vDireccion.getCiudad() + "\" WHERE `ciudad`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -598,7 +582,5 @@ public class ManipulaDBDireccion implements Serializable
         return true;
     }
 
-
     ////////////////////////////////////////////////////////////////////////////
 }
-
