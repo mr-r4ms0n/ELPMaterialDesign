@@ -10,13 +10,9 @@ import java.awt.Color;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import modelo.MetodosBD;
-import pDataBasePrisasdb.ManipulaDBAdmins;
 
 /**
  *
