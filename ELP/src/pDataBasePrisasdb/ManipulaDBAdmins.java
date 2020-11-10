@@ -37,7 +37,6 @@ public class ManipulaDBAdmins implements Serializable
         {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             vConexion = DriverManager.getConnection("jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1");//localhost/prisasbd
-            System.out.println("Si me conecte...");
         } catch (Exception e)
         {
             System.err.println("¡ERROR! No se puede conectar a la base de datos.\n"+e);

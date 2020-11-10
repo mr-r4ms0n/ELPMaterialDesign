@@ -27,7 +27,7 @@ public class LoginAdmin extends javax.swing.JFrame
 
     public static Window vtn;
     
-    ManipulaDBAdmins mani = new ManipulaDBAdmins();
+   // ManipulaDBAdmins mani = new ManipulaDBAdmins();
 
     /**
      * Creates new form LoginAdmin
