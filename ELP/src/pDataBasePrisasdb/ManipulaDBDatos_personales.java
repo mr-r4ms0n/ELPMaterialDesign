@@ -18,14 +18,14 @@ public class ManipulaDBDatos_personales implements Serializable
 {
 
     private static final long serialVersionUID = 1L;
-    
+
     private Connection vConexion = null;
     private Statement vStatement = null;
     private ResultSet vResultSet = null;
 
     /**
-     * Constructor para la Clase ManipulaDBDatos_personales, aqui se conectara a la base de
-     * datos.
+     * Constructor para la Clase ManipulaDBDatos_personales, aqui se conectara a
+     * la base de datos.
      */
     public ManipulaDBDatos_personales()
     {
@@ -35,7 +35,8 @@ public class ManipulaDBDatos_personales implements Serializable
             vConexion = DriverManager.getConnection("jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1");
         } catch (Exception e)
         {
-            System.err.println("¡ERROR! No se puede conectar a la base de datos.");        }
+            System.err.println("¡ERROR! No se puede conectar a la base de datos.");
+        }
     }
 
     /**
@@ -56,12 +57,11 @@ public class ManipulaDBDatos_personales implements Serializable
     //Insetar, eliminar, consultar, modificar
 
     ////////////////////////Insertar////////////////////////
-    
     /**
      * Metodo para poder insertar dentro de la base de datos "Datos_personales".
      *
-     * @param vInsertarDatos_personales Información que es alamcenada en la clase
-     * Datos_personales.
+     * @param vInsertarDatos_personales Información que es alamcenada en la
+     * clase Datos_personales.
      * @return true o false, true: La petición fue realizada, false: La petición
      * no fue realizada.
      */
@@ -70,7 +70,7 @@ public class ManipulaDBDatos_personales implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-            vStatement.executeQuery("INSERT INTO `datos_personales`(`IdNombre`, `nombre`, `ApeP`, `ApeM`) VALUES ("+"\""+vInsertarDatos_personales.getIdNombre() + "\", \"" + "\""+vInsertarDatos_personales.getNombre() + "\", \"" + "\""+vInsertarDatos_personales.getApeP() + "\", \"" + "\""+vInsertarDatos_personales.getApeM() + "\""+")");
+            vStatement.executeQuery("INSERT INTO `datos_personales`(`IdNombre`, `nombre`, `ApeP`, `ApeM`) VALUES (" + "\"" + vInsertarDatos_personales.getIdNombre() + "\", \"" + "\"" + vInsertarDatos_personales.getNombre() + "\", \"" + "\"" + vInsertarDatos_personales.getApeP() + "\", \"" + "\"" + vInsertarDatos_personales.getApeM() + "\"" + ")");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -81,7 +81,6 @@ public class ManipulaDBDatos_personales implements Serializable
     }
 
     ////////////////////////Consulta General////////////////////////
-    
     /**
      * Metodo para sacar toda la información que se encuentra en la tabla
      * "Datos_personales".
@@ -104,7 +103,6 @@ public class ManipulaDBDatos_personales implements Serializable
                 String ApeP = ((String) vResultSet.getObject(0));
                 String ApeM = ((String) vResultSet.getObject(0));
 
-
                 vDatos_personalesList.add(new Datos_personales(IdNombre, nombre, ApeP, ApeM));
             }
             vStatement.close();
@@ -118,10 +116,9 @@ public class ManipulaDBDatos_personales implements Serializable
     }
 
     ////////////////////////Consulta por variable////////////////////////
-
     /**
-     * Metodo para buscar en "IdNombre" en la tabla "Datos_personales". La información
-     * sera de acuerdo a las coincidencia del parametro a buscar.
+     * Metodo para buscar en "IdNombre" en la tabla "Datos_personales". La
+     * información sera de acuerdo a las coincidencia del parametro a buscar.
      *
      * @param vBuscar Lo que se queire buscar.
      * @return Un ArrayList<Datos_personales> donde contendra la información
@@ -142,7 +139,6 @@ public class ManipulaDBDatos_personales implements Serializable
                 String ApeP = ((String) vResultSet.getObject(3));
                 String ApeM = ((String) vResultSet.getObject(4));
 
-
                 vDatos_personalesList.add(new Datos_personales(IdNombre, nombre, ApeP, ApeM));
             }
             vStatement.close();
@@ -156,8 +152,8 @@ public class ManipulaDBDatos_personales implements Serializable
     }
 
     /**
-     * Metodo para buscar en "nombre" en la tabla "Datos_personales". La información
-     * sera de acuerdo a las coincidencia del parametro a buscar.
+     * Metodo para buscar en "nombre" en la tabla "Datos_personales". La
+     * información sera de acuerdo a las coincidencia del parametro a buscar.
      *
      * @param vBuscar Lo que se queire buscar.
      * @return Un ArrayList<Datos_personales> donde contendra la información
@@ -178,7 +174,6 @@ public class ManipulaDBDatos_personales implements Serializable
                 String ApeP = ((String) vResultSet.getObject(3));
                 String ApeM = ((String) vResultSet.getObject(4));
 
-
                 vDatos_personalesList.add(new Datos_personales(IdNombre, nombre, ApeP, ApeM));
             }
             vStatement.close();
@@ -192,8 +187,8 @@ public class ManipulaDBDatos_personales implements Serializable
     }
 
     /**
-     * Metodo para buscar en "ApeP" en la tabla "Datos_personales". La información
-     * sera de acuerdo a las coincidencia del parametro a buscar.
+     * Metodo para buscar en "ApeP" en la tabla "Datos_personales". La
+     * información sera de acuerdo a las coincidencia del parametro a buscar.
      *
      * @param vBuscar Lo que se queire buscar.
      * @return Un ArrayList<Datos_personales> donde contendra la información
@@ -214,7 +209,6 @@ public class ManipulaDBDatos_personales implements Serializable
                 String ApeP = ((String) vResultSet.getObject(3));
                 String ApeM = ((String) vResultSet.getObject(4));
 
-
                 vDatos_personalesList.add(new Datos_personales(IdNombre, nombre, ApeP, ApeM));
             }
             vStatement.close();
@@ -228,8 +222,8 @@ public class ManipulaDBDatos_personales implements Serializable
     }
 
     /**
-     * Metodo para buscar en "ApeM" en la tabla "Datos_personales". La información
-     * sera de acuerdo a las coincidencia del parametro a buscar.
+     * Metodo para buscar en "ApeM" en la tabla "Datos_personales". La
+     * información sera de acuerdo a las coincidencia del parametro a buscar.
      *
      * @param vBuscar Lo que se queire buscar.
      * @return Un ArrayList<Datos_personales> donde contendra la información
@@ -250,7 +244,6 @@ public class ManipulaDBDatos_personales implements Serializable
                 String ApeP = ((String) vResultSet.getObject(3));
                 String ApeM = ((String) vResultSet.getObject(4));
 
-
                 vDatos_personalesList.add(new Datos_personales(IdNombre, nombre, ApeP, ApeM));
             }
             vStatement.close();
@@ -263,12 +256,11 @@ public class ManipulaDBDatos_personales implements Serializable
         }
     }
 
-
     ////////////////////////Eliminar tabla////////////////////////
-    
     /**
-     * Metodo para eliminar todo el contendio de la tabla "Datos_personales". ¡Alerta!
-     * Esta operación no tiene forma para regresar la información eliminada.
+     * Metodo para eliminar todo el contendio de la tabla "Datos_personales".
+     * ¡Alerta! Esta operación no tiene forma para regresar la información
+     * eliminada.
      *
      * @return true o false, true: La petición fue realizada, false: La
      * peticioón no fue realizada.
@@ -289,12 +281,11 @@ public class ManipulaDBDatos_personales implements Serializable
     }
 
     ////////////////////////Eliminar por variable////////////////////////
-
     /**
-     * Metodo para buscar en "IdNombre" de la tabla "Datos_personales". La eliminación
-     * sera de acuerdo a las coincidencia del parametro a buscar, Cada fila
-     * donde coincida con el parametro dado sera eliminada. ¡Alerta! Esta
-     * operación no tiene forma para regresar la información eliminada.
+     * Metodo para buscar en "IdNombre" de la tabla "Datos_personales". La
+     * eliminación sera de acuerdo a las coincidencia del parametro a buscar,
+     * Cada fila donde coincida con el parametro dado sera eliminada. ¡Alerta!
+     * Esta operación no tiene forma para regresar la información eliminada.
      *
      * @param vBuscar Lo que se queire buscar para eliminar la fila.
      * @return true o false, true: La petición fue realizada, false: La
@@ -305,7 +296,7 @@ public class ManipulaDBDatos_personales implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `datos_personales` WHERE `IdNombre`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `datos_personales` WHERE `IdNombre`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -316,10 +307,10 @@ public class ManipulaDBDatos_personales implements Serializable
     }
 
     /**
-     * Metodo para buscar en "nombre" de la tabla "Datos_personales". La eliminación
-     * sera de acuerdo a las coincidencia del parametro a buscar, Cada fila
-     * donde coincida con el parametro dado sera eliminada. ¡Alerta! Esta
-     * operación no tiene forma para regresar la información eliminada.
+     * Metodo para buscar en "nombre" de la tabla "Datos_personales". La
+     * eliminación sera de acuerdo a las coincidencia del parametro a buscar,
+     * Cada fila donde coincida con el parametro dado sera eliminada. ¡Alerta!
+     * Esta operación no tiene forma para regresar la información eliminada.
      *
      * @param vBuscar Lo que se queire buscar para eliminar la fila.
      * @return true o false, true: La petición fue realizada, false: La
@@ -330,7 +321,7 @@ public class ManipulaDBDatos_personales implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `datos_personales` WHERE `nombre`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `datos_personales` WHERE `nombre`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -341,10 +332,10 @@ public class ManipulaDBDatos_personales implements Serializable
     }
 
     /**
-     * Metodo para buscar en "ApeP" de la tabla "Datos_personales". La eliminación
-     * sera de acuerdo a las coincidencia del parametro a buscar, Cada fila
-     * donde coincida con el parametro dado sera eliminada. ¡Alerta! Esta
-     * operación no tiene forma para regresar la información eliminada.
+     * Metodo para buscar en "ApeP" de la tabla "Datos_personales". La
+     * eliminación sera de acuerdo a las coincidencia del parametro a buscar,
+     * Cada fila donde coincida con el parametro dado sera eliminada. ¡Alerta!
+     * Esta operación no tiene forma para regresar la información eliminada.
      *
      * @param vBuscar Lo que se queire buscar para eliminar la fila.
      * @return true o false, true: La petición fue realizada, false: La
@@ -355,7 +346,7 @@ public class ManipulaDBDatos_personales implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `datos_personales` WHERE `ApeP`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `datos_personales` WHERE `ApeP`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -366,10 +357,10 @@ public class ManipulaDBDatos_personales implements Serializable
     }
 
     /**
-     * Metodo para buscar en "ApeM" de la tabla "Datos_personales". La eliminación
-     * sera de acuerdo a las coincidencia del parametro a buscar, Cada fila
-     * donde coincida con el parametro dado sera eliminada. ¡Alerta! Esta
-     * operación no tiene forma para regresar la información eliminada.
+     * Metodo para buscar en "ApeM" de la tabla "Datos_personales". La
+     * eliminación sera de acuerdo a las coincidencia del parametro a buscar,
+     * Cada fila donde coincida con el parametro dado sera eliminada. ¡Alerta!
+     * Esta operación no tiene forma para regresar la información eliminada.
      *
      * @param vBuscar Lo que se queire buscar para eliminar la fila.
      * @return true o false, true: La petición fue realizada, false: La
@@ -380,7 +371,7 @@ public class ManipulaDBDatos_personales implements Serializable
         try
         {
             vStatement = vConexion.createStatement();
-                vStatement.executeQuery("DELETE FROM `datos_personales` WHERE `ApeM`=\"" + vBuscar + "\"");
+            vStatement.executeQuery("DELETE FROM `datos_personales` WHERE `ApeM`=\"" + vBuscar + "\"");
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -391,15 +382,15 @@ public class ManipulaDBDatos_personales implements Serializable
     }
 
     ////////////////////////Modificar por variale////////////////////////
-
     /**
-     * Metodo para modificar en la tabla "Datos_personales" donde se buscara en "IdNombre",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Datos_personales" donde se buscara en
+     * "IdNombre", la fila que coincida con la busqueda sera cambiada por la
+     * información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
-     * @param vDatos_personales Información que es alamcenada en la clase Datos_personales.
+     * @param vDatos_personales Información que es alamcenada en la clase
+     * Datos_personales.
      * @return true o false, true: La petición fue realizada, false: La
      * peticioón no fue realizada.
      */
@@ -409,7 +400,7 @@ public class ManipulaDBDatos_personales implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `datos_personales` SET ``IdNombre`=\"" + vDatos_personales.getIdNombre() + "\",`nombre`=\"" + vDatos_personales.getNombre() + "\",`ApeP`=\"" + vDatos_personales.getApeP() + "\",`ApeM`=\"" + vDatos_personales.getApeM() + "\" WHERE `IdNombre`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `datos_personales` SET ``IdNombre`=\"" + vDatos_personales.getIdNombre() + "\",`nombre`=\"" + vDatos_personales.getNombre() + "\",`ApeP`=\"" + vDatos_personales.getApeP() + "\",`ApeM`=\"" + vDatos_personales.getApeM() + "\" WHERE `IdNombre`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -419,15 +410,15 @@ public class ManipulaDBDatos_personales implements Serializable
         return true;
     }
 
-
     /**
-     * Metodo para modificar en la tabla "Datos_personales" donde se buscara en "nombre",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Datos_personales" donde se buscara en
+     * "nombre", la fila que coincida con la busqueda sera cambiada por la
+     * información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
-     * @param vDatos_personales Información que es alamcenada en la clase Datos_personales.
+     * @param vDatos_personales Información que es alamcenada en la clase
+     * Datos_personales.
      * @return true o false, true: La petición fue realizada, false: La
      * peticioón no fue realizada.
      */
@@ -437,7 +428,7 @@ public class ManipulaDBDatos_personales implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `datos_personales` SET ``IdNombre`=\"" + vDatos_personales.getIdNombre() + "\",`nombre`=\"" + vDatos_personales.getNombre() + "\",`ApeP`=\"" + vDatos_personales.getApeP() + "\",`ApeM`=\"" + vDatos_personales.getApeM() + "\" WHERE `nombre`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `datos_personales` SET ``IdNombre`=\"" + vDatos_personales.getIdNombre() + "\",`nombre`=\"" + vDatos_personales.getNombre() + "\",`ApeP`=\"" + vDatos_personales.getApeP() + "\",`ApeM`=\"" + vDatos_personales.getApeM() + "\" WHERE `nombre`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -447,15 +438,15 @@ public class ManipulaDBDatos_personales implements Serializable
         return true;
     }
 
-
     /**
-     * Metodo para modificar en la tabla "Datos_personales" donde se buscara en "ApeP",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Datos_personales" donde se buscara en
+     * "ApeP", la fila que coincida con la busqueda sera cambiada por la
+     * información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
-     * @param vDatos_personales Información que es alamcenada en la clase Datos_personales.
+     * @param vDatos_personales Información que es alamcenada en la clase
+     * Datos_personales.
      * @return true o false, true: La petición fue realizada, false: La
      * peticioón no fue realizada.
      */
@@ -465,7 +456,7 @@ public class ManipulaDBDatos_personales implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `datos_personales` SET ``IdNombre`=\"" + vDatos_personales.getIdNombre() + "\",`nombre`=\"" + vDatos_personales.getNombre() + "\",`ApeP`=\"" + vDatos_personales.getApeP() + "\",`ApeM`=\"" + vDatos_personales.getApeM() + "\" WHERE `ApeP`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `datos_personales` SET ``IdNombre`=\"" + vDatos_personales.getIdNombre() + "\",`nombre`=\"" + vDatos_personales.getNombre() + "\",`ApeP`=\"" + vDatos_personales.getApeP() + "\",`ApeM`=\"" + vDatos_personales.getApeM() + "\" WHERE `ApeP`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -475,15 +466,15 @@ public class ManipulaDBDatos_personales implements Serializable
         return true;
     }
 
-
     /**
-     * Metodo para modificar en la tabla "Datos_personales" donde se buscara en "ApeM",
-     * la fila que coincida con la busqueda sera cambiada por la información
-     * dada.
+     * Metodo para modificar en la tabla "Datos_personales" donde se buscara en
+     * "ApeM", la fila que coincida con la busqueda sera cambiada por la
+     * información dada.
      *
      * @param vBusqueda Lo que se queire buscar para modificar los datos en la
      * fila.
-     * @param vDatos_personales Información que es alamcenada en la clase Datos_personales.
+     * @param vDatos_personales Información que es alamcenada en la clase
+     * Datos_personales.
      * @return true o false, true: La petición fue realizada, false: La
      * peticioón no fue realizada.
      */
@@ -493,7 +484,7 @@ public class ManipulaDBDatos_personales implements Serializable
         {
             vStatement = vConexion.createStatement();
 
-                vStatement.executeQuery("UPDATE `datos_personales` SET ``IdNombre`=\"" + vDatos_personales.getIdNombre() + "\",`nombre`=\"" + vDatos_personales.getNombre() + "\",`ApeP`=\"" + vDatos_personales.getApeP() + "\",`ApeM`=\"" + vDatos_personales.getApeM() + "\" WHERE `ApeM`=" + vBusqueda);
+            vStatement.executeQuery("UPDATE `datos_personales` SET ``IdNombre`=\"" + vDatos_personales.getIdNombre() + "\",`nombre`=\"" + vDatos_personales.getNombre() + "\",`ApeP`=\"" + vDatos_personales.getApeP() + "\",`ApeM`=\"" + vDatos_personales.getApeM() + "\" WHERE `ApeM`=" + vBusqueda);
             vStatement.close();
         } catch (SQLException ex)
         {
@@ -503,7 +494,5 @@ public class ManipulaDBDatos_personales implements Serializable
         return true;
     }
 
-
     ////////////////////////////////////////////////////////////////////////////
 }
-
