@@ -10,7 +10,7 @@ public class Paquetes implements Serializable
 {
 
     private static final long serialVersionUID = 1L;
-    
+
     private String num_guia;
     private String fecha_recp;
     private String fecha_ent;
@@ -22,15 +22,16 @@ public class Paquetes implements Serializable
 
     public Paquetes(String num_guia, String fecha_recp, String fecha_ent, float peso, float altura, float ancho, float profundidad, float precio)
     {
-        this.num_guia=num_guia;
-        this.fecha_recp=fecha_recp;
-        this.fecha_ent=fecha_ent;
-        this.peso=peso;
-        this.altura=altura;
-        this.ancho=ancho;
-        this.profundidad=profundidad;
-        this.precio=precio;
+        this.num_guia = num_guia;
+        this.fecha_recp = fecha_recp;
+        this.fecha_ent = fecha_ent;
+        this.peso = peso;
+        this.altura = altura;
+        this.ancho = ancho;
+        this.profundidad = profundidad;
+        this.precio = precio;
     }
+
     /**
      * @return Obtiene num_guia
      */
@@ -38,14 +39,15 @@ public class Paquetes implements Serializable
     {
         return num_guia;
     }
-    
+
     /**
      * @param Dar num_guia
      */
     public void setNum_guia(String num_guia)
     {
-        this.num_guia=num_guia;
+        this.num_guia = num_guia;
     }
+
     /**
      * @return Obtiene fecha_recp
      */
@@ -53,14 +55,15 @@ public class Paquetes implements Serializable
     {
         return fecha_recp;
     }
-    
+
     /**
      * @param Dar fecha_recp
      */
     public void setFecha_recp(String fecha_recp)
     {
-        this.fecha_recp=fecha_recp;
+        this.fecha_recp = fecha_recp;
     }
+
     /**
      * @return Obtiene fecha_ent
      */
@@ -68,14 +71,15 @@ public class Paquetes implements Serializable
     {
         return fecha_ent;
     }
-    
+
     /**
      * @param Dar fecha_ent
      */
     public void setFecha_ent(String fecha_ent)
     {
-        this.fecha_ent=fecha_ent;
+        this.fecha_ent = fecha_ent;
     }
+
     /**
      * @return Obtiene peso
      */
@@ -83,14 +87,15 @@ public class Paquetes implements Serializable
     {
         return peso;
     }
-    
+
     /**
      * @param Dar peso
      */
     public void setPeso(float peso)
     {
-        this.peso=peso;
+        this.peso = peso;
     }
+
     /**
      * @return Obtiene altura
      */
@@ -98,14 +103,15 @@ public class Paquetes implements Serializable
     {
         return altura;
     }
-    
+
     /**
      * @param Dar altura
      */
     public void setAltura(float altura)
     {
-        this.altura=altura;
+        this.altura = altura;
     }
+
     /**
      * @return Obtiene ancho
      */
@@ -113,14 +119,15 @@ public class Paquetes implements Serializable
     {
         return ancho;
     }
-    
+
     /**
      * @param Dar ancho
      */
     public void setAncho(float ancho)
     {
-        this.ancho=ancho;
+        this.ancho = ancho;
     }
+
     /**
      * @return Obtiene profundidad
      */
@@ -128,14 +135,15 @@ public class Paquetes implements Serializable
     {
         return profundidad;
     }
-    
+
     /**
      * @param Dar profundidad
      */
     public void setProfundidad(float profundidad)
     {
-        this.profundidad=profundidad;
+        this.profundidad = profundidad;
     }
+
     /**
      * @return Obtiene precio
      */
@@ -143,14 +151,13 @@ public class Paquetes implements Serializable
     {
         return precio;
     }
-    
+
     /**
      * @param Dar precio
      */
     public void setPrecio(float precio)
     {
-        this.precio=precio;
+        this.precio = precio;
     }
-
 
 }
