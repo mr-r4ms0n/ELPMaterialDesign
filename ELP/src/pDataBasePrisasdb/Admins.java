@@ -50,5 +50,4 @@ public class Admins implements Serializable
         this.contraseña=contraseña;
     }
 
-
 }
