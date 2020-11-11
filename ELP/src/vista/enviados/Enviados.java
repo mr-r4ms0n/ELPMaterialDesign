@@ -9,13 +9,13 @@ package vista.enviados;
  *
  * @author Kevin Benitez
  */
-public class Principal extends javax.swing.JPanel
+public class Enviados extends javax.swing.JPanel
 {
 
     /**
      * Creates new form Principal
      */
-    public Principal()
+    public Enviados()
     {
         initComponents();
     }
@@ -34,7 +34,7 @@ public class Principal extends javax.swing.JPanel
         rSButtonIcon_new1 = new newscomponents.RSButtonIcon_new();
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
         pnlSlider = new newscomponents.RSPanelEffect();
-        tabContenido1 = new vista.paquetes.tabContenido();
+        tabContenidoEnv1 = new vista.enviados.tabContenidoEnv();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -75,7 +75,7 @@ public class Principal extends javax.swing.JPanel
         );
 
         pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
-        pnlSlider.add(tabContenido1, "card2");
+        pnlSlider.add(tabContenidoEnv1, "card2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -107,6 +107,6 @@ public class Principal extends javax.swing.JPanel
     private newscomponents.RSPanelEffect pnlSlider;
     private newscomponents.RSButtonIcon_new rSButtonIcon_new1;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
-    private vista.paquetes.tabContenido tabContenido1;
+    private vista.enviados.tabContenidoEnv tabContenidoEnv1;
     // End of variables declaration//GEN-END:variables
 }

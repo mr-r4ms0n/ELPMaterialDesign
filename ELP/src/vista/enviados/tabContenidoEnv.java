@@ -7,6 +7,7 @@ package vista.enviados;
 
 import RSMaterialComponent.RSTableMetroCustom;
 import configuracion.Funciones_aux;
+import java.awt.Color;
 import java.sql.ResultSet;
 import modelo.MetodosBD;
 
@@ -14,22 +15,23 @@ import modelo.MetodosBD;
  *
  * @author Kevin Benitez
  */
-public class tabContenido extends javax.swing.JPanel
+public class tabContenidoEnv extends javax.swing.JPanel
 {
 
     /**
      * Creates new form tabContenido
      */
-    public tabContenido()
+    public tabContenidoEnv()
     {
         initComponents();
-        //listarPaquetes(tblPaquetes, "1");
+         jScrollPane1.getViewport().setBackground(Color.white);
+        listarPaquetes(tblPaquetesEnv);
     }
     
-    public void listarPaquetes(RSTableMetroCustom tabla, String tab)
+    public void listarPaquetes(RSTableMetroCustom tabla)
     {
-        String arr[] = {"Numero de guia","Fecha de recepcion","Fecha de envio","Peso","Altura Ancho","Profundidad","Precio"};
-        ResultSet rs = MetodosBD.getPaquetesRec();
+        String arr[] = {"num_guia","fecha_recp","Fecha_ent","peso","altura", "ancho","profundidad","precio"};
+        ResultSet rs = MetodosBD.getPaquetesEnv();
         Funciones_aux.getTable(rs, tabla, arr);
     }
 
@@ -44,7 +46,7 @@ public class tabContenido extends javax.swing.JPanel
     {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblPaquetes = new RSMaterialComponent.RSTableMetroCustom();
+        tblPaquetesEnv = new RSMaterialComponent.RSTableMetroCustom();
         tfbusqueda = new RSMaterialComponent.RSTextFieldMaterialIcon();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -52,8 +54,8 @@ public class tabContenido extends javax.swing.JPanel
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        tblPaquetes.setForeground(new java.awt.Color(255, 255, 255));
-        tblPaquetes.setModel(new javax.swing.table.DefaultTableModel(
+        tblPaquetesEnv.setForeground(new java.awt.Color(255, 255, 255));
+        tblPaquetesEnv.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
                 {null, null, null, null, null, null, null, null},
@@ -77,19 +79,19 @@ public class tabContenido extends javax.swing.JPanel
                 return canEdit [columnIndex];
             }
         });
-        tblPaquetes.setBackgoundHead(new java.awt.Color(0, 153, 204));
-        tblPaquetes.setBackgoundHover(new java.awt.Color(0, 153, 204));
-        tblPaquetes.setColorBorderHead(new java.awt.Color(255, 255, 255));
-        tblPaquetes.setColorBorderRows(new java.awt.Color(255, 255, 255));
-        tblPaquetes.setColorPrimaryText(new java.awt.Color(0, 153, 204));
-        tblPaquetes.setColorSecundaryText(new java.awt.Color(0, 153, 204));
-        tblPaquetes.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        tblPaquetes.setFontHead(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        tblPaquetes.setFontRowHover(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        tblPaquetes.setFontRowSelect(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        tblPaquetes.setGridColor(new java.awt.Color(255, 255, 255));
-        tblPaquetes.setSelectionBackground(new java.awt.Color(0, 153, 204));
-        jScrollPane1.setViewportView(tblPaquetes);
+        tblPaquetesEnv.setBackgoundHead(new java.awt.Color(0, 153, 204));
+        tblPaquetesEnv.setBackgoundHover(new java.awt.Color(0, 153, 204));
+        tblPaquetesEnv.setColorBorderHead(new java.awt.Color(255, 255, 255));
+        tblPaquetesEnv.setColorBorderRows(new java.awt.Color(255, 255, 255));
+        tblPaquetesEnv.setColorPrimaryText(new java.awt.Color(0, 153, 204));
+        tblPaquetesEnv.setColorSecundaryText(new java.awt.Color(0, 153, 204));
+        tblPaquetesEnv.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        tblPaquetesEnv.setFontHead(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        tblPaquetesEnv.setFontRowHover(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        tblPaquetesEnv.setFontRowSelect(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        tblPaquetesEnv.setGridColor(new java.awt.Color(255, 255, 255));
+        tblPaquetesEnv.setSelectionBackground(new java.awt.Color(0, 153, 204));
+        jScrollPane1.setViewportView(tblPaquetesEnv);
 
         tfbusqueda.setForeground(new java.awt.Color(103, 177, 202));
         tfbusqueda.setColorIcon(new java.awt.Color(103, 177, 202));
@@ -127,7 +129,7 @@ public class tabContenido extends javax.swing.JPanel
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private RSMaterialComponent.RSTableMetroCustom tblPaquetes;
+    private RSMaterialComponent.RSTableMetroCustom tblPaquetesEnv;
     private RSMaterialComponent.RSTextFieldMaterialIcon tfbusqueda;
     // End of variables declaration//GEN-END:variables
 }

@@ -44,8 +44,26 @@ public class MetodosBD
     {
         try
         {
+            System.out.println("Entre por recibidos");
             conexionBD = ConexionBD.getConection();
             query = "SELECT * FROM paquetes ORDER BY num_guia";
+            sentencia = conexionBD.prepareStatement(query);
+            ResultSet rs = sentencia.executeQuery();
+            return rs;
+        } catch (SQLException e)
+        {
+            System.out.println("Error al obtener los paquetes");
+        }
+        return null;
+    }
+    
+    public static ResultSet getPaquetesEnv()
+    {
+        try
+        {
+            System.out.println("Entre por envios");
+            conexionBD = ConexionBD.getConection();
+            query = "SELECT * FROM paquetes WHERE fecha_ent is not null ORDER BY num_guia";
             sentencia = conexionBD.prepareStatement(query);
             ResultSet rs = sentencia.executeQuery();
             return rs;

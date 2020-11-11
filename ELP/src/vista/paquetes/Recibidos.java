@@ -9,15 +9,16 @@ package vista.paquetes;
  *
  * @author Kevin Benitez
  */
-public class Principal extends javax.swing.JPanel
+public class Recibidos extends javax.swing.JPanel
 {
 
     /**
      * Creates new form Principal
      */
-    public Principal()
+    public Recibidos()
     {
         initComponents();
+        
     }
 
     /**
@@ -37,7 +38,7 @@ public class Principal extends javax.swing.JPanel
         rSButtonIcon_new5 = new newscomponents.RSButtonIcon_new();
         rSButtonIcon_new4 = new newscomponents.RSButtonIcon_new();
         pnlSlider = new newscomponents.RSPanelEffect();
-        tabContenido1 = new vista.paquetes.tabContenido();
+        tabContenido1 = new vista.paquetes.tabContenidoRec();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -189,6 +190,6 @@ public class Principal extends javax.swing.JPanel
     private newscomponents.RSButtonIcon_new rSButtonIcon_new4;
     private newscomponents.RSButtonIcon_new rSButtonIcon_new5;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
-    private vista.paquetes.tabContenido tabContenido1;
+    private vista.paquetes.tabContenidoRec tabContenido1;
     // End of variables declaration//GEN-END:variables
 }

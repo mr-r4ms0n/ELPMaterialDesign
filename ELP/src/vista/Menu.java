@@ -8,9 +8,6 @@ package vista;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
-import java.util.Arrays;
-import newscomponents.RSPanelEffect;
-
 /**
  *
  * @author Kevin Benitez
@@ -67,9 +64,9 @@ public class Menu extends javax.swing.JFrame
         JBPaquetesEnv = new RSMaterialComponent.RSButtonMaterialIconShadow();
         LblBienvenida1 = new javax.swing.JLabel();
         panelRecibidos = new newscomponents.RSPanelEffect();
-        principal1 = new vista.paquetes.Principal();
+        principal1 = new vista.paquetes.Recibidos();
         panelEnviados = new newscomponents.RSPanelEffect();
-        principal3 = new vista.enviados.Principal();
+        enviados1 = new vista.enviados.Enviados();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -314,7 +311,7 @@ public class Menu extends javax.swing.JFrame
         panelRecibidos.add(principal1, "card2");
 
         panelEnviados.setBackground(new java.awt.Color(255, 255, 255));
-        panelEnviados.add(principal3, "card2");
+        panelEnviados.add(enviados1, "card2");
 
         javax.swing.GroupLayout rSPanelMaterialImage1Layout = new javax.swing.GroupLayout(rSPanelMaterialImage1);
         rSPanelMaterialImage1.setLayout(rSPanelMaterialImage1Layout);
@@ -503,13 +500,13 @@ public class Menu extends javax.swing.JFrame
     private RSMaterialComponent.RSButtonMaterialIconShadow JBServicios;
     private javax.swing.JLabel LblBienvenida;
     private javax.swing.JLabel LblBienvenida1;
+    private vista.enviados.Enviados enviados1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private newscomponents.RSPanelEffect panelEnviados;
     private newscomponents.RSPanelEffect panelRecibidos;
-    private vista.paquetes.Principal principal1;
-    private vista.enviados.Principal principal3;
+    private vista.paquetes.Recibidos principal1;
     private RSMaterialComponent.RSLabelIcon rSLabelIcon1;
     private RSMaterialComponent.RSPanelBorderImage rSPanelBorderImage1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
