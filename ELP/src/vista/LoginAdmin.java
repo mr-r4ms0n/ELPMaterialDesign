@@ -13,6 +13,7 @@ import java.awt.geom.RoundRectangle2D;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import modelo.MetodosBD;
+import rojeru_san.complementos.RSEffectFade;
 
 /**
  *
@@ -35,6 +36,7 @@ public class LoginAdmin extends javax.swing.JFrame
         setLocationRelativeTo(null);
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
         vtn.setShape(forma);
+        RSEffectFade.setFadeWindowIn(this, 30, 0.1f);
         lblError();
     }
 

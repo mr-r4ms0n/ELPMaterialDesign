@@ -47,7 +47,7 @@ public class tabContenidoRec extends javax.swing.JPanel
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPaquetesRec = new RSMaterialComponent.RSTableMetroCustom();
-        tfbusqueda = new RSMaterialComponent.RSTextFieldMaterialIcon();
+        rSTextFieldIconOne1 = new RSMaterialComponent.RSTextFieldIconOne();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -93,14 +93,13 @@ public class tabContenidoRec extends javax.swing.JPanel
         tblPaquetesRec.setSelectionBackground(new java.awt.Color(0, 153, 204));
         jScrollPane1.setViewportView(tblPaquetesRec);
 
-        tfbusqueda.setForeground(new java.awt.Color(103, 177, 202));
-        tfbusqueda.setColorIcon(new java.awt.Color(103, 177, 202));
-        tfbusqueda.setColorMaterial(new java.awt.Color(103, 177, 202));
-        tfbusqueda.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        tfbusqueda.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        tfbusqueda.setPhColor(new java.awt.Color(103, 177, 202));
-        tfbusqueda.setPlaceholder("Buscar");
-        tfbusqueda.setSelectionColor(new java.awt.Color(103, 177, 202));
+        rSTextFieldIconOne1.setForeground(new java.awt.Color(103, 177, 202));
+        rSTextFieldIconOne1.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTextFieldIconOne1.setColorIcon(new java.awt.Color(103, 177, 202));
+        rSTextFieldIconOne1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        rSTextFieldIconOne1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        rSTextFieldIconOne1.setPhColor(new java.awt.Color(103, 177, 202));
+        rSTextFieldIconOne1.setPlaceholder("Busqueda");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -108,19 +107,19 @@ public class tabContenidoRec extends javax.swing.JPanel
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1142, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(423, 423, 423)
-                .addComponent(tfbusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(481, Short.MAX_VALUE))
+                .addGap(473, 473, 473)
+                .addComponent(rSTextFieldIconOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(tfbusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(15, 15, 15)
+                .addComponent(rSTextFieldIconOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(7, Short.MAX_VALUE))
         );
@@ -129,7 +128,7 @@ public class tabContenidoRec extends javax.swing.JPanel
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
+    private RSMaterialComponent.RSTextFieldIconOne rSTextFieldIconOne1;
     private RSMaterialComponent.RSTableMetroCustom tblPaquetesRec;
-    private RSMaterialComponent.RSTextFieldMaterialIcon tfbusqueda;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,6 +8,7 @@ package vista;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
+import rojeru_san.complementos.RSEffectFade;
 /**
  *
  * @author Kevin Benitez
@@ -19,10 +20,11 @@ public class Menu extends javax.swing.JFrame
      * Creates new form Menu
      */
     public static Window vtn;
-
+    
     public Menu(String user)
-    {
+    {   
         initComponents();
+        RSEffectFade.setFadeWindowIn(this, 30, 0.1f);
         setLocationRelativeTo(null);
         vtn = this;
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
@@ -64,9 +66,9 @@ public class Menu extends javax.swing.JFrame
         JBPaquetesEnv = new RSMaterialComponent.RSButtonMaterialIconShadow();
         LblBienvenida1 = new javax.swing.JLabel();
         panelRecibidos = new newscomponents.RSPanelEffect();
-        principal1 = new vista.paquetes.Recibidos();
+        recibidos1 = new vista.paquetes.Recibidos();
         panelEnviados = new newscomponents.RSPanelEffect();
-        enviados1 = new vista.enviados.Enviados();
+        enviados2 = new vista.enviados.Enviados();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -308,10 +310,10 @@ public class Menu extends javax.swing.JFrame
         );
 
         panelRecibidos.setBackground(new java.awt.Color(255, 255, 255));
-        panelRecibidos.add(principal1, "card2");
+        panelRecibidos.add(recibidos1, "card2");
 
         panelEnviados.setBackground(new java.awt.Color(255, 255, 255));
-        panelEnviados.add(enviados1, "card2");
+        panelEnviados.add(enviados2, "card2");
 
         javax.swing.GroupLayout rSPanelMaterialImage1Layout = new javax.swing.GroupLayout(rSPanelMaterialImage1);
         rSPanelMaterialImage1.setLayout(rSPanelMaterialImage1Layout);
@@ -500,17 +502,17 @@ public class Menu extends javax.swing.JFrame
     private RSMaterialComponent.RSButtonMaterialIconShadow JBServicios;
     private javax.swing.JLabel LblBienvenida;
     private javax.swing.JLabel LblBienvenida1;
-    private vista.enviados.Enviados enviados1;
+    private vista.enviados.Enviados enviados2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private newscomponents.RSPanelEffect panelEnviados;
     private newscomponents.RSPanelEffect panelRecibidos;
-    private vista.paquetes.Recibidos principal1;
     private RSMaterialComponent.RSLabelIcon rSLabelIcon1;
     private RSMaterialComponent.RSPanelBorderImage rSPanelBorderImage1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial2;
     private RSMaterialComponent.RSPanelMaterialImage rSPanelMaterialImage1;
+    private vista.paquetes.Recibidos recibidos1;
     // End of variables declaration//GEN-END:variables
 }

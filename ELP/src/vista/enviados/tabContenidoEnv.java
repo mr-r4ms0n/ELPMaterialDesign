@@ -45,20 +45,11 @@ public class tabContenidoEnv extends javax.swing.JPanel
     private void initComponents()
     {
 
-        tfbusqueda = new RSMaterialComponent.RSTextFieldMaterialIcon();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPaquetesEnv = new RSMaterialComponent.RSTableMetroCustom();
+        rSTextFieldIconOne1 = new RSMaterialComponent.RSTextFieldIconOne();
 
         setBackground(new java.awt.Color(255, 255, 255));
-
-        tfbusqueda.setForeground(new java.awt.Color(103, 177, 202));
-        tfbusqueda.setColorIcon(new java.awt.Color(103, 177, 202));
-        tfbusqueda.setColorMaterial(new java.awt.Color(103, 177, 202));
-        tfbusqueda.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        tfbusqueda.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        tfbusqueda.setPhColor(new java.awt.Color(103, 177, 202));
-        tfbusqueda.setPlaceholder("Buscar");
-        tfbusqueda.setSelectionColor(new java.awt.Color(103, 177, 202));
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
@@ -102,26 +93,35 @@ public class tabContenidoEnv extends javax.swing.JPanel
         tblPaquetesEnv.setSelectionBackground(new java.awt.Color(0, 153, 204));
         jScrollPane1.setViewportView(tblPaquetesEnv);
 
+        rSTextFieldIconOne1.setForeground(new java.awt.Color(103, 177, 202));
+        rSTextFieldIconOne1.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTextFieldIconOne1.setColorIcon(new java.awt.Color(103, 177, 202));
+        rSTextFieldIconOne1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        rSTextFieldIconOne1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        rSTextFieldIconOne1.setPhColor(new java.awt.Color(103, 177, 202));
+        rSTextFieldIconOne1.setPlaceholder("Busqueda");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(392, 392, 392)
-                .addComponent(tfbusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(512, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(395, 395, 395)
+                        .addComponent(rSTextFieldIconOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 497, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(tfbusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addComponent(rSTextFieldIconOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -129,7 +129,7 @@ public class tabContenidoEnv extends javax.swing.JPanel
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
+    private RSMaterialComponent.RSTextFieldIconOne rSTextFieldIconOne1;
     private RSMaterialComponent.RSTableMetroCustom tblPaquetesEnv;
-    private RSMaterialComponent.RSTextFieldMaterialIcon tfbusqueda;
     // End of variables declaration//GEN-END:variables
 }
