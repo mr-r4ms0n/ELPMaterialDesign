@@ -51,6 +51,13 @@ public class Recibidos extends javax.swing.JPanel
         rSButtonIcon_new1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         rSButtonIcon_new1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD_CIRCLE);
         rSButtonIcon_new1.setRound(10);
+        rSButtonIcon_new1.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                rSButtonIcon_new1ActionPerformed(evt);
+            }
+        });
 
         rSLabelTextIcon1.setForeground(new java.awt.Color(0, 153, 204));
         rSLabelTextIcon1.setText("Paquetes recibidos");
@@ -180,6 +187,12 @@ public class Recibidos extends javax.swing.JPanel
     {//GEN-HEADEREND:event_rSButtonIcon_new5ActionPerformed
         
     }//GEN-LAST:event_rSButtonIcon_new5ActionPerformed
+
+    private void rSButtonIcon_new1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rSButtonIcon_new1ActionPerformed
+    {//GEN-HEADEREND:event_rSButtonIcon_new1ActionPerformed
+        Altas vtn = new Altas();
+        vtn.setVisible(true);
+    }//GEN-LAST:event_rSButtonIcon_new1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

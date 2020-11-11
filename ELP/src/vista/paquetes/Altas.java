@@ -165,6 +165,13 @@ public class Altas extends javax.swing.JFrame
         btnCerrarAltas.setBackgroundHover(new java.awt.Color(103, 177, 202));
         btnCerrarAltas.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CANCEL);
         btnCerrarAltas.setRound(15);
+        btnCerrarAltas.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnCerrarAltasActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -439,6 +446,13 @@ public class Altas extends javax.swing.JFrame
         btnCerrarAltas5.setBackgroundHover(new java.awt.Color(103, 177, 202));
         btnCerrarAltas5.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CANCEL);
         btnCerrarAltas5.setRound(15);
+        btnCerrarAltas5.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnCerrarAltas5ActionPerformed(evt);
+            }
+        });
 
         jLabel44.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(255, 255, 255));
@@ -718,6 +732,13 @@ public class Altas extends javax.swing.JFrame
         btnCerrarAltas8.setBackgroundHover(new java.awt.Color(103, 177, 202));
         btnCerrarAltas8.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CANCEL);
         btnCerrarAltas8.setRound(15);
+        btnCerrarAltas8.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnCerrarAltas8ActionPerformed(evt);
+            }
+        });
 
         jLabel62.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(255, 255, 255));
@@ -1072,6 +1093,21 @@ public class Altas extends javax.swing.JFrame
             rSPanelPaquete.setVisible(false);
         }
     }//GEN-LAST:event_btnReceptorAntActionPerformed
+
+    private void btnCerrarAltasActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCerrarAltasActionPerformed
+    {//GEN-HEADEREND:event_btnCerrarAltasActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnCerrarAltasActionPerformed
+
+    private void btnCerrarAltas5ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCerrarAltas5ActionPerformed
+    {//GEN-HEADEREND:event_btnCerrarAltas5ActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnCerrarAltas5ActionPerformed
+
+    private void btnCerrarAltas8ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCerrarAltas8ActionPerformed
+    {//GEN-HEADEREND:event_btnCerrarAltas8ActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnCerrarAltas8ActionPerformed
 
     /**
      * @param args the command line arguments

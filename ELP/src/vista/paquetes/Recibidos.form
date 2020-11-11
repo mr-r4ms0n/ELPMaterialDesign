@@ -118,6 +118,9 @@
             </Property>
             <Property name="round" type="int" value="10"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButtonIcon_new1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="RSMaterialComponent.RSLabelTextIcon" name="rSLabelTextIcon1">
           <Properties>

@@ -29,6 +29,7 @@ public class Menu extends javax.swing.JFrame
         vtn = this;
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
         vtn.setShape(forma);
+        LblBienvenida1.setText("Bienvenido ("+user+")");
         panelRecibidos.setVisible(false);
         panelEnviados.setVisible(false);
 
