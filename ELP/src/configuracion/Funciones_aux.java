@@ -70,8 +70,13 @@ public class Funciones_aux
                 ((JComboBox) componente).setSelectedIndex(0);
             } else if (componente instanceof JSlider)
             {
+<<<<<<< Updated upstream
                 ((JSlider) componente).setValue(((JSlider) componente).getMinimum());
             } else if (componente instanceof JSpinner)
+=======
+                ((JSlider) componentes[i]).setValue(((JSlider) componentes[i]).getMinimum());
+            } else if (componentes[i] instanceof JSpinner)
+>>>>>>> Stashed changes
             {
                 ((JSpinner) componente).setValue(0);
             } else if (componente instanceof JFormattedTextField)
