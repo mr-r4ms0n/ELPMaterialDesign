@@ -30,7 +30,7 @@ public class tabContenidoRec extends javax.swing.JPanel
     
     public void listarPaquetes(RSTableMetroCustom tabla)
     {
-        String arr[] = {"num_guia","fecha_recp","Fecha_ent","peso","altura", "ancho","profundidad","precio"};
+        String arr[] = {"num_guia","nom_emisor","fecha_recp","nom_recep","direccion","Fecha_ent","peso","altura", "ancho","profundidad","precio"};
         ResultSet rs = MetodosBD.getPaquetesRec();
         Funciones_aux.getTable(rs, tabla, arr);
     }
@@ -58,20 +58,20 @@ public class tabContenidoRec extends javax.swing.JPanel
         tblPaquetesRec.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String []
             {
-                "Numero de guia", "Fecha de recepcion", "Fecha de envio", "Peso", "Altura", "Ancho", "Profundiidad", "Precio"
+                "Numero de guia", "Nombre del emisor", "Fecha de recepcion", "Nombre del receptor", "Dirección", "Fecha de entrega", "Peso", "Altura", "Ancho", "Profundiidad", "Precio"
             }
         )
         {
             boolean[] canEdit = new boolean []
             {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex)
@@ -107,7 +107,7 @@ public class tabContenidoRec extends javax.swing.JPanel
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1142, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1552, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(473, 473, 473)

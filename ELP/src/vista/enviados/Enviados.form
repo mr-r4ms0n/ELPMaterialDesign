@@ -23,7 +23,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="pnlSlider" pref="1289" max="32767" attributes="0"/>
+              <Component id="pnlSlider" pref="1523" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -68,7 +68,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="rSLabelTextIcon1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="934" max="32767" attributes="0"/>
+                  <EmptySpace pref="1168" max="32767" attributes="0"/>
                   <Component id="rSButtonIcon_new1" min="-2" pref="155" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -129,7 +129,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
       <SubComponents>
-        <Component class="vista.enviados.tabContenidoEnv" name="tabContenidoEnv1">
+        <Component class="vista.enviados.tabContenidoEnv" name="tabContenidoEnv2">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
               <CardConstraints cardName="card2"/>

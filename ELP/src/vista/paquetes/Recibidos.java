@@ -38,7 +38,7 @@ public class Recibidos extends javax.swing.JPanel
         rSButtonIcon_new5 = new newscomponents.RSButtonIcon_new();
         rSButtonIcon_new4 = new newscomponents.RSButtonIcon_new();
         pnlSlider = new newscomponents.RSPanelEffect();
-        tabContenido1 = new vista.paquetes.tabContenidoRec();
+        tabContenidoRec1 = new vista.paquetes.tabContenidoRec();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -129,7 +129,7 @@ public class Recibidos extends javax.swing.JPanel
                 .addComponent(rSButtonIcon_new4, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(rSButtonIcon_new5, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(381, Short.MAX_VALUE))
+                .addContainerGap(615, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,7 +147,7 @@ public class Recibidos extends javax.swing.JPanel
         );
 
         pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
-        pnlSlider.add(tabContenido1, "card2");
+        pnlSlider.add(tabContenidoRec1, "card2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -155,7 +155,7 @@ public class Recibidos extends javax.swing.JPanel
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 1289, Short.MAX_VALUE)
+                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 1523, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -203,6 +203,6 @@ public class Recibidos extends javax.swing.JPanel
     private newscomponents.RSButtonIcon_new rSButtonIcon_new4;
     private newscomponents.RSButtonIcon_new rSButtonIcon_new5;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
-    private vista.paquetes.tabContenidoRec tabContenido1;
+    private vista.paquetes.tabContenidoRec tabContenidoRec1;
     // End of variables declaration//GEN-END:variables
 }

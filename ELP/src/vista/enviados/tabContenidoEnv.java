@@ -30,7 +30,7 @@ public class tabContenidoEnv extends javax.swing.JPanel
     
     public void listarPaquetes(RSTableMetroCustom tabla)
     {
-        String arr[] = {"num_guia","fecha_recp","Fecha_ent","peso","altura", "ancho","profundidad","precio"};
+        String arr[] = {"num_guia","nom_emisor","fecha_recp","nom_recep","direccion","Fecha_ent","peso","altura", "ancho","profundidad","precio"};
         ResultSet rs = MetodosBD.getPaquetesEnv();
         Funciones_aux.getTable(rs, tabla, arr);
     }
@@ -58,20 +58,20 @@ public class tabContenidoEnv extends javax.swing.JPanel
         tblPaquetesEnv.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
             {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String []
             {
-                "Numero de guia", "Fecha de recepcion", "Fecha de envio", "Peso", "Altura", "Ancho", "Profundiidad", "Precio"
+                "Numero de guia", "Nombe del emisor", "Fecha de recepcion", "Nombre del receptor", "Dirección", "Fecha de entrega", "Peso", "Altura", "Ancho", "Profundiidad", "Precio"
             }
         )
         {
             boolean[] canEdit = new boolean []
             {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, true, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex)
@@ -112,7 +112,7 @@ public class tabContenidoEnv extends javax.swing.JPanel
                     .addGroup(layout.createSequentialGroup()
                         .addGap(395, 395, 395)
                         .addComponent(rSTextFieldIconOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 497, Short.MAX_VALUE)))
+                        .addGap(0, 907, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
