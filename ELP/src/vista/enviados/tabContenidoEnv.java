@@ -45,11 +45,20 @@ public class tabContenidoEnv extends javax.swing.JPanel
     private void initComponents()
     {
 
+        tfbusqueda = new RSMaterialComponent.RSTextFieldMaterialIcon();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPaquetesEnv = new RSMaterialComponent.RSTableMetroCustom();
-        tfbusqueda = new RSMaterialComponent.RSTextFieldMaterialIcon();
 
         setBackground(new java.awt.Color(255, 255, 255));
+
+        tfbusqueda.setForeground(new java.awt.Color(103, 177, 202));
+        tfbusqueda.setColorIcon(new java.awt.Color(103, 177, 202));
+        tfbusqueda.setColorMaterial(new java.awt.Color(103, 177, 202));
+        tfbusqueda.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        tfbusqueda.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        tfbusqueda.setPhColor(new java.awt.Color(103, 177, 202));
+        tfbusqueda.setPlaceholder("Buscar");
+        tfbusqueda.setSelectionColor(new java.awt.Color(103, 177, 202));
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
@@ -93,36 +102,27 @@ public class tabContenidoEnv extends javax.swing.JPanel
         tblPaquetesEnv.setSelectionBackground(new java.awt.Color(0, 153, 204));
         jScrollPane1.setViewportView(tblPaquetesEnv);
 
-        tfbusqueda.setForeground(new java.awt.Color(103, 177, 202));
-        tfbusqueda.setColorIcon(new java.awt.Color(103, 177, 202));
-        tfbusqueda.setColorMaterial(new java.awt.Color(103, 177, 202));
-        tfbusqueda.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        tfbusqueda.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        tfbusqueda.setPhColor(new java.awt.Color(103, 177, 202));
-        tfbusqueda.setPlaceholder("Buscar");
-        tfbusqueda.setSelectionColor(new java.awt.Color(103, 177, 202));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(392, 392, 392)
+                .addComponent(tfbusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(512, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(423, 423, 423)
-                .addComponent(tfbusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(481, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(tfbusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
