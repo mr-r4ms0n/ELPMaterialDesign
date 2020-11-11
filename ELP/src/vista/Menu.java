@@ -29,7 +29,6 @@ public class Menu extends javax.swing.JFrame
         vtn.setShape(forma);
         panelRecibidos.setVisible(false);
         panelEnviados.setVisible(false);
-        LblBienvenida1.setText("Bienvenido"+"("+user+")");
 
     }
 
