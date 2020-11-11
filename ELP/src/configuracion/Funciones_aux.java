@@ -28,7 +28,6 @@ import javax.swing.JViewport;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
  * @author Kevin Benitez
  */
 public class Funciones_aux
@@ -72,7 +71,7 @@ public class Funciones_aux
             {
                 ((JSlider) componente).setValue(((JSlider) componente).getMinimum());
             } else if (componente instanceof JSpinner)
-
+            {
                 ((JSlider) componentes[i]).setValue(((JSlider) componentes[i]).getMinimum());
             } else if (componentes[i] instanceof JSpinner)
             {
@@ -86,17 +85,19 @@ public class Funciones_aux
             }
         }
     }
+
     /**
      * Funcion general para poder listar cualquier tabla
+     *
      * @param rs
      * @param tabla
-     * @param columnas 
+     * @param columnas
      */
-    public static void getTable(ResultSet rs, RSTableMetroCustom tabla,String columnas[])
+    public static void getTable(ResultSet rs, RSTableMetroCustom tabla, String columnas[])
     {
         DefaultTableModel tablamdl = (DefaultTableModel) tabla.getModel();
         //Vaciamos la tabla primero
-        while (tablamdl.getRowCount()>0)
+        while (tablamdl.getRowCount() > 0)
         {
             tablamdl.removeRow(0);
         }
