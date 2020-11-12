@@ -191,6 +191,7 @@ public class Recibidos extends javax.swing.JPanel
     private void rSButtonIcon_new1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rSButtonIcon_new1ActionPerformed
     {//GEN-HEADEREND:event_rSButtonIcon_new1ActionPerformed
         Altas vtn = new Altas();
+        vtn.setModal(true);
         vtn.setVisible(true);
     }//GEN-LAST:event_rSButtonIcon_new1ActionPerformed
 

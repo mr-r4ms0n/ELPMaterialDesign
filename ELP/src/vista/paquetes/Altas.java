@@ -14,7 +14,7 @@ import rojeru_san.complementos.RSUtilities;
  *
  * @author Kevin Benitez
  */
-public class Altas extends javax.swing.JFrame
+public class Altas extends javax.swing.JDialog
 {
     private Window vtn;
     /**
@@ -123,21 +123,9 @@ public class Altas extends javax.swing.JFrame
         rSTextFieldOne25 = new RSMaterialComponent.RSTextFieldOne();
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
-        rSTextFieldOne26 = new RSMaterialComponent.RSTextFieldOne();
-        jLabel70 = new javax.swing.JLabel();
-        jLabel71 = new javax.swing.JLabel();
-        rSTextFieldOne27 = new RSMaterialComponent.RSTextFieldOne();
-        jLabel72 = new javax.swing.JLabel();
-        jLabel73 = new javax.swing.JLabel();
-        rSTextFieldOne28 = new RSMaterialComponent.RSTextFieldOne();
-        jLabel74 = new javax.swing.JLabel();
-        jLabel75 = new javax.swing.JLabel();
-        jLabel76 = new javax.swing.JLabel();
-        rSTextFieldOne29 = new RSMaterialComponent.RSTextFieldOne();
-        jLabel77 = new javax.swing.JLabel();
         btnEmisorAnt = new RSMaterialComponent.RSButtonIconOne();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setUndecorated(true);
 
         jPFondo.setBackground(new java.awt.Color(0, 0, 0));
@@ -622,9 +610,7 @@ public class Altas extends javax.swing.JFrame
                         .addGroup(rSPanelReceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rSTextFieldOne24, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(rSPanelReceptorLayout.createSequentialGroup()
-                                .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12))))
+                            .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(rSPanelReceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(btnCerrarAltas6, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(rSPanelReceptorLayout.createSequentialGroup()
@@ -753,7 +739,7 @@ public class Altas extends javax.swing.JFrame
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(97, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -826,54 +812,6 @@ public class Altas extends javax.swing.JFrame
         jLabel69.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel69.setText("Error apellido M");
 
-        rSTextFieldOne26.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne26.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne26.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne26.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne26.setPlaceholder("Ingrese calle");
-
-        jLabel70.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel70.setText("Calle");
-
-        jLabel71.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel71.setText("Error calle");
-
-        rSTextFieldOne27.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne27.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne27.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne27.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne27.setPlaceholder("Ingrese localidad");
-
-        jLabel72.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel72.setText("Localidad");
-
-        jLabel73.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel73.setText("Error calle");
-
-        rSTextFieldOne28.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne28.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne28.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne28.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne28.setPlaceholder("Ingrese localidad");
-
-        jLabel74.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel74.setText("Ciudad");
-
-        jLabel75.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel75.setText("Error ciudad");
-
-        jLabel76.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel76.setText("Codigo Postal");
-
-        rSTextFieldOne29.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne29.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne29.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne29.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne29.setPlaceholder("Ingrese C.P.");
-
-        jLabel77.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel77.setText("Error C.P");
-
         btnEmisorAnt.setBackground(new java.awt.Color(0, 153, 204));
         btnEmisorAnt.setToolTipText("Cerrar Formulario");
         btnEmisorAnt.setBackgroundHover(new java.awt.Color(103, 177, 202));
@@ -897,109 +835,52 @@ public class Altas extends javax.swing.JFrame
                 .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(rSPanelEmisorLayout.createSequentialGroup()
                         .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(rSPanelEmisorLayout.createSequentialGroup()
-                                .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel70)
-                                    .addComponent(rSTextFieldOne26, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(36, 36, 36)
-                                .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel72)
-                                    .addComponent(rSTextFieldOne27, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(rSPanelEmisorLayout.createSequentialGroup()
-                                .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel60)
-                                    .addComponent(rSTextFieldOne13, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel65)
-                                    .addComponent(rSTextFieldOne14, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel68)
-                                    .addComponent(rSTextFieldOne25, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(rSPanelEmisorLayout.createSequentialGroup()
-                                .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel75, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel74)
-                                    .addComponent(rSTextFieldOne28, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(32, 32, 32)
-                                .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rSTextFieldOne29, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(rSPanelEmisorLayout.createSequentialGroup()
-                                        .addComponent(jLabel77, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(12, 12, 12)))))
-                        .addContainerGap(27, Short.MAX_VALUE))
+                            .addComponent(jLabel60)
+                            .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rSTextFieldOne13, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(rSPanelEmisorLayout.createSequentialGroup()
                         .addComponent(btnEmisorAnt, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnEmisorNext, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26))))
+                        .addGap(26, 26, 26))
+                    .addGroup(rSPanelEmisorLayout.createSequentialGroup()
+                        .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel68)
+                            .addComponent(rSTextFieldOne25, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel65)
+                            .addComponent(rSTextFieldOne14, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         rSPanelEmisorLayout.setVerticalGroup(
             rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelEmisorLayout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(rSPanelEmisorLayout.createSequentialGroup()
-                        .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(rSPanelEmisorLayout.createSequentialGroup()
-                                .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rSTextFieldOne14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(rSPanelEmisorLayout.createSequentialGroup()
-                                .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rSTextFieldOne13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel66, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel67, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(rSPanelEmisorLayout.createSequentialGroup()
-                        .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTextFieldOne25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, 12)
-                .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelEmisorLayout.createSequentialGroup()
-                        .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTextFieldOne26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(rSPanelEmisorLayout.createSequentialGroup()
-                        .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTextFieldOne27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(rSPanelEmisorLayout.createSequentialGroup()
-                        .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTextFieldOne29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel77, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(rSPanelEmisorLayout.createSequentialGroup()
-                        .addComponent(jLabel74, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTextFieldOne28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel75, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSTextFieldOne13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSTextFieldOne14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSTextFieldOne25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEmisorAnt, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEmisorNext, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPInteracturadorLayout = new javax.swing.GroupLayout(jPInteracturador);
@@ -1156,7 +1037,6 @@ public class Altas extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private RSMaterialComponent.RSButtonIconOne btnCerrarAltas;
-    private RSMaterialComponent.RSButtonIconOne btnCerrarAltas4;
     private RSMaterialComponent.RSButtonIconOne btnCerrarAltas5;
     private RSMaterialComponent.RSButtonIconOne btnCerrarAltas6;
     private RSMaterialComponent.RSButtonIconOne btnCerrarAltas8;
@@ -1175,12 +1055,7 @@ public class Altas extends javax.swing.JFrame
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel43;
@@ -1213,28 +1088,17 @@ public class Altas extends javax.swing.JFrame
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
-    private javax.swing.JLabel jLabel75;
-    private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPFondo;
     private javax.swing.JPanel jPInteracturador;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private RSMaterialComponent.RSPanelBorder rSPanelEmisor;
-    private RSMaterialComponent.RSPanelBorder rSPanelEmisor1;
     private RSMaterialComponent.RSPanelBorder rSPanelPaquete;
     private RSMaterialComponent.RSPanelBorder rSPanelReceptor;
     private RSMaterialComponent.RSTextFieldOne rSTextFieldOne1;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne10;
     private RSMaterialComponent.RSTextFieldOne rSTextFieldOne11;
     private RSMaterialComponent.RSTextFieldOne rSTextFieldOne12;
     private RSMaterialComponent.RSTextFieldOne rSTextFieldOne13;
@@ -1246,10 +1110,6 @@ public class Altas extends javax.swing.JFrame
     private RSMaterialComponent.RSTextFieldOne rSTextFieldOne23;
     private RSMaterialComponent.RSTextFieldOne rSTextFieldOne24;
     private RSMaterialComponent.RSTextFieldOne rSTextFieldOne25;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne26;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne27;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne28;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne29;
     private RSMaterialComponent.RSTextFieldOne rSTextFieldOne3;
     private RSMaterialComponent.RSTextFieldOne rSTextFieldOne4;
     private RSMaterialComponent.RSTextFieldOne rSTextFieldOne5;
