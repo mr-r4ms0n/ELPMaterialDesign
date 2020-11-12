@@ -30,7 +30,7 @@ public class tabContenidoRec extends javax.swing.JPanel
     
     public void listarPaquetes(RSTableMetroCustom tabla)
     {
-        MetodosBD.consultaBD(tabla);
+        MetodosBD.consultaBD(1,tabla);
         //Funciones_aux.getTable(rs, tabla, arr);
     }
 

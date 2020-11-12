@@ -83,10 +83,10 @@ public class MetodosBD
     /**
      * Este metodo sirve para extraer todos los paquetes de la tabla paquetes
      *
-     * @param tab
-     * @return tabla con todos los paquetes
+     * @param opc 1 --> para paquetes recibidos
+     * @param tab 2 --> para paquetes enviados
      */
-    public static void consultaBD(RSTableMetroCustom tab)
+    public static void consultaBD(int opc, RSTableMetroCustom tab)
     {
         DefaultTableModel mdl = null;
         mdl = (DefaultTableModel) tab.getModel();
@@ -96,9 +96,19 @@ public class MetodosBD
         }
         try
         {
-
             conexionBD = ConexionBD.getConection();
-            String consulta = "SELECT * FROM paquetes";
+            String consulta = "";
+            
+            switch (opc)
+            {
+                case 1: //Caso de los paquetes recibidos
+                    consulta = "SELECT * FROM paquetes WHERE fecha_ent = 'PENDIENTE'";
+                    break;
+
+                case 2: //Caso de los paquetes enviados
+                    consulta = "SELECT * FROM paquetes WHERE fecha_ent != 'PENDIENTE'";
+                    break;
+            }
 
             sentencia = conexionBD.prepareStatement(consulta);
             resultado = sentencia.executeQuery();

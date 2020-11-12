@@ -24,17 +24,14 @@ public class tabContenidoEnv extends javax.swing.JPanel
     public tabContenidoEnv()
     {
         initComponents();
-         jScrollPane1.getViewport().setBackground(Color.white);
+        jScrollPane1.getViewport().setBackground(Color.white);
         listarPaquetes(tblPaquetesEnv);
     }
-    
+
     public void listarPaquetes(RSTableMetroCustom tabla)
     {
-        /*
-        String arr[] = {"num_guia","nom_emisor","fecha_recp","nom_recep","direccion","Fecha_ent","peso","altura", "ancho","profundidad","precio"};
-        ResultSet rs = MetodosBD.getPaquetesEnv();
-        Funciones_aux.getTable(rs, tabla, arr);
-        */
+        MetodosBD.consultaBD(2, tabla);
+        //Funciones_aux.getTable(rs, tabla, arr);
     }
 
     /**

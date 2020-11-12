@@ -5,6 +5,7 @@
  */
 package configuracion;
 
+import RSMaterialComponent.RSTableMetroCustom;
 import modelo.MetodosBD;
 
 /**
@@ -21,7 +22,8 @@ public class PrbPaqs
         MetodosBD.guardaPaqs(p1);
         MetodosBD.guardaPaqs(p2);
         MetodosBD.guardaPaqs(p3);
-        MetodosBD.consultaBD();
-        
+        MetodosBD.consultaBD(1, new RSTableMetroCustom()); //Con 1 llamas a los paquetes recibidos
+        MetodosBD.consultaBD(2, new RSTableMetroCustom()); //Con 2 llamas a los paquetes enviados
+
     }
 }
