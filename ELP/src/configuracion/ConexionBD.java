@@ -23,23 +23,12 @@ public class ConexionBD
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
-
-
             //CONEXION REMOTA = "jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"
             //CONEXION LOCAL =  "jdbc:mysql://localhost/prisasdb", "root", ""
-            //Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/prisasdb", "root", "");
-
-            //Connection conexion = DriverManager.getConnection("jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"); //jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"
-            //Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/elprisas", "root", ""); //jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"
-
-
-            //Connection conexion = DriverManager.getConnection("jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"); //jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/elprisas", "root", ""); //jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"
-
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/elprisas", "root", ""); 
             return conexion;
         } catch (ClassNotFoundException | SQLException ex)
         {
-            System.out.println("Error al conectar a la BD !!! " + ex);
             Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;

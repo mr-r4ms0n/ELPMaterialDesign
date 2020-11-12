@@ -6,6 +6,8 @@
 package configuracion;
 
 import RSMaterialComponent.RSTableMetroCustom;
+import RSMaterialComponent.RSTextFieldOne;
+import java.awt.Color;
 import java.awt.Component;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,6 +16,7 @@ import java.util.logging.Logger;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
@@ -28,11 +31,22 @@ import javax.swing.JViewport;
 import javax.swing.table.DefaultTableModel;
 
 /**
+ *
  * @author Kevin Benitez
  */
 public class Funciones_aux
 {
-
+    /*
+    Variables help referentes al color de las advertencias
+    */
+    public static Color primary = new Color(1, 56, 228);
+    public static Color sucess = new Color(40, 167, 69);
+    public static Color danger = new Color(220,53,69);
+    public static Color warning = new Color(255,136,0);
+    public static Color info = new Color(51,181,229);
+    /*
+    ///////////////////////////
+    */
     public void limpiarFormulario(Component[] componentes)
     {
         for (Component componente : componentes)
@@ -72,9 +86,6 @@ public class Funciones_aux
                 ((JSlider) componente).setValue(((JSlider) componente).getMinimum());
             } else if (componente instanceof JSpinner)
             {
-                ((JSlider) componentes[i]).setValue(((JSlider) componentes[i]).getMinimum());
-            } else if (componentes[i] instanceof JSpinner)
-            {
                 ((JSpinner) componente).setValue(0);
             } else if (componente instanceof JFormattedTextField)
             {
@@ -85,19 +96,17 @@ public class Funciones_aux
             }
         }
     }
-
     /**
      * Funcion general para poder listar cualquier tabla
-     *
      * @param rs
      * @param tabla
-     * @param columnas
+     * @param columnas 
      */
-    public static void getTable(ResultSet rs, RSTableMetroCustom tabla, String columnas[])
+    public static void getTable(ResultSet rs, RSTableMetroCustom tabla,String columnas[])
     {
         DefaultTableModel tablamdl = (DefaultTableModel) tabla.getModel();
         //Vaciamos la tabla primero
-        while (tablamdl.getRowCount() > 0)
+        while (tablamdl.getRowCount()>0)
         {
             tablamdl.removeRow(0);
         }
@@ -117,6 +126,28 @@ public class Funciones_aux
         } catch (SQLException ex)
         {
             Logger.getLogger(Funciones_aux.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    /**
+     * Metodo para validar componentes 
+     * @param tf
+     * @param err
+     * @param type 
+     */
+    public static void validaTF(RSTextFieldOne tf,JLabel err, String type)
+    {
+        switch (type)
+        {
+            case "vacio":
+                if (tf.getText().isEmpty())
+                {
+                    err.setText("Campo requerido");
+                    err.setForeground(Color.red);
+                }
+                break;
+            default:
+                throw new AssertionError();
         }
     }
 }

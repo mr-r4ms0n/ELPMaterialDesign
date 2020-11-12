@@ -30,9 +30,8 @@ public class tabContenidoRec extends javax.swing.JPanel
     
     public void listarPaquetes(RSTableMetroCustom tabla)
     {
-        String arr[] = {"num_guia","nom_emisor","fecha_recp","nom_recep","direccion","Fecha_ent","peso","altura", "ancho","profundidad","precio"};
-        ResultSet rs = MetodosBD.getPaquetesRec();
-        Funciones_aux.getTable(rs, tabla, arr);
+        MetodosBD.consultaBD(tabla);
+        //Funciones_aux.getTable(rs, tabla, arr);
     }
 
     /**
@@ -121,7 +120,7 @@ public class tabContenidoRec extends javax.swing.JPanel
                 .addComponent(rSTextFieldIconOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

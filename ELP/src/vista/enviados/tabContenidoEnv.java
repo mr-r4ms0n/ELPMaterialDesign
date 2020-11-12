@@ -30,9 +30,11 @@ public class tabContenidoEnv extends javax.swing.JPanel
     
     public void listarPaquetes(RSTableMetroCustom tabla)
     {
+        /*
         String arr[] = {"num_guia","nom_emisor","fecha_recp","nom_recep","direccion","Fecha_ent","peso","altura", "ancho","profundidad","precio"};
         ResultSet rs = MetodosBD.getPaquetesEnv();
         Funciones_aux.getTable(rs, tabla, arr);
+        */
     }
 
     /**
