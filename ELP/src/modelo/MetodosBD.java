@@ -5,7 +5,6 @@
  */
 package modelo;
 
-import RSMaterialComponent.RSTableMetro;
 import RSMaterialComponent.RSTableMetroCustom;
 import configuracion.ConexionBD;
 import configuracion.Paqs;
@@ -118,11 +117,11 @@ public class MetodosBD
             conexionBD = ConexionBD.getConection();
             switch (tbl)
             {
-                case 1: //Tabla recibidios per no enviados
+                case 1: //Tabla recibidios pero no enviados
                     sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes WHERE fecha_ent = 'PENDIENTE'");
                     mdl = (DefaultTableModel) vista.paquetes.tabContenidoRec.tblPaquetesRec.getModel();
                     break;
-                case 2:
+                case 2: //Tabla recibidos pero ya enviados
                     sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes WHERE fecha_ent != 'PENDIENTE'");
                     mdl = (DefaultTableModel) vista.enviados.tabContenidoEnv.tblPaquetesEnv.getModel();
                     break;

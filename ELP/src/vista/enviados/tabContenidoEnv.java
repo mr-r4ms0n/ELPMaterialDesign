@@ -6,9 +6,7 @@
 package vista.enviados;
 
 import RSMaterialComponent.RSTableMetroCustom;
-import configuracion.Funciones_aux;
 import java.awt.Color;
-import java.sql.ResultSet;
 import modelo.MetodosBD;
 
 /**
@@ -47,7 +45,7 @@ public class tabContenidoEnv extends javax.swing.JPanel
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPaquetesEnv = new RSMaterialComponent.RSTableMetroCustom();
         rSTextFieldIconOne1 = new RSMaterialComponent.RSTextFieldIconOne();
-        jCBTipoBusqueda = new javax.swing.JComboBox<>();
+        jCBTipoBusqueda = new RSMaterialComponent.RSComboBox();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -108,8 +106,12 @@ public class tabContenidoEnv extends javax.swing.JPanel
             }
         });
 
-        jCBTipoBusqueda.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jCBTipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Numero de guía", "Nombre del emisor", "Nombre del receptor", "Dirección", "Peso, altura, ancho o profundidad del paquete", "Precio del envío" }));
+        jCBTipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Numero de guía", "Nombre del emisor", "Nombre del receptor", "Dirección", "Peso, altura, ancho o profundidad del paquete", "Precio del envío" }));
+        jCBTipoBusqueda.setColorArrow(new java.awt.Color(103, 177, 202));
+        jCBTipoBusqueda.setColorBorde(new java.awt.Color(103, 177, 202));
+        jCBTipoBusqueda.setColorFondo(new java.awt.Color(103, 177, 202));
+        jCBTipoBusqueda.setColorSeleccion(new java.awt.Color(103, 177, 202));
+        jCBTipoBusqueda.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -122,9 +124,9 @@ public class tabContenidoEnv extends javax.swing.JPanel
                     .addGroup(layout.createSequentialGroup()
                         .addGap(395, 395, 395)
                         .addComponent(rSTextFieldIconOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31)
-                        .addComponent(jCBTipoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 722, Short.MAX_VALUE)))
+                        .addGap(35, 35, 35)
+                        .addComponent(jCBTipoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 672, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -133,7 +135,7 @@ public class tabContenidoEnv extends javax.swing.JPanel
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(rSTextFieldIconOne1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jCBTipoBusqueda))
+                    .addComponent(jCBTipoBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
                 .addContainerGap())
@@ -147,7 +149,7 @@ public class tabContenidoEnv extends javax.swing.JPanel
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jCBTipoBusqueda;
+    private RSMaterialComponent.RSComboBox jCBTipoBusqueda;
     private javax.swing.JScrollPane jScrollPane1;
     private RSMaterialComponent.RSTextFieldIconOne rSTextFieldIconOne1;
     public static RSMaterialComponent.RSTableMetroCustom tblPaquetesEnv;
