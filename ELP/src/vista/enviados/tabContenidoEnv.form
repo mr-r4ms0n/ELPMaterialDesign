@@ -227,8 +227,8 @@
             <StringItem index="1" value="Nombre del emisor"/>
             <StringItem index="2" value="Nombre del receptor"/>
             <StringItem index="3" value="Direcci&#xf3;n"/>
-            <StringItem index="4" value="Peso, altura, ancho o profundidad del paquete"/>
-            <StringItem index="5" value="Precio del env&#xed;o"/>
+            <StringItem index="4" value="Fecha de recibido"/>
+            <StringItem index="5" value="Fecha de entrega"/>
           </StringArray>
         </Property>
         <Property name="colorArrow" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

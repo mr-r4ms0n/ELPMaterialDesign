@@ -27,10 +27,10 @@ public class tabContenidoRec extends javax.swing.JPanel
         jScrollPane1.getViewport().setBackground(Color.white);
         listarPaquetes(tblPaquetesRec);
     }
-    
-    public void listarPaquetes(RSTableMetroCustom tabla)
+
+    public static void listarPaquetes(RSTableMetroCustom tabla)
     {
-        MetodosBD.consultaBD(1,tabla);
+        MetodosBD.consultaBD(1, tabla);
         //Funciones_aux.getTable(rs, tabla, arr);
     }
 
@@ -47,6 +47,7 @@ public class tabContenidoRec extends javax.swing.JPanel
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPaquetesRec = new RSMaterialComponent.RSTableMetroCustom();
         txtBusquedaRec = new RSMaterialComponent.RSTextFieldIconOne();
+        jCBTipoBusqueda = new RSMaterialComponent.RSComboBox();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -99,6 +100,20 @@ public class tabContenidoRec extends javax.swing.JPanel
         txtBusquedaRec.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
         txtBusquedaRec.setPhColor(new java.awt.Color(103, 177, 202));
         txtBusquedaRec.setPlaceholder("Busqueda");
+        txtBusquedaRec.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyReleased(java.awt.event.KeyEvent evt)
+            {
+                txtBusquedaRecKeyReleased(evt);
+            }
+        });
+
+        jCBTipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Numero de guía", "Nombre del emisor", "Nombre del receptor", "Dirección", "Fecha de recibido" }));
+        jCBTipoBusqueda.setColorArrow(new java.awt.Color(103, 177, 202));
+        jCBTipoBusqueda.setColorBorde(new java.awt.Color(103, 177, 202));
+        jCBTipoBusqueda.setColorFondo(new java.awt.Color(103, 177, 202));
+        jCBTipoBusqueda.setColorSeleccion(new java.awt.Color(103, 177, 202));
+        jCBTipoBusqueda.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -111,21 +126,31 @@ public class tabContenidoRec extends javax.swing.JPanel
             .addGroup(layout.createSequentialGroup()
                 .addGap(473, 473, 473)
                 .addComponent(txtBusquedaRec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jCBTipoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(txtBusquedaRec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBusquedaRec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCBTipoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtBusquedaRecKeyReleased(java.awt.event.KeyEvent evt)//GEN-FIRST:event_txtBusquedaRecKeyReleased
+    {//GEN-HEADEREND:event_txtBusquedaRecKeyReleased
+        MetodosBD.busqBD(txtBusquedaRec.getText(), jCBTipoBusqueda.getSelectedIndex() + 1, 1, tblPaquetesRec);
+    }//GEN-LAST:event_txtBusquedaRecKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private RSMaterialComponent.RSComboBox jCBTipoBusqueda;
     private javax.swing.JScrollPane jScrollPane1;
     public static RSMaterialComponent.RSTableMetroCustom tblPaquetesRec;
     public static RSMaterialComponent.RSTextFieldIconOne txtBusquedaRec;

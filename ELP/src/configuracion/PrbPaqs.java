@@ -30,7 +30,7 @@ public class PrbPaqs
         /*MetodosBD.consultaBD(1, new RSTableMetroCustom()); //Con 1 llamas a los paquetes recibidos
         MetodosBD.consultaBD(2, new RSTableMetroCustom()); //Con 2 llamas a los paquetes enviados
         MetodosBD.eliminaBD(7);*/
-        System.out.println("Siguiente registro == " + (MetodosBD.ultimoRegistro() + 1));
+        //System.out.println("Siguiente registro == " + (MetodosBD.ultimoRegistro() + 1));
 
     }
 }

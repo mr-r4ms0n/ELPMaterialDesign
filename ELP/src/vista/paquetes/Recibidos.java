@@ -18,7 +18,7 @@ public class Recibidos extends javax.swing.JPanel
     public Recibidos()
     {
         initComponents();
-        
+
     }
 
     /**
@@ -155,7 +155,13 @@ public class Recibidos extends javax.swing.JPanel
 
     private void rSButtonIcon_new2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rSButtonIcon_new2ActionPerformed
     {//GEN-HEADEREND:event_rSButtonIcon_new2ActionPerformed
-        // TODO add your handling code here:
+        System.out.println("Seleccionaste la fila == " + tabContenidoRec.tblPaquetesRec.getSelectedRow());
+        int row = tabContenidoRec.tblPaquetesRec.getSelectedRow();
+        String num_guia = (String) (tabContenidoRec.tblPaquetesRec.getValueAt(row, 0));
+        System.out.println("Dato seleccionado == " + num_guia);
+        //int dato = (int) tabContenidoRec.tblPaquetesRec.getValueAt(tabContenidoRec.tblPaquetesRec.getSelectedRow(), 0);
+        modelo.MetodosBD.eliminaBD(Integer.parseInt(num_guia));
+        tabContenidoRec.listarPaquetes(tabContenidoRec.tblPaquetesRec);
     }//GEN-LAST:event_rSButtonIcon_new2ActionPerformed
 
     private void rSButtonIcon_new4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rSButtonIcon_new4ActionPerformed

@@ -106,7 +106,7 @@ public class tabContenidoEnv extends javax.swing.JPanel
             }
         });
 
-        jCBTipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Numero de guía", "Nombre del emisor", "Nombre del receptor", "Dirección", "Peso, altura, ancho o profundidad del paquete", "Precio del envío" }));
+        jCBTipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Numero de guía", "Nombre del emisor", "Nombre del receptor", "Dirección", "Fecha de recibido", "Fecha de entrega" }));
         jCBTipoBusqueda.setColorArrow(new java.awt.Color(103, 177, 202));
         jCBTipoBusqueda.setColorBorde(new java.awt.Color(103, 177, 202));
         jCBTipoBusqueda.setColorFondo(new java.awt.Color(103, 177, 202));

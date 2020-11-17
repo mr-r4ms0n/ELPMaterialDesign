@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="0"/>
     <Property name="undecorated" type="boolean" value="true"/>
@@ -113,12 +113,12 @@
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rSTextFieldOne1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rSTFNumeroGuia" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel9" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="rSTextFieldOne2" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rSTFFechaRecp" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel10" min="-2" pref="142" max="-2" attributes="0"/>
                                   </Group>
@@ -127,7 +127,7 @@
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel18" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                                          <Component id="rSTextFieldOne7" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                                          <Component id="rSTFPrecio" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="433" max="-2" attributes="0"/>
                                   </Group>
@@ -135,13 +135,13 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                               <Component id="jLabel11" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="rSTextFieldOne3" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                                              <Component id="rSTFPeso" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="rSTextFieldOne4" alignment="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="rSTFAltura" alignment="0" pref="0" max="32767" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
@@ -155,7 +155,7 @@
                                               <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jLabel14" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                                          <Component id="rSTextFieldOne5" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
+                                          <Component id="rSTFAncho" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -164,7 +164,7 @@
                                               <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jLabel16" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                                          <Component id="rSTextFieldOne6" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
+                                          <Component id="rSTFProfundidad" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -191,8 +191,8 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="rSTextFieldOne1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rSTextFieldOne2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rSTFNumeroGuia" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rSTFFechaRecp" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                                   <Component id="jLabel9" min="-2" pref="18" max="-2" attributes="0"/>
@@ -205,7 +205,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                          <Component id="rSTextFieldOne3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="rSTFPeso" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel4" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
                                   </Group>
@@ -215,21 +215,21 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel13" min="-2" pref="18" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rSTextFieldOne5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rSTFAncho" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel14" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel5" min="-2" pref="18" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rSTextFieldOne4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rSTFAltura" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel12" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel15" min="-2" pref="18" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rSTextFieldOne6" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rSTFProfundidad" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel16" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
@@ -238,7 +238,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                  <Component id="rSTextFieldOne7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rSTFPrecio" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel17" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
@@ -260,8 +260,9 @@
                     <Property name="text" type="java.lang.String" value="Numero de guia"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne1">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFNumeroGuia">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
@@ -405,7 +406,7 @@
                     <Property name="text" type="java.lang.String" value="Fecha de recepci&#xf3;n"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne2">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFFechaRecp">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -430,7 +431,7 @@
                     <Property name="text" type="java.lang.String" value="Peso"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne3">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFPeso">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -455,7 +456,7 @@
                     <Property name="text" type="java.lang.String" value="Altura"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne4">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFAltura">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -504,7 +505,7 @@
                     <Property name="text" type="java.lang.String" value="Error altura"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne5">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFAncho">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -537,7 +538,7 @@
                     <Property name="text" type="java.lang.String" value="Error altura"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne6">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFProfundidad">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -570,7 +571,7 @@
                     <Property name="text" type="java.lang.String" value="Profundidad"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne7">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFPrecio">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -644,25 +645,25 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel53" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                       <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rSTextFieldOne21" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
+                                      <Component id="rSTFCalle" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel55" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                       <Component id="jLabel54" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rSTextFieldOne22" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <Component id="rSTFLocalidad" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel57" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                       <Component id="jLabel56" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rSTextFieldOne23" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <Component id="rSTFCiudad" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
                                       <Component id="btnReceptorAnt" min="-2" pref="56" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="rSTextFieldOne24" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                                      <Component id="rSTFCodigoPostal" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
                                       <Component id="jLabel58" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
                                       <Component id="jLabel59" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                   </Group>
@@ -672,20 +673,20 @@
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="rSTextFieldOne11" alignment="0" min="-2" pref="192" max="-2" attributes="0"/>
+                                          <Component id="rSTFReceptorNombre" alignment="0" min="-2" pref="192" max="-2" attributes="0"/>
                                           <Component id="jLabel48" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="rSTextFieldOne12" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
+                                          <Component id="rSTFReceptorApeP" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
                                           <Component id="jLabel49" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel51" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                           <Component id="jLabel50" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="rSTextFieldOne20" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
+                                          <Component id="rSTFReceptorApeM" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -705,12 +706,12 @@
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="jLabel47" min="-2" pref="18" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="rSTextFieldOne12" min="-2" max="-2" attributes="0"/>
+                                          <Component id="rSTFReceptorApeP" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="jLabel38" min="-2" pref="18" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="rSTextFieldOne11" min="-2" max="-2" attributes="0"/>
+                                          <Component id="rSTFReceptorNombre" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -722,7 +723,7 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel50" min="-2" pref="18" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rSTextFieldOne20" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rSTFReceptorApeM" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel51" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
@@ -732,14 +733,14 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel52" min="-2" pref="18" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rSTextFieldOne21" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rSTFCalle" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel53" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel54" min="-2" pref="18" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rSTextFieldOne22" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rSTFLocalidad" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel55" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
@@ -749,14 +750,14 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel58" min="-2" pref="18" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rSTextFieldOne24" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rSTFCodigoPostal" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel59" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel56" min="-2" pref="18" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rSTextFieldOne23" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rSTFCiudad" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel57" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
@@ -786,7 +787,7 @@
                     <Property name="text" type="java.lang.String" value="Nombre(s)"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne11">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFReceptorNombre">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -931,7 +932,7 @@
                     <Property name="text" type="java.lang.String" value="Apellido Paterno"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne12">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFReceptorApeP">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -978,8 +979,11 @@
                     </Property>
                     <Property name="round" type="int" value="15"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCerrarAltas6ActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne20">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFReceptorApeM">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -1012,7 +1016,7 @@
                     <Property name="text" type="java.lang.String" value="Error apellido M"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne21">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFCalle">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -1045,7 +1049,7 @@
                     <Property name="text" type="java.lang.String" value="Error calle"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne22">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFLocalidad">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -1078,7 +1082,7 @@
                     <Property name="text" type="java.lang.String" value="Error calle"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne23">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFCiudad">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -1119,7 +1123,7 @@
                     <Property name="text" type="java.lang.String" value="Codigo Postal"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne24">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFCodigoPostal">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -1185,7 +1189,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel60" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel66" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                      <Component id="rSTextFieldOne13" min="-2" pref="349" max="-2" attributes="0"/>
+                                      <Component id="rSTFEmisorNombre" min="-2" pref="349" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
@@ -1199,9 +1203,9 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel69" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                       <Component id="jLabel68" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rSTextFieldOne25" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
+                                      <Component id="rSTFEmisorApeM" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
                                       <Component id="jLabel65" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="rSTextFieldOne14" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
+                                      <Component id="rSTFEmisorApeP" alignment="0" min="-2" pref="212" max="-2" attributes="0"/>
                                       <Component id="jLabel67" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -1217,19 +1221,19 @@
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jLabel60" min="-2" pref="18" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="rSTextFieldOne13" min="-2" max="-2" attributes="0"/>
+                          <Component id="rSTFEmisorNombre" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel66" min="-2" pref="18" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel65" min="-2" pref="18" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="rSTextFieldOne14" min="-2" max="-2" attributes="0"/>
+                          <Component id="rSTFEmisorApeP" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel67" min="-2" pref="18" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel68" min="-2" pref="18" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="rSTextFieldOne25" min="-2" max="-2" attributes="0"/>
+                          <Component id="rSTFEmisorApeM" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel69" min="-2" pref="18" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
@@ -1251,7 +1255,7 @@
                     <Property name="text" type="java.lang.String" value="Nombre(s)"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne13">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFEmisorNombre">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -1396,7 +1400,7 @@
                     <Property name="text" type="java.lang.String" value="Apellido Paterno"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne14">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFEmisorApeP">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -1447,7 +1451,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEmisorNextActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTextFieldOne25">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFEmisorApeM">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>

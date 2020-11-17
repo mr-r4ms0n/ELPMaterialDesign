@@ -5,17 +5,22 @@
  */
 package vista.paquetes;
 
+import configuracion.Paqs;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
+import modelo.MetodosBD;
 import rojeru_san.complementos.RSUtilities;
+
 /**
  *
  * @author Kevin Benitez
  */
 public class Altas extends javax.swing.JDialog
 {
+
     private Window vtn;
+
     /**
      * Creates new form Altas
      */
@@ -30,7 +35,7 @@ public class Altas extends javax.swing.JDialog
         vtn.setShape(forma);
         rSPanelEmisor.setVisible(false);
         rSPanelReceptor.setVisible(false);
-        
+        rSTFNumeroGuia.setText("                     " + String.valueOf((modelo.MetodosBD.ultimoRegistro() + 1)));
     }
 
     /**
@@ -47,7 +52,7 @@ public class Altas extends javax.swing.JDialog
         jPInteracturador = new javax.swing.JPanel();
         rSPanelPaquete = new RSMaterialComponent.RSPanelBorder();
         jLabel2 = new javax.swing.JLabel();
-        rSTextFieldOne1 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFNumeroGuia = new RSMaterialComponent.RSTextFieldOne();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnCerrarAltas = new RSMaterialComponent.RSButtonIconOne();
@@ -55,28 +60,28 @@ public class Altas extends javax.swing.JDialog
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        rSTextFieldOne2 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFFechaRecp = new RSMaterialComponent.RSTextFieldOne();
         jLabel4 = new javax.swing.JLabel();
-        rSTextFieldOne3 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFPeso = new RSMaterialComponent.RSTextFieldOne();
         jLabel5 = new javax.swing.JLabel();
-        rSTextFieldOne4 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFAltura = new RSMaterialComponent.RSTextFieldOne();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        rSTextFieldOne5 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFAncho = new RSMaterialComponent.RSTextFieldOne();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        rSTextFieldOne6 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFProfundidad = new RSMaterialComponent.RSTextFieldOne();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        rSTextFieldOne7 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFPrecio = new RSMaterialComponent.RSTextFieldOne();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         btnPaqueteNext = new RSMaterialComponent.RSButtonIconOne();
         rSPanelReceptor = new RSMaterialComponent.RSPanelBorder();
         jLabel38 = new javax.swing.JLabel();
-        rSTextFieldOne11 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFReceptorNombre = new RSMaterialComponent.RSTextFieldOne();
         jPanel4 = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
         btnCerrarAltas5 = new RSMaterialComponent.RSButtonIconOne();
@@ -84,29 +89,29 @@ public class Altas extends javax.swing.JDialog
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
-        rSTextFieldOne12 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFReceptorApeP = new RSMaterialComponent.RSTextFieldOne();
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         btnCerrarAltas6 = new RSMaterialComponent.RSButtonIconOne();
-        rSTextFieldOne20 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFReceptorApeM = new RSMaterialComponent.RSTextFieldOne();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
-        rSTextFieldOne21 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFCalle = new RSMaterialComponent.RSTextFieldOne();
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
-        rSTextFieldOne22 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFLocalidad = new RSMaterialComponent.RSTextFieldOne();
         jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
-        rSTextFieldOne23 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFCiudad = new RSMaterialComponent.RSTextFieldOne();
         jLabel56 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
-        rSTextFieldOne24 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFCodigoPostal = new RSMaterialComponent.RSTextFieldOne();
         jLabel59 = new javax.swing.JLabel();
         btnReceptorAnt = new RSMaterialComponent.RSButtonIconOne();
         rSPanelEmisor = new RSMaterialComponent.RSPanelBorder();
         jLabel60 = new javax.swing.JLabel();
-        rSTextFieldOne13 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFEmisorNombre = new RSMaterialComponent.RSTextFieldOne();
         jPanel5 = new javax.swing.JPanel();
         jLabel61 = new javax.swing.JLabel();
         btnCerrarAltas8 = new RSMaterialComponent.RSButtonIconOne();
@@ -114,11 +119,11 @@ public class Altas extends javax.swing.JDialog
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
-        rSTextFieldOne14 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFEmisorApeP = new RSMaterialComponent.RSTextFieldOne();
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
         btnEmisorNext = new RSMaterialComponent.RSButtonIconOne();
-        rSTextFieldOne25 = new RSMaterialComponent.RSTextFieldOne();
+        rSTFEmisorApeM = new RSMaterialComponent.RSTextFieldOne();
         jLabel68 = new javax.swing.JLabel();
         jLabel69 = new javax.swing.JLabel();
         btnEmisorAnt = new RSMaterialComponent.RSButtonIconOne();
@@ -134,11 +139,12 @@ public class Altas extends javax.swing.JDialog
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel2.setText("Numero de guia");
 
-        rSTextFieldOne1.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne1.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne1.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne1.setPlaceholder("Ingrese numero de guia");
+        rSTFNumeroGuia.setEditable(false);
+        rSTFNumeroGuia.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFNumeroGuia.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFNumeroGuia.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFNumeroGuia.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFNumeroGuia.setPlaceholder("Ingrese numero de guia");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 204));
 
@@ -208,29 +214,29 @@ public class Altas extends javax.swing.JDialog
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel3.setText("Fecha de recepción");
 
-        rSTextFieldOne2.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne2.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne2.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne2.setPlaceholder("Ingrese fecha de recepción");
+        rSTFFechaRecp.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFFechaRecp.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFFechaRecp.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFFechaRecp.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFFechaRecp.setPlaceholder("Ingrese fecha de recepción");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel4.setText("Peso");
 
-        rSTextFieldOne3.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne3.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne3.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne3.setPlaceholder("Ingrese el peso");
+        rSTFPeso.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFPeso.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFPeso.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFPeso.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFPeso.setPlaceholder("Ingrese el peso");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel5.setText("Altura");
 
-        rSTextFieldOne4.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne4.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne4.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne4.setPlaceholder("Ingrese la altura");
+        rSTFAltura.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFAltura.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFAltura.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFAltura.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFAltura.setPlaceholder("Ingrese la altura");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel9.setText("Error guia");
@@ -244,11 +250,11 @@ public class Altas extends javax.swing.JDialog
         jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel12.setText("Error altura");
 
-        rSTextFieldOne5.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne5.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne5.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne5.setPlaceholder("Ingrese el ancho");
+        rSTFAncho.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFAncho.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFAncho.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFAncho.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFAncho.setPlaceholder("Ingrese el ancho");
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel13.setText("Ancho");
@@ -256,11 +262,11 @@ public class Altas extends javax.swing.JDialog
         jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel14.setText("Error altura");
 
-        rSTextFieldOne6.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne6.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne6.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne6.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne6.setPlaceholder("Ingrese la profundidad");
+        rSTFProfundidad.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFProfundidad.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFProfundidad.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFProfundidad.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFProfundidad.setPlaceholder("Ingrese la profundidad");
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel15.setText("Profundidad");
@@ -268,11 +274,11 @@ public class Altas extends javax.swing.JDialog
         jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel16.setText("Profundidad");
 
-        rSTextFieldOne7.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne7.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne7.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne7.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne7.setPlaceholder("Ingrese costo de envio");
+        rSTFPrecio.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFPrecio.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFPrecio.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFPrecio.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFPrecio.setPlaceholder("Ingrese costo de envio");
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel17.setText("Costo de envio $");
@@ -305,28 +311,28 @@ public class Altas extends javax.swing.JDialog
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(rSTextFieldOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rSTFNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(34, 34, 34)
                         .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rSTextFieldOne2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rSTFFechaRecp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                             .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(rSTextFieldOne7, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(rSTFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(433, 433, 433))
                         .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                             .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(rSTextFieldOne3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(rSTFPeso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(jLabel4))
                             .addGap(18, 18, 18)
                             .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(rSTextFieldOne4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(rSTFAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                 .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                                     .addGap(6, 6, 6)
                                     .addComponent(jLabel5))
@@ -337,14 +343,14 @@ public class Altas extends javax.swing.JDialog
                                     .addGap(6, 6, 6)
                                     .addComponent(jLabel13))
                                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(rSTextFieldOne5, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(rSTFAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(18, 18, 18)
                             .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                                     .addGap(6, 6, 6)
                                     .addComponent(jLabel15))
                                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(rSTextFieldOne6, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(rSTFProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelPaqueteLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -363,8 +369,8 @@ public class Altas extends javax.swing.JDialog
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rSTextFieldOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSTextFieldOne2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(rSTFNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rSTFFechaRecp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(4, 4, 4)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -374,33 +380,33 @@ public class Altas extends javax.swing.JDialog
                         .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                                 .addGap(24, 24, 24)
-                                .addComponent(rSTextFieldOne3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(rSTFPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTextFieldOne5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rSTFAncho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTextFieldOne4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rSTFAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTextFieldOne6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rSTFProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(28, 28, 28)
                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(rSTextFieldOne7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(rSTFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -415,11 +421,11 @@ public class Altas extends javax.swing.JDialog
         jLabel38.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel38.setText("Nombre(s)");
 
-        rSTextFieldOne11.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne11.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne11.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne11.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne11.setPlaceholder("Ingrese nombre(s)");
+        rSTFReceptorNombre.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFReceptorNombre.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFReceptorNombre.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFReceptorNombre.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFReceptorNombre.setPlaceholder("Ingrese nombre(s)");
 
         jPanel4.setBackground(new java.awt.Color(0, 153, 204));
 
@@ -489,11 +495,11 @@ public class Altas extends javax.swing.JDialog
         jLabel47.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel47.setText("Apellido Paterno");
 
-        rSTextFieldOne12.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne12.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne12.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne12.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne12.setPlaceholder("Ingrese apellido paterno");
+        rSTFReceptorApeP.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFReceptorApeP.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFReceptorApeP.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFReceptorApeP.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFReceptorApeP.setPlaceholder("Ingrese apellido paterno");
 
         jLabel48.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel48.setText("Error nombre");
@@ -506,12 +512,19 @@ public class Altas extends javax.swing.JDialog
         btnCerrarAltas6.setBackgroundHover(new java.awt.Color(103, 177, 202));
         btnCerrarAltas6.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SAVE);
         btnCerrarAltas6.setRound(15);
+        btnCerrarAltas6.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnCerrarAltas6ActionPerformed(evt);
+            }
+        });
 
-        rSTextFieldOne20.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne20.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne20.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne20.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne20.setPlaceholder("Ingrese apellido materno");
+        rSTFReceptorApeM.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFReceptorApeM.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFReceptorApeM.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFReceptorApeM.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFReceptorApeM.setPlaceholder("Ingrese apellido materno");
 
         jLabel50.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel50.setText("Apellido Materno");
@@ -519,11 +532,11 @@ public class Altas extends javax.swing.JDialog
         jLabel51.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel51.setText("Error apellido M");
 
-        rSTextFieldOne21.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne21.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne21.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne21.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne21.setPlaceholder("Ingrese calle");
+        rSTFCalle.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFCalle.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFCalle.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFCalle.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFCalle.setPlaceholder("Ingrese calle");
 
         jLabel52.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel52.setText("Calle");
@@ -531,11 +544,11 @@ public class Altas extends javax.swing.JDialog
         jLabel53.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel53.setText("Error calle");
 
-        rSTextFieldOne22.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne22.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne22.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne22.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne22.setPlaceholder("Ingrese localidad");
+        rSTFLocalidad.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFLocalidad.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFLocalidad.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFLocalidad.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFLocalidad.setPlaceholder("Ingrese localidad");
 
         jLabel54.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel54.setText("Localidad");
@@ -543,11 +556,11 @@ public class Altas extends javax.swing.JDialog
         jLabel55.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel55.setText("Error calle");
 
-        rSTextFieldOne23.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne23.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne23.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne23.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne23.setPlaceholder("Ingrese localidad");
+        rSTFCiudad.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFCiudad.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFCiudad.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFCiudad.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFCiudad.setPlaceholder("Ingrese localidad");
 
         jLabel56.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel56.setText("Ciudad");
@@ -558,11 +571,11 @@ public class Altas extends javax.swing.JDialog
         jLabel58.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel58.setText("Codigo Postal");
 
-        rSTextFieldOne24.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne24.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne24.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne24.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne24.setPlaceholder("Ingrese C.P.");
+        rSTFCodigoPostal.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFCodigoPostal.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFCodigoPostal.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFCodigoPostal.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFCodigoPostal.setPlaceholder("Ingrese C.P.");
 
         jLabel59.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel59.setText("Error C.P");
@@ -592,21 +605,21 @@ public class Altas extends javax.swing.JDialog
                         .addGroup(rSPanelReceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel52)
-                            .addComponent(rSTextFieldOne21, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(rSTFCalle, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(36, 36, 36)
                         .addGroup(rSPanelReceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel54)
-                            .addComponent(rSTextFieldOne22, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(rSTFLocalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(rSPanelReceptorLayout.createSequentialGroup()
                         .addGroup(rSPanelReceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel56)
-                            .addComponent(rSTextFieldOne23, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rSTFCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnReceptorAnt, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32)
                         .addGroup(rSPanelReceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rSTextFieldOne24, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rSTFCodigoPostal, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(rSPanelReceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -614,18 +627,18 @@ public class Altas extends javax.swing.JDialog
                         .addGroup(rSPanelReceptorLayout.createSequentialGroup()
                             .addGroup(rSPanelReceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel38)
-                                .addComponent(rSTextFieldOne11, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rSTFReceptorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(rSPanelReceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel47)
-                                .addComponent(rSTextFieldOne12, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rSTFReceptorApeP, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(rSPanelReceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel50)
-                                .addComponent(rSTextFieldOne20, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(rSTFReceptorApeM, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         rSPanelReceptorLayout.setVerticalGroup(
@@ -639,11 +652,11 @@ public class Altas extends javax.swing.JDialog
                             .addGroup(rSPanelReceptorLayout.createSequentialGroup()
                                 .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rSTextFieldOne12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(rSTFReceptorApeP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(rSPanelReceptorLayout.createSequentialGroup()
                                 .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rSTextFieldOne11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(rSTFReceptorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(rSPanelReceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel48, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -651,7 +664,7 @@ public class Altas extends javax.swing.JDialog
                     .addGroup(rSPanelReceptorLayout.createSequentialGroup()
                         .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTextFieldOne20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rSTFReceptorApeM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(12, 12, 12)
@@ -659,13 +672,13 @@ public class Altas extends javax.swing.JDialog
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelReceptorLayout.createSequentialGroup()
                         .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTextFieldOne21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rSTFCalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(rSPanelReceptorLayout.createSequentialGroup()
                         .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTextFieldOne22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rSTFLocalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
@@ -673,13 +686,13 @@ public class Altas extends javax.swing.JDialog
                     .addGroup(rSPanelReceptorLayout.createSequentialGroup()
                         .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTextFieldOne24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rSTFCodigoPostal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(rSPanelReceptorLayout.createSequentialGroup()
                         .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTextFieldOne23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rSTFCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(rSPanelReceptorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -699,11 +712,11 @@ public class Altas extends javax.swing.JDialog
         jLabel60.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel60.setText("Nombre(s)");
 
-        rSTextFieldOne13.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne13.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne13.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne13.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne13.setPlaceholder("Ingrese nombre(s)");
+        rSTFEmisorNombre.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFEmisorNombre.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFEmisorNombre.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFEmisorNombre.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFEmisorNombre.setPlaceholder("Ingrese nombre(s)");
 
         jPanel5.setBackground(new java.awt.Color(0, 153, 204));
 
@@ -773,11 +786,11 @@ public class Altas extends javax.swing.JDialog
         jLabel65.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel65.setText("Apellido Paterno");
 
-        rSTextFieldOne14.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne14.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne14.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne14.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne14.setPlaceholder("Ingrese apellido paterno");
+        rSTFEmisorApeP.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFEmisorApeP.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFEmisorApeP.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFEmisorApeP.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFEmisorApeP.setPlaceholder("Ingrese apellido paterno");
 
         jLabel66.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel66.setText("Error nombre");
@@ -798,11 +811,11 @@ public class Altas extends javax.swing.JDialog
             }
         });
 
-        rSTextFieldOne25.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne25.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldOne25.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTextFieldOne25.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTextFieldOne25.setPlaceholder("Ingrese apellido materno");
+        rSTFEmisorApeM.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFEmisorApeM.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFEmisorApeM.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFEmisorApeM.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFEmisorApeM.setPlaceholder("Ingrese apellido materno");
 
         jLabel68.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel68.setText("Apellido Materno");
@@ -835,7 +848,7 @@ public class Altas extends javax.swing.JDialog
                         .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel60)
                             .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rSTextFieldOne13, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(rSTFEmisorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(rSPanelEmisorLayout.createSequentialGroup()
                         .addComponent(btnEmisorAnt, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -846,9 +859,9 @@ public class Altas extends javax.swing.JDialog
                         .addGroup(rSPanelEmisorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel68)
-                            .addComponent(rSTextFieldOne25, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rSTFEmisorApeM, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel65)
-                            .addComponent(rSTextFieldOne14, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rSTFEmisorApeP, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
@@ -859,19 +872,19 @@ public class Altas extends javax.swing.JDialog
                 .addGap(26, 26, 26)
                 .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSTextFieldOne13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rSTFEmisorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSTextFieldOne14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rSTFEmisorApeP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSTextFieldOne25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rSTFEmisorApeM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
@@ -941,6 +954,7 @@ public class Altas extends javax.swing.JDialog
             rSPanelEmisor.setVisible(true);
             rSPanelReceptor.setVisible(false);
         }
+
     }//GEN-LAST:event_btnPaqueteNextActionPerformed
 
     private void btnEmisorAntActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnEmisorAntActionPerformed
@@ -987,6 +1001,39 @@ public class Altas extends javax.swing.JDialog
     {//GEN-HEADEREND:event_btnCerrarAltas8ActionPerformed
         dispose();
     }//GEN-LAST:event_btnCerrarAltas8ActionPerformed
+
+    private void btnCerrarAltas6ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCerrarAltas6ActionPerformed
+    {//GEN-HEADEREND:event_btnCerrarAltas6ActionPerformed
+
+        Paqs obj = new Paqs();
+        //Datos de la Primera ventana
+        obj.setFchRecp(rSTFFechaRecp.getText());
+        obj.setPeso(Double.parseDouble(rSTFPeso.getText()));
+        obj.setAltura(Double.parseDouble(rSTFAltura.getText()));
+        obj.setAncho(Double.parseDouble(rSTFAncho.getText()));
+        obj.setProfundidad(Double.parseDouble(rSTFProfundidad.getText()));
+        obj.setPrecio(Double.parseDouble(rSTFPrecio.getText()));
+        //Datos de la Segunda ventana
+        obj.seteNombre(rSTFEmisorNombre.getText());
+        obj.seteApP(rSTFEmisorApeP.getText());
+        obj.seteApM(rSTFEmisorApeM.getText());
+        //Datos de la Tercera ventana
+        obj.setrNombre(rSTFReceptorNombre.getText());
+        obj.setrApP(rSTFReceptorApeP.getText());
+        obj.setrApM(rSTFReceptorApeM.getText());
+        obj.setCalle(rSTFCalle.getText());
+        obj.setLocalidad(rSTFLocalidad.getText());
+        obj.setCiudad(rSTFCiudad.getText());
+        obj.setCp(Integer.parseInt(rSTFCodigoPostal.getText()));
+        obj.setFchEnt("PENDIENTE");
+        //Guardamos en la BD
+        obj.desp();
+        modelo.MetodosBD.guardaPaqs(obj);
+        //Cerramos 
+        dispose();
+        //Actualizamos la tabla
+        tabContenidoRec.listarPaquetes(tabContenidoRec.tblPaquetesRec);
+    }//GEN-LAST:event_btnCerrarAltas6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1096,22 +1143,22 @@ public class Altas extends javax.swing.JDialog
     private RSMaterialComponent.RSPanelBorder rSPanelEmisor;
     private RSMaterialComponent.RSPanelBorder rSPanelPaquete;
     private RSMaterialComponent.RSPanelBorder rSPanelReceptor;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne1;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne11;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne12;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne13;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne14;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne2;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne20;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne21;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne22;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne23;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne24;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne25;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne3;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne4;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne5;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne6;
-    private RSMaterialComponent.RSTextFieldOne rSTextFieldOne7;
+    private RSMaterialComponent.RSTextFieldOne rSTFAltura;
+    private RSMaterialComponent.RSTextFieldOne rSTFAncho;
+    private RSMaterialComponent.RSTextFieldOne rSTFCalle;
+    private RSMaterialComponent.RSTextFieldOne rSTFCiudad;
+    private RSMaterialComponent.RSTextFieldOne rSTFCodigoPostal;
+    private RSMaterialComponent.RSTextFieldOne rSTFEmisorApeM;
+    private RSMaterialComponent.RSTextFieldOne rSTFEmisorApeP;
+    private RSMaterialComponent.RSTextFieldOne rSTFEmisorNombre;
+    private RSMaterialComponent.RSTextFieldOne rSTFFechaRecp;
+    private RSMaterialComponent.RSTextFieldOne rSTFLocalidad;
+    private RSMaterialComponent.RSTextFieldOne rSTFNumeroGuia;
+    private RSMaterialComponent.RSTextFieldOne rSTFPeso;
+    private RSMaterialComponent.RSTextFieldOne rSTFPrecio;
+    private RSMaterialComponent.RSTextFieldOne rSTFProfundidad;
+    private RSMaterialComponent.RSTextFieldOne rSTFReceptorApeM;
+    private RSMaterialComponent.RSTextFieldOne rSTFReceptorApeP;
+    private RSMaterialComponent.RSTextFieldOne rSTFReceptorNombre;
     // End of variables declaration//GEN-END:variables
 }
