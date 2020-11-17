@@ -27,6 +27,37 @@ public class MetodosBD
     private static PreparedStatement sentencia = null; //la usaremos para manejar las consultas provenientes de la BD
     private static ResultSet resultado = null;
 
+    public static int ultimoRegistro()
+    {
+        int n = 0;
+
+        try
+        {
+            conexionBD = ConexionBD.getConection();
+            sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes ORDER BY num_guia DESC LIMIT 1");
+            resultado = sentencia.executeQuery();
+            if (resultado.next())
+            {
+                n = resultado.getInt("num_guia");
+            } else
+            {
+                n = -1;
+            }
+        } catch (SQLException e)
+        {
+            System.out.println("Error al conectar a BD vehiculos incorporados " + e);
+        } finally
+        {
+            try
+            {
+                conexionBD.close();
+            } catch (Exception e)
+            {
+            }
+        }
+        return n;
+    }
+
     public static void eliminaBD(int num_guia)
     {
         try
@@ -66,40 +97,6 @@ public class MetodosBD
         return null;
     }
 
-    public static ResultSet getPaquetesRec()
-    {
-        try
-        {
-            System.out.println("Entre por recibidos");
-            conexionBD = ConexionBD.getConection();
-            query = "SELECT * FROM paquetes ORDER BY num_guia";
-            sentencia = conexionBD.prepareStatement(query);
-            ResultSet rs = sentencia.executeQuery();
-            return rs;
-        } catch (SQLException e)
-        {
-            System.out.println("Error al obtener los paquetes");
-        }
-        return null;
-    }
-
-    public static ResultSet getPaquetesEnv()
-    {
-        try
-        {
-            System.out.println("Entre por envios");
-            conexionBD = ConexionBD.getConection();
-            query = "SELECT * FROM paquetes WHERE fecha_ent is not null ORDER BY num_guia";
-            sentencia = conexionBD.prepareStatement(query);
-            ResultSet rs = sentencia.executeQuery();
-            return rs;
-        } catch (SQLException e)
-        {
-            System.out.println("Error al obtener los paquetes");
-        }
-        return null;
-    }
-
     /**
      * Retorna una tabla con los resultados de la consulta SQL
      *
@@ -127,7 +124,7 @@ public class MetodosBD
                     {
                         case 1:
                             String filtro = busq + "_%";
-                            sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes WHERE fecha_ent = 'PENDIENTE' AND WHERE num_guia LIKE ?");
+                            sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes WHERE fecha_ent = 'PENDIENTE' AND num_guia LIKE ?");
                             sentencia.setString(1, filtro);
                             resultado = sentencia.executeQuery();
                             if (resultado != null)
@@ -222,7 +219,7 @@ public class MetodosBD
                                 }
                             }
                             break;
-                        case 5: ////Peso, altura, ancho o profundidad del paquete
+                        case 5: ////Peso, altura, ancho o profundidad del paquete //QUITAR
                             sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes WHERE fecha_ent != 'PENDIENTE'");
                             resultado = sentencia.executeQuery();
                             if (resultado != null)
