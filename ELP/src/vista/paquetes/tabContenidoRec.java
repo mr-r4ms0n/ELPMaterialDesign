@@ -128,6 +128,6 @@ public class tabContenidoRec extends javax.swing.JPanel
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private RSMaterialComponent.RSTextFieldIconOne rSTextFieldIconOne1;
-    private RSMaterialComponent.RSTableMetroCustom tblPaquetesRec;
+    public static RSMaterialComponent.RSTableMetroCustom tblPaquetesRec;
     // End of variables declaration//GEN-END:variables
 }

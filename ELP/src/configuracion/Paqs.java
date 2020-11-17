@@ -12,6 +12,7 @@ package configuracion;
 public class Paqs
 {
 
+    int num_guia;
     private String eNombre;
     private String eApP;
     private String eApM;
