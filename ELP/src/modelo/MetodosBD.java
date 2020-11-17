@@ -106,117 +106,167 @@ public class MetodosBD
      * @param busq Cadena de texto a buscar
      * @param tipo tipo de busqueda segun el combo box que escojas
      * @param tbl Tabla en la que deseas buscar 1 = recibidos 2 = enviados
-     * @return tabla lista para poner (SET) en tu tabluki y
-     * listoooooooooooo!!!!!!!!!!!!!!!!!!!!!!
+     * @param table El modelo de la tabla que se desea llenar
      */
-    public static DefaultTableModel busqBD(String busq, int tipo, int tbl)
+    public static void busqBD(String busq, int tipo, int tbl, RSTableMetroCustom table)
     {
+        System.out.println("TIPO: " + tipo);
         DefaultTableModel mdl = null;
+        mdl = (DefaultTableModel) table.getModel();
+        while (mdl.getRowCount() > 0)
+        {
+            mdl.setRowCount(0);//Por si las moscas la vacio
+        }
         try
         {
             conexionBD = ConexionBD.getConection();
-            switch (tbl)
+            switch (tbl) //tabla de recibidos o tabla de enviados
             {
-                case 1: //Tabla recibidios pero no enviados
-                    sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes WHERE fecha_ent = 'PENDIENTE'");
-                    mdl = (DefaultTableModel) vista.paquetes.tabContenidoRec.tblPaquetesRec.getModel();
-                    break;
-                case 2: //Tabla recibidos pero ya enviados
-                    sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes WHERE fecha_ent != 'PENDIENTE'");
-                    mdl = (DefaultTableModel) vista.enviados.tabContenidoEnv.tblPaquetesEnv.getModel();
-                    break;
-            }
-            resultado = sentencia.executeQuery();
-            mdl.setRowCount(0);
-            if (resultado != null)
-            {
-                switch (tipo) //Llena la tabla segun el tipo de busqueda
-                {
-                    case 0: //Numero de guia
-                        //Ya debe estar validado que la variable "cmp" es entera
-                        while (resultado.next())
-                        {
-                            if (busq.startsWith(String.valueOf(resultado.getInt("num_guia"))));
+                case 1: //Tabla recibidios
+                    switch (tipo)
+                    {
+                        case 1:
+                            String filtro = busq + "_%";
+                            sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes WHERE fecha_ent = 'PENDIENTE' AND WHERE num_guia LIKE ?");
+                            sentencia.setString(1, filtro);
+                            resultado = sentencia.executeQuery();
+                            if (resultado != null)
                             {
-                                System.out.println("SI ENTRO A BUSCAR PAPS");
-                                System.out.println("NumGuia == " + resultado.getInt("num_guia") + " Busq == " + busq);
-                                mdl.addRow(new Object[]
+                                while (resultado.next())
                                 {
-                                    resultado.getInt("num_guia"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")), resultado.getString("fecha_recp"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")), MetodosBD.obtenerDatos(2, resultado.getInt("id_direccion")), resultado.getString("fecha_ent"), resultado.getDouble("peso"), resultado.getDouble("altura"), resultado.getDouble("ancho"), resultado.getDouble("profundidad"), resultado.getDouble("precio")
-                                });
+                                    System.out.println("SI ENTRO A BUSCAR PAPS");
+                                    System.out.println("NumGuia == " + resultado.getInt("num_guia") + " Busq == " + busq);
+                                    mdl.addRow(new Object[]
+                                    {
+                                        resultado.getInt("num_guia"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")), resultado.getString("fecha_recp"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")), MetodosBD.obtenerDatos(2, resultado.getInt("id_direccion")), resultado.getString("fecha_ent"), resultado.getDouble("peso"), resultado.getDouble("altura"), resultado.getDouble("ancho"), resultado.getDouble("profundidad"), resultado.getDouble("precio")
+                                    });
+                                }
                             }
-                        }
-                        break;
-                    case 1: //Nombres de emisores
-                        while (resultado.next())
-                        {
-                            String nomb = MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")).toUpperCase();
-                            if (nomb.startsWith(busq.toUpperCase()))
+                            break;
+                        default:
+                            throw new AssertionError();
+                    }
+                    break;
+                case 2: //Tabla enviados
+                    switch (tipo)
+                    {
+                        case 1: //numero de guia 
+                            sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes WHERE fecha_ent != 'PENDIENTE' AND num_guia LIKE ?");
+                            sentencia.setString(1, "%" + busq + "%");
+                            resultado = sentencia.executeQuery();
+                            if (resultado != null)
                             {
-                                mdl.addRow(new Object[]
+                                while (resultado.next())
                                 {
-                                    resultado.getInt("num_guia"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")), resultado.getString("fecha_recp"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")), MetodosBD.obtenerDatos(2, resultado.getInt("id_direccion")), resultado.getString("fecha_ent"), resultado.getDouble("peso"), resultado.getDouble("altura"), resultado.getDouble("ancho"), resultado.getDouble("profundidad"), resultado.getDouble("precio")
-                                });
+                                    System.out.println("SI ENTRO A BUSCAR PAPS");
+                                    System.out.println("NumGuia == " + resultado.getInt("num_guia") + " Busq == " + busq);
+                                    mdl.addRow(new Object[]
+                                    {
+                                        resultado.getInt("num_guia"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")), resultado.getString("fecha_recp"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")), MetodosBD.obtenerDatos(2, resultado.getInt("id_direccion")), resultado.getString("fecha_ent"), resultado.getDouble("peso"), resultado.getDouble("altura"), resultado.getDouble("ancho"), resultado.getDouble("profundidad"), resultado.getDouble("precio")
+                                    });
+                                }
                             }
-                        }
-                        break;
+                            break;
+                        case 2://nombre del emisor
+                            sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes WHERE fecha_ent != 'PENDIENTE'");
+                            resultado = sentencia.executeQuery();
+                            if (resultado != null)
+                            {
+                                while (resultado.next())
+                                {
+                                    String nomb = MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")).toUpperCase();
+                                    if (nomb.startsWith(busq.toUpperCase()))
+                                    {
+                                        mdl.addRow(new Object[]
+                                        {
+                                            resultado.getInt("num_guia"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")), resultado.getString("fecha_recp"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")), MetodosBD.obtenerDatos(2, resultado.getInt("id_direccion")), resultado.getString("fecha_ent"), resultado.getDouble("peso"), resultado.getDouble("altura"), resultado.getDouble("ancho"), resultado.getDouble("profundidad"), resultado.getDouble("precio")
+                                        });
+                                    }
+                                }
+                            }
+                            break;
+                        case 3: //nombre del receptor
+                            sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes WHERE fecha_ent != 'PENDIENTE'");
+                            resultado = sentencia.executeQuery();
+                            if (resultado != null)
+                            {
+                                while (resultado.next())
+                                {
+                                    String nomb = MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")).toUpperCase();
+                                    if (nomb.startsWith(busq.toUpperCase()))
+                                    {
+                                        mdl.addRow(new Object[]
+                                        {
+                                            resultado.getInt("num_guia"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")), resultado.getString("fecha_recp"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")), MetodosBD.obtenerDatos(2, resultado.getInt("id_direccion")), resultado.getString("fecha_ent"), resultado.getDouble("peso"), resultado.getDouble("altura"), resultado.getDouble("ancho"), resultado.getDouble("profundidad"), resultado.getDouble("precio")
+                                        });
+                                    }
+                                }
+                            }
+                            break;
+                        case 4: //Direccion (Calle,Localidad,Ciudad,Codigo Postal)
+                            sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes WHERE fecha_ent != 'PENDIENTE'");
+                            resultado = sentencia.executeQuery();
+                            if (resultado != null)
+                            {
+                                while (resultado.next())
+                                {
+                                    String dir = MetodosBD.obtenerDatos(2, resultado.getInt("id_direccion"));
+                                    System.out.println("DIRECCION EN EL 4: " + dir);
+                                    if (dir.contains(busq))
+                                    {
+                                        mdl.addRow(new Object[]
+                                        {
+                                            resultado.getInt("num_guia"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")), resultado.getString("fecha_recp"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")), MetodosBD.obtenerDatos(2, resultado.getInt("id_direccion")), resultado.getString("fecha_ent"), resultado.getDouble("peso"), resultado.getDouble("altura"), resultado.getDouble("ancho"), resultado.getDouble("profundidad"), resultado.getDouble("precio")
+                                        });
+                                    }
+                                }
+                            }
+                            break;
+                        case 5: ////Peso, altura, ancho o profundidad del paquete
+                            sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes WHERE fecha_ent != 'PENDIENTE'");
+                            resultado = sentencia.executeQuery();
+                            if (resultado != null)
+                            {
+                                while (resultado.next())
+                                {
+                                    if (String.valueOf(resultado.getInt("peso")).startsWith(busq)
+                                            || String.valueOf(resultado.getInt("altura")).startsWith(busq)
+                                            || String.valueOf(resultado.getInt("ancho")).startsWith(busq)
+                                            || String.valueOf(resultado.getInt("profundidad")).startsWith(busq))
+                                    {
+                                        mdl.addRow(new Object[]
+                                        {
+                                            resultado.getInt("num_guia"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")), resultado.getString("fecha_recp"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")), MetodosBD.obtenerDatos(2, resultado.getInt("id_direccion")), resultado.getString("fecha_ent"), resultado.getDouble("peso"), resultado.getDouble("altura"), resultado.getDouble("ancho"), resultado.getDouble("profundidad"), resultado.getDouble("precio")
+                                        });
+                                    }
+                                }
+                            }
+                            break;
+                        case 6:
+                            sentencia = conexionBD.prepareStatement("SELECT * FROM paquetes WHERE fecha_ent != 'PENDIENTE'");
+                            resultado = sentencia.executeQuery();
+                            if (resultado != null)
+                            {
+                                while (resultado.next())
+                                {
+                                    if (String.valueOf(resultado.getInt("precio")).startsWith(busq))
+                                    {
+                                        mdl.addRow(new Object[]
+                                        {
+                                            resultado.getInt("num_guia"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")), resultado.getString("fecha_recp"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")), MetodosBD.obtenerDatos(2, resultado.getInt("id_direccion")), resultado.getString("fecha_ent"), resultado.getDouble("peso"), resultado.getDouble("altura"), resultado.getDouble("ancho"), resultado.getDouble("profundidad"), resultado.getDouble("precio")
+                                        });
+                                    }
+                                }
+                            }
 
-                    case 2: //Nombres de receptores
-                        while (resultado.next())
-                        {
-                            String nomb = MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")).toUpperCase();
-                            if (nomb.startsWith(busq.toUpperCase()))
-                            {
-                                mdl.addRow(new Object[]
-                                {
-                                    resultado.getInt("num_guia"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")), resultado.getString("fecha_recp"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")), MetodosBD.obtenerDatos(2, resultado.getInt("id_direccion")), resultado.getString("fecha_ent"), resultado.getDouble("peso"), resultado.getDouble("altura"), resultado.getDouble("ancho"), resultado.getDouble("profundidad"), resultado.getDouble("precio")
-                                });
-                            }
-                        }
-                        break;
-                    case 3: //Direccion
-                        while (resultado.next())
-                        {
-                            CharSequence sec = busq;
-                            String dir = MetodosBD.obtenerDatos(2, resultado.getInt("id_nombre_emisor")).toUpperCase();
-                            if (dir.contains(sec))
-                            {
-                                mdl.addRow(new Object[]
-                                {
-                                    resultado.getInt("num_guia"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")), resultado.getString("fecha_recp"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")), MetodosBD.obtenerDatos(2, resultado.getInt("id_direccion")), resultado.getString("fecha_ent"), resultado.getDouble("peso"), resultado.getDouble("altura"), resultado.getDouble("ancho"), resultado.getDouble("profundidad"), resultado.getDouble("precio")
-                                });
-                            }
-                        }
-                        break;
-                    case 4: //Peso, altura, ancho o profundidad del paquete
-                        while (resultado.next())
-                        {
-                            if (String.valueOf(resultado.getInt("peso")).startsWith(busq)
-                                    || String.valueOf(resultado.getInt("altura")).startsWith(busq)
-                                    || String.valueOf(resultado.getInt("ancho")).startsWith(busq)
-                                    || String.valueOf(resultado.getInt("profundidad")).startsWith(busq))
-                            {
-                                mdl.addRow(new Object[]
-                                {
-                                    resultado.getInt("num_guia"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")), resultado.getString("fecha_recp"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")), MetodosBD.obtenerDatos(2, resultado.getInt("id_direccion")), resultado.getString("fecha_ent"), resultado.getDouble("peso"), resultado.getDouble("altura"), resultado.getDouble("ancho"), resultado.getDouble("profundidad"), resultado.getDouble("precio")
-                                });
-                            }
-                        }
-                        break;
-                    case 5: //Precio
-                        while (resultado.next())
-                        {
-                            if (String.valueOf(resultado.getInt("precio")).startsWith(busq))
-                            {
-                                mdl.addRow(new Object[]
-                                {
-                                    resultado.getInt("num_guia"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")), resultado.getString("fecha_recp"), MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")), MetodosBD.obtenerDatos(2, resultado.getInt("id_direccion")), resultado.getString("fecha_ent"), resultado.getDouble("peso"), resultado.getDouble("altura"), resultado.getDouble("ancho"), resultado.getDouble("profundidad"), resultado.getDouble("precio")
-                                });
-                            }
-                        }
-                        break;
-                }
+                            break;
+                        default:
+                            throw new AssertionError();
+                    }
+
+                    break;
             }
+
             conexionBD.close();
         } catch (Exception e)
         {
@@ -228,7 +278,6 @@ public class MetodosBD
             {
             }
         }
-        return mdl;
     }
 
     /**
@@ -342,7 +391,7 @@ public class MetodosBD
                     res = sentencia.executeQuery();
                     if (res.next())
                     {
-                        s = res.getString("ciudad") + ", " + res.getString("localidad") + ", " + res.getString("calle") + " " + res.getInt("codigo_postal");
+                        s = res.getString("calle") + ", " + res.getString("localidad") + ", " + res.getString("ciudad") + " " + res.getInt("codigo_postal");
                     }
 
                     break;

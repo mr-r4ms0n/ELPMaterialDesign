@@ -27,7 +27,7 @@
                   <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="395" max="-2" attributes="0"/>
-                      <Component id="rSTextFieldIconOne1" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtBusqueda" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="jCBTipoBusqueda" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="672" max="32767" attributes="0"/>
@@ -42,7 +42,7 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="rSTextFieldIconOne1" max="32767" attributes="0"/>
+                  <Component id="txtBusqueda" max="32767" attributes="0"/>
                   <Component id="jCBTipoBusqueda" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -193,7 +193,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="RSMaterialComponent.RSTextFieldIconOne" name="rSTextFieldIconOne1">
+    <Component class="RSMaterialComponent.RSTextFieldIconOne" name="txtBusqueda">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ca" green="b1" red="67" type="rgb"/>
@@ -216,7 +216,7 @@
         <Property name="placeholder" type="java.lang.String" value="Busqueda"/>
       </Properties>
       <Events>
-        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTextFieldIconOne1KeyReleased"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtBusquedaKeyReleased"/>
       </Events>
     </Component>
     <Component class="RSMaterialComponent.RSComboBox" name="jCBTipoBusqueda">
