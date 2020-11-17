@@ -35,7 +35,6 @@ public class Recibidos extends javax.swing.JPanel
         rSButtonIcon_new1 = new newscomponents.RSButtonIcon_new();
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
         rSButtonIcon_new2 = new newscomponents.RSButtonIcon_new();
-        rSButtonIcon_new5 = new newscomponents.RSButtonIcon_new();
         rSButtonIcon_new4 = new newscomponents.RSButtonIcon_new();
         pnlSlider = new newscomponents.RSPanelEffect();
         tabContenidoRec1 = new vista.paquetes.tabContenidoRec();
@@ -80,22 +79,6 @@ public class Recibidos extends javax.swing.JPanel
             }
         });
 
-        rSButtonIcon_new5.setBackground(new java.awt.Color(255, 255, 255));
-        rSButtonIcon_new5.setText("Buscar paquete");
-        rSButtonIcon_new5.setBackgroundHover(new java.awt.Color(0, 153, 153));
-        rSButtonIcon_new5.setForegroundIcon(new java.awt.Color(0, 102, 0));
-        rSButtonIcon_new5.setForegroundText(new java.awt.Color(0, 0, 0));
-        rSButtonIcon_new5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        rSButtonIcon_new5.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.REMOVE_RED_EYE);
-        rSButtonIcon_new5.setRound(10);
-        rSButtonIcon_new5.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                rSButtonIcon_new5ActionPerformed(evt);
-            }
-        });
-
         rSButtonIcon_new4.setBackground(new java.awt.Color(255, 255, 255));
         rSButtonIcon_new4.setText("Modificar paquete");
         rSButtonIcon_new4.setBackgroundHover(new java.awt.Color(0, 153, 153));
@@ -123,13 +106,11 @@ public class Recibidos extends javax.swing.JPanel
                 .addComponent(rSButtonIcon_new1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(294, 294, 294)
+                .addGap(414, 414, 414)
                 .addComponent(rSButtonIcon_new2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(48, 48, 48)
                 .addComponent(rSButtonIcon_new4, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(rSButtonIcon_new5, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(615, Short.MAX_VALUE))
+                .addContainerGap(721, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,7 +122,6 @@ public class Recibidos extends javax.swing.JPanel
                 .addGap(7, 7, 7)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rSButtonIcon_new2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButtonIcon_new5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSButtonIcon_new4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
@@ -183,11 +163,6 @@ public class Recibidos extends javax.swing.JPanel
         // TODO add your handling code here:
     }//GEN-LAST:event_rSButtonIcon_new4ActionPerformed
 
-    private void rSButtonIcon_new5ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rSButtonIcon_new5ActionPerformed
-    {//GEN-HEADEREND:event_rSButtonIcon_new5ActionPerformed
-        
-    }//GEN-LAST:event_rSButtonIcon_new5ActionPerformed
-
     private void rSButtonIcon_new1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rSButtonIcon_new1ActionPerformed
     {//GEN-HEADEREND:event_rSButtonIcon_new1ActionPerformed
         Altas vtn = new Altas();
@@ -202,7 +177,6 @@ public class Recibidos extends javax.swing.JPanel
     private newscomponents.RSButtonIcon_new rSButtonIcon_new1;
     private newscomponents.RSButtonIcon_new rSButtonIcon_new2;
     private newscomponents.RSButtonIcon_new rSButtonIcon_new4;
-    private newscomponents.RSButtonIcon_new rSButtonIcon_new5;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
     private vista.paquetes.tabContenidoRec tabContenidoRec1;
     // End of variables declaration//GEN-END:variables

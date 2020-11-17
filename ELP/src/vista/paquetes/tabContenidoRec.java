@@ -46,7 +46,7 @@ public class tabContenidoRec extends javax.swing.JPanel
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPaquetesRec = new RSMaterialComponent.RSTableMetroCustom();
-        rSTextFieldIconOne1 = new RSMaterialComponent.RSTextFieldIconOne();
+        txtBusquedaRec = new RSMaterialComponent.RSTextFieldIconOne();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -92,13 +92,13 @@ public class tabContenidoRec extends javax.swing.JPanel
         tblPaquetesRec.setSelectionBackground(new java.awt.Color(0, 153, 204));
         jScrollPane1.setViewportView(tblPaquetesRec);
 
-        rSTextFieldIconOne1.setForeground(new java.awt.Color(103, 177, 202));
-        rSTextFieldIconOne1.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldIconOne1.setColorIcon(new java.awt.Color(103, 177, 202));
-        rSTextFieldIconOne1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        rSTextFieldIconOne1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        rSTextFieldIconOne1.setPhColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldIconOne1.setPlaceholder("Busqueda");
+        txtBusquedaRec.setForeground(new java.awt.Color(103, 177, 202));
+        txtBusquedaRec.setBorderColor(new java.awt.Color(103, 177, 202));
+        txtBusquedaRec.setColorIcon(new java.awt.Color(103, 177, 202));
+        txtBusquedaRec.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        txtBusquedaRec.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtBusquedaRec.setPhColor(new java.awt.Color(103, 177, 202));
+        txtBusquedaRec.setPlaceholder("Busqueda");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -110,14 +110,14 @@ public class tabContenidoRec extends javax.swing.JPanel
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(473, 473, 473)
-                .addComponent(rSTextFieldIconOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtBusquedaRec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(rSTextFieldIconOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtBusquedaRec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -127,7 +127,7 @@ public class tabContenidoRec extends javax.swing.JPanel
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private RSMaterialComponent.RSTextFieldIconOne rSTextFieldIconOne1;
     public static RSMaterialComponent.RSTableMetroCustom tblPaquetesRec;
+    public static RSMaterialComponent.RSTextFieldIconOne txtBusquedaRec;
     // End of variables declaration//GEN-END:variables
 }

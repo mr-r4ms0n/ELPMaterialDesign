@@ -8,7 +8,6 @@ package vista.paquetes;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
-import rojeru_san.complementos.RSEffectFade;
 import rojeru_san.complementos.RSUtilities;
 /**
  *
@@ -23,7 +22,6 @@ public class Altas extends javax.swing.JDialog
     public Altas()
     {
         initComponents();
-        RSEffectFade.setFadeWindowIn(this, 30, 0.1f);
         RSUtilities.setOpaqueWindow(this, false);
         RSUtilities.setOpacityComponent(this.jPFondo, 150);
         setLocationRelativeTo(null);
