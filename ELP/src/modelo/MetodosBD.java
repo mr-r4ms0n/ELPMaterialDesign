@@ -27,6 +27,72 @@ public class MetodosBD
     private static PreparedStatement sentencia = null; //la usaremos para manejar las consultas provenientes de la BD
     private static ResultSet resultado = null;
 
+    /**
+     * Recibe objeto de tipo Paqs de para realizar la modificacion en la base de
+     * datos, OBJ ya debe tener dentro del numero de guia
+     *
+     * @param obj Contiene todos los datos que se van modificar
+     * @param opc OPC 1 == Modifica un paquete recibido que aun no es enviado,
+     * esta opcion se ejecuta al seleccionar la fila que quieres modificar y
+     * rellenar el formulario con las correspodientes modificaciones............
+     * OPC 2 == Ejecuta unicamente la modificacion de la fecha de entrega, esta
+     * opcion se ejecuta cuando seleccionas un paquete y presionas el boton de
+     * enviar
+     */
+    public static void modificacion(Paqs obj, int opc)
+    {
+        try
+        {
+            conexionBD = ConexionBD.getConection();
+            switch (opc)
+            {
+                case 1: //Caso de modificar un paquete recibido
+                    //1ero modifico los datos del paquete de la tabla paquetes
+                    sentencia = conexionBD.prepareStatement("UPDATE paquetes SET peso = ?, altura = ?, ancho = ?, profundidad = ?, precio = ? WHERE num_guia = ?");
+                    sentencia.setDouble(1, obj.getPeso());
+                    sentencia.setDouble(2, obj.getAltura());
+                    sentencia.setDouble(3, obj.getAncho());
+                    sentencia.setDouble(4, obj.getProfundidad());
+                    sentencia.setDouble(5, obj.getPrecio());
+                    sentencia.setDouble(6, obj.getNum_guia());
+                    int f = sentencia.executeUpdate();
+                    if (f > 0)
+                    {
+                        System.out.println("Modificaciones del paquete guardados con exito");
+                    } else
+                    {
+                        System.out.println("Modificaciones del paquete NO REALIZADOS");
+                    }
+                    //2do modificacion de los nombres del paquete
+
+                    break;
+                case 2: //Caso de enviar un paquete recibido
+                    sentencia = conexionBD.prepareStatement("UPDATE paquetes SET fecha_ent = ? WHERE num_guia = ?");
+                    sentencia.setString(1, obj.getFchEnt());
+                    sentencia.setDouble(2, obj.getNum_guia());
+                    int ff = sentencia.executeUpdate();
+                    if (ff > 0)
+                    {
+                        System.out.println("Paquete enviado con exito");
+                    } else
+                    {
+                        System.out.println("NO se pudo ENVIAR el paquete");
+                    }
+                    break;
+            }
+        } catch (Exception e)
+        {
+        } finally
+        {
+            try
+            {
+                conexionBD.close();
+            } catch (Exception e)
+            {
+            }
+        }
+    }
+
     public static int ultimoRegistro()
     {
         int n = 0;
@@ -324,13 +390,13 @@ public class MetodosBD
             }
 
             conexionBD.close();
-        } catch (Exception e)
+        } catch (SQLException e)
         {
             System.out.println("Error al buscar " + e);
             try
             {
                 conexionBD.close();
-            } catch (Exception xe)
+            } catch (SQLException xe)
             {
             }
         }

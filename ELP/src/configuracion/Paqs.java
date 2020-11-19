@@ -12,7 +12,7 @@ package configuracion;
 public class Paqs
 {
 
-    int num_guia;
+    private int num_guia;
     private String eNombre;
     private String eApP;
     private String eApM;
@@ -354,6 +354,22 @@ public class Paqs
     public void setCiudad(String ciudad)
     {
         this.ciudad = ciudad;
+    }
+
+    /**
+     * @return the num_guia
+     */
+    public int getNum_guia()
+    {
+        return num_guia;
+    }
+
+    /**
+     * @param num_guia the num_guia to set
+     */
+    public void setNum_guia(int num_guia)
+    {
+        this.num_guia = num_guia;
     }
 
 }
