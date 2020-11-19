@@ -54,7 +54,7 @@ public class MetodosBD
                     sentencia.setDouble(3, obj.getAncho());
                     sentencia.setDouble(4, obj.getProfundidad());
                     sentencia.setDouble(5, obj.getPrecio());
-                    sentencia.setDouble(6, obj.getNum_guia());
+                    sentencia.setInt(6, obj.getNum_guia());
                     int f = sentencia.executeUpdate();
                     if (f > 0)
                     {
@@ -69,7 +69,7 @@ public class MetodosBD
                 case 2: //Caso de enviar un paquete recibido
                     sentencia = conexionBD.prepareStatement("UPDATE paquetes SET fecha_ent = ? WHERE num_guia = ?");
                     sentencia.setString(1, obj.getFchEnt());
-                    sentencia.setDouble(2, obj.getNum_guia());
+                    sentencia.setInt(2, obj.getNum_guia());
                     int ff = sentencia.executeUpdate();
                     if (ff > 0)
                     {

@@ -26,7 +26,7 @@ public class tabContenidoEnv extends javax.swing.JPanel
         listarPaquetes(tblPaquetesEnv);
     }
 
-    public void listarPaquetes(RSTableMetroCustom tabla)
+    public static void listarPaquetes(RSTableMetroCustom tabla)
     {
         MetodosBD.consultaBD(2, tabla);
         //Funciones_aux.getTable(rs, tabla, arr);
