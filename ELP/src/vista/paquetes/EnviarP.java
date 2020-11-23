@@ -5,6 +5,7 @@
  */
 package vista.paquetes;
 
+import PCalendario.CCalendario;
 import configuracion.Paqs;
 import java.awt.Color;
 import java.awt.Shape;
@@ -39,6 +40,7 @@ public class EnviarP extends javax.swing.JDialog
         vtn.setShape(forma);
         rSTFNumeroGuia.setText(num_guia);
         jLabel1.setVisible(false);
+        vLabelErrEnvioFecha.setVisible(false);
     }
 
     public EnviarP()
@@ -70,7 +72,7 @@ public class EnviarP extends javax.swing.JDialog
         btnCerrarAltas8 = new RSMaterialComponent.RSButtonIconOne();
         jLabel4 = new javax.swing.JLabel();
         rSTFFechaEnv = new RSMaterialComponent.RSTextFieldOne();
-        jLabel11 = new javax.swing.JLabel();
+        vLabelErrEnvioFecha = new javax.swing.JLabel();
         btnCerrarAltas7 = new RSMaterialComponent.RSButtonIconOne();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -183,9 +185,28 @@ public class EnviarP extends javax.swing.JDialog
         rSTFFechaEnv.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
         rSTFFechaEnv.setPhColor(new java.awt.Color(0, 0, 0));
         rSTFFechaEnv.setPlaceholder("Ingrese la fecha de envio ##/##/####");
+        rSTFFechaEnv.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusLost(java.awt.event.FocusEvent evt)
+            {
+                rSTFFechaEnvFocusLost(evt);
+            }
+        });
+        rSTFFechaEnv.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyReleased(java.awt.event.KeyEvent evt)
+            {
+                rSTFFechaEnvKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                rSTFFechaEnvKeyTyped(evt);
+            }
+        });
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel11.setText("Error fecha");
+        vLabelErrEnvioFecha.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        vLabelErrEnvioFecha.setForeground(java.awt.Color.red);
+        vLabelErrEnvioFecha.setText("Error fecha");
 
         btnCerrarAltas7.setBackground(new java.awt.Color(0, 153, 204));
         btnCerrarAltas7.setToolTipText("Cerrar Formulario");
@@ -218,7 +239,7 @@ public class EnviarP extends javax.swing.JDialog
                     .addComponent(rSTFNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vLabelErrEnvioFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(rSTFFechaEnv, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -240,7 +261,7 @@ public class EnviarP extends javax.swing.JDialog
                                 .addComponent(rSTFFechaEnv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(vLabelErrEnvioFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCerrarAltas7, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
@@ -317,52 +338,77 @@ public class EnviarP extends javax.swing.JDialog
         dispose();
     }//GEN-LAST:event_btnCerrarAltas8ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[])
-    {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try
+    private void rSTFFechaEnvKeyReleased(java.awt.event.KeyEvent evt)//GEN-FIRST:event_rSTFFechaEnvKeyReleased
+    {//GEN-HEADEREND:event_rSTFFechaEnvKeyReleased
+        if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9')
         {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
+            if (evt.getKeyChar() != 8)
             {
-                if ("Nimbus".equals(info.getName()))
+                if (!mFormatoFechas(rSTFFechaEnv, evt))
                 {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
+                    vLabelErrEnvioFecha.setVisible(true);
+                } else
+                {
+                    vLabelErrEnvioFecha.setVisible(false);
                 }
             }
-        } catch (ClassNotFoundException ex)
-        {
-            java.util.logging.Logger.getLogger(EnviarP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex)
-        {
-            java.util.logging.Logger.getLogger(EnviarP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex)
-        {
-            java.util.logging.Logger.getLogger(EnviarP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex)
-        {
-            java.util.logging.Logger.getLogger(EnviarP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+    }//GEN-LAST:event_rSTFFechaEnvKeyReleased
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable()
+    private void rSTFFechaEnvKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_rSTFFechaEnvKeyTyped
+    {//GEN-HEADEREND:event_rSTFFechaEnvKeyTyped
+        if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9')
         {
-            public void run()
+            if (rSTFFechaEnv.getText().length() > 9)
             {
-                new EnviarP().setVisible(true);
+                evt.consume();
             }
-        });
+        } else
+        {
+            evt.consume();
+        }
+    }//GEN-LAST:event_rSTFFechaEnvKeyTyped
+
+    private void rSTFFechaEnvFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_rSTFFechaEnvFocusLost
+    {//GEN-HEADEREND:event_rSTFFechaEnvFocusLost
+        try
+        {
+            new CCalendario().mValidarFecha(rSTFFechaEnv.getText());
+            vLabelErrEnvioFecha.setVisible(false);
+        } catch (Exception e)
+        {
+            vLabelErrEnvioFecha.setVisible(true);
+        }
+    }//GEN-LAST:event_rSTFFechaEnvFocusLost
+
+    /**
+     * Verificar la fecha si esta escrita correctamente
+     *
+     * @param vTextField TextFile el cual se va a adquierir los datos
+     * @param vEvt Evento del TextFile
+     */
+    protected boolean mFormatoFechas(javax.swing.JTextField vTextField, java.awt.event.KeyEvent vEvt)
+    {
+        try
+        {
+            switch (vTextField.getText().length())
+            {
+                case 2://d
+                    vTextField.setText(vTextField.getText() + "/");
+                    break;
+                case 5://m
+                    vTextField.setText(vTextField.getText() + "/");
+                    break;
+                case 10:                            //a
+                    return (new CCalendario().mValidarFecha(vTextField.getText()));
+                default:
+            }
+        } catch (Exception e)
+        {
+            System.err.println("Error al meter el formato dd/mm/aaaa");
+        }
+
+        return true;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -370,7 +416,6 @@ public class EnviarP extends javax.swing.JDialog
     private RSMaterialComponent.RSButtonIconOne btnCerrarAltas7;
     private RSMaterialComponent.RSButtonIconOne btnCerrarAltas8;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
@@ -382,5 +427,6 @@ public class EnviarP extends javax.swing.JDialog
     private RSMaterialComponent.RSPanelBorder rSPanelPaquete;
     private RSMaterialComponent.RSTextFieldOne rSTFFechaEnv;
     private RSMaterialComponent.RSTextFieldOne rSTFNumeroGuia;
+    private javax.swing.JLabel vLabelErrEnvioFecha;
     // End of variables declaration//GEN-END:variables
 }

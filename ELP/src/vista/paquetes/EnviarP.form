@@ -107,7 +107,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel11" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                              <Component id="vLabelErrEnvioFecha" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <Component id="rSTFFechaEnv" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
                           </Group>
@@ -135,7 +135,7 @@
                                       <Component id="jLabel4" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel11" min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="vLabelErrEnvioFecha" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -341,11 +341,19 @@
                     </Property>
                     <Property name="placeholder" type="java.lang.String" value="Ingrese la fecha de envio ##/##/####"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="rSTFFechaEnvFocusLost"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTFFechaEnvKeyReleased"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTFFechaEnvKeyTyped"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel11">
+                <Component class="javax.swing.JLabel" name="vLabelErrEnvioFecha">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Error fecha"/>
                   </Properties>
