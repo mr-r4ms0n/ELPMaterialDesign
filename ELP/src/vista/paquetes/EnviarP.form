@@ -96,7 +96,7 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnCerrarAltas7" min="-2" pref="56" max="-2" attributes="0"/>
+                          <Component id="btnGuardarEnvio" min="-2" pref="56" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -139,7 +139,7 @@
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnCerrarAltas7" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="btnGuardarEnvio" min="-2" pref="55" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -358,7 +358,7 @@
                     <Property name="text" type="java.lang.String" value="Error fecha"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSButtonIconOne" name="btnCerrarAltas7">
+                <Component class="RSMaterialComponent.RSButtonIconOne" name="btnGuardarEnvio">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="99" red="0" type="rgb"/>
@@ -373,7 +373,8 @@
                     <Property name="round" type="int" value="15"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCerrarAltas7ActionPerformed"/>
+                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnGuardarEnvioMouseEntered"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarEnvioActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

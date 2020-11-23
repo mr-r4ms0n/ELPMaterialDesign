@@ -1519,7 +1519,6 @@ public class Altas extends javax.swing.JDialog
         {
             vLabelErrPaqFecRec.setVisible(true);
         }
-        mHabilitaBtnPaqNext();
     }//GEN-LAST:event_vTextFilePaqFecRecepcionFocusLost
 
     private void btnPaqueteNextMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_btnPaqueteNextMouseEntered

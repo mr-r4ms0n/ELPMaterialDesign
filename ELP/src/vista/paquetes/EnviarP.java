@@ -73,7 +73,7 @@ public class EnviarP extends javax.swing.JDialog
         jLabel4 = new javax.swing.JLabel();
         rSTFFechaEnv = new RSMaterialComponent.RSTextFieldOne();
         vLabelErrEnvioFecha = new javax.swing.JLabel();
-        btnCerrarAltas7 = new RSMaterialComponent.RSButtonIconOne();
+        btnGuardarEnvio = new RSMaterialComponent.RSButtonIconOne();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setUndecorated(true);
@@ -208,16 +208,23 @@ public class EnviarP extends javax.swing.JDialog
         vLabelErrEnvioFecha.setForeground(java.awt.Color.red);
         vLabelErrEnvioFecha.setText("Error fecha");
 
-        btnCerrarAltas7.setBackground(new java.awt.Color(0, 153, 204));
-        btnCerrarAltas7.setToolTipText("Cerrar Formulario");
-        btnCerrarAltas7.setBackgroundHover(new java.awt.Color(103, 177, 202));
-        btnCerrarAltas7.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SAVE);
-        btnCerrarAltas7.setRound(15);
-        btnCerrarAltas7.addActionListener(new java.awt.event.ActionListener()
+        btnGuardarEnvio.setBackground(new java.awt.Color(0, 153, 204));
+        btnGuardarEnvio.setToolTipText("Cerrar Formulario");
+        btnGuardarEnvio.setBackgroundHover(new java.awt.Color(103, 177, 202));
+        btnGuardarEnvio.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SAVE);
+        btnGuardarEnvio.setRound(15);
+        btnGuardarEnvio.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                btnGuardarEnvioMouseEntered(evt);
+            }
+        });
+        btnGuardarEnvio.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                btnCerrarAltas7ActionPerformed(evt);
+                btnGuardarEnvioActionPerformed(evt);
             }
         });
 
@@ -230,7 +237,7 @@ public class EnviarP extends javax.swing.JDialog
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelPaqueteLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCerrarAltas7, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGuardarEnvio, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(94, 94, 94))
             .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
@@ -263,7 +270,7 @@ public class EnviarP extends javax.swing.JDialog
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(vLabelErrEnvioFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCerrarAltas7, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGuardarEnvio, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
 
@@ -314,8 +321,8 @@ public class EnviarP extends javax.swing.JDialog
         dispose();
     }//GEN-LAST:event_btnCerrarAltasActionPerformed
 
-    private void btnCerrarAltas7ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCerrarAltas7ActionPerformed
-    {//GEN-HEADEREND:event_btnCerrarAltas7ActionPerformed
+    private void btnGuardarEnvioActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnGuardarEnvioActionPerformed
+    {//GEN-HEADEREND:event_btnGuardarEnvioActionPerformed
         if (!rSTFFechaEnv.getText().isEmpty())
         {
             Paqs obj = new Paqs();
@@ -331,7 +338,7 @@ public class EnviarP extends javax.swing.JDialog
             jLabel1.setText("Fecha invalida");
         }
 
-    }//GEN-LAST:event_btnCerrarAltas7ActionPerformed
+    }//GEN-LAST:event_btnGuardarEnvioActionPerformed
 
     private void btnCerrarAltas8ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCerrarAltas8ActionPerformed
     {//GEN-HEADEREND:event_btnCerrarAltas8ActionPerformed
@@ -375,11 +382,24 @@ public class EnviarP extends javax.swing.JDialog
         {
             new CCalendario().mValidarFecha(rSTFFechaEnv.getText());
             vLabelErrEnvioFecha.setVisible(false);
+            btnGuardarEnvio.setEnabled(true);
         } catch (Exception e)
         {
             vLabelErrEnvioFecha.setVisible(true);
         }
     }//GEN-LAST:event_rSTFFechaEnvFocusLost
+
+    private void btnGuardarEnvioMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_btnGuardarEnvioMouseEntered
+    {//GEN-HEADEREND:event_btnGuardarEnvioMouseEntered
+        rSTFFechaEnvFocusLost(null);
+        if (vLabelErrEnvioFecha.isVisible())
+        {
+            btnGuardarEnvio.setEnabled(false);
+        }else
+        {
+            btnGuardarEnvio.setEnabled(true);
+        }
+    }//GEN-LAST:event_btnGuardarEnvioMouseEntered
 
     /**
      * Verificar la fecha si esta escrita correctamente
@@ -413,8 +433,8 @@ public class EnviarP extends javax.swing.JDialog
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private RSMaterialComponent.RSButtonIconOne btnCerrarAltas;
-    private RSMaterialComponent.RSButtonIconOne btnCerrarAltas7;
     private RSMaterialComponent.RSButtonIconOne btnCerrarAltas8;
+    private RSMaterialComponent.RSButtonIconOne btnGuardarEnvio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

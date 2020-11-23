@@ -86,6 +86,9 @@
                   <Color blue="cc" green="99" red="0" type="rgb"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="rSPanelPaqueteMouseMoved"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -96,7 +99,7 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnCerrarAltas7" min="-2" pref="56" max="-2" attributes="0"/>
+                          <Component id="btnGuardarMod" min="-2" pref="56" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -108,27 +111,27 @@
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel18" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                                                  <Component id="rSTFPrecio" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                                                  <Component id="vLabelErrModCosto" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                                                  <Component id="vTextFileModCosto" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="433" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                      <Component id="jLabel11" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="rSTFPeso" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                                                      <Component id="vLabelErrModPeso" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="vTextFileModPeso" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="rSTFAltura" alignment="0" pref="0" max="32767" attributes="0"/>
+                                                  <Component id="vTextFileModAltura" alignment="0" pref="0" max="32767" attributes="0"/>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Component id="jLabel12" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                                                  <Component id="vLabelErrModAltura" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
@@ -136,8 +139,8 @@
                                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                                       <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Component id="jLabel14" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                                                  <Component id="rSTFAncho" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
+                                                  <Component id="vLabelErrModAncho" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                                                  <Component id="vTextFileModAncho" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
@@ -145,8 +148,8 @@
                                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Component id="jLabel16" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
-                                                  <Component id="rSTFProfundidad" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
+                                                  <Component id="vLabelErrModProfundidad" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                                                  <Component id="vTextFileModProfundidad" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -178,47 +181,47 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                          <Component id="rSTFPeso" min="-2" max="-2" attributes="0"/>
+                                          <Component id="vTextFileModPeso" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel4" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel11" min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="vLabelErrModPeso" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel13" min="-2" pref="18" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rSTFAncho" min="-2" max="-2" attributes="0"/>
+                                  <Component id="vTextFileModAncho" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel14" min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="vLabelErrModAncho" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel5" min="-2" pref="18" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rSTFAltura" min="-2" max="-2" attributes="0"/>
+                                  <Component id="vTextFileModAltura" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel12" min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="vLabelErrModAltura" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jLabel15" min="-2" pref="18" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="rSTFProfundidad" min="-2" max="-2" attributes="0"/>
+                                  <Component id="vTextFileModProfundidad" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel16" min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="vLabelErrModProfundidad" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                  <Component id="rSTFPrecio" min="-2" max="-2" attributes="0"/>
+                                  <Component id="vTextFileModCosto" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel17" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel18" min="-2" pref="18" max="-2" attributes="0"/>
+                          <Component id="vLabelErrModCosto" min="-2" pref="18" max="-2" attributes="0"/>
                           <EmptySpace pref="33" max="32767" attributes="0"/>
-                          <Component id="btnCerrarAltas7" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="btnGuardarMod" min="-2" pref="55" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -400,7 +403,7 @@
                     <Property name="text" type="java.lang.String" value="Peso"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFPeso">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFileModPeso">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -416,6 +419,10 @@
                     </Property>
                     <Property name="placeholder" type="java.lang.String" value="Ingrese el peso"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileModPesoFocusLost"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileModPesoKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
@@ -425,7 +432,7 @@
                     <Property name="text" type="java.lang.String" value="Altura"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFAltura">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFileModAltura">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -441,24 +448,34 @@
                     </Property>
                     <Property name="placeholder" type="java.lang.String" value="Ingrese la altura"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileModAlturaFocusLost"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileModAlturaKeyTyped"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel11">
+                <Component class="javax.swing.JLabel" name="vLabelErrModPeso">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Error peso"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel12">
+                <Component class="javax.swing.JLabel" name="vLabelErrModAltura">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Error altura"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFAncho">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFileModAncho">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -474,6 +491,10 @@
                     </Property>
                     <Property name="placeholder" type="java.lang.String" value="Ingrese el ancho"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileModAnchoFocusLost"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileModAnchoKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel13">
                   <Properties>
@@ -483,15 +504,18 @@
                     <Property name="text" type="java.lang.String" value="Ancho"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel14">
+                <Component class="javax.swing.JLabel" name="vLabelErrModAncho">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Error altura"/>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Error ancho"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFProfundidad">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFileModProfundidad">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -507,6 +531,10 @@
                     </Property>
                     <Property name="placeholder" type="java.lang.String" value="Ingrese la profundidad"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileModProfundidadFocusLost"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileModProfundidadKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel15">
                   <Properties>
@@ -516,15 +544,18 @@
                     <Property name="text" type="java.lang.String" value="Profundidad"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel16">
+                <Component class="javax.swing.JLabel" name="vLabelErrModProfundidad">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Profundidad"/>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Error profundidad"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFPrecio">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFileModCosto">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -540,6 +571,10 @@
                     </Property>
                     <Property name="placeholder" type="java.lang.String" value="Ingrese costo de envio"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileModCostoFocusLost"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileModCostoKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel17">
                   <Properties>
@@ -549,20 +584,23 @@
                     <Property name="text" type="java.lang.String" value="Costo de envio $"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel18">
+                <Component class="javax.swing.JLabel" name="vLabelErrModCosto">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
                     </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Error costo"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSButtonIconOne" name="btnCerrarAltas7">
+                <Component class="RSMaterialComponent.RSButtonIconOne" name="btnGuardarMod">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="99" red="0" type="rgb"/>
                     </Property>
-                    <Property name="toolTipText" type="java.lang.String" value="Cerrar Formulario"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Guardar modificaciones"/>
                     <Property name="backgroundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ca" green="b1" red="67" type="rgb"/>
                     </Property>
@@ -572,7 +610,8 @@
                     <Property name="round" type="int" value="15"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCerrarAltas7ActionPerformed"/>
+                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnGuardarModMouseEntered"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarModActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

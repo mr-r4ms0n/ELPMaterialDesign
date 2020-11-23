@@ -9,6 +9,8 @@ import configuracion.Paqs;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import modelo.MetodosBD;
 import rojeru_san.complementos.RSUtilities;
 import vista.confirmaciones.ConfirmaAcc;
@@ -43,11 +45,11 @@ public class Modificaciones extends javax.swing.JDialog
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
         vtn.setShape(forma);
         rSTFNumeroGuia.setText(num_guia);
-        rSTFPeso.setText(peso);
-        rSTFAltura.setText(altura);
-        rSTFAncho.setText(ancho);
-        rSTFProfundidad.setText(profundidad);
-        rSTFPrecio.setText(precio);
+        vTextFileModPeso.setText(peso);
+        vTextFileModAltura.setText(altura);
+        vTextFileModAncho.setText(ancho);
+        vTextFileModProfundidad.setText(profundidad);
+        vTextFileModCosto.setText(precio);
     }
 
     public Modificaciones()
@@ -78,21 +80,21 @@ public class Modificaciones extends javax.swing.JDialog
         jLabel8 = new javax.swing.JLabel();
         btnCerrarAltas8 = new RSMaterialComponent.RSButtonIconOne();
         jLabel4 = new javax.swing.JLabel();
-        rSTFPeso = new RSMaterialComponent.RSTextFieldOne();
+        vTextFileModPeso = new RSMaterialComponent.RSTextFieldOne();
         jLabel5 = new javax.swing.JLabel();
-        rSTFAltura = new RSMaterialComponent.RSTextFieldOne();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        rSTFAncho = new RSMaterialComponent.RSTextFieldOne();
+        vTextFileModAltura = new RSMaterialComponent.RSTextFieldOne();
+        vLabelErrModPeso = new javax.swing.JLabel();
+        vLabelErrModAltura = new javax.swing.JLabel();
+        vTextFileModAncho = new RSMaterialComponent.RSTextFieldOne();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        rSTFProfundidad = new RSMaterialComponent.RSTextFieldOne();
+        vLabelErrModAncho = new javax.swing.JLabel();
+        vTextFileModProfundidad = new RSMaterialComponent.RSTextFieldOne();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        rSTFPrecio = new RSMaterialComponent.RSTextFieldOne();
+        vLabelErrModProfundidad = new javax.swing.JLabel();
+        vTextFileModCosto = new RSMaterialComponent.RSTextFieldOne();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        btnCerrarAltas7 = new RSMaterialComponent.RSButtonIconOne();
+        vLabelErrModCosto = new javax.swing.JLabel();
+        btnGuardarMod = new RSMaterialComponent.RSButtonIconOne();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setUndecorated(true);
@@ -101,6 +103,13 @@ public class Modificaciones extends javax.swing.JDialog
 
         rSPanelPaquete.setBackground(new java.awt.Color(255, 255, 255));
         rSPanelPaquete.setBgBorder(new java.awt.Color(0, 153, 204));
+        rSPanelPaquete.addMouseMotionListener(new java.awt.event.MouseMotionAdapter()
+        {
+            public void mouseMoved(java.awt.event.MouseEvent evt)
+            {
+                rSPanelPaqueteMouseMoved(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel2.setText("Numero de guia");
@@ -197,73 +206,155 @@ public class Modificaciones extends javax.swing.JDialog
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel4.setText("Peso");
 
-        rSTFPeso.setForeground(new java.awt.Color(0, 0, 0));
-        rSTFPeso.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTFPeso.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTFPeso.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTFPeso.setPlaceholder("Ingrese el peso");
+        vTextFileModPeso.setForeground(new java.awt.Color(0, 0, 0));
+        vTextFileModPeso.setBorderColor(new java.awt.Color(103, 177, 202));
+        vTextFileModPeso.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        vTextFileModPeso.setPhColor(new java.awt.Color(0, 0, 0));
+        vTextFileModPeso.setPlaceholder("Ingrese el peso");
+        vTextFileModPeso.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusLost(java.awt.event.FocusEvent evt)
+            {
+                vTextFileModPesoFocusLost(evt);
+            }
+        });
+        vTextFileModPeso.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                vTextFileModPesoKeyTyped(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel5.setText("Altura");
 
-        rSTFAltura.setForeground(new java.awt.Color(0, 0, 0));
-        rSTFAltura.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTFAltura.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTFAltura.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTFAltura.setPlaceholder("Ingrese la altura");
+        vTextFileModAltura.setForeground(new java.awt.Color(0, 0, 0));
+        vTextFileModAltura.setBorderColor(new java.awt.Color(103, 177, 202));
+        vTextFileModAltura.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        vTextFileModAltura.setPhColor(new java.awt.Color(0, 0, 0));
+        vTextFileModAltura.setPlaceholder("Ingrese la altura");
+        vTextFileModAltura.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusLost(java.awt.event.FocusEvent evt)
+            {
+                vTextFileModAlturaFocusLost(evt);
+            }
+        });
+        vTextFileModAltura.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                vTextFileModAlturaKeyTyped(evt);
+            }
+        });
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel11.setText("Error peso");
+        vLabelErrModPeso.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        vLabelErrModPeso.setForeground(java.awt.Color.red);
+        vLabelErrModPeso.setText("Error peso");
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel12.setText("Error altura");
+        vLabelErrModAltura.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        vLabelErrModAltura.setForeground(java.awt.Color.red);
+        vLabelErrModAltura.setText("Error altura");
 
-        rSTFAncho.setForeground(new java.awt.Color(0, 0, 0));
-        rSTFAncho.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTFAncho.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTFAncho.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTFAncho.setPlaceholder("Ingrese el ancho");
+        vTextFileModAncho.setForeground(new java.awt.Color(0, 0, 0));
+        vTextFileModAncho.setBorderColor(new java.awt.Color(103, 177, 202));
+        vTextFileModAncho.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        vTextFileModAncho.setPhColor(new java.awt.Color(0, 0, 0));
+        vTextFileModAncho.setPlaceholder("Ingrese el ancho");
+        vTextFileModAncho.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusLost(java.awt.event.FocusEvent evt)
+            {
+                vTextFileModAnchoFocusLost(evt);
+            }
+        });
+        vTextFileModAncho.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                vTextFileModAnchoKeyTyped(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel13.setText("Ancho");
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel14.setText("Error altura");
+        vLabelErrModAncho.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        vLabelErrModAncho.setForeground(java.awt.Color.red);
+        vLabelErrModAncho.setText("Error ancho");
 
-        rSTFProfundidad.setForeground(new java.awt.Color(0, 0, 0));
-        rSTFProfundidad.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTFProfundidad.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTFProfundidad.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTFProfundidad.setPlaceholder("Ingrese la profundidad");
+        vTextFileModProfundidad.setForeground(new java.awt.Color(0, 0, 0));
+        vTextFileModProfundidad.setBorderColor(new java.awt.Color(103, 177, 202));
+        vTextFileModProfundidad.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        vTextFileModProfundidad.setPhColor(new java.awt.Color(0, 0, 0));
+        vTextFileModProfundidad.setPlaceholder("Ingrese la profundidad");
+        vTextFileModProfundidad.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusLost(java.awt.event.FocusEvent evt)
+            {
+                vTextFileModProfundidadFocusLost(evt);
+            }
+        });
+        vTextFileModProfundidad.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                vTextFileModProfundidadKeyTyped(evt);
+            }
+        });
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel15.setText("Profundidad");
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel16.setText("Profundidad");
+        vLabelErrModProfundidad.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        vLabelErrModProfundidad.setForeground(java.awt.Color.red);
+        vLabelErrModProfundidad.setText("Error profundidad");
 
-        rSTFPrecio.setForeground(new java.awt.Color(0, 0, 0));
-        rSTFPrecio.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTFPrecio.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTFPrecio.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTFPrecio.setPlaceholder("Ingrese costo de envio");
+        vTextFileModCosto.setForeground(new java.awt.Color(0, 0, 0));
+        vTextFileModCosto.setBorderColor(new java.awt.Color(103, 177, 202));
+        vTextFileModCosto.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        vTextFileModCosto.setPhColor(new java.awt.Color(0, 0, 0));
+        vTextFileModCosto.setPlaceholder("Ingrese costo de envio");
+        vTextFileModCosto.addFocusListener(new java.awt.event.FocusAdapter()
+        {
+            public void focusLost(java.awt.event.FocusEvent evt)
+            {
+                vTextFileModCostoFocusLost(evt);
+            }
+        });
+        vTextFileModCosto.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyTyped(java.awt.event.KeyEvent evt)
+            {
+                vTextFileModCostoKeyTyped(evt);
+            }
+        });
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel17.setText("Costo de envio $");
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel18.setText("Error costo");
+        vLabelErrModCosto.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        vLabelErrModCosto.setForeground(java.awt.Color.red);
+        vLabelErrModCosto.setText("Error costo");
 
-        btnCerrarAltas7.setBackground(new java.awt.Color(0, 153, 204));
-        btnCerrarAltas7.setToolTipText("Cerrar Formulario");
-        btnCerrarAltas7.setBackgroundHover(new java.awt.Color(103, 177, 202));
-        btnCerrarAltas7.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SAVE);
-        btnCerrarAltas7.setRound(15);
-        btnCerrarAltas7.addActionListener(new java.awt.event.ActionListener()
+        btnGuardarMod.setBackground(new java.awt.Color(0, 153, 204));
+        btnGuardarMod.setToolTipText("Guardar modificaciones");
+        btnGuardarMod.setBackgroundHover(new java.awt.Color(103, 177, 202));
+        btnGuardarMod.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SAVE);
+        btnGuardarMod.setRound(15);
+        btnGuardarMod.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseEntered(java.awt.event.MouseEvent evt)
+            {
+                btnGuardarModMouseEntered(evt);
+            }
+        });
+        btnGuardarMod.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                btnCerrarAltas7ActionPerformed(evt);
+                btnGuardarModActionPerformed(evt);
             }
         });
 
@@ -272,58 +363,56 @@ public class Modificaciones extends javax.swing.JDialog
         rSPanelPaqueteLayout.setHorizontalGroup(
             rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                        .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSTFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(433, 433, 433))
-                            .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(rSTFPeso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel4))
-                                .addGap(18, 18, 18)
-                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(rSTFAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel5))
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel13))
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSTFAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel15))
-                                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSTFProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelPaqueteLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCerrarAltas7, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGuardarMod, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(94, 94, 94))
             .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                .addGap(212, 212, 212)
                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(rSTFNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17)
+                            .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
+                                    .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(vLabelErrModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(vTextFileModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(433, 433, 433))
+                                .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
+                                    .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(vLabelErrModPeso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(vTextFileModPeso, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel4))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(vTextFileModAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                        .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
+                                            .addGap(6, 6, 6)
+                                            .addComponent(jLabel5))
+                                        .addComponent(vLabelErrModAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
+                                            .addGap(6, 6, 6)
+                                            .addComponent(jLabel13))
+                                        .addComponent(vLabelErrModAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(vTextFileModAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
+                                            .addGap(6, 6, 6)
+                                            .addComponent(jLabel15))
+                                        .addComponent(vLabelErrModProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(vTextFileModProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
+                        .addGap(212, 212, 212)
+                        .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(rSTFNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         rSPanelPaqueteLayout.setVerticalGroup(
@@ -340,38 +429,38 @@ public class Modificaciones extends javax.swing.JDialog
                         .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                                 .addGap(24, 24, 24)
-                                .addComponent(rSTFPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(vTextFileModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(vLabelErrModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTFAncho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(vTextFileModAncho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(vLabelErrModAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTFAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(vTextFileModAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(vLabelErrModAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rSTFProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(vTextFileModProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(vLabelErrModProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(28, 28, 28)
                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(rSTFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(vTextFileModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(vLabelErrModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(btnCerrarAltas7, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGuardarMod, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
 
@@ -422,15 +511,15 @@ public class Modificaciones extends javax.swing.JDialog
         dispose();
     }//GEN-LAST:event_btnCerrarAltasActionPerformed
 
-    private void btnCerrarAltas7ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCerrarAltas7ActionPerformed
-    {//GEN-HEADEREND:event_btnCerrarAltas7ActionPerformed
+    private void btnGuardarModActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnGuardarModActionPerformed
+    {//GEN-HEADEREND:event_btnGuardarModActionPerformed
         Paqs obj = new Paqs();
         obj.setNum_guia(Integer.parseInt(rSTFNumeroGuia.getText()));
-        obj.setPeso(Double.parseDouble(rSTFPeso.getText()));
-        obj.setAltura(Double.parseDouble(rSTFAltura.getText()));
-        obj.setAncho(Double.parseDouble(rSTFAncho.getText()));
-        obj.setProfundidad(Double.parseDouble(rSTFProfundidad.getText()));
-        obj.setPrecio(Double.parseDouble(rSTFPrecio.getText()));
+        obj.setPeso(Double.parseDouble(vTextFileModPeso.getText()));
+        obj.setAltura(Double.parseDouble(vTextFileModAltura.getText()));
+        obj.setAncho(Double.parseDouble(vTextFileModAncho.getText()));
+        obj.setProfundidad(Double.parseDouble(vTextFileModProfundidad.getText()));
+        obj.setPrecio(Double.parseDouble(vTextFileModCosto.getText()));
         ConfirmaAcc sure = new ConfirmaAcc("modificar");
         sure.setModal(true);
         sure.setVisible(true);
@@ -444,27 +533,188 @@ public class Modificaciones extends javax.swing.JDialog
             dispose();
         }
 
-    }//GEN-LAST:event_btnCerrarAltas7ActionPerformed
+    }//GEN-LAST:event_btnGuardarModActionPerformed
 
     private void btnCerrarAltas8ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCerrarAltas8ActionPerformed
     {//GEN-HEADEREND:event_btnCerrarAltas8ActionPerformed
         dispose();
     }//GEN-LAST:event_btnCerrarAltas8ActionPerformed
 
-    
+    private void vTextFileModPesoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModPesoKeyTyped
+    {//GEN-HEADEREND:event_vTextFileModPesoKeyTyped
+        if (!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9' || evt.getKeyChar() == '.'))
+        {
+            evt.consume();
+        }
+    }//GEN-LAST:event_vTextFileModPesoKeyTyped
+
+    private void vTextFileModPesoFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModPesoFocusLost
+    {//GEN-HEADEREND:event_vTextFileModPesoFocusLost
+        mValidarNumerosDouble(vTextFileModPeso, vLabelErrModPeso);
+    }//GEN-LAST:event_vTextFileModPesoFocusLost
+
+    private void vTextFileModAlturaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModAlturaKeyTyped
+    {//GEN-HEADEREND:event_vTextFileModAlturaKeyTyped
+        if (!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9' || evt.getKeyChar() == '.'))
+        {
+            evt.consume();
+        }
+    }//GEN-LAST:event_vTextFileModAlturaKeyTyped
+
+    private void vTextFileModAlturaFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModAlturaFocusLost
+    {//GEN-HEADEREND:event_vTextFileModAlturaFocusLost
+        mValidarNumerosDouble(vTextFileModAltura, vLabelErrModAltura);
+    }//GEN-LAST:event_vTextFileModAlturaFocusLost
+
+    private void vTextFileModAnchoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModAnchoKeyTyped
+    {//GEN-HEADEREND:event_vTextFileModAnchoKeyTyped
+        if (!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9' || evt.getKeyChar() == '.'))
+        {
+            evt.consume();
+        }
+    }//GEN-LAST:event_vTextFileModAnchoKeyTyped
+
+    private void vTextFileModAnchoFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModAnchoFocusLost
+    {//GEN-HEADEREND:event_vTextFileModAnchoFocusLost
+        mValidarNumerosDouble(vTextFileModAncho, vLabelErrModAncho);
+    }//GEN-LAST:event_vTextFileModAnchoFocusLost
+
+    private void vTextFileModProfundidadKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModProfundidadKeyTyped
+    {//GEN-HEADEREND:event_vTextFileModProfundidadKeyTyped
+        if (!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9' || evt.getKeyChar() == '.'))
+        {
+            evt.consume();
+        }
+    }//GEN-LAST:event_vTextFileModProfundidadKeyTyped
+
+    private void vTextFileModProfundidadFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModProfundidadFocusLost
+    {//GEN-HEADEREND:event_vTextFileModProfundidadFocusLost
+        mValidarNumerosDouble(vTextFileModProfundidad, vLabelErrModProfundidad);
+    }//GEN-LAST:event_vTextFileModProfundidadFocusLost
+
+    private void vTextFileModCostoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModCostoKeyTyped
+    {//GEN-HEADEREND:event_vTextFileModCostoKeyTyped
+        if (!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9' || evt.getKeyChar() == '.'))
+        {
+            evt.consume();
+        }
+    }//GEN-LAST:event_vTextFileModCostoKeyTyped
+
+    private void vTextFileModCostoFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModCostoFocusLost
+    {//GEN-HEADEREND:event_vTextFileModCostoFocusLost
+        mValidarNumerosDouble(vTextFileModCosto, vLabelErrModCosto);
+    }//GEN-LAST:event_vTextFileModCostoFocusLost
+
+    private void btnGuardarModMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_btnGuardarModMouseEntered
+    {//GEN-HEADEREND:event_btnGuardarModMouseEntered
+        mHabilitaBtnModNextMouseEntered();
+        vActivarVerificadorPaneMod = true;
+    }//GEN-LAST:event_btnGuardarModMouseEntered
+
+    private void rSPanelPaqueteMouseMoved(java.awt.event.MouseEvent evt)//GEN-FIRST:event_rSPanelPaqueteMouseMoved
+    {//GEN-HEADEREND:event_rSPanelPaqueteMouseMoved
+        if (vActivarVerificadorPaneMod)
+        {
+            mHabilitaBtnModNextMouseEntered();
+        }
+    }//GEN-LAST:event_rSPanelPaqueteMouseMoved
+
+    private boolean vActivarVerificadorPaneMod = false;
+
+    /**
+     * Habilita o deshabilita el boton Next verificando si los labels de error
+     * no esten visibles
+     */
+    protected void mHabilitaBtnModNext()
+    {
+        if (vLabelErrModAltura.isVisible() || vLabelErrModAncho.isVisible() || vLabelErrModCosto.isVisible()
+                || vLabelErrModPeso.isVisible() || vLabelErrModProfundidad.isVisible())
+        {
+            btnGuardarMod.setEnabled(false);
+        } else
+        {
+            btnGuardarMod.setEnabled(true);
+        }
+    }
+
+    /**
+     * Habilita o deshabilita el boton Next verificando si los labels de error
+     * no esten visibles activando el metodo para verificar cada TextFile
+     */
+    protected void mHabilitaBtnModNextMouseEntered()
+    {
+        vTextFileModAlturaFocusLost(null);
+        vTextFileModAnchoFocusLost(null);
+        vTextFileModCostoFocusLost(null);
+        vTextFileModPesoFocusLost(null);
+        vTextFileModProfundidadFocusLost(null);
+
+        if (vLabelErrModAltura.isVisible() || vLabelErrModAncho.isVisible() || vLabelErrModCosto.isVisible()
+                || vLabelErrModPeso.isVisible() || vLabelErrModProfundidad.isVisible())
+        {
+            btnGuardarMod.setEnabled(false);
+        } else
+        {
+            btnGuardarMod.setEnabled(true);
+        }
+    }
+
+    /**
+     * Valida el texto obtenido para verifcar si es correcto el dato ingresado:
+     * d+.d+ o d+
+     *
+     * @param vTextField TextFile el cual se va a adquierir los datos
+     * @param vLabelErr Label de error el que se va a mostrar
+     */
+    protected void mValidarNumerosDouble(javax.swing.JTextField vTextField, javax.swing.JLabel vLabelErr)
+    {
+        boolean vExistPunto = false;
+
+        for (int i = 0; i < vTextField.getText().length(); i++)
+        {
+            if (vTextField.getText().charAt(i) == '.')
+            {
+                vExistPunto = true;
+                break;
+            }
+        }
+        Pattern vPartern;
+        Pattern vParternValida;
+        if (vExistPunto)
+        {
+            vPartern = Pattern.compile("^[0-9]+\\.[0-9]+$");
+            vParternValida = Pattern.compile("^[0]+\\.[0]+$");
+        } else
+        {
+            vPartern = Pattern.compile("^[0-9]+$");
+            vParternValida = Pattern.compile("^[0]+$");
+        }
+        Matcher vMatcher = vPartern.matcher(vTextField.getText());
+        Matcher vMatcherValida = vParternValida.matcher(vTextField.getText());
+        if (vMatcher.matches())
+        {
+            if (!vMatcherValida.matches())
+            {
+                vLabelErr.setVisible(false);
+                mHabilitaBtnModNext();
+            } else
+            {
+                vLabelErr.setVisible(true);
+            }
+        } else
+        {
+            vLabelErr.setVisible(true);
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private RSMaterialComponent.RSButtonIconOne btnCerrarAltas;
-    private RSMaterialComponent.RSButtonIconOne btnCerrarAltas7;
     private RSMaterialComponent.RSButtonIconOne btnCerrarAltas8;
+    private RSMaterialComponent.RSButtonIconOne btnGuardarMod;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -475,11 +725,16 @@ public class Modificaciones extends javax.swing.JDialog
     private javax.swing.JPanel jPInteracturador;
     private javax.swing.JPanel jPanel1;
     private RSMaterialComponent.RSPanelBorder rSPanelPaquete;
-    private RSMaterialComponent.RSTextFieldOne rSTFAltura;
-    private RSMaterialComponent.RSTextFieldOne rSTFAncho;
     private RSMaterialComponent.RSTextFieldOne rSTFNumeroGuia;
-    private RSMaterialComponent.RSTextFieldOne rSTFPeso;
-    private RSMaterialComponent.RSTextFieldOne rSTFPrecio;
-    private RSMaterialComponent.RSTextFieldOne rSTFProfundidad;
+    private javax.swing.JLabel vLabelErrModAltura;
+    private javax.swing.JLabel vLabelErrModAncho;
+    private javax.swing.JLabel vLabelErrModCosto;
+    private javax.swing.JLabel vLabelErrModPeso;
+    private javax.swing.JLabel vLabelErrModProfundidad;
+    private RSMaterialComponent.RSTextFieldOne vTextFileModAltura;
+    private RSMaterialComponent.RSTextFieldOne vTextFileModAncho;
+    private RSMaterialComponent.RSTextFieldOne vTextFileModCosto;
+    private RSMaterialComponent.RSTextFieldOne vTextFileModPeso;
+    private RSMaterialComponent.RSTextFieldOne vTextFileModProfundidad;
     // End of variables declaration//GEN-END:variables
 }

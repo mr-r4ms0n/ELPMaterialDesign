@@ -81,7 +81,8 @@ public class ConfirmaAcc extends javax.swing.JDialog
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("!Confirmar Accion!");
+        jLabel1.setText("!Confirmar Acción!");
+        jLabel1.setToolTipText("");
 
         jLabel7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
@@ -139,6 +140,7 @@ public class ConfirmaAcc extends javax.swing.JDialog
             }
         });
 
+        JFMensaje.setEditable(false);
         JFMensaje.setForeground(new java.awt.Color(255, 102, 102));
         JFMensaje.setCaretColor(new java.awt.Color(255, 0, 51));
         JFMensaje.setColorIcon(new java.awt.Color(255, 0, 51));
