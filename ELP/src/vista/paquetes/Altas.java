@@ -7,7 +7,6 @@ package vista.paquetes;
 
 import PCalendario.CCalendario;
 import configuracion.Paqs;
-import java.awt.Color;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
@@ -21,14 +20,11 @@ import rojeru_san.complementos.RSUtilities;
  */
 public class Altas extends javax.swing.JDialog
 {
-    
+
     private Window vtn;
     private boolean vActivarVerificadorPanePaq = false;
     private boolean vActivarVerificadorPaneEmi = false;
     private boolean vActivarVerificadorPaneRece = false;
-    
-    Color vColorOrig=new Color(0,153,204);
-    Color vColorErr=new Color(204,71,0);
 
     /**
      * Creates new form Altas
@@ -47,14 +43,14 @@ public class Altas extends javax.swing.JDialog
         vTextFilePaqGuia.setText("                     " + String.valueOf((modelo.MetodosBD.ultimoRegistro() + 1)));
 
         //Ocultamos los labels de error
-        /*Error en datos del paquete*/
+            /*Error en datos del paquete*/
         vLabelErrPaqAltura.setVisible(false);
         vLabelErrPaqAncho.setVisible(false);
         vLabelErrPaqCosto.setVisible(false);
         vLabelErrPaqFecRec.setVisible(false);
         vLabelErrPaqPeso.setVisible(false);
         vLabelErrPaqProfundidad.setVisible(false);
-        /*Error en datos del receptor*/
+            /*Error en datos del receptor*/
         vLabelErrRecApellidoP.setVisible(false);
         vLabelErrRecApellidoM.setVisible(false);
         vLabelErrRecCP.setVisible(false);
@@ -62,11 +58,11 @@ public class Altas extends javax.swing.JDialog
         vLabelErrRecCiudad.setVisible(false);
         vLabelErrRecLocalidad.setVisible(false);
         vLabelErrRecNombre.setVisible(false);
-        /*Error en datos del emisor*/
+            /*Error en datos del emisor*/
         vLabelErrEmiApellidoM.setVisible(false);
         vLabelErrEmiApellidoP.setVisible(false);
         vLabelErrEmiNombre.setVisible(false);
-        
+
     }
 
     /**
@@ -263,6 +259,13 @@ public class Altas extends javax.swing.JDialog
             public void focusLost(java.awt.event.FocusEvent evt)
             {
                 vTextFilePaqFecRecepcionFocusLost(evt);
+            }
+        });
+        vTextFilePaqFecRecepcion.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                vTextFilePaqFecRecepcionActionPerformed(evt);
             }
         });
         vTextFilePaqFecRecepcion.addKeyListener(new java.awt.event.KeyAdapter()
@@ -534,7 +537,11 @@ public class Altas extends javax.swing.JDialog
                 .addComponent(vTextFilePaqCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(vLabelErrPaqCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+>>>>>>> parent of cb0312e... Errores compuestos y otros
                 .addComponent(btnPaqueteNext, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
@@ -562,6 +569,13 @@ public class Altas extends javax.swing.JDialog
             public void focusLost(java.awt.event.FocusEvent evt)
             {
                 vTextFileEmiNombreFocusLost(evt);
+            }
+        });
+        vTextFileEmiNombre.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                vTextFileEmiNombreActionPerformed(evt);
             }
         });
         vTextFileEmiNombre.addKeyListener(new java.awt.event.KeyAdapter()
@@ -1317,7 +1331,6 @@ public class Altas extends javax.swing.JDialog
             rSPanelPaquete.setVisible(false);
             rSPanelEmisor.setVisible(true);
             rSPanelReceptor.setVisible(false);
-            btnEmisorAnt.setBackground(vColorOrig);
         }
 
     }//GEN-LAST:event_btnPaqueteNextActionPerformed
@@ -1329,7 +1342,6 @@ public class Altas extends javax.swing.JDialog
             rSPanelEmisor.setVisible(false);
             rSPanelPaquete.setVisible(true);
             rSPanelReceptor.setVisible(false);
-            btnReceptorAnt.setBackground(vColorOrig);
         }
     }//GEN-LAST:event_btnEmisorAntActionPerformed
 
@@ -1370,57 +1382,35 @@ public class Altas extends javax.swing.JDialog
 
     private void btnGuardarAltasActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnGuardarAltasActionPerformed
     {//GEN-HEADEREND:event_btnGuardarAltasActionPerformed
-        mHabilitaBtnPaqNextMouseEntered();
-        mHabilitaBtnEmiNextMouseEntered();
-        mHabilitaBtnRecepNextMouseEntered();
-        if (vLabelErrPaqAltura.isVisible() || vLabelErrPaqAncho.isVisible() || vLabelErrPaqCosto.isVisible()
-                || vLabelErrPaqFecRec.isVisible() || vLabelErrPaqPeso.isVisible() || vLabelErrPaqProfundidad.isVisible())
-        {
-            btnEmisorAnt.setBackground(vColorErr);
-            btnReceptorAnt.setBackground(vColorErr);
-        }
-        if (vLabelErrEmiNombre.isVisible() || vLabelErrEmiApellidoP.isVisible() || vLabelErrEmiApellidoM.isVisible())
-        {
-            btnReceptorAnt.setBackground(vColorErr);
-        }
-        if (vLabelErrPaqAltura.isVisible() || vLabelErrPaqAncho.isVisible() || vLabelErrPaqCosto.isVisible()
-                || vLabelErrPaqFecRec.isVisible() || vLabelErrPaqPeso.isVisible() || vLabelErrPaqProfundidad.isVisible()
-                || vLabelErrEmiNombre.isVisible() || vLabelErrEmiApellidoP.isVisible() || vLabelErrEmiApellidoM.isVisible()
-                || vLabelErrRecApellidoP.isVisible() || vLabelErrRecApellidoM.isVisible() || vLabelErrRecCP.isVisible() || vLabelErrRecCalle.isVisible()
-                || vLabelErrRecCiudad.isVisible() || vLabelErrRecLocalidad.isVisible() || vLabelErrRecNombre.isVisible())
-        {
-            btnGuardarAltas.setEnabled(false);
-        } else
-        {
-            Paqs obj = new Paqs();
-            //Datos de la Primera ventana
-            obj.setFchRecp(vTextFilePaqFecRecepcion.getText());
-            obj.setPeso(Double.parseDouble(vTextFilePaqPeso.getText()));
-            obj.setAltura(Double.parseDouble(vTextFilePaqAltura.getText()));
-            obj.setAncho(Double.parseDouble(vTextFilePaqAncho.getText()));
-            obj.setProfundidad(Double.parseDouble(vTextFilePaqProfundidad.getText()));
-            obj.setPrecio(Double.parseDouble(vTextFilePaqCosto.getText()));
-            //Datos de la Segunda ventana
-            obj.seteNombre(vTextFileEmiNombre.getText());
-            obj.seteApP(vTextFileEmiApeP.getText());
-            obj.seteApM(vTextFileEmiApeM.getText());
-            //Datos de la Tercera ventana
-            obj.setrNombre(vTextFileRecepNombre.getText());
-            obj.setrApP(vTextFileRecepApeP.getText());
-            obj.setrApM(vTextFileRecepApeM.getText());
-            obj.setCalle(vTextFileRecepCalle.getText());
-            obj.setLocalidad(vTextFileRecepLocaliad.getText());
-            obj.setCiudad(vTextFileRecepCiudad.getText());
-            obj.setCp(Integer.parseInt(vTextFileRecepCP.getText()));
-            obj.setFchEnt("PENDIENTE");
-            //Guardamos en la BD
-            obj.desp();
-            modelo.MetodosBD.guardaPaqs(obj);
-            //Cerramos 
-            dispose();
-            //Actualizamos la tabla
-            tabContenidoRec.listarPaquetes(tabContenidoRec.tblPaquetesRec);
-        }
+
+        Paqs obj = new Paqs();
+        //Datos de la Primera ventana
+        obj.setFchRecp(vTextFilePaqFecRecepcion.getText());
+        obj.setPeso(Double.parseDouble(vTextFilePaqPeso.getText()));
+        obj.setAltura(Double.parseDouble(vTextFilePaqAltura.getText()));
+        obj.setAncho(Double.parseDouble(vTextFilePaqAncho.getText()));
+        obj.setProfundidad(Double.parseDouble(vTextFilePaqProfundidad.getText()));
+        obj.setPrecio(Double.parseDouble(vTextFilePaqCosto.getText()));
+        //Datos de la Segunda ventana
+        obj.seteNombre(vTextFileEmiNombre.getText());
+        obj.seteApP(vTextFileEmiApeP.getText());
+        obj.seteApM(vTextFileEmiApeM.getText());
+        //Datos de la Tercera ventana
+        obj.setrNombre(vTextFileRecepNombre.getText());
+        obj.setrApP(vTextFileRecepApeP.getText());
+        obj.setrApM(vTextFileRecepApeM.getText());
+        obj.setCalle(vTextFileRecepCalle.getText());
+        obj.setLocalidad(vTextFileRecepLocaliad.getText());
+        obj.setCiudad(vTextFileRecepCiudad.getText());
+        obj.setCp(Integer.parseInt(vTextFileRecepCP.getText()));
+        obj.setFchEnt("PENDIENTE");
+        //Guardamos en la BD
+        obj.desp();
+        modelo.MetodosBD.guardaPaqs(obj);
+        //Cerramos 
+        dispose();
+        //Actualizamos la tabla
+        tabContenidoRec.listarPaquetes(tabContenidoRec.tblPaquetesRec);
     }//GEN-LAST:event_btnGuardarAltasActionPerformed
 
     private void vTextFilePaqFecRecepcionKeyReleased(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFilePaqFecRecepcionKeyReleased
@@ -1442,7 +1432,7 @@ public class Altas extends javax.swing.JDialog
 
     private void vTextFilePaqFecRecepcionKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFilePaqFecRecepcionKeyTyped
     {//GEN-HEADEREND:event_vTextFilePaqFecRecepcionKeyTyped
-        
+
         if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9')
         {
             if (vTextFilePaqFecRecepcion.getText().length() > 9)
@@ -1574,7 +1564,7 @@ public class Altas extends javax.swing.JDialog
         vTextFilePaqPesoFocusLost(null);
         vTextFilePaqProfundidadFocusLost(null);
         vTextFilePaqFecRecepcionFocusLost(null);
-        
+
         if (vLabelErrPaqAltura.isVisible() || vLabelErrPaqAncho.isVisible() || vLabelErrPaqCosto.isVisible()
                 || vLabelErrPaqFecRec.isVisible() || vLabelErrPaqPeso.isVisible() || vLabelErrPaqProfundidad.isVisible())
         {
@@ -1595,7 +1585,7 @@ public class Altas extends javax.swing.JDialog
     protected void mValidarNumerosDouble(RSMaterialComponent.RSTextFieldOne vTextField, javax.swing.JLabel vLabelErr)
     {
         boolean vExistPunto = false;
-        
+
         for (int i = 0; i < vTextField.getText().length(); i++)
         {
             if (vTextField.getText().charAt(i) == '.')
@@ -1637,7 +1627,7 @@ public class Altas extends javax.swing.JDialog
      * Verificar la fecha si esta escrita correctamente
      *
      * @param vTextField TextFile el cual se va a adquierir los datos
-     * @return
+     * @return 
      */
     protected boolean mFormatoFechas(RSMaterialComponent.RSTextFieldOne vTextField)
     {
@@ -1659,7 +1649,7 @@ public class Altas extends javax.swing.JDialog
         {
             System.err.println("Error al meter el formato dd/mm/aaaa");
         }
-        
+
         return true;
     }
 
@@ -1770,7 +1760,7 @@ public class Altas extends javax.swing.JDialog
 
     private void rSPanelEmisorMouseMoved(java.awt.event.MouseEvent evt)//GEN-FIRST:event_rSPanelEmisorMouseMoved
     {//GEN-HEADEREND:event_rSPanelEmisorMouseMoved
-        
+
         if (vActivarVerificadorPaneEmi)
         {
             mHabilitaBtnEmiNextMouseEntered();
@@ -1781,7 +1771,7 @@ public class Altas extends javax.swing.JDialog
      */
     protected void mHabilitaBtnEmiNext()
     {
-        
+
         if (vLabelErrEmiNombre.isVisible() || vLabelErrEmiApellidoP.isVisible() || vLabelErrEmiApellidoM.isVisible())
         {
             btnEmisorNext.setEnabled(false);
@@ -1789,7 +1779,7 @@ public class Altas extends javax.swing.JDialog
         {
             btnEmisorNext.setEnabled(true);
         }
-        
+
     }
 
     /**
@@ -1801,7 +1791,7 @@ public class Altas extends javax.swing.JDialog
         vTextFileEmiNombreFocusLost(null);
         vTextFileEmiApePFocusLost(null);
         vTextFileEmiApeMFocusLost(null);
-        
+
         if (vLabelErrEmiNombre.isVisible() || vLabelErrEmiApellidoP.isVisible() || vLabelErrEmiApellidoM.isVisible())
         {
             btnEmisorNext.setEnabled(false);
@@ -1998,7 +1988,7 @@ public class Altas extends javax.swing.JDialog
 
     private void vTextFileRecepCPKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileRecepCPKeyTyped
     {//GEN-HEADEREND:event_vTextFileRecepCPKeyTyped
-        if (vTextFileRecepCP.getText().length() > 4 || !(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9'))
+        if (vTextFileRecepCP.getText().length() > 5)
         {
             evt.consume();
         }
@@ -2012,14 +2002,11 @@ public class Altas extends javax.swing.JDialog
             {
                 if (vTextFileRecepCP.getText().charAt(1) == '0')
                 {
-                    vLabelErrRecCP.setVisible(true);
+                vLabelErrRecCP.setVisible(true);
                 } else
-                {
-                    vLabelErrRecCP.setVisible(false);
-                }
-            } else
             {
                 vLabelErrRecCP.setVisible(false);
+            }
             }
         } else
         {
@@ -2035,19 +2022,29 @@ public class Altas extends javax.swing.JDialog
 
     private void btnGuardarAltasMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_btnGuardarAltasMouseEntered
     {//GEN-HEADEREND:event_btnGuardarAltasMouseEntered
-        
+
         if (vActivarVerificadorPaneRece)
         {
             mHabilitaBtnRecepNextMouseEntered();
         }
     }//GEN-LAST:event_btnGuardarAltasMouseEntered
 
+    private void vTextFilePaqFecRecepcionActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_vTextFilePaqFecRecepcionActionPerformed
+    {//GEN-HEADEREND:event_vTextFilePaqFecRecepcionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vTextFilePaqFecRecepcionActionPerformed
+
+    private void vTextFileEmiNombreActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_vTextFileEmiNombreActionPerformed
+    {//GEN-HEADEREND:event_vTextFileEmiNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vTextFileEmiNombreActionPerformed
+
     /**
      * Habilita o deshabilita el boton Next verificando si los labels de error
      */
     protected void mHabilitaBtnRecepNext()
     {
-        
+
         if (vLabelErrRecApellidoP.isVisible() || vLabelErrRecApellidoM.isVisible() || vLabelErrRecCP.isVisible() || vLabelErrRecCalle.isVisible()
                 || vLabelErrRecCiudad.isVisible() || vLabelErrRecLocalidad.isVisible() || vLabelErrRecNombre.isVisible())
         {
@@ -2056,7 +2053,7 @@ public class Altas extends javax.swing.JDialog
         {
             btnGuardarAltas.setEnabled(true);
         }
-        
+
     }
 
     /**
@@ -2072,7 +2069,7 @@ public class Altas extends javax.swing.JDialog
         vTextFileRecepLocaliadFocusLost(null);
         vTextFileRecepCiudadFocusLost(null);
         vTextFileRecepCPFocusLost(null);
-        
+
         if (vLabelErrRecApellidoP.isVisible() || vLabelErrRecApellidoM.isVisible() || vLabelErrRecCP.isVisible() || vLabelErrRecCalle.isVisible()
                 || vLabelErrRecCiudad.isVisible() || vLabelErrRecLocalidad.isVisible() || vLabelErrRecNombre.isVisible())
         {
@@ -2081,7 +2078,7 @@ public class Altas extends javax.swing.JDialog
         {
             btnGuardarAltas.setEnabled(true);
         }
-        
+
     }
 
     /**
@@ -2110,9 +2107,7 @@ public class Altas extends javax.swing.JDialog
     }
 
     /**
-     * Convierte el contenido del texto en forma de oracion leandro gomez =
-     * Leandro Gomez
-     *
+     * Convierte el contenido del texto en forma de oracion leandro gomez = Leandro Gomez
      * @param vArregloC Texto a convertir
      * @return El texto convertido
      */
@@ -2123,20 +2118,17 @@ public class Altas extends javax.swing.JDialog
             if (vArregloC[i] == ' ')
             {
                 i++;
-                if (i < vArregloC.length)
+                if (vArregloC[i] >= 'a' && vArregloC[i] <= 'z' || vArregloC[i] == 'ñ')
                 {
-                    if (vArregloC[i] >= 'a' && vArregloC[i] <= 'z' || vArregloC[i] == 'ñ')
+                    if (vArregloC[i] == 'ñ')
                     {
-                        if (vArregloC[i] == 'ñ')
-                        {
-                            vArregloC[i] = 'Ñ';
-                        } else
-                        {
-                            vArregloC[i] = (char) ((int) vArregloC[i] - 32);
-                        }
+                        vArregloC[i] = 'Ñ';
+                    } else
+                    {
+                        vArregloC[i] = (char) ((int) vArregloC[i] - 32);
                     }
                 }
-                
+
             } else
             {
                 if (i == 0)
@@ -2221,7 +2213,7 @@ public class Altas extends javax.swing.JDialog
             vEspacio = false;
         } else
         {
-            
+
             if (vEspacio)
             {
                 char vTextTmp[] = vTextField.getText().toCharArray();
@@ -2246,7 +2238,7 @@ public class Altas extends javax.swing.JDialog
     {
         if (vCaracter >= 'a' && vCaracter <= 'z' || vCaracter == 'ñ')
         {
-            
+
             if (vCaracter >= 'a' && vCaracter <= 'z')
             {
                 vCaracter = (char) ((int) vCaracter - 32);
