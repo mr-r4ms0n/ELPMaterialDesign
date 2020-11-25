@@ -16,7 +16,7 @@ public class Recibidos extends javax.swing.JPanel
 {
 
     public static int confirmacion = -1;
-
+    public static boolean busqueda_f = false;
     /**
      * Creates new form Principal
      */
@@ -184,7 +184,7 @@ public class Recibidos extends javax.swing.JPanel
     {//GEN-HEADEREND:event_btnEliminarPqActionPerformed
         System.out.println("Seleccionaste la fila == " + tabContenidoRec.tblPaquetesRec.getSelectedRow());
         int row = tabContenidoRec.tblPaquetesRec.getSelectedRow();
-        String num_guia = (String) (tabContenidoRec.tblPaquetesRec.getValueAt(row, 0));
+        String num_guia = (String) (String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 0)));
         System.out.println("Dato seleccionado == " + num_guia);
         ConfirmaAcc sure = new ConfirmaAcc("eliminar");
         sure.setModal(true);

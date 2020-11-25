@@ -8,6 +8,8 @@ package vista;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
+import vista.enviados.tabContenidoEnv;
+import vista.paquetes.tabContenidoRec;
 /**
  *
  * @author Kevin Benitez
@@ -409,6 +411,7 @@ public class Menu extends javax.swing.JFrame
         }
         panelRecibidos.setVisible(false);
         panelEnviados.setVisible(true);
+        tabContenidoEnv.listarPaquetes(tabContenidoEnv.tblPaquetesEnv);
     }//GEN-LAST:event_JBPaquetesEnvActionPerformed
 
     /**

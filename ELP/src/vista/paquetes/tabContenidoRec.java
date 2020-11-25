@@ -146,6 +146,11 @@ public class tabContenidoRec extends javax.swing.JPanel
     private void txtBusquedaRecKeyReleased(java.awt.event.KeyEvent evt)//GEN-FIRST:event_txtBusquedaRecKeyReleased
     {//GEN-HEADEREND:event_txtBusquedaRecKeyReleased
         MetodosBD.busqBD(txtBusquedaRec.getText(), jCBTipoBusqueda.getSelectedIndex() + 1, 1, tblPaquetesRec);
+        if (txtBusquedaRec.getText().isEmpty())
+        {
+            listarPaquetes(tblPaquetesRec);
+            Recibidos.busqueda_f = true;
+        }
     }//GEN-LAST:event_txtBusquedaRecKeyReleased
 
 
