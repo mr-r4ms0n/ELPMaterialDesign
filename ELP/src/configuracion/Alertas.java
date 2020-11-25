@@ -6,8 +6,6 @@
 package configuracion;
 
 import java.applet.AudioClip;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -27,19 +25,23 @@ public class Alertas
                     sonido = java.applet.Applet.newAudioClip(getClass().getResource("/recursos/error.wav"));
                     sonido.play();
                     Thread.sleep(200);
+                    
                     break;
                 case 2:
                     sonido = java.applet.Applet.newAudioClip(getClass().getResource("/recursos/correcto.wav"));
                     sonido.play();
                     Thread.sleep(200);
+                    
                     break;
                 default:
                     throw new AssertionError();
             }
-        } catch (InterruptedException ex)
+        } catch (InterruptedException e)
         {
-            Logger.getLogger(Alertas.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error al producir sonidos");
         }
+            
+        
 
     }
 }

@@ -6,9 +6,7 @@
 package vista.enviados;
 
 import RSMaterialComponent.RSTableMetroCustom;
-import configuracion.Funciones_aux;
 import java.awt.Color;
-import java.sql.ResultSet;
 import modelo.MetodosBD;
 
 /**
@@ -24,17 +22,14 @@ public class tabContenidoEnv extends javax.swing.JPanel
     public tabContenidoEnv()
     {
         initComponents();
-         jScrollPane1.getViewport().setBackground(Color.white);
+        jScrollPane1.getViewport().setBackground(Color.white);
         listarPaquetes(tblPaquetesEnv);
     }
-    
-    public void listarPaquetes(RSTableMetroCustom tabla)
+
+    public static void listarPaquetes(RSTableMetroCustom tabla)
     {
-        /*
-        String arr[] = {"num_guia","nom_emisor","fecha_recp","nom_recep","direccion","Fecha_ent","peso","altura", "ancho","profundidad","precio"};
-        ResultSet rs = MetodosBD.getPaquetesEnv();
-        Funciones_aux.getTable(rs, tabla, arr);
-        */
+        MetodosBD.consultaBD(2, tabla);
+        //Funciones_aux.getTable(rs, tabla, arr);
     }
 
     /**
@@ -49,7 +44,8 @@ public class tabContenidoEnv extends javax.swing.JPanel
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPaquetesEnv = new RSMaterialComponent.RSTableMetroCustom();
-        rSTextFieldIconOne1 = new RSMaterialComponent.RSTextFieldIconOne();
+        txtBusqueda = new RSMaterialComponent.RSTextFieldIconOne();
+        jCBTipoBusqueda = new RSMaterialComponent.RSComboBox();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -95,13 +91,27 @@ public class tabContenidoEnv extends javax.swing.JPanel
         tblPaquetesEnv.setSelectionBackground(new java.awt.Color(0, 153, 204));
         jScrollPane1.setViewportView(tblPaquetesEnv);
 
-        rSTextFieldIconOne1.setForeground(new java.awt.Color(103, 177, 202));
-        rSTextFieldIconOne1.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldIconOne1.setColorIcon(new java.awt.Color(103, 177, 202));
-        rSTextFieldIconOne1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        rSTextFieldIconOne1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
-        rSTextFieldIconOne1.setPhColor(new java.awt.Color(103, 177, 202));
-        rSTextFieldIconOne1.setPlaceholder("Busqueda");
+        txtBusqueda.setForeground(new java.awt.Color(103, 177, 202));
+        txtBusqueda.setBorderColor(new java.awt.Color(103, 177, 202));
+        txtBusqueda.setColorIcon(new java.awt.Color(103, 177, 202));
+        txtBusqueda.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        txtBusqueda.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEARCH);
+        txtBusqueda.setPhColor(new java.awt.Color(103, 177, 202));
+        txtBusqueda.setPlaceholder("Busqueda");
+        txtBusqueda.addKeyListener(new java.awt.event.KeyAdapter()
+        {
+            public void keyReleased(java.awt.event.KeyEvent evt)
+            {
+                txtBusquedaKeyReleased(evt);
+            }
+        });
+
+        jCBTipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Numero de guía", "Nombre del emisor", "Nombre del receptor", "Dirección", "Fecha de recibido", "Fecha de entrega" }));
+        jCBTipoBusqueda.setColorArrow(new java.awt.Color(103, 177, 202));
+        jCBTipoBusqueda.setColorBorde(new java.awt.Color(103, 177, 202));
+        jCBTipoBusqueda.setColorFondo(new java.awt.Color(103, 177, 202));
+        jCBTipoBusqueda.setColorSeleccion(new java.awt.Color(103, 177, 202));
+        jCBTipoBusqueda.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -113,25 +123,36 @@ public class tabContenidoEnv extends javax.swing.JPanel
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(395, 395, 395)
-                        .addComponent(rSTextFieldIconOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 907, Short.MAX_VALUE)))
+                        .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(jCBTipoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 672, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(rSTextFieldIconOne1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCBTipoBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtBusquedaKeyReleased(java.awt.event.KeyEvent evt)//GEN-FIRST:event_txtBusquedaKeyReleased
+    {//GEN-HEADEREND:event_txtBusquedaKeyReleased
+        MetodosBD.busqBD(txtBusqueda.getText(), jCBTipoBusqueda.getSelectedIndex()+1, 2,tblPaquetesEnv);
+    }//GEN-LAST:event_txtBusquedaKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private RSMaterialComponent.RSComboBox jCBTipoBusqueda;
     private javax.swing.JScrollPane jScrollPane1;
-    private RSMaterialComponent.RSTextFieldIconOne rSTextFieldIconOne1;
-    private RSMaterialComponent.RSTableMetroCustom tblPaquetesEnv;
+    public static RSMaterialComponent.RSTableMetroCustom tblPaquetesEnv;
+    private RSMaterialComponent.RSTextFieldIconOne txtBusqueda;
     // End of variables declaration//GEN-END:variables
+
 }
