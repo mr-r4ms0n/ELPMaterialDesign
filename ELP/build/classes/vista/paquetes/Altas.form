@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+<Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="0"/>
     <Property name="undecorated" type="boolean" value="true"/>
@@ -19,10 +19,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-<<<<<<< HEAD
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-127,0,0,2,-76"/>
-=======
->>>>>>> parent of cb0312e... Errores compuestos y otros
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,122,0,0,2,-78"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -37,7 +34,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="-1" height="640"/>
+          <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
 
@@ -55,8 +52,8 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jPInteracturador" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPInteracturador" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -64,32 +61,8 @@
       <SubComponents>
         <Container class="javax.swing.JPanel" name="jPInteracturador">
 
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="rSPanelPaquete" alignment="0" max="32767" attributes="0"/>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="rSPanelReceptor" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-                      <Component id="rSPanelEmisor" alignment="1" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="rSPanelPaquete" alignment="0" max="32767" attributes="0"/>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Component id="rSPanelReceptor" alignment="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
-                      <Component id="rSPanelEmisor" alignment="0" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
             <Container class="RSMaterialComponent.RSPanelBorder" name="rSPanelPaquete">
@@ -104,131 +77,160 @@
               <Events>
                 <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="rSPanelPaqueteMouseMoved"/>
               </Events>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="0" width="689" height="621"/>
+                </Constraint>
+              </Constraints>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="btnPaqueteNext" min="-2" pref="56" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="vLabelErrPaqCosto" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="vTextFilePaqGuia" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="vLabelErrPaqGuia" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="vTextFilePaqFecRecepcion" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                                          <Component id="vLabelErrPaqFecRec" min="-2" pref="142" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                              <Component id="vTextFilePaqAncho" min="-2" pref="133" max="-2" attributes="0"/>
-                                              <Component id="vLabelErrPaqAncho" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Component id="vTextFilePaqCosto" min="-2" pref="180" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                                      </Group>
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="vTextFilePaqPeso" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                                              <Component id="vLabelErrPaqPeso" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="198" pref="198" max="-2" attributes="0"/>
+                                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="jLabel4" max="32767" attributes="0"/>
+                                                  <EmptySpace min="136" pref="136" max="-2" attributes="0"/>
+                                                  <Component id="jLabel5" max="32767" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
+                                                  <Component id="jLabel15" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Component id="jLabel17" max="32767" attributes="0"/>
+                                              <Component id="vTextFilePaqCosto" min="-2" pref="180" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="vTextFilePaqGuia" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="vLabelErrPaqGuia" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" attributes="0">
+                                                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                                          <Component id="vTextFilePaqFecRecepcion" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Group type="102" alignment="1" attributes="0">
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="vLabelErrPaqFecRec" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
                                           </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="vTextFilePaqPeso" min="-2" pref="130" max="-2" attributes="0"/>
+                                                  <EmptySpace min="31" pref="31" max="-2" attributes="0"/>
+                                                  <Component id="vTextFilePaqAltura" min="-2" pref="124" max="-2" attributes="0"/>
+                                                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel13" max="32767" attributes="0"/>
+                                                      <Component id="vTextFilePaqAncho" min="-2" pref="133" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                                  <Component id="vLabelErrPaqPeso" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="vLabelErrPaqAltura" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                                  <Component id="vLabelErrPaqAncho" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="vTextFilePaqProfundidad" min="-2" pref="178" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="vLabelErrPaqProfundidad" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                                          <Component id="vLabelErrPaqCosto" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="vTextFilePaqAltura" min="-2" pref="124" max="-2" attributes="0"/>
-                                      <Component id="vLabelErrPaqAltura" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                      <Component id="vTextFilePaqProfundidad" min="-2" pref="178" max="-2" attributes="0"/>
-                                      <Component id="vLabelErrPaqProfundidad" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="btnPaqueteNext" min="-2" pref="56" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel2" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="vTextFilePaqGuia" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="vTextFilePaqFecRecepcion" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                          <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel2" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" pref="18" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="vTextFilePaqGuia" min="-2" max="-2" attributes="0"/>
+                              <Component id="vTextFilePaqFecRecepcion" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
                                   <Component id="vLabelErrPaqGuia" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="vLabelErrPaqFecRec" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="vLabelErrPaqFecRec" min="-2" pref="18" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel4" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel5" alignment="3" max="32767" attributes="0"/>
+                                  <Component id="jLabel13" alignment="3" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel15" pref="18" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="vTextFilePaqPeso" min="-2" max="-2" attributes="0"/>
+                              <Component id="vTextFilePaqAltura" min="-2" max="-2" attributes="0"/>
+                              <Component id="vTextFilePaqAncho" min="-2" max="-2" attributes="0"/>
+                              <Component id="vTextFilePaqProfundidad" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="vLabelErrPaqAncho" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="vLabelErrPaqAltura" min="-2" max="-2" attributes="0"/>
+                              <Component id="vLabelErrPaqPeso" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="vLabelErrPaqProfundidad" min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel4" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="jLabel5" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="jLabel13" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="jLabel15" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel17" pref="18" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="vTextFilePaqPeso" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="vTextFilePaqAltura" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="vTextFilePaqProfundidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="vTextFilePaqAncho" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="vLabelErrPaqPeso" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="vLabelErrPaqAltura" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="vLabelErrPaqAncho" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="vLabelErrPaqProfundidad" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="jLabel17" min="-2" pref="18" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="vTextFilePaqCosto" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Component id="vLabelErrPaqCosto" min="-2" pref="18" max="-2" attributes="0"/>
-<<<<<<< HEAD
-                          <EmptySpace pref="53" max="32767" attributes="0"/>
-=======
-                          <EmptySpace pref="44" max="32767" attributes="0"/>
->>>>>>> parent of cb0312e... Errores compuestos y otros
+                          <EmptySpace pref="52" max="32767" attributes="0"/>
                           <Component id="btnPaqueteNext" min="-2" pref="55" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -406,7 +408,6 @@
                   </Properties>
                   <Events>
                     <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFilePaqFecRecepcionFocusLost"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="vTextFilePaqFecRecepcionActionPerformed"/>
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFilePaqFecRecepcionKeyReleased"/>
                     <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFilePaqFecRecepcionKeyTyped"/>
                   </Events>
@@ -417,6 +418,7 @@
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Peso"/>
+                    <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFilePaqPeso">
@@ -446,6 +448,7 @@
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Altura"/>
+                    <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFilePaqAltura">
@@ -489,6 +492,7 @@
                       <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Error fecha recepci&#xf3;n"/>
+                    <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="vLabelErrPaqPeso">
@@ -500,6 +504,7 @@
                       <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Error peso"/>
+                    <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="vLabelErrPaqAltura">
@@ -511,6 +516,42 @@
                       <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Error altura"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="vLabelErrPaqAncho">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Semibold" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Error ancho"/>
+                    <Property name="focusable" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="vLabelErrPaqProfundidad">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Semibold" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Error profundidad"/>
+                    <Property name="focusable" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="vLabelErrPaqCosto">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Semibold" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Error costo"/>
+                    <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFilePaqAncho">
@@ -540,17 +581,7 @@
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Ancho"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="vLabelErrPaqAncho">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Error ancho"/>
+                    <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFilePaqProfundidad">
@@ -580,17 +611,7 @@
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Profundidad"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="vLabelErrPaqProfundidad">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Error profundidad"/>
+                    <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFilePaqCosto">
@@ -620,17 +641,7 @@
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Costo de envio $"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="vLabelErrPaqCosto">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI Semibold" size="12" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Error costo"/>
+                    <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="RSMaterialComponent.RSButtonIconOne" name="btnPaqueteNext">
@@ -666,6 +677,11 @@
               <Events>
                 <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="rSPanelEmisorMouseMoved"/>
               </Events>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="0" width="0" height="0"/>
+                </Constraint>
+              </Constraints>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -739,7 +755,7 @@
                                       <Component id="vTextFileEmiApeM" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="vLabelErrEmiApellidoM" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="89" max="32767" attributes="0"/>
+                                  <EmptySpace pref="80" max="32767" attributes="0"/>
                                   <Component id="btnEmisorAnt" min="-2" pref="55" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
@@ -779,7 +795,6 @@
                   </Properties>
                   <Events>
                     <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileEmiNombreFocusLost"/>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="vTextFileEmiNombreActionPerformed"/>
                     <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileEmiNombreKeyPressed"/>
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileEmiNombreKeyReleased"/>
                     <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileEmiNombreKeyTyped"/>
@@ -1051,6 +1066,11 @@
               <Events>
                 <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="rSPanelReceptorMouseMoved"/>
               </Events>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="0" width="0" height="0"/>
+                </Constraint>
+              </Constraints>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -1183,7 +1203,7 @@
                                   <Component id="vLabelErrRecCiudad" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="60" max="32767" attributes="0"/>
+                          <EmptySpace pref="51" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btnGuardarAltas" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
                               <Component id="btnReceptorAnt" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
