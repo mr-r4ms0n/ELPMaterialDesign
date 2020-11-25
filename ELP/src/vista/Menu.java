@@ -8,6 +8,7 @@ package vista;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
+import rojeru_san.complementos.RSEffectFade;
 /**
  *
  * @author Kevin Benitez
@@ -23,6 +24,7 @@ public class Menu extends javax.swing.JFrame
     public Menu(String user)
     {   
         initComponents();
+        RSEffectFade.setFadeWindowIn(this, 30, 0.1f);
         setLocationRelativeTo(null);
         vtn = this;
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);

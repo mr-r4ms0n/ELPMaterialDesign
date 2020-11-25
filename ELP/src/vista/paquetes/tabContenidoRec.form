@@ -28,9 +28,7 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="473" max="-2" attributes="0"/>
-              <Component id="txtBusquedaRec" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jCBTipoBusqueda" min="-2" max="-2" attributes="0"/>
+              <Component id="rSTextFieldIconOne1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -39,10 +37,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtBusquedaRec" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCBTipoBusqueda" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="rSTextFieldIconOne1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="376" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
@@ -185,13 +180,10 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="RSMaterialComponent.RSTextFieldIconOne" name="txtBusquedaRec">
+    <Component class="RSMaterialComponent.RSTextFieldIconOne" name="rSTextFieldIconOne1">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ca" green="b1" red="67" type="rgb"/>
@@ -212,40 +204,6 @@
           <Color blue="ca" green="b1" red="67" type="rgb"/>
         </Property>
         <Property name="placeholder" type="java.lang.String" value="Busqueda"/>
-      </Properties>
-      <Events>
-        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtBusquedaRecKeyReleased"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-      </AuxValues>
-    </Component>
-    <Component class="RSMaterialComponent.RSComboBox" name="jCBTipoBusqueda">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value="Numero de gu&#xed;a"/>
-            <StringItem index="1" value="Nombre del emisor"/>
-            <StringItem index="2" value="Nombre del receptor"/>
-            <StringItem index="3" value="Direcci&#xf3;n"/>
-            <StringItem index="4" value="Fecha de recibido"/>
-          </StringArray>
-        </Property>
-        <Property name="colorArrow" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ca" green="b1" red="67" type="rgb"/>
-        </Property>
-        <Property name="colorBorde" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ca" green="b1" red="67" type="rgb"/>
-        </Property>
-        <Property name="colorFondo" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ca" green="b1" red="67" type="rgb"/>
-        </Property>
-        <Property name="colorSeleccion" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ca" green="b1" red="67" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI Semibold" size="14" style="1"/>
-        </Property>
       </Properties>
     </Component>
   </SubComponents>

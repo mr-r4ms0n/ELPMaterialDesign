@@ -36,19 +36,17 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Funciones_aux
 {
-
     /*
     Variables help referentes al color de las advertencias
-     */
+    */
     public static Color primary = new Color(1, 56, 228);
     public static Color sucess = new Color(40, 167, 69);
-    public static Color danger = new Color(220, 53, 69);
-    public static Color warning = new Color(255, 136, 0);
-    public static Color info = new Color(51, 181, 229);
-
+    public static Color danger = new Color(220,53,69);
+    public static Color warning = new Color(255,136,0);
+    public static Color info = new Color(51,181,229);
     /*
     ///////////////////////////
-     */
+    */
     public void limpiarFormulario(Component[] componentes)
     {
         for (Component componente : componentes)
@@ -98,19 +96,17 @@ public class Funciones_aux
             }
         }
     }
-
     /**
      * Funcion general para poder listar cualquier tabla
-     *
      * @param rs
      * @param tabla
-     * @param columnas
+     * @param columnas 
      */
-    public static void getTable(ResultSet rs, RSTableMetroCustom tabla, String columnas[])
+    public static void getTable(ResultSet rs, RSTableMetroCustom tabla,String columnas[])
     {
         DefaultTableModel tablamdl = (DefaultTableModel) tabla.getModel();
         //Vaciamos la tabla primero
-        while (tablamdl.getRowCount() > 0)
+        while (tablamdl.getRowCount()>0)
         {
             tablamdl.removeRow(0);
         }
@@ -132,15 +128,14 @@ public class Funciones_aux
             Logger.getLogger(Funciones_aux.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
     /**
-     * Metodo para validar componentes
-     *
+     * Metodo para validar componentes 
      * @param tf
      * @param err
-     * @param type
+     * @param type 
      */
-    public static void validaTF(RSTextFieldOne tf, JLabel err, String type)
+    public static void validaTF(RSTextFieldOne tf,JLabel err, String type)
     {
         switch (type)
         {

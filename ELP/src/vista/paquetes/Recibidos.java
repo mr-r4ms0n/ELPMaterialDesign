@@ -5,9 +5,6 @@
  */
 package vista.paquetes;
 
-import configuracion.Paqs;
-import vista.confirmaciones.ConfirmaAcc;
-
 /**
  *
  * @author Kevin Benitez
@@ -15,15 +12,13 @@ import vista.confirmaciones.ConfirmaAcc;
 public class Recibidos extends javax.swing.JPanel
 {
 
-    public static int confirmacion = -1;
-
     /**
      * Creates new form Principal
      */
     public Recibidos()
     {
         initComponents();
-
+        
     }
 
     /**
@@ -39,9 +34,9 @@ public class Recibidos extends javax.swing.JPanel
         jPanel1 = new javax.swing.JPanel();
         rSButtonIcon_new1 = new newscomponents.RSButtonIcon_new();
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
-        btnEliminarPq = new newscomponents.RSButtonIcon_new();
-        btnModificarPq = new newscomponents.RSButtonIcon_new();
-        btnEnviarPq = new newscomponents.RSButtonIcon_new();
+        rSButtonIcon_new2 = new newscomponents.RSButtonIcon_new();
+        rSButtonIcon_new5 = new newscomponents.RSButtonIcon_new();
+        rSButtonIcon_new4 = new newscomponents.RSButtonIcon_new();
         pnlSlider = new newscomponents.RSPanelEffect();
         tabContenidoRec1 = new vista.paquetes.tabContenidoRec();
 
@@ -69,51 +64,51 @@ public class Recibidos extends javax.swing.JPanel
         rSLabelTextIcon1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
         rSLabelTextIcon1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.LOCAL_POST_OFFICE);
 
-        btnEliminarPq.setBackground(new java.awt.Color(255, 255, 255));
-        btnEliminarPq.setText("Eliminar paquete");
-        btnEliminarPq.setBackgroundHover(new java.awt.Color(0, 153, 153));
-        btnEliminarPq.setForegroundIcon(new java.awt.Color(255, 0, 0));
-        btnEliminarPq.setForegroundText(new java.awt.Color(0, 0, 0));
-        btnEliminarPq.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnEliminarPq.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.REMOVE_CIRCLE);
-        btnEliminarPq.setRound(10);
-        btnEliminarPq.addActionListener(new java.awt.event.ActionListener()
+        rSButtonIcon_new2.setBackground(new java.awt.Color(255, 255, 255));
+        rSButtonIcon_new2.setText("Eliminar paquete");
+        rSButtonIcon_new2.setBackgroundHover(new java.awt.Color(0, 153, 153));
+        rSButtonIcon_new2.setForegroundIcon(new java.awt.Color(255, 0, 0));
+        rSButtonIcon_new2.setForegroundText(new java.awt.Color(0, 0, 0));
+        rSButtonIcon_new2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rSButtonIcon_new2.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.REMOVE_CIRCLE);
+        rSButtonIcon_new2.setRound(10);
+        rSButtonIcon_new2.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                btnEliminarPqActionPerformed(evt);
+                rSButtonIcon_new2ActionPerformed(evt);
             }
         });
 
-        btnModificarPq.setBackground(new java.awt.Color(255, 255, 255));
-        btnModificarPq.setText("Modificar paquete");
-        btnModificarPq.setBackgroundHover(new java.awt.Color(0, 153, 153));
-        btnModificarPq.setForegroundIcon(new java.awt.Color(0, 153, 204));
-        btnModificarPq.setForegroundText(new java.awt.Color(0, 0, 0));
-        btnModificarPq.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnModificarPq.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
-        btnModificarPq.setRound(10);
-        btnModificarPq.addActionListener(new java.awt.event.ActionListener()
+        rSButtonIcon_new5.setBackground(new java.awt.Color(255, 255, 255));
+        rSButtonIcon_new5.setText("Buscar paquete");
+        rSButtonIcon_new5.setBackgroundHover(new java.awt.Color(0, 153, 153));
+        rSButtonIcon_new5.setForegroundIcon(new java.awt.Color(0, 102, 0));
+        rSButtonIcon_new5.setForegroundText(new java.awt.Color(0, 0, 0));
+        rSButtonIcon_new5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rSButtonIcon_new5.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.REMOVE_RED_EYE);
+        rSButtonIcon_new5.setRound(10);
+        rSButtonIcon_new5.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                btnModificarPqActionPerformed(evt);
+                rSButtonIcon_new5ActionPerformed(evt);
             }
         });
 
-        btnEnviarPq.setBackground(new java.awt.Color(255, 255, 255));
-        btnEnviarPq.setText("Enviar paquete");
-        btnEnviarPq.setBackgroundHover(new java.awt.Color(0, 153, 153));
-        btnEnviarPq.setForegroundIcon(new java.awt.Color(0, 102, 102));
-        btnEnviarPq.setForegroundText(new java.awt.Color(0, 0, 0));
-        btnEnviarPq.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnEnviarPq.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.SEND);
-        btnEnviarPq.setRound(10);
-        btnEnviarPq.addActionListener(new java.awt.event.ActionListener()
+        rSButtonIcon_new4.setBackground(new java.awt.Color(255, 255, 255));
+        rSButtonIcon_new4.setText("Modificar paquete");
+        rSButtonIcon_new4.setBackgroundHover(new java.awt.Color(0, 153, 153));
+        rSButtonIcon_new4.setForegroundIcon(new java.awt.Color(0, 153, 204));
+        rSButtonIcon_new4.setForegroundText(new java.awt.Color(0, 0, 0));
+        rSButtonIcon_new4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rSButtonIcon_new4.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.EDIT);
+        rSButtonIcon_new4.setRound(10);
+        rSButtonIcon_new4.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                btnEnviarPqActionPerformed(evt);
+                rSButtonIcon_new4ActionPerformed(evt);
             }
         });
 
@@ -121,22 +116,20 @@ public class Recibidos extends javax.swing.JPanel
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rSButtonIcon_new1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(414, 414, 414)
-                        .addComponent(btnEliminarPq, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(btnModificarPq, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
-                        .addComponent(btnEnviarPq, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 479, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(rSButtonIcon_new1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(294, 294, 294)
+                .addComponent(rSButtonIcon_new2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addComponent(rSButtonIcon_new4, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(rSButtonIcon_new5, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(615, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,9 +140,9 @@ public class Recibidos extends javax.swing.JPanel
                     .addComponent(rSButtonIcon_new1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEliminarPq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnModificarPq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEnviarPq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rSButtonIcon_new2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonIcon_new5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonIcon_new4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -180,65 +173,35 @@ public class Recibidos extends javax.swing.JPanel
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnEliminarPqActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnEliminarPqActionPerformed
-    {//GEN-HEADEREND:event_btnEliminarPqActionPerformed
-        System.out.println("Seleccionaste la fila == " + tabContenidoRec.tblPaquetesRec.getSelectedRow());
-        int row = tabContenidoRec.tblPaquetesRec.getSelectedRow();
-        String num_guia = (String) (tabContenidoRec.tblPaquetesRec.getValueAt(row, 0));
-        System.out.println("Dato seleccionado == " + num_guia);
-        ConfirmaAcc sure = new ConfirmaAcc("eliminar");
-        sure.setModal(true);
-        sure.setVisible(true);
-        if (confirmacion == 1)
-        {
-            //int dato = (int) tabContenidoRec.tblPaquetesRec.getValueAt(tabContenidoRec.tblPaquetesRec.getSelectedRow(), 0);
-            modelo.MetodosBD.eliminaBD(Integer.parseInt(num_guia));
-            tabContenidoRec.listarPaquetes(tabContenidoRec.tblPaquetesRec);
-            confirmacion = -1;
-        }
+    private void rSButtonIcon_new2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rSButtonIcon_new2ActionPerformed
+    {//GEN-HEADEREND:event_rSButtonIcon_new2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonIcon_new2ActionPerformed
 
-    }//GEN-LAST:event_btnEliminarPqActionPerformed
+    private void rSButtonIcon_new4ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rSButtonIcon_new4ActionPerformed
+    {//GEN-HEADEREND:event_rSButtonIcon_new4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rSButtonIcon_new4ActionPerformed
 
-    private void btnModificarPqActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnModificarPqActionPerformed
-    {//GEN-HEADEREND:event_btnModificarPqActionPerformed
-        int row = tabContenidoRec.tblPaquetesRec.getSelectedRow();
-        String num_guia = (String) (tabContenidoRec.tblPaquetesRec.getValueAt(row, 0));
-        String peso = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 6));
-        String altura = String.valueOf((tabContenidoRec.tblPaquetesRec.getValueAt(row, 7)));
-        String ancho = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 8));
-        String profundidad = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 9));
-        String precio = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 10));
-
-        Modificaciones mod = new Modificaciones(num_guia, peso, altura, ancho, profundidad, precio);
-        mod.setModal(true);
-        mod.setVisible(true);
-
-    }//GEN-LAST:event_btnModificarPqActionPerformed
+    private void rSButtonIcon_new5ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rSButtonIcon_new5ActionPerformed
+    {//GEN-HEADEREND:event_rSButtonIcon_new5ActionPerformed
+        
+    }//GEN-LAST:event_rSButtonIcon_new5ActionPerformed
 
     private void rSButtonIcon_new1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_rSButtonIcon_new1ActionPerformed
     {//GEN-HEADEREND:event_rSButtonIcon_new1ActionPerformed
         Altas vtn = new Altas();
-        vtn.setModal(true);
         vtn.setVisible(true);
     }//GEN-LAST:event_rSButtonIcon_new1ActionPerformed
 
-    private void btnEnviarPqActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnEnviarPqActionPerformed
-    {//GEN-HEADEREND:event_btnEnviarPqActionPerformed
-        int row = tabContenidoRec.tblPaquetesRec.getSelectedRow();
-        String num_guia = (String) (tabContenidoRec.tblPaquetesRec.getValueAt(row, 0));
-        EnviarP send = new EnviarP(num_guia);
-        send.setModal(true);
-        send.setVisible(true);
-    }//GEN-LAST:event_btnEnviarPqActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private newscomponents.RSButtonIcon_new btnEliminarPq;
-    private newscomponents.RSButtonIcon_new btnEnviarPq;
-    private newscomponents.RSButtonIcon_new btnModificarPq;
     private javax.swing.JPanel jPanel1;
     private newscomponents.RSPanelEffect pnlSlider;
     private newscomponents.RSButtonIcon_new rSButtonIcon_new1;
+    private newscomponents.RSButtonIcon_new rSButtonIcon_new2;
+    private newscomponents.RSButtonIcon_new rSButtonIcon_new4;
+    private newscomponents.RSButtonIcon_new rSButtonIcon_new5;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
     private vista.paquetes.tabContenidoRec tabContenidoRec1;
     // End of variables declaration//GEN-END:variables

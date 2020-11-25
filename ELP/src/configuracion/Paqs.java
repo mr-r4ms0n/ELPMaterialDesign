@@ -12,7 +12,6 @@ package configuracion;
 public class Paqs
 {
 
-    private int num_guia;
     private String eNombre;
     private String eApP;
     private String eApM;
@@ -31,36 +30,6 @@ public class Paqs
     private int cp;
     private String ciudad;
     ////////////////////////////////////
-
-    public void desp()
-    {
-        System.out.println("*********Datos del paquete*********");
-        System.out.println(
-                "Nombre Emisor == " + eNombre
-                + "\nApellido Paterno Emisor == " + eApP
-                + "\nApellido Materno Emisor == " + eApM
-                + "\nNombre Receptor == " + rNombre
-                + "\nApellido Paterno Receptor == " + rApP
-                + "\nApellido Materno Receptor == " + rApM
-                + "\nAltura == " + altura
-                + "\nAncho == " + ancho
-                + "\nProfundidad == " + profundidad
-                + "\nPeso == " + peso
-                + "\nPrecio == " + precio
-                + "\nCalle == " + calle
-                + "\nLocalidad == " + localidad
-                + "\nCiudad == " + ciudad
-                + "\nC.P. == " + cp
-                + "Fecha Recp == " + fchRecp
-                + "Fecha Entrega == " + fchEnt
-        );
-        System.out.println("************************************");
-    }
-
-    ////////////////////////////////////
-    public Paqs()
-    {
-    }
 
     public Paqs(String eNombre, String eApP, String eApM, String fchRecp, String rNombre, String rApP, String rApM, String fchEnt, double peso, double altura, double ancho, double profundidad, double precio, String calle, String localidad, int cp, String ciudad)
     {
@@ -223,7 +192,7 @@ public class Paqs
     /**
      * @param peso the peso to set
      */
-    public void setPeso(double peso)
+    public void setPeso(float peso)
     {
         this.peso = peso;
     }
@@ -239,7 +208,7 @@ public class Paqs
     /**
      * @param altura the altura to set
      */
-    public void setAltura(double altura)
+    public void setAltura(float altura)
     {
         this.altura = altura;
     }
@@ -255,7 +224,7 @@ public class Paqs
     /**
      * @param ancho the ancho to set
      */
-    public void setAncho(double ancho)
+    public void setAncho(float ancho)
     {
         this.ancho = ancho;
     }
@@ -271,7 +240,7 @@ public class Paqs
     /**
      * @param profundidad the profundidad to set
      */
-    public void setProfundidad(double profundidad)
+    public void setProfundidad(float profundidad)
     {
         this.profundidad = profundidad;
     }
@@ -287,7 +256,7 @@ public class Paqs
     /**
      * @param precio the precio to set
      */
-    public void setPrecio(double precio)
+    public void setPrecio(float precio)
     {
         this.precio = precio;
     }
@@ -354,22 +323,6 @@ public class Paqs
     public void setCiudad(String ciudad)
     {
         this.ciudad = ciudad;
-    }
-
-    /**
-     * @return the num_guia
-     */
-    public int getNum_guia()
-    {
-        return num_guia;
-    }
-
-    /**
-     * @param num_guia the num_guia to set
-     */
-    public void setNum_guia(int num_guia)
-    {
-        this.num_guia = num_guia;
     }
 
 }

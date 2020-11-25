@@ -31,6 +31,7 @@ public class Enviados extends javax.swing.JPanel
     {
 
         jPanel1 = new javax.swing.JPanel();
+        rSButtonIcon_new1 = new newscomponents.RSButtonIcon_new();
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
         pnlSlider = new newscomponents.RSPanelEffect();
         tabContenidoEnv2 = new vista.enviados.tabContenidoEnv();
@@ -39,6 +40,13 @@ public class Enviados extends javax.swing.JPanel
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(51, 51, 51)));
+
+        rSButtonIcon_new1.setBackground(new java.awt.Color(103, 177, 202));
+        rSButtonIcon_new1.setText("Nuevo paquete");
+        rSButtonIcon_new1.setBackgroundHover(new java.awt.Color(0, 153, 153));
+        rSButtonIcon_new1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rSButtonIcon_new1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD_CIRCLE);
+        rSButtonIcon_new1.setRound(10);
 
         rSLabelTextIcon1.setForeground(new java.awt.Color(0, 153, 204));
         rSLabelTextIcon1.setText("Paquetes enviados");
@@ -52,13 +60,17 @@ public class Enviados extends javax.swing.JPanel
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1329, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1168, Short.MAX_VALUE)
+                .addComponent(rSButtonIcon_new1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButtonIcon_new1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
 
@@ -93,6 +105,7 @@ public class Enviados extends javax.swing.JPanel
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private newscomponents.RSPanelEffect pnlSlider;
+    private newscomponents.RSButtonIcon_new rSButtonIcon_new1;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
     private vista.enviados.tabContenidoEnv tabContenidoEnv2;
     // End of variables declaration//GEN-END:variables
