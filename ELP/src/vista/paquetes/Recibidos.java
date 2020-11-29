@@ -202,7 +202,7 @@ public class Recibidos extends javax.swing.JPanel
     private void btnModificarPqActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnModificarPqActionPerformed
     {//GEN-HEADEREND:event_btnModificarPqActionPerformed
         int row = tabContenidoRec.tblPaquetesRec.getSelectedRow();
-        String num_guia = (String) (tabContenidoRec.tblPaquetesRec.getValueAt(row, 0));
+        String num_guia = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 0));
         String peso = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 6));
         String altura = String.valueOf((tabContenidoRec.tblPaquetesRec.getValueAt(row, 7)));
         String ancho = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 8));
@@ -225,7 +225,7 @@ public class Recibidos extends javax.swing.JPanel
     private void btnEnviarPqActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnEnviarPqActionPerformed
     {//GEN-HEADEREND:event_btnEnviarPqActionPerformed
         int row = tabContenidoRec.tblPaquetesRec.getSelectedRow();
-        String num_guia = (String) (tabContenidoRec.tblPaquetesRec.getValueAt(row, 0));
+        String num_guia = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 0));
         EnviarP send = new EnviarP(num_guia);
         send.setModal(true);
         send.setVisible(true);
