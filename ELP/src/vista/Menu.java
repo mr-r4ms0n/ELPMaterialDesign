@@ -34,6 +34,7 @@ public class Menu extends javax.swing.JFrame
         panelRecibidos.setVisible(false);
         panelEnviados.setVisible(false);
         panelinfo.setVisible(false);
+        panelreloj.setVisible(true);
     }
 
     public Menu()
@@ -72,6 +73,7 @@ public class Menu extends javax.swing.JFrame
         enviados1 = new vista.enviados.Enviados();
         panelinfo = new newscomponents.RSPanelEffect();
         informacion1 = new vista.confirmaciones.Informacion();
+        panelreloj = new newscomponents.RSPanelEffect();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -302,6 +304,8 @@ public class Menu extends javax.swing.JFrame
         panelinfo.setBackground(new java.awt.Color(255, 255, 255));
         panelinfo.add(informacion1, "card2");
 
+        panelreloj.setBackground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout rSPanelMaterialImage1Layout = new javax.swing.GroupLayout(rSPanelMaterialImage1);
         rSPanelMaterialImage1.setLayout(rSPanelMaterialImage1Layout);
         rSPanelMaterialImage1Layout.setHorizontalGroup(
@@ -322,9 +326,14 @@ public class Menu extends javax.swing.JFrame
                     .addGap(18, 18, 18)))
             .addGroup(rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(rSPanelMaterialImage1Layout.createSequentialGroup()
-                    .addGap(271, 271, 271)
-                    .addComponent(panelinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGap(16, 16, 16)))
+                    .addGap(295, 295, 295)
+                    .addComponent(panelinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 1433, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(16, Short.MAX_VALUE)))
+            .addGroup(rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterialImage1Layout.createSequentialGroup()
+                    .addContainerGap(278, Short.MAX_VALUE)
+                    .addComponent(panelreloj, javax.swing.GroupLayout.PREFERRED_SIZE, 1460, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
         rSPanelMaterialImage1Layout.setVerticalGroup(
             rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -342,10 +351,15 @@ public class Menu extends javax.swing.JFrame
                     .addComponent(panelEnviados, javax.swing.GroupLayout.PREFERRED_SIZE, 744, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(rSPanelMaterialImage1Layout.createSequentialGroup()
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelMaterialImage1Layout.createSequentialGroup()
                     .addGap(122, 122, 122)
                     .addComponent(panelinfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
+            .addGroup(rSPanelMaterialImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(rSPanelMaterialImage1Layout.createSequentialGroup()
+                    .addGap(112, 112, 112)
+                    .addComponent(panelreloj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(16, 16, 16)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -375,7 +389,7 @@ public class Menu extends javax.swing.JFrame
         panelRecibidos.setVisible(false);
         panelEnviados.setVisible(false);
         panelinfo.setVisible(true);
-
+        panelreloj.setVisible(false);
     }//GEN-LAST:event_JBAboutActionPerformed
 
     private void BtnCerrarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_BtnCerrarActionPerformed
@@ -400,6 +414,7 @@ public class Menu extends javax.swing.JFrame
         panelRecibidos.setVisible(true);
         panelEnviados.setVisible(false);
         panelinfo.setVisible(false);
+        panelreloj.setVisible(false);
     }//GEN-LAST:event_JBPaquetesActionPerformed
 
     private void JBInicioActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBInicioActionPerformed
@@ -416,6 +431,7 @@ public class Menu extends javax.swing.JFrame
         panelRecibidos.setVisible(false);
         panelEnviados.setVisible(false);
         panelinfo.setVisible(false);
+        panelreloj.setVisible(true);
     }//GEN-LAST:event_JBInicioActionPerformed
 
     private void JBPaquetesEnvActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBPaquetesEnvActionPerformed
@@ -432,6 +448,7 @@ public class Menu extends javax.swing.JFrame
         panelRecibidos.setVisible(false);
         panelEnviados.setVisible(true);
         panelinfo.setVisible(false);
+        panelreloj.setVisible(false);
         tabContenidoEnv.listarPaquetes(tabContenidoEnv.tblPaquetesEnv);
     }//GEN-LAST:event_JBPaquetesEnvActionPerformed
 
@@ -496,6 +513,7 @@ public class Menu extends javax.swing.JFrame
     private newscomponents.RSPanelEffect panelEnviados;
     private newscomponents.RSPanelEffect panelRecibidos;
     private newscomponents.RSPanelEffect panelinfo;
+    private newscomponents.RSPanelEffect panelreloj;
     private RSMaterialComponent.RSLabelIcon rSLabelIcon1;
     private RSMaterialComponent.RSPanelBorderImage rSPanelBorderImage1;
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial1;
