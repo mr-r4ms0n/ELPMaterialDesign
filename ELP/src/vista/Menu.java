@@ -74,6 +74,7 @@ public class Menu extends javax.swing.JFrame
         panelinfo = new newscomponents.RSPanelEffect();
         informacion1 = new vista.confirmaciones.Informacion();
         panelreloj = new newscomponents.RSPanelEffect();
+        reloj1 = new vista.VistaReloj();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -157,7 +158,6 @@ public class Menu extends javax.swing.JFrame
         );
 
         LblBienvenida.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        LblBienvenida.setForeground(new java.awt.Color(0, 0, 0));
         LblBienvenida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblBienvenida.setText("Usuario");
 
@@ -229,7 +229,6 @@ public class Menu extends javax.swing.JFrame
         });
 
         LblBienvenida1.setFont(new java.awt.Font("Segoe UI Semibold", 2, 14)); // NOI18N
-        LblBienvenida1.setForeground(new java.awt.Color(0, 0, 0));
         LblBienvenida1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LblBienvenida1.setText("Usuario");
 
@@ -305,6 +304,7 @@ public class Menu extends javax.swing.JFrame
         panelinfo.add(informacion1, "card2");
 
         panelreloj.setBackground(new java.awt.Color(255, 255, 255));
+        panelreloj.add(reloj1, "card2");
 
         javax.swing.GroupLayout rSPanelMaterialImage1Layout = new javax.swing.GroupLayout(rSPanelMaterialImage1);
         rSPanelMaterialImage1.setLayout(rSPanelMaterialImage1Layout);
@@ -520,5 +520,6 @@ public class Menu extends javax.swing.JFrame
     private RSMaterialComponent.RSPanelMaterial rSPanelMaterial2;
     private RSMaterialComponent.RSPanelMaterialImage rSPanelMaterialImage1;
     private vista.paquetes.Recibidos recibidos1;
+    private vista.VistaReloj reloj1;
     // End of variables declaration//GEN-END:variables
 }
