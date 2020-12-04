@@ -5,6 +5,14 @@
  */
 package vista;
 
+import javafx.application.Platform;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.Scene;
+import javafx.scene.paint.Color;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import reloj.Reloj;
+
 
 /**
  *
@@ -20,6 +28,7 @@ public class VistaReloj extends javax.swing.JPanel
      */
     public VistaReloj()
     {
+        mRelojCorrer();
         initComponents();
 
     }
@@ -37,8 +46,15 @@ public class VistaReloj extends javax.swing.JPanel
         jPanel1 = new javax.swing.JPanel();
         rSLabelTextIcon1 = new RSMaterialComponent.RSLabelTextIcon();
         pnlSlider = new newscomponents.RSPanelEffect();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        vLabelNumPaqEnviados = new javax.swing.JLabel();
+        vLabelNumPaqEnviados1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(51, 51, 51)));
@@ -56,46 +72,104 @@ public class VistaReloj extends javax.swing.JPanel
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1078, Short.MAX_VALUE))
+                .addContainerGap(982, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1490, 80));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 1564, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(119, Short.MAX_VALUE)
-                .addComponent(pnlSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 504, Short.MAX_VALUE)))
-        );
+        pnlSlider.setBackground(new java.awt.Color(153, 0, 51));
+        pnlSlider.setLayout(new java.awt.FlowLayout());
+        add(pnlSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 530, 580));
+
+        jLabel1.setFont(new java.awt.Font("OCR A Extended", 1, 38)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Paquetes recibidos");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 160, 460, 60));
+
+        jLabel2.setFont(new java.awt.Font("OCR A Extended", 1, 38)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Paquetes enviadoz");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 450, 60));
+
+        vLabelNumPaqEnviados.setFont(new java.awt.Font("OCR A Extended", 1, 38)); // NOI18N
+        vLabelNumPaqEnviados.setText("123456789");
+        add(vLabelNumPaqEnviados, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 250, 450, 40));
+
+        vLabelNumPaqEnviados1.setFont(new java.awt.Font("OCR A Extended", 1, 38)); // NOI18N
+        vLabelNumPaqEnviados1.setText("123456789");
+        add(vLabelNumPaqEnviados1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 450, 40));
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setOpaque(true);
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 230, 450, 10));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setOpaque(true);
+        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 450, 10));
     }// </editor-fold>//GEN-END:initComponents
 
 
+    private static void initAndShowGUI()
+    {
+        
+        // This method is invoked on Swing thread
+        final JFXPanel fxPanel = new JFXPanel();
+        fxPanel.setBackground(java.awt.Color.red);
+        pnlSlider.add(fxPanel);
+        Platform.runLater(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                initFX(fxPanel);
+            }
+        });
+    }
+    
+    private static void initFX(JFXPanel fxPanel)
+    {
+        // This method is invoked on JavaFX thread
+        Scene scene = createScene();
+        fxPanel.setScene(scene);
+    }
+    
+    public void mRelojCorrer()
+    {
+        SwingUtilities.invokeLater(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                initAndShowGUI();
+            }
+        });
+    }
+    
+    private static Scene createScene()
+    {
+        Reloj reloj = new Reloj();
+        Scene scene = new Scene(reloj);
+        scene.setFill(Color.TRANSPARENT);
+        return scene;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private newscomponents.RSPanelEffect pnlSlider;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    public static newscomponents.RSPanelEffect pnlSlider;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
+    private javax.swing.JLabel vLabelNumPaqEnviados;
+    private javax.swing.JLabel vLabelNumPaqEnviados1;
     // End of variables declaration//GEN-END:variables
 }

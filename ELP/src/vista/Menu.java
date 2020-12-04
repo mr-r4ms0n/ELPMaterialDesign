@@ -5,11 +5,13 @@
  */
 package vista;
 
+import configuracion.Alertas;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
 import vista.enviados.tabContenidoEnv;
-import vista.paquetes.tabContenidoRec;
+import static configuracion.Alertas.vPanelPrincipal;
+
 
 /**
  *
@@ -378,6 +380,7 @@ public class Menu extends javax.swing.JFrame
 
     private void JBAboutActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBAboutActionPerformed
     {//GEN-HEADEREND:event_JBAboutActionPerformed
+        vPanelPrincipal=false;
         if (!JBAbout.isSelected())
         {
             JBAbout.setSelected(true);
@@ -401,6 +404,7 @@ public class Menu extends javax.swing.JFrame
 
     private void JBPaquetesActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBPaquetesActionPerformed
     {//GEN-HEADEREND:event_JBPaquetesActionPerformed
+        vPanelPrincipal=false;
         if (!JBPaquetes.isSelected())
         {
 
@@ -419,6 +423,7 @@ public class Menu extends javax.swing.JFrame
 
     private void JBInicioActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBInicioActionPerformed
     {//GEN-HEADEREND:event_JBInicioActionPerformed
+        vPanelPrincipal = true;
         if (!JBInicio.isSelected())
         {
             JBInicio.setSelected(true);
@@ -436,6 +441,7 @@ public class Menu extends javax.swing.JFrame
 
     private void JBPaquetesEnvActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBPaquetesEnvActionPerformed
     {//GEN-HEADEREND:event_JBPaquetesEnvActionPerformed
+        vPanelPrincipal = false;
         if (!JBPaquetesEnv.isSelected())
         {
             JBPaquetesEnv.setSelected(true);
