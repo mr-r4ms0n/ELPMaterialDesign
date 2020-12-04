@@ -48,8 +48,8 @@ public class VistaReloj extends javax.swing.JPanel
         pnlSlider = new newscomponents.RSPanelEffect();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        vLabelNumPaqRecibidos = new javax.swing.JLabel();
         vLabelNumPaqEnviados = new javax.swing.JLabel();
-        vLabelNumPaqEnviados1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
 
@@ -83,37 +83,39 @@ public class VistaReloj extends javax.swing.JPanel
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1490, 80));
 
-        pnlSlider.setBackground(new java.awt.Color(153, 0, 51));
+        pnlSlider.setBackground(new java.awt.Color(255, 255, 255));
         pnlSlider.setLayout(new java.awt.FlowLayout());
         add(pnlSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 530, 580));
 
         jLabel1.setFont(new java.awt.Font("OCR A Extended", 1, 38)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Paquetes recibidos");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 160, 460, 60));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 260, 460, 60));
 
         jLabel2.setFont(new java.awt.Font("OCR A Extended", 1, 38)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Paquetes enviadoz");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 450, 60));
+        jLabel2.setText("Paquetes enviados");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 450, 60));
+
+        vLabelNumPaqRecibidos.setFont(new java.awt.Font("OCR A Extended", 1, 38)); // NOI18N
+        vLabelNumPaqRecibidos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        vLabelNumPaqRecibidos.setText("123456789");
+        add(vLabelNumPaqRecibidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 350, 450, 40));
 
         vLabelNumPaqEnviados.setFont(new java.awt.Font("OCR A Extended", 1, 38)); // NOI18N
+        vLabelNumPaqEnviados.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vLabelNumPaqEnviados.setText("123456789");
-        add(vLabelNumPaqEnviados, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 250, 450, 40));
-
-        vLabelNumPaqEnviados1.setFont(new java.awt.Font("OCR A Extended", 1, 38)); // NOI18N
-        vLabelNumPaqEnviados1.setText("123456789");
-        add(vLabelNumPaqEnviados1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 450, 40));
+        add(vLabelNumPaqEnviados, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 450, 40));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator1.setOpaque(true);
-        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 230, 450, 10));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 330, 450, 10));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator2.setOpaque(true);
-        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 450, 10));
+        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 450, 10));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -169,7 +171,7 @@ public class VistaReloj extends javax.swing.JPanel
     private javax.swing.JSeparator jSeparator2;
     public static newscomponents.RSPanelEffect pnlSlider;
     private RSMaterialComponent.RSLabelTextIcon rSLabelTextIcon1;
-    private javax.swing.JLabel vLabelNumPaqEnviados;
-    private javax.swing.JLabel vLabelNumPaqEnviados1;
+    public static javax.swing.JLabel vLabelNumPaqEnviados;
+    public static javax.swing.JLabel vLabelNumPaqRecibidos;
     // End of variables declaration//GEN-END:variables
 }

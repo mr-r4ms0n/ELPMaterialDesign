@@ -11,6 +11,9 @@ import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
 import vista.enviados.tabContenidoEnv;
 import static configuracion.Alertas.vPanelPrincipal;
+import static vista.VistaReloj.*;
+import static vista.enviados.tabContenidoEnv.*;
+import static vista.paquetes.tabContenidoRec.*;
 
 
 /**
@@ -37,6 +40,9 @@ public class Menu extends javax.swing.JFrame
         panelEnviados.setVisible(false);
         panelinfo.setVisible(false);
         panelreloj.setVisible(true);
+        
+        vLabelNumPaqEnviados.setText(String.valueOf(tblPaquetesEnv.getRowCount()));
+        vLabelNumPaqRecibidos.setText(String.valueOf(tblPaquetesRec.getRowCount()));
     }
 
     public Menu()
@@ -424,6 +430,10 @@ public class Menu extends javax.swing.JFrame
     private void JBInicioActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_JBInicioActionPerformed
     {//GEN-HEADEREND:event_JBInicioActionPerformed
         vPanelPrincipal = true;
+        
+        vLabelNumPaqEnviados.setText(String.valueOf(tblPaquetesEnv.getRowCount()));
+        vLabelNumPaqRecibidos.setText(String.valueOf(tblPaquetesRec.getRowCount()));
+        
         if (!JBInicio.isSelected())
         {
             JBInicio.setSelected(true);

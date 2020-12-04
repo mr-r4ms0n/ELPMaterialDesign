@@ -5,7 +5,7 @@
  */
 package vista.paquetes;
 
-import configuracion.Paqs;
+import vista.confirmaciones.CError;
 import vista.confirmaciones.ConfirmaAcc;
 
 /**
@@ -17,6 +17,7 @@ public class Recibidos extends javax.swing.JPanel
 
     public static int confirmacion = -1;
     public static boolean busqueda_f = false;
+
     /**
      * Creates new form Principal
      */
@@ -182,36 +183,52 @@ public class Recibidos extends javax.swing.JPanel
 
     private void btnEliminarPqActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnEliminarPqActionPerformed
     {//GEN-HEADEREND:event_btnEliminarPqActionPerformed
-        System.out.println("Seleccionaste la fila == " + tabContenidoRec.tblPaquetesRec.getSelectedRow());
-        int row = tabContenidoRec.tblPaquetesRec.getSelectedRow();
-        String num_guia = (String) (String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 0)));
-        System.out.println("Dato seleccionado == " + num_guia);
-        ConfirmaAcc sure = new ConfirmaAcc("eliminar");
-        sure.setModal(true);
-        sure.setVisible(true);
-        if (confirmacion == 1)
+        try
         {
-            //int dato = (int) tabContenidoRec.tblPaquetesRec.getValueAt(tabContenidoRec.tblPaquetesRec.getSelectedRow(), 0);
-            modelo.MetodosBD.eliminaBD(Integer.parseInt(num_guia));
-            tabContenidoRec.listarPaquetes(tabContenidoRec.tblPaquetesRec);
-            confirmacion = -1;
+            System.out.println("Seleccionaste la fila == " + tabContenidoRec.tblPaquetesRec.getSelectedRow());
+            int row = tabContenidoRec.tblPaquetesRec.getSelectedRow();
+            String num_guia = (String) (String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 0)));
+            System.out.println("Dato seleccionado == " + num_guia);
+            ConfirmaAcc sure = new ConfirmaAcc("eliminar");
+            sure.setModal(true);
+            sure.setVisible(true);
+            if (confirmacion == 1)
+            {
+                //int dato = (int) tabContenidoRec.tblPaquetesRec.getValueAt(tabContenidoRec.tblPaquetesRec.getSelectedRow(), 0);
+                modelo.MetodosBD.eliminaBD(Integer.parseInt(num_guia));
+                tabContenidoRec.listarPaquetes(tabContenidoRec.tblPaquetesRec);
+                confirmacion = -1;
+            }
+        } catch (Exception e)
+        {
+            CError vErr = new CError("Seleccione un paquete de la tabla");
+            vErr.setModal(true);
+            vErr.setVisible(true);
         }
 
     }//GEN-LAST:event_btnEliminarPqActionPerformed
 
     private void btnModificarPqActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnModificarPqActionPerformed
     {//GEN-HEADEREND:event_btnModificarPqActionPerformed
-        int row = tabContenidoRec.tblPaquetesRec.getSelectedRow();
-        String num_guia = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 0));
-        String peso = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 6));
-        String altura = String.valueOf((tabContenidoRec.tblPaquetesRec.getValueAt(row, 7)));
-        String ancho = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 8));
-        String profundidad = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 9));
-        String precio = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 10));
+        try
+        {
+            int row = tabContenidoRec.tblPaquetesRec.getSelectedRow();
+            String num_guia = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 0));
+            String peso = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 6));
+            String altura = String.valueOf((tabContenidoRec.tblPaquetesRec.getValueAt(row, 7)));
+            String ancho = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 8));
+            String profundidad = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 9));
+            String precio = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 10));
 
-        Modificaciones mod = new Modificaciones(num_guia, peso, altura, ancho, profundidad, precio);
-        mod.setModal(true);
-        mod.setVisible(true);
+            Modificaciones mod = new Modificaciones(num_guia, peso, altura, ancho, profundidad, precio);
+            mod.setModal(true);
+            mod.setVisible(true);
+        } catch (Exception e)
+        {
+            CError vErr = new CError("Seleccione un paquete de la tabla");
+            vErr.setModal(true);
+            vErr.setVisible(true);
+        }
 
     }//GEN-LAST:event_btnModificarPqActionPerformed
 
@@ -224,11 +241,19 @@ public class Recibidos extends javax.swing.JPanel
 
     private void btnEnviarPqActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnEnviarPqActionPerformed
     {//GEN-HEADEREND:event_btnEnviarPqActionPerformed
-        int row = tabContenidoRec.tblPaquetesRec.getSelectedRow();
-        String num_guia = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 0));
-        EnviarP send = new EnviarP(num_guia);
-        send.setModal(true);
-        send.setVisible(true);
+        try
+        {
+            int row = tabContenidoRec.tblPaquetesRec.getSelectedRow();
+            String num_guia = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 0));
+            EnviarP send = new EnviarP(num_guia);
+            send.setModal(true);
+            send.setVisible(true);
+        } catch (Exception e)
+        {
+            CError vErr = new CError("Seleccione un paquete de la tabla");
+            vErr.setModal(true);
+            vErr.setVisible(true);
+        }
     }//GEN-LAST:event_btnEnviarPqActionPerformed
 
 
