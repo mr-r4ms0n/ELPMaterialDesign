@@ -198,6 +198,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ca" green="b1" red="67" type="rgb"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Busqueda filtrada de paquetes enviados"/>
         <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ca" green="b1" red="67" type="rgb"/>
         </Property>
@@ -231,6 +232,7 @@
             <StringItem index="5" value="Fecha de entrega"/>
           </StringArray>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Seleccione tipo de filtro para la busqueda"/>
         <Property name="colorArrow" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ca" green="b1" red="67" type="rgb"/>
         </Property>

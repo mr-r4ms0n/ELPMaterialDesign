@@ -273,6 +273,7 @@
             <Component class="RSMaterialComponent.RSButtonMaterialIconOne" name="btnIngresar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ingresar"/>
+                <Property name="toolTipText" type="java.lang.String" value="Ingreso al sistema"/>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
                   <Value id="ARROW_FORWARD"/>
@@ -289,6 +290,7 @@
                   <Color blue="33" green="0" red="cc" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Salir"/>
+                <Property name="toolTipText" type="java.lang.String" value="Salir del sistema"/>
                 <Property name="backgroundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="0" red="cc" type="rgb"/>
                 </Property>

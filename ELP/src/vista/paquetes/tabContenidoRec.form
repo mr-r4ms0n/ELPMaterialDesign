@@ -41,7 +41,7 @@
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="txtBusquedaRec" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCBTipoBusqueda" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCBTipoBusqueda" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="376" max="-2" attributes="0"/>
@@ -196,6 +196,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ca" green="b1" red="67" type="rgb"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Busqueda filtrada de paquetes recibidos"/>
         <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ca" green="b1" red="67" type="rgb"/>
         </Property>
@@ -231,6 +232,7 @@
             <StringItem index="4" value="Fecha de recibido"/>
           </StringArray>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Seleccione tipo de filtro para la busqueda"/>
         <Property name="colorArrow" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ca" green="b1" red="67" type="rgb"/>
         </Property>

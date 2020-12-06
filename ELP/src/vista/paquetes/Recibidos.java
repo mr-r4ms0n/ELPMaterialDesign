@@ -53,6 +53,7 @@ public class Recibidos extends javax.swing.JPanel
 
         rSButtonIcon_new1.setBackground(new java.awt.Color(103, 177, 202));
         rSButtonIcon_new1.setText("Nuevo paquete");
+        rSButtonIcon_new1.setToolTipText("Boton que acciona el registro de un nuevo paquete");
         rSButtonIcon_new1.setBackgroundHover(new java.awt.Color(0, 153, 153));
         rSButtonIcon_new1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         rSButtonIcon_new1.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ADD_CIRCLE);
@@ -72,6 +73,7 @@ public class Recibidos extends javax.swing.JPanel
 
         btnEliminarPq.setBackground(new java.awt.Color(255, 255, 255));
         btnEliminarPq.setText("Eliminar paquete");
+        btnEliminarPq.setToolTipText("Boton que acciona la eliminación de un paquete");
         btnEliminarPq.setBackgroundHover(new java.awt.Color(0, 153, 153));
         btnEliminarPq.setForegroundIcon(new java.awt.Color(255, 0, 0));
         btnEliminarPq.setForegroundText(new java.awt.Color(0, 0, 0));
@@ -88,6 +90,7 @@ public class Recibidos extends javax.swing.JPanel
 
         btnModificarPq.setBackground(new java.awt.Color(255, 255, 255));
         btnModificarPq.setText("Modificar paquete");
+        btnModificarPq.setToolTipText("Boton que acciona la modiicación de datos de un paquete");
         btnModificarPq.setBackgroundHover(new java.awt.Color(0, 153, 153));
         btnModificarPq.setForegroundIcon(new java.awt.Color(0, 153, 204));
         btnModificarPq.setForegroundText(new java.awt.Color(0, 0, 0));
@@ -104,6 +107,7 @@ public class Recibidos extends javax.swing.JPanel
 
         btnEnviarPq.setBackground(new java.awt.Color(255, 255, 255));
         btnEnviarPq.setText("Enviar paquete");
+        btnEnviarPq.setToolTipText("Boton que acciona el envio de un paquete");
         btnEnviarPq.setBackgroundHover(new java.awt.Color(0, 153, 153));
         btnEnviarPq.setForegroundIcon(new java.awt.Color(0, 102, 102));
         btnEnviarPq.setForegroundText(new java.awt.Color(0, 0, 0));

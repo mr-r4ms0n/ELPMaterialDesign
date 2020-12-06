@@ -158,6 +158,7 @@ public class LoginAdmin extends javax.swing.JFrame
         JFContraseña.setPlaceholder("Ingrese Contraseña");
 
         btnIngresar.setText("Ingresar");
+        btnIngresar.setToolTipText("Ingreso al sistema");
         btnIngresar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnIngresar.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.ARROW_FORWARD);
         btnIngresar.setRound(20);
@@ -171,6 +172,7 @@ public class LoginAdmin extends javax.swing.JFrame
 
         btnSalir.setBackground(new java.awt.Color(204, 0, 51));
         btnSalir.setText("Salir");
+        btnSalir.setToolTipText("Salir del sistema");
         btnSalir.setBackgroundHover(new java.awt.Color(204, 0, 51));
         btnSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnSalir.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CANCEL);

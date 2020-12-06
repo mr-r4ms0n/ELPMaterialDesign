@@ -113,6 +113,7 @@
               <Color blue="ca" green="b1" red="67" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Nuevo paquete"/>
+            <Property name="toolTipText" type="java.lang.String" value="Boton que acciona el registro de un nuevo paquete"/>
             <Property name="backgroundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="0" type="rgb"/>
             </Property>
@@ -146,6 +147,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Eliminar paquete"/>
+            <Property name="toolTipText" type="java.lang.String" value="Boton que acciona la eliminaci&#xf3;n de un paquete"/>
             <Property name="backgroundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="0" type="rgb"/>
             </Property>
@@ -171,6 +173,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Modificar paquete"/>
+            <Property name="toolTipText" type="java.lang.String" value="Boton que acciona la modiicaci&#xf3;n de datos de un paquete"/>
             <Property name="backgroundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="0" type="rgb"/>
             </Property>
@@ -196,6 +199,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Enviar paquete"/>
+            <Property name="toolTipText" type="java.lang.String" value="Boton que acciona el envio de un paquete"/>
             <Property name="backgroundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="0" type="rgb"/>
             </Property>

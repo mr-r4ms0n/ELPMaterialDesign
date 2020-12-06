@@ -125,7 +125,6 @@
                                                   <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
                                                   <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="vTextFilePaqCosto" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="vTextFilePaqGuia" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -137,31 +136,34 @@
                                                       <Component id="vTextFilePaqFecRecepcion" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <Component id="vLabelErrPaqCosto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="vLabelErrPaqCosto" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="vTextFilePaqCosto" alignment="0" pref="180" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="vTextFilePaqPeso" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="vTextFilePaqPeso" alignment="0" pref="130" max="32767" attributes="0"/>
                                               <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                              <Component id="vLabelErrPaqPeso" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="vLabelErrPaqPeso" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="vLabelErrPaqAltura" min="-2" max="-2" attributes="0"/>
-                                              <Component id="vTextFilePaqAltura" min="-2" pref="124" max="-2" attributes="0"/>
+                                              <Component id="vTextFilePaqAltura" pref="124" max="32767" attributes="0"/>
+                                              <Component id="vLabelErrPaqAltura" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="40" max="32767" attributes="0"/>
+                                          <EmptySpace pref="27" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                                               <Component id="vTextFilePaqAncho" min="-2" pref="133" max="-2" attributes="0"/>
                                               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace pref="14" max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="vTextFilePaqProfundidad" min="-2" pref="178" max="-2" attributes="0"/>
-                                              <Component id="vLabelErrPaqProfundidad" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace pref="27" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="vTextFilePaqProfundidad" pref="178" max="32767" attributes="0"/>
+                                              <Component id="vLabelErrPaqProfundidad" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -507,7 +509,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Error peso"/>
+                    <Property name="text" type="java.lang.String" value="Error, verifique peso"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="vLabelErrPaqAltura">
@@ -518,7 +520,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Error altura"/>
+                    <Property name="text" type="java.lang.String" value="Error, verifique altura"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="vLabelErrPaqProfundidad">
@@ -529,7 +531,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Error profundidad"/>
+                    <Property name="text" type="java.lang.String" value="Error, verifique profundidad"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="vLabelErrPaqCosto">
@@ -540,7 +542,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Error costo"/>
+                    <Property name="text" type="java.lang.String" value="Error, verifique costo"/>
                   </Properties>
                 </Component>
                 <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFilePaqAncho">
@@ -660,8 +662,8 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="vLabelErrPaqAncho" min="-2" pref="105" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                              <Component id="vLabelErrPaqAncho" min="-2" pref="119" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -680,7 +682,7 @@
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Error ancho"/>
+                        <Property name="text" type="java.lang.String" value="Error, verifique ancho"/>
                       </Properties>
                     </Component>
                   </SubComponents>

@@ -92,6 +92,7 @@ public class tabContenidoEnv extends javax.swing.JPanel
         jScrollPane1.setViewportView(tblPaquetesEnv);
 
         txtBusqueda.setForeground(new java.awt.Color(103, 177, 202));
+        txtBusqueda.setToolTipText("Busqueda filtrada de paquetes enviados");
         txtBusqueda.setBorderColor(new java.awt.Color(103, 177, 202));
         txtBusqueda.setColorIcon(new java.awt.Color(103, 177, 202));
         txtBusqueda.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
@@ -107,6 +108,7 @@ public class tabContenidoEnv extends javax.swing.JPanel
         });
 
         jCBTipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Numero de guía", "Nombre del emisor", "Nombre del receptor", "Dirección", "Fecha de recibido", "Fecha de entrega" }));
+        jCBTipoBusqueda.setToolTipText("Seleccione tipo de filtro para la busqueda");
         jCBTipoBusqueda.setColorArrow(new java.awt.Color(103, 177, 202));
         jCBTipoBusqueda.setColorBorde(new java.awt.Color(103, 177, 202));
         jCBTipoBusqueda.setColorFondo(new java.awt.Color(103, 177, 202));

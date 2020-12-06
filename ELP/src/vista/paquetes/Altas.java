@@ -21,14 +21,14 @@ import rojeru_san.complementos.RSUtilities;
  */
 public class Altas extends javax.swing.JDialog
 {
-    
+
     private Window vtn;
     private boolean vActivarVerificadorPanePaq = false;
     private boolean vActivarVerificadorPaneEmi = false;
     private boolean vActivarVerificadorPaneRece = false;
-    
-    Color vColorOrig=new Color(0,153,204);
-    Color vColorErr=new Color(204,71,0);
+
+    Color vColorOrig = new Color(0, 153, 204);
+    Color vColorErr = new Color(204, 71, 0);
 
     /**
      * Creates new form Altas
@@ -66,7 +66,7 @@ public class Altas extends javax.swing.JDialog
         vLabelErrEmiApellidoM.setVisible(false);
         vLabelErrEmiApellidoP.setVisible(false);
         vLabelErrEmiNombre.setVisible(false);
-        
+
     }
 
     /**
@@ -334,19 +334,19 @@ public class Altas extends javax.swing.JDialog
 
         vLabelErrPaqPeso.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         vLabelErrPaqPeso.setForeground(java.awt.Color.red);
-        vLabelErrPaqPeso.setText("Error peso");
+        vLabelErrPaqPeso.setText("Error, verifique peso");
 
         vLabelErrPaqAltura.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         vLabelErrPaqAltura.setForeground(java.awt.Color.red);
-        vLabelErrPaqAltura.setText("Error altura");
+        vLabelErrPaqAltura.setText("Error, verifique altura");
 
         vLabelErrPaqProfundidad.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         vLabelErrPaqProfundidad.setForeground(java.awt.Color.red);
-        vLabelErrPaqProfundidad.setText("Error profundidad");
+        vLabelErrPaqProfundidad.setText("Error, verifique profundidad");
 
         vLabelErrPaqCosto.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         vLabelErrPaqCosto.setForeground(java.awt.Color.red);
-        vLabelErrPaqCosto.setText("Error costo");
+        vLabelErrPaqCosto.setText("Error, verifique costo");
 
         vTextFilePaqAncho.setForeground(new java.awt.Color(0, 0, 0));
         vTextFilePaqAncho.setBorderColor(new java.awt.Color(103, 177, 202));
@@ -441,15 +441,15 @@ public class Altas extends javax.swing.JDialog
 
         vLabelErrPaqAncho.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         vLabelErrPaqAncho.setForeground(java.awt.Color.red);
-        vLabelErrPaqAncho.setText("Error ancho");
+        vLabelErrPaqAncho.setText("Error, verifique ancho");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(vLabelErrPaqAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(vLabelErrPaqAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -478,7 +478,6 @@ public class Altas extends javax.swing.JDialog
                                         .addComponent(jLabel5)
                                         .addGap(279, 279, 279)
                                         .addComponent(jLabel15))
-                                    .addComponent(vTextFilePaqCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                                         .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(vTextFilePaqGuia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -487,26 +486,28 @@ public class Altas extends javax.swing.JDialog
                                         .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(vLabelErrPaqFecRec)
                                             .addComponent(vTextFilePaqFecRecepcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(vLabelErrPaqCosto))
+                                    .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(vLabelErrPaqCosto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(vTextFilePaqCosto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(vTextFilePaqPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(vTextFilePaqPeso, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
                                     .addComponent(jLabel17)
-                                    .addComponent(vLabelErrPaqPeso))
+                                    .addComponent(vLabelErrPaqPeso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(31, 31, 31)
                                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(vLabelErrPaqAltura)
-                                    .addComponent(vTextFilePaqAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                    .addComponent(vTextFilePaqAltura, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                                    .addComponent(vLabelErrPaqAltura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel13)
                                     .addComponent(vTextFilePaqAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(vTextFilePaqProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(vLabelErrPaqProfundidad)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(vTextFilePaqProfundidad, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                                    .addComponent(vLabelErrPaqProfundidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnPaqueteNext, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1468,7 +1469,7 @@ public class Altas extends javax.swing.JDialog
 
     private void vTextFilePaqFecRecepcionKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFilePaqFecRecepcionKeyTyped
     {//GEN-HEADEREND:event_vTextFilePaqFecRecepcionKeyTyped
-        
+
         if (evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9')
         {
             if (vTextFilePaqFecRecepcion.getText().length() > 9)
@@ -1491,7 +1492,7 @@ public class Altas extends javax.swing.JDialog
 
     private void vTextFilePaqPesoFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFilePaqPesoFocusLost
     {//GEN-HEADEREND:event_vTextFilePaqPesoFocusLost
-        mValidarNumerosDouble(vTextFilePaqPeso, vLabelErrPaqPeso);
+        mValidarNumerosDouble(vTextFilePaqPeso, vLabelErrPaqPeso, 1);
     }//GEN-LAST:event_vTextFilePaqPesoFocusLost
 
     private void vTextFilePaqAlturaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFilePaqAlturaKeyTyped
@@ -1504,7 +1505,7 @@ public class Altas extends javax.swing.JDialog
 
     private void vTextFilePaqAlturaFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFilePaqAlturaFocusLost
     {//GEN-HEADEREND:event_vTextFilePaqAlturaFocusLost
-        mValidarNumerosDouble(vTextFilePaqAltura, vLabelErrPaqAltura);
+        mValidarNumerosDouble(vTextFilePaqAltura, vLabelErrPaqAltura, 2);
     }//GEN-LAST:event_vTextFilePaqAlturaFocusLost
 
     private void vTextFilePaqAnchoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFilePaqAnchoKeyTyped
@@ -1517,7 +1518,7 @@ public class Altas extends javax.swing.JDialog
 
     private void vTextFilePaqAnchoFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFilePaqAnchoFocusLost
     {//GEN-HEADEREND:event_vTextFilePaqAnchoFocusLost
-        mValidarNumerosDouble(vTextFilePaqAncho, vLabelErrPaqAncho);
+        mValidarNumerosDouble(vTextFilePaqAncho, vLabelErrPaqAncho, 2);
     }//GEN-LAST:event_vTextFilePaqAnchoFocusLost
 
     private void vTextFilePaqProfundidadKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFilePaqProfundidadKeyTyped
@@ -1530,7 +1531,7 @@ public class Altas extends javax.swing.JDialog
 
     private void vTextFilePaqProfundidadFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFilePaqProfundidadFocusLost
     {//GEN-HEADEREND:event_vTextFilePaqProfundidadFocusLost
-        mValidarNumerosDouble(vTextFilePaqProfundidad, vLabelErrPaqProfundidad);
+        mValidarNumerosDouble(vTextFilePaqProfundidad, vLabelErrPaqProfundidad, 2);
     }//GEN-LAST:event_vTextFilePaqProfundidadFocusLost
 
     private void vTextFilePaqCostoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFilePaqCostoKeyTyped
@@ -1543,7 +1544,7 @@ public class Altas extends javax.swing.JDialog
 
     private void vTextFilePaqCostoFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFilePaqCostoFocusLost
     {//GEN-HEADEREND:event_vTextFilePaqCostoFocusLost
-        mValidarNumerosDouble(vTextFilePaqCosto, vLabelErrPaqCosto);
+        mValidarNumerosDouble(vTextFilePaqCosto, vLabelErrPaqCosto, 0);
     }//GEN-LAST:event_vTextFilePaqCostoFocusLost
 
     private void vTextFilePaqFecRecepcionFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFilePaqFecRecepcionFocusLost
@@ -1600,7 +1601,7 @@ public class Altas extends javax.swing.JDialog
         vTextFilePaqPesoFocusLost(null);
         vTextFilePaqProfundidadFocusLost(null);
         vTextFilePaqFecRecepcionFocusLost(null);
-        
+
         if (vLabelErrPaqAltura.isVisible() || vLabelErrPaqAncho.isVisible() || vLabelErrPaqCosto.isVisible()
                 || vLabelErrPaqFecRec.isVisible() || vLabelErrPaqPeso.isVisible() || vLabelErrPaqProfundidad.isVisible())
         {
@@ -1618,10 +1619,11 @@ public class Altas extends javax.swing.JDialog
      * @param vTextField TextFile el cual se va a adquierir los datos
      * @param vLabelErr Label de error el que se va a mostrar
      */
-    protected void mValidarNumerosDouble(RSMaterialComponent.RSTextFieldOne vTextField, javax.swing.JLabel vLabelErr)
+    protected void mValidarNumerosDouble(RSMaterialComponent.RSTextFieldOne vTextField, javax.swing.JLabel vLabelErr, int vTipo)
     {
         boolean vExistPunto = false;
-        
+        boolean vExceso = false;
+
         for (int i = 0; i < vTextField.getText().length(); i++)
         {
             if (vTextField.getText().charAt(i) == '.')
@@ -1647,8 +1649,44 @@ public class Altas extends javax.swing.JDialog
         {
             if (!vMatcherValida.matches())
             {
-                vLabelErr.setVisible(false);
-                mHabilitaBtnPaqNext();
+                if (vTipo >= 0)
+                {
+                    switch (vTipo)
+                    {
+                        case 0:
+                            vLabelErr.setVisible(false);
+                            mHabilitaBtnPaqNext();
+                            break;
+
+                        case 1:
+                            if (Double.parseDouble(vTextField.getText()) > 22)
+                            {
+                                vLabelErr.setVisible(true);
+                                vLabelErr.setText("Exceso de peso");
+                            } else
+                            {
+                                vLabelErr.setVisible(false);
+                                mHabilitaBtnPaqNext();
+                            }
+                            break;
+                        case 2:
+                            if (Double.parseDouble(vTextField.getText()) > 100)
+                            {
+                                vLabelErr.setVisible(true);
+                                vLabelErr.setText("Exceso de dimensiones");
+                            } else
+                            {
+                                vLabelErr.setText("Error, verifique altura");
+                                vLabelErr.setVisible(false);
+                                mHabilitaBtnPaqNext();
+                            }
+                            break;
+                    }
+                }
+                if (vExceso == false)
+                {
+
+                }
             } else
             {
                 vLabelErr.setVisible(true);
@@ -1685,7 +1723,7 @@ public class Altas extends javax.swing.JDialog
         {
             System.err.println("Error al meter el formato dd/mm/aaaa");
         }
-        
+
         return true;
     }
 
@@ -1796,7 +1834,7 @@ public class Altas extends javax.swing.JDialog
 
     private void rSPanelEmisorMouseMoved(java.awt.event.MouseEvent evt)//GEN-FIRST:event_rSPanelEmisorMouseMoved
     {//GEN-HEADEREND:event_rSPanelEmisorMouseMoved
-        
+
         if (vActivarVerificadorPaneEmi)
         {
             mHabilitaBtnEmiNextMouseEntered();
@@ -1807,7 +1845,7 @@ public class Altas extends javax.swing.JDialog
      */
     protected void mHabilitaBtnEmiNext()
     {
-        
+
         if (vLabelErrEmiNombre.isVisible() || vLabelErrEmiApellidoP.isVisible() || vLabelErrEmiApellidoM.isVisible())
         {
             btnEmisorNext.setEnabled(false);
@@ -1815,7 +1853,7 @@ public class Altas extends javax.swing.JDialog
         {
             btnEmisorNext.setEnabled(true);
         }
-        
+
     }
 
     /**
@@ -1827,7 +1865,7 @@ public class Altas extends javax.swing.JDialog
         vTextFileEmiNombreFocusLost(null);
         vTextFileEmiApePFocusLost(null);
         vTextFileEmiApeMFocusLost(null);
-        
+
         if (vLabelErrEmiNombre.isVisible() || vLabelErrEmiApellidoP.isVisible() || vLabelErrEmiApellidoM.isVisible())
         {
             btnEmisorNext.setEnabled(false);
@@ -2061,7 +2099,7 @@ public class Altas extends javax.swing.JDialog
 
     private void btnGuardarAltasMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_btnGuardarAltasMouseEntered
     {//GEN-HEADEREND:event_btnGuardarAltasMouseEntered
-        
+
         if (vActivarVerificadorPaneRece)
         {
             mHabilitaBtnRecepNextMouseEntered();
@@ -2073,7 +2111,7 @@ public class Altas extends javax.swing.JDialog
      */
     protected void mHabilitaBtnRecepNext()
     {
-        
+
         if (vLabelErrRecApellidoP.isVisible() || vLabelErrRecApellidoM.isVisible() || vLabelErrRecCP.isVisible() || vLabelErrRecCalle.isVisible()
                 || vLabelErrRecCiudad.isVisible() || vLabelErrRecLocalidad.isVisible() || vLabelErrRecNombre.isVisible())
         {
@@ -2082,7 +2120,7 @@ public class Altas extends javax.swing.JDialog
         {
             btnGuardarAltas.setEnabled(true);
         }
-        
+
     }
 
     /**
@@ -2098,7 +2136,7 @@ public class Altas extends javax.swing.JDialog
         vTextFileRecepLocaliadFocusLost(null);
         vTextFileRecepCiudadFocusLost(null);
         vTextFileRecepCPFocusLost(null);
-        
+
         if (vLabelErrRecApellidoP.isVisible() || vLabelErrRecApellidoM.isVisible() || vLabelErrRecCP.isVisible() || vLabelErrRecCalle.isVisible()
                 || vLabelErrRecCiudad.isVisible() || vLabelErrRecLocalidad.isVisible() || vLabelErrRecNombre.isVisible())
         {
@@ -2107,7 +2145,7 @@ public class Altas extends javax.swing.JDialog
         {
             btnGuardarAltas.setEnabled(true);
         }
-        
+
     }
 
     /**
@@ -2162,7 +2200,7 @@ public class Altas extends javax.swing.JDialog
                         }
                     }
                 }
-                
+
             } else
             {
                 if (i == 0)
@@ -2247,7 +2285,7 @@ public class Altas extends javax.swing.JDialog
             vEspacio = false;
         } else
         {
-            
+
             if (vEspacio)
             {
                 char vTextTmp[] = vTextField.getText().toCharArray();
@@ -2272,7 +2310,7 @@ public class Altas extends javax.swing.JDialog
     {
         if (vCaracter >= 'a' && vCaracter <= 'z' || vCaracter == 'ñ')
         {
-            
+
             if (vCaracter >= 'a' && vCaracter <= 'z')
             {
                 vCaracter = (char) ((int) vCaracter - 32);

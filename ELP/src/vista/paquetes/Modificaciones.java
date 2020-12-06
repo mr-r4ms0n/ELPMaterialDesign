@@ -210,7 +210,7 @@ public class Modificaciones extends javax.swing.JDialog
         );
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel4.setText("Peso");
+        jLabel4.setText("Peso (KG)");
 
         vTextFileModPeso.setForeground(new java.awt.Color(0, 0, 0));
         vTextFileModPeso.setBorderColor(new java.awt.Color(103, 177, 202));
@@ -233,7 +233,7 @@ public class Modificaciones extends javax.swing.JDialog
         });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel5.setText("Altura");
+        jLabel5.setText("Altura (CM)");
 
         vTextFileModAltura.setForeground(new java.awt.Color(0, 0, 0));
         vTextFileModAltura.setBorderColor(new java.awt.Color(103, 177, 202));
@@ -257,11 +257,11 @@ public class Modificaciones extends javax.swing.JDialog
 
         vLabelErrModPeso.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         vLabelErrModPeso.setForeground(java.awt.Color.red);
-        vLabelErrModPeso.setText("Error peso");
+        vLabelErrModPeso.setText("Error, verifique peso");
 
         vLabelErrModAltura.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         vLabelErrModAltura.setForeground(java.awt.Color.red);
-        vLabelErrModAltura.setText("Error altura");
+        vLabelErrModAltura.setText("Error, verifique altura");
 
         vTextFileModAncho.setForeground(new java.awt.Color(0, 0, 0));
         vTextFileModAncho.setBorderColor(new java.awt.Color(103, 177, 202));
@@ -284,11 +284,11 @@ public class Modificaciones extends javax.swing.JDialog
         });
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel13.setText("Ancho");
+        jLabel13.setText("Ancho (CM)");
 
         vLabelErrModAncho.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         vLabelErrModAncho.setForeground(java.awt.Color.red);
-        vLabelErrModAncho.setText("Error ancho");
+        vLabelErrModAncho.setText("Error, verifique ancho");
 
         vTextFileModProfundidad.setForeground(new java.awt.Color(0, 0, 0));
         vTextFileModProfundidad.setBorderColor(new java.awt.Color(103, 177, 202));
@@ -311,11 +311,11 @@ public class Modificaciones extends javax.swing.JDialog
         });
 
         jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jLabel15.setText("Profundidad");
+        jLabel15.setText("Profundidad (CM)");
 
         vLabelErrModProfundidad.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         vLabelErrModProfundidad.setForeground(java.awt.Color.red);
-        vLabelErrModProfundidad.setText("Error profundidad");
+        vLabelErrModProfundidad.setText("Error verifique profundidad");
 
         vTextFileModCosto.setForeground(new java.awt.Color(0, 0, 0));
         vTextFileModCosto.setBorderColor(new java.awt.Color(103, 177, 202));
@@ -342,7 +342,7 @@ public class Modificaciones extends javax.swing.JDialog
 
         vLabelErrModCosto.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         vLabelErrModCosto.setForeground(java.awt.Color.red);
-        vLabelErrModCosto.setText("Error costo");
+        vLabelErrModCosto.setText("Error, verifique costo");
 
         btnGuardarMod.setBackground(new java.awt.Color(0, 153, 204));
         btnGuardarMod.setToolTipText("Guardar modificaciones");
@@ -369,13 +369,7 @@ public class Modificaciones extends javax.swing.JDialog
         rSPanelPaqueteLayout.setHorizontalGroup(
             rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(vLabelErrModCosto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnGuardarMod, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(96, 96, 96))
-            .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addGap(212, 212, 212)
@@ -388,34 +382,37 @@ public class Modificaciones extends javax.swing.JDialog
                         .addComponent(jLabel4)
                         .addGap(123, 123, 123)
                         .addComponent(jLabel5)
-                        .addGap(110, 110, 110)
+                        .addGap(86, 86, 86)
                         .addComponent(jLabel13)
-                        .addGap(116, 116, 116)
+                        .addGap(106, 106, 106)
                         .addComponent(jLabel15))
-                    .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(vTextFileModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(vTextFileModAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(vTextFileModAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(vTextFileModProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(vLabelErrModPeso)
-                        .addGap(88, 88, 88)
-                        .addComponent(vLabelErrModAltura)
-                        .addGap(81, 81, 81)
-                        .addComponent(vLabelErrModAncho)
-                        .addGap(98, 98, 98)
-                        .addComponent(vLabelErrModProfundidad))
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(jLabel17))
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(vTextFileModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(vTextFileModPeso, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                            .addComponent(vLabelErrModPeso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(vTextFileModAltura, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                            .addComponent(vLabelErrModAltura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(vTextFileModAncho, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                            .addComponent(vLabelErrModAncho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(vTextFileModProfundidad, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                            .addComponent(vLabelErrModProfundidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(vTextFileModCosto, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                            .addComponent(vLabelErrModCosto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(365, 365, 365)
+                        .addComponent(btnGuardarMod, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         rSPanelPaqueteLayout.setVerticalGroup(
@@ -429,9 +426,10 @@ public class Modificaciones extends javax.swing.JDialog
                 .addGap(40, 40, 40)
                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(6, 6, 6)
                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(vTextFileModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -442,8 +440,9 @@ public class Modificaciones extends javax.swing.JDialog
                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(vLabelErrModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(vLabelErrModAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vLabelErrModAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vLabelErrModProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(vLabelErrModAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(vLabelErrModProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(28, 28, 28)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
@@ -532,7 +531,8 @@ public class Modificaciones extends javax.swing.JDialog
 
     private void vTextFileModPesoFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModPesoFocusLost
     {//GEN-HEADEREND:event_vTextFileModPesoFocusLost
-        mValidarNumerosDouble(vTextFileModPeso, vLabelErrModPeso);
+        mValidarNumerosDouble(vTextFileModPeso, vLabelErrModPeso, 1);
+
     }//GEN-LAST:event_vTextFileModPesoFocusLost
 
     private void vTextFileModAlturaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModAlturaKeyTyped
@@ -545,7 +545,8 @@ public class Modificaciones extends javax.swing.JDialog
 
     private void vTextFileModAlturaFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModAlturaFocusLost
     {//GEN-HEADEREND:event_vTextFileModAlturaFocusLost
-        mValidarNumerosDouble(vTextFileModAltura, vLabelErrModAltura);
+        mValidarNumerosDouble(vTextFileModAltura, vLabelErrModAltura, 2);
+
     }//GEN-LAST:event_vTextFileModAlturaFocusLost
 
     private void vTextFileModAnchoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModAnchoKeyTyped
@@ -558,7 +559,8 @@ public class Modificaciones extends javax.swing.JDialog
 
     private void vTextFileModAnchoFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModAnchoFocusLost
     {//GEN-HEADEREND:event_vTextFileModAnchoFocusLost
-        mValidarNumerosDouble(vTextFileModAncho, vLabelErrModAncho);
+        mValidarNumerosDouble(vTextFileModAncho, vLabelErrModAncho, 2);
+
     }//GEN-LAST:event_vTextFileModAnchoFocusLost
 
     private void vTextFileModProfundidadKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModProfundidadKeyTyped
@@ -571,7 +573,8 @@ public class Modificaciones extends javax.swing.JDialog
 
     private void vTextFileModProfundidadFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModProfundidadFocusLost
     {//GEN-HEADEREND:event_vTextFileModProfundidadFocusLost
-        mValidarNumerosDouble(vTextFileModProfundidad, vLabelErrModProfundidad);
+        mValidarNumerosDouble(vTextFileModProfundidad, vLabelErrModProfundidad, 2);
+
     }//GEN-LAST:event_vTextFileModProfundidadFocusLost
 
     private void vTextFileModCostoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModCostoKeyTyped
@@ -584,7 +587,8 @@ public class Modificaciones extends javax.swing.JDialog
 
     private void vTextFileModCostoFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModCostoFocusLost
     {//GEN-HEADEREND:event_vTextFileModCostoFocusLost
-        mValidarNumerosDouble(vTextFileModCosto, vLabelErrModCosto);
+        mValidarNumerosDouble(vTextFileModCosto, vLabelErrModCosto, 0);
+
     }//GEN-LAST:event_vTextFileModCostoFocusLost
 
     private void btnGuardarModMouseEntered(java.awt.event.MouseEvent evt)//GEN-FIRST:event_btnGuardarModMouseEntered
@@ -647,10 +651,13 @@ public class Modificaciones extends javax.swing.JDialog
      *
      * @param vTextField TextFile el cual se va a adquierir los datos
      * @param vLabelErr Label de error el que se va a mostrar
+     * @param vTipo campo que se esta validando (Peso, Altura, Profundidad,
+     * etc.)
      */
-    protected void mValidarNumerosDouble(javax.swing.JTextField vTextField, javax.swing.JLabel vLabelErr)
+    protected void mValidarNumerosDouble(javax.swing.JTextField vTextField, javax.swing.JLabel vLabelErr, int vTipo)
     {
         boolean vExistPunto = false;
+        boolean vExceso = false;
 
         for (int i = 0; i < vTextField.getText().length(); i++)
         {
@@ -677,14 +684,56 @@ public class Modificaciones extends javax.swing.JDialog
         {
             if (!vMatcherValida.matches())
             {
-                vLabelErr.setVisible(false);
-                mHabilitaBtnModNext();
+                if (vTipo > 0)
+                {
+                    switch (vTipo)
+                    {
+                        case 1:
+                            if (Double.parseDouble(vTextField.getText()) > 22)
+                            {
+                                vLabelErr.setVisible(true);
+                                vLabelErr.setText("Exceso de peso");
+                            } else
+                            {
+                                vLabelErr.setVisible(false);
+                                mHabilitaBtnModNext();
+                            }
+                            break;
+                        case 2:
+                            if (Double.parseDouble(vTextField.getText()) > 100)
+                            {
+                                vLabelErr.setVisible(true);
+                                vLabelErr.setText("Exceso de dimensiones");
+                            } else
+                            {
+                                vLabelErr.setText("Error, verifique altura");
+                                vLabelErr.setVisible(false);
+                                mHabilitaBtnModNext();
+                            }
+                            break;
+                    }
+                }
+                if (vExceso == false)
+                {
+
+                }
+
             } else
             {
+                vLabelErrModPeso.setText("Error, verifique el peso");
+                vLabelErrModAltura.setText("Error, verifique altura");
+                vLabelErrModAncho.setText("Error, verifique ancho");
+                vLabelErrModProfundidad.setText("Error, verifique profundidad");
+                vLabelErrModCosto.setText("Error, verifique costo");
                 vLabelErr.setVisible(true);
             }
         } else
         {
+            vLabelErrModPeso.setText("Error, verifique el peso");
+            vLabelErrModAltura.setText("Error, verifique altura");
+            vLabelErrModAncho.setText("Error, verifique ancho");
+            vLabelErrModProfundidad.setText("Error, verifique profundidad");
+            vLabelErrModCosto.setText("Error, verifique costo");
             vLabelErr.setVisible(true);
         }
     }

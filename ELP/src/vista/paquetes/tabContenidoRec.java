@@ -94,6 +94,7 @@ public class tabContenidoRec extends javax.swing.JPanel
         jScrollPane1.setViewportView(tblPaquetesRec);
 
         txtBusquedaRec.setForeground(new java.awt.Color(103, 177, 202));
+        txtBusquedaRec.setToolTipText("Busqueda filtrada de paquetes recibidos");
         txtBusquedaRec.setBorderColor(new java.awt.Color(103, 177, 202));
         txtBusquedaRec.setColorIcon(new java.awt.Color(103, 177, 202));
         txtBusquedaRec.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
@@ -109,6 +110,7 @@ public class tabContenidoRec extends javax.swing.JPanel
         });
 
         jCBTipoBusqueda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Numero de guía", "Nombre del emisor", "Nombre del receptor", "Dirección", "Fecha de recibido" }));
+        jCBTipoBusqueda.setToolTipText("Seleccione tipo de filtro para la busqueda");
         jCBTipoBusqueda.setColorArrow(new java.awt.Color(103, 177, 202));
         jCBTipoBusqueda.setColorBorde(new java.awt.Color(103, 177, 202));
         jCBTipoBusqueda.setColorFondo(new java.awt.Color(103, 177, 202));
@@ -136,7 +138,7 @@ public class tabContenidoRec extends javax.swing.JPanel
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtBusquedaRec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCBTipoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCBTipoBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
