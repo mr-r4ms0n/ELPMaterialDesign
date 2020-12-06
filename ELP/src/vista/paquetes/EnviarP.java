@@ -6,6 +6,7 @@
 package vista.paquetes;
 
 import PCalendario.CCalendario;
+import configuracion.Alertas;
 import configuracion.Paqs;
 import java.awt.Color;
 import java.awt.Shape;
@@ -331,9 +332,13 @@ public class EnviarP extends javax.swing.JDialog
             MetodosBD.modificacion(obj, 2);
             tabContenidoRec.listarPaquetes(tabContenidoRec.tblPaquetesRec);
             tabContenidoEnv.listarPaquetes(tabContenidoEnv.tblPaquetesEnv);
+            //Sonido de exito
+            new Alertas().incorrect(5);
             dispose();
         }else
         {
+            //Sonido de alerta
+            new Alertas().incorrect(6);
             jLabel1.setForeground(Color.red);
             jLabel1.setText("Fecha invalida");
         }

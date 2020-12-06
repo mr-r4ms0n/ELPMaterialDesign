@@ -6,6 +6,7 @@
 package vista.paquetes;
 
 import PCalendario.CCalendario;
+import configuracion.Alertas;
 import configuracion.Paqs;
 import java.awt.Color;
 import java.awt.Shape;
@@ -1416,6 +1417,8 @@ public class Altas extends javax.swing.JDialog
                 || vLabelErrRecApellidoP.isVisible() || vLabelErrRecApellidoM.isVisible() || vLabelErrRecCP.isVisible() || vLabelErrRecCalle.isVisible()
                 || vLabelErrRecCiudad.isVisible() || vLabelErrRecLocalidad.isVisible() || vLabelErrRecNombre.isVisible())
         {
+            //Sonido de alerta
+            new Alertas().incorrect(6);
             btnGuardarAltas.setEnabled(false);
         } else
         {
@@ -1443,6 +1446,8 @@ public class Altas extends javax.swing.JDialog
             //Guardamos en la BD
             obj.desp();
             modelo.MetodosBD.guardaPaqs(obj);
+            //Sonido de exito
+            new Alertas().incorrect(5);
             //Cerramos 
             dispose();
             //Actualizamos la tabla

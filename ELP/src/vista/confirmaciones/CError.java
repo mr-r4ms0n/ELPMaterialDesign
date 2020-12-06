@@ -5,7 +5,7 @@
  */
 package vista.confirmaciones;
 
-import vista.paquetes.*;
+import configuracion.Alertas;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
@@ -38,6 +38,8 @@ public class CError extends javax.swing.JDialog
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
         vtn.setShape(forma);
         JFMensaje.setText(cad);
+        //Sonido de alerta
+            new Alertas().incorrect(6);
     }
 
     public CError()

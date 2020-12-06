@@ -42,6 +42,8 @@ public class ConfirmaAcc extends javax.swing.JDialog
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
         vtn.setShape(forma);
         JFMensaje.setText("¿Desea " + cad + " este paquete ?");
+        //Sonido de alerta
+            new Alertas().incorrect(6);
     }
 
     public ConfirmaAcc()
@@ -232,6 +234,8 @@ public class ConfirmaAcc extends javax.swing.JDialog
                 Recibidos.confirmacion = 1;
             }
         }
+        //Sonido de exito
+            new Alertas().incorrect(5);
         dispose();
     }//GEN-LAST:event_btnIngresarActionPerformed
 

@@ -15,7 +15,8 @@ import java.io.File;
  */
 public class Alertas
 {
-    public static boolean vPanelPrincipal=true;
+
+    public static boolean vPanelPrincipal = true;
 
     public void incorrect(int opc)
     {
@@ -48,8 +49,12 @@ public class Alertas
                         CArchivo_Audio_WAV.reproducirSonido("Archivos\\tac.wav");
                     }
                     break;
-                default:
-                    throw new AssertionError();
+                case 5:
+                    CArchivo_Audio_WAV.reproducirSonido("Archivos\\correcto.wav");
+                    break;
+                case 6:
+                    CArchivo_Audio_WAV.reproducirSonido("Archivos\\error.wav");
+                    break;
             }
         } catch (InterruptedException e)
         {
