@@ -5,6 +5,7 @@
  */
 package vista.confirmaciones;
 
+import configuracion.Alertas;
 import vista.paquetes.*;
 import configuracion.Paqs;
 import java.awt.Color;
@@ -43,7 +44,7 @@ public class ConfirmaAcc extends javax.swing.JDialog
         vtn.setShape(forma);
         JFMensaje.setText("¿Desea " + cad + " este paquete ?");
         //Sonido de alerta
-            new Alertas().incorrect(6);
+        new Alertas().incorrect(6);
     }
 
     public ConfirmaAcc()
@@ -235,7 +236,7 @@ public class ConfirmaAcc extends javax.swing.JDialog
             }
         }
         //Sonido de exito
-            new Alertas().incorrect(5);
+        new Alertas().incorrect(5);
         dispose();
     }//GEN-LAST:event_btnIngresarActionPerformed
 
