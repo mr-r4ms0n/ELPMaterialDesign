@@ -75,7 +75,7 @@ public class Informacion extends javax.swing.JPanel
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(rSLabelTextIcon1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1366, Short.MAX_VALUE))
+                .addContainerGap(1392, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,7 +147,7 @@ public class Informacion extends javax.swing.JPanel
 
         rSTextFieldIconTwo4.setEditable(false);
         rSTextFieldIconTwo4.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldIconTwo4.setText("Paraje el Tejocote, San Pedro Tlaltizapán, CP 52640, Tianguistenco,  Estado de México");
+        rSTextFieldIconTwo4.setText("Paraje el Tejocote, Tlaltizapán, CP 52640, Tianguistenco,  Edo de México");
         rSTextFieldIconTwo4.setBorderColor(new java.awt.Color(0, 0, 0));
         rSTextFieldIconTwo4.setColorIcon(new java.awt.Color(0, 153, 204));
         rSTextFieldIconTwo4.setFocusable(false);
@@ -251,7 +251,7 @@ public class Informacion extends javax.swing.JPanel
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(rSTextFieldIconTwo5, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(rSTextFieldIconTwo6, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rSTextFieldIconTwo4, javax.swing.GroupLayout.PREFERRED_SIZE, 767, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(rSTextFieldIconTwo4, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(273, 273, 273)
                                 .addComponent(rSLabelTextIcon2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -281,7 +281,7 @@ public class Informacion extends javax.swing.JPanel
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(87, 87, 87)
                                 .addComponent(rSLabelTextIcon3, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,7 +307,7 @@ public class Informacion extends javax.swing.JPanel
                                 .addComponent(rSTextFieldIconTwo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(rSTextFieldIconTwo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rSLabelTextIcon3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -333,7 +333,7 @@ public class Informacion extends javax.swing.JPanel
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 1582, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))

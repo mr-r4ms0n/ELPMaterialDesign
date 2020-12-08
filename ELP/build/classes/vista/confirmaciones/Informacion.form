@@ -23,7 +23,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="pnlSlider" max="32767" attributes="0"/>
+              <Component id="pnlSlider" pref="1582" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -68,7 +68,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="rSLabelTextIcon1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="1366" max="32767" attributes="0"/>
+                  <EmptySpace pref="1392" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -144,7 +144,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="rSTextFieldIconTwo5" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
                                           <Component id="rSTextFieldIconTwo6" alignment="0" min="-2" pref="279" max="-2" attributes="0"/>
-                                          <Component id="rSTextFieldIconTwo4" min="-2" pref="767" max="-2" attributes="0"/>
+                                          <Component id="rSTextFieldIconTwo4" min="-2" pref="658" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -192,7 +192,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="88" max="32767" attributes="0"/>
+                      <EmptySpace pref="215" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -223,7 +223,7 @@
                                       <Component id="rSTextFieldIconTwo5" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="52" max="32767" attributes="0"/>
+                              <EmptySpace pref="55" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -385,7 +385,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Paraje el Tejocote, San Pedro Tlaltizap&#xe1;n, CP 52640, Tianguistenco,  Estado de M&#xe9;xico"/>
+                <Property name="text" type="java.lang.String" value="Paraje el Tejocote, Tlaltizap&#xe1;n, CP 52640, Tianguistenco,  Edo de M&#xe9;xico"/>
                 <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
