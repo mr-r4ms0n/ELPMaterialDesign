@@ -1,3 +1,8 @@
+---Integrantes---
+--Kevin Benítez Valentín  
+--Sandro de Jesús Hernández del Ángel  
+--David Vergara Gómez 
+
 -- --------------------------------------------------------
 -- Host:                         localhost
 -- Versión del servidor:         5.7.24 - MySQL Community Server (GPL)
@@ -18,8 +23,9 @@ USE `elprisas`;
 
 -- Volcando estructura para tabla elprisas.admins
 CREATE TABLE IF NOT EXISTS `admins` (
-  `usuario` varchar(50) DEFAULT NULL,
-  `contraseña` varchar(50) DEFAULT NULL
+  `usuario` varchar(50) NOT NULL,
+  `contraseña` varchar(50) NOT NULL,
+  PRIMARY KEY (`usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tabla donde se almacenaran los usuarios que ingresaran al sistema';
 
 -- Volcando datos para la tabla elprisas.admins: ~1 rows (aproximadamente)
@@ -31,13 +37,13 @@ INSERT INTO `admins` (`usuario`, `contraseña`) VALUES
 -- Volcando estructura para tabla elprisas.datos_personales
 CREATE TABLE IF NOT EXISTS `datos_personales` (
   `id_datos_personales` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(50) DEFAULT NULL,
-  `ApeP` varchar(50) DEFAULT NULL,
-  `ApeM` varchar(50) DEFAULT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `ApeP` varchar(50) NOT NULL,
+  `ApeM` varchar(50) NOT NULL,
   PRIMARY KEY (`id_datos_personales`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COMMENT='Tabla donde se almacenara el nombre completo del remitente y destinarario\r\n';
 
--- Volcando datos para la tabla elprisas.datos_personales: ~6 rows (aproximadamente)
+-- Volcando datos para la tabla elprisas.datos_personales: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `datos_personales` DISABLE KEYS */;
 INSERT INTO `datos_personales` (`id_datos_personales`, `nombre`, `ApeP`, `ApeM`) VALUES
 	(11, 'David', 'Vergara', 'Gomez'),
@@ -52,14 +58,14 @@ INSERT INTO `datos_personales` (`id_datos_personales`, `nombre`, `ApeP`, `ApeM`)
 -- Volcando estructura para tabla elprisas.direccion
 CREATE TABLE IF NOT EXISTS `direccion` (
   `clave_domicilio` int(11) NOT NULL AUTO_INCREMENT,
-  `calle` varchar(50) DEFAULT NULL,
-  `localidad` varchar(50) DEFAULT NULL,
-  `codigo_postal` int(11) DEFAULT NULL,
-  `ciudad` varchar(50) DEFAULT NULL,
+  `calle` varchar(50) NOT NULL,
+  `localidad` varchar(50) NOT NULL,
+  `codigo_postal` int(11) NOT NULL,
+  `ciudad` varchar(50) NOT NULL,
   PRIMARY KEY (`clave_domicilio`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COMMENT='Tabla donde se almacenaran las direcciones correspondientes a los paquetes recibidos\r\n';
 
--- Volcando datos para la tabla elprisas.direccion: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla elprisas.direccion: ~5 rows (aproximadamente)
 /*!40000 ALTER TABLE `direccion` DISABLE KEYS */;
 INSERT INTO `direccion` (`clave_domicilio`, `calle`, `localidad`, `codigo_postal`, `ciudad`) VALUES
 	(5, 'Tamarindo', 'Xona', 50010, 'Toluca'),
@@ -79,9 +85,9 @@ CREATE TABLE IF NOT EXISTS `paquetes` (
   `ancho` float NOT NULL DEFAULT '0',
   `profundidad` float NOT NULL DEFAULT '0',
   `precio` float NOT NULL DEFAULT '0',
-  `id_nombre_emisor` int(11) DEFAULT NULL,
-  `id_nombre_receptor` int(11) DEFAULT NULL,
-  `id_direccion` int(11) DEFAULT NULL,
+  `id_nombre_emisor` int(11) NOT NULL,
+  `id_nombre_receptor` int(11) NOT NULL,
+  `id_direccion` int(11) NOT NULL,
   PRIMARY KEY (`num_guia`),
   KEY `FK_paquetes_datos_personales` (`id_nombre_emisor`),
   KEY `FK_paquetes_datos_personales_2` (`id_nombre_receptor`),
@@ -91,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `paquetes` (
   CONSTRAINT `FK_paquetes_direccion` FOREIGN KEY (`id_direccion`) REFERENCES `direccion` (`clave_domicilio`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COMMENT='Tabla donde se almacenaran los paquetes recibidos\r\n';
 
--- Volcando datos para la tabla elprisas.paquetes: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla elprisas.paquetes: ~5 rows (aproximadamente)
 /*!40000 ALTER TABLE `paquetes` DISABLE KEYS */;
 INSERT INTO `paquetes` (`num_guia`, `fecha_recp`, `fecha_ent`, `peso`, `altura`, `ancho`, `profundidad`, `precio`, `id_nombre_emisor`, `id_nombre_receptor`, `id_direccion`) VALUES
 	(2, '10/05/2021', 'PENDIENTE', 12, 20, 20, 20, 20, 11, 12, 5),
