@@ -1,7 +1,7 @@
----Integrantes---
+/*Integrantes---
 --Kevin Benítez Valentín  
 --Sandro de Jesús Hernández del Ángel  
---David Vergara Gómez
+David Vergara Gómez*/
 -- --------------------------------------------------------
 -- Host:                         localhost
 -- Versión del servidor:         5.7.24 - MySQL Community Server (GPL)
