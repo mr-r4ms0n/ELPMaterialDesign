@@ -201,7 +201,7 @@ public class Informacion extends javax.swing.JPanel
 
         rSTextFieldIconTwo10.setEditable(false);
         rSTextFieldIconTwo10.setForeground(new java.awt.Color(0, 0, 0));
-        rSTextFieldIconTwo10.setText("Decks");
+        rSTextFieldIconTwo10.setText("Deks");
         rSTextFieldIconTwo10.setBorderColor(new java.awt.Color(0, 0, 0));
         rSTextFieldIconTwo10.setColorIcon(new java.awt.Color(0, 153, 204));
         rSTextFieldIconTwo10.setFocusable(false);
@@ -333,7 +333,7 @@ public class Informacion extends javax.swing.JPanel
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 1582, Short.MAX_VALUE)
+                .addComponent(pnlSlider, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
