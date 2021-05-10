@@ -1,8 +1,7 @@
 ---Integrantes---
 --Kevin Benítez Valentín  
 --Sandro de Jesús Hernández del Ángel  
---David Vergara Gómez 
-
+--David Vergara Gómez
 -- --------------------------------------------------------
 -- Host:                         localhost
 -- Versión del servidor:         5.7.24 - MySQL Community Server (GPL)
@@ -110,3 +109,89 @@ INSERT INTO `paquetes` (`num_guia`, `fecha_recp`, `fecha_ent`, `peso`, `altura`,
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
+/*1.- CONSULTA PARA PAQUETES RECIBIDOS*/
+SELECT paquetes.num_guia AS "Numero de guia",
+CONCAT(datos_personalesA1.nombre, " ", datos_personalesA1.apeP, " ", datos_personalesA1.apeM) AS "Emisor",
+paquetes.fecha_recp AS "Fecha de recepcion",
+CONCAT(datos_personalesA2.nombre, " ", datos_personalesA2.apeP, " ", datos_personalesA2.apeM) AS "Receptor",
+paquetes.fecha_ent AS "Fecha de entrega",
+CONCAT(direccionB1.calle, ", ", direccionB1.localidad, ", ", direccionB1.ciudad, ", C.P. ", direccionB1.codigo_postal) AS "Direccion",
+paquetes.peso AS "Peso",
+paquetes.altura AS "Altura",
+paquetes.profundidad AS "Profundidad",
+paquetes.precio AS "Precio"
+FROM paquetes
+INNER JOIN datos_personales AS datos_personalesA1 ON datos_personalesA1.id_datos_personales = paquetes.id_nombre_emisor
+INNER JOIN datos_personales AS datos_personalesA2 ON datos_personalesA2.id_datos_personales = paquetes.id_nombre_receptor
+INNER JOIN direccion AS direccionB1 ON direccionB1.clave_domicilio = paquetes.id_direccion
+WHERE paquetes.fecha_ent="PENDIENTE";
+
+/*2.- CONSULTA PARA PAQUETES ENVIADOS*/
+SELECT paquetes.num_guia AS "Numero de guia",
+CONCAT(datos_personalesA1.nombre, " ", datos_personalesA1.apeP, " ", datos_personalesA1.apeM) AS "Emisor",
+paquetes.fecha_recp AS "Fecha de recepcion",
+CONCAT(datos_personalesA2.nombre, " ", datos_personalesA2.apeP, " ", datos_personalesA2.apeM) AS "Receptor",
+paquetes.fecha_ent AS "Fecha de entrega",
+CONCAT(direccionB1.calle, ", ", direccionB1.localidad, ", ", direccionB1.ciudad, ", C.P. ", direccionB1.codigo_postal) AS "Direccion",
+paquetes.peso AS "Peso",
+paquetes.altura AS "Altura",
+paquetes.profundidad AS "Profundidad",
+paquetes.precio AS "Precio"
+FROM paquetes
+INNER JOIN datos_personales AS datos_personalesA1 ON datos_personalesA1.id_datos_personales = paquetes.id_nombre_emisor
+INNER JOIN datos_personales AS datos_personalesA2 ON datos_personalesA2.id_datos_personales = paquetes.id_nombre_receptor
+INNER JOIN direccion AS direccionB1 ON direccionB1.clave_domicilio = paquetes.id_direccion
+WHERE paquetes.fecha_ent!="PENDIENTE";
+
+/*3.- CONSULTA PARA BUSCAR POR PRECIOS MAYORES A 100 EN LOS PAQUETES RECIBIDOS*/
+SELECT paquetes.num_guia AS "Numero de guia",
+CONCAT(datos_personalesA1.nombre, " ", datos_personalesA1.apeP, " ", datos_personalesA1.apeM) AS "Emisor",
+paquetes.fecha_recp AS "Fecha de recepcion",
+CONCAT(datos_personalesA2.nombre, " ", datos_personalesA2.apeP, " ", datos_personalesA2.apeM) AS "Receptor",
+paquetes.fecha_ent AS "Fecha de entrega",
+CONCAT(direccionB1.calle, ", ", direccionB1.localidad, ", ", direccionB1.ciudad, ", C.P. ", direccionB1.codigo_postal) AS "Direccion",
+paquetes.peso AS "Peso",
+paquetes.altura AS "Altura",
+paquetes.profundidad AS "Profundidad",
+paquetes.precio AS "Precio"
+FROM paquetes
+INNER JOIN datos_personales AS datos_personalesA1 ON datos_personalesA1.id_datos_personales = paquetes.id_nombre_emisor
+INNER JOIN datos_personales AS datos_personalesA2 ON datos_personalesA2.id_datos_personales = paquetes.id_nombre_receptor
+INNER JOIN direccion AS direccionB1 ON direccionB1.clave_domicilio = paquetes.id_direccion
+WHERE paquetes.fecha_ent="PENDIENTE" AND paquetes.precio>100;
+
+/*4.- CONSULTA PARA BUSCAR POR NOMBRE DE RECEPTOR EN LOS PAQUETES RECIBIDOS*/
+SELECT paquetes.num_guia AS "Numero de guia",
+CONCAT(datos_personalesA1.nombre, " ", datos_personalesA1.apeP, " ", datos_personalesA1.apeM) AS "Emisor",
+paquetes.fecha_recp AS "Fecha de recepcion",
+CONCAT(datos_personalesA2.nombre, " ", datos_personalesA2.apeP, " ", datos_personalesA2.apeM) AS "Receptor",
+paquetes.fecha_ent AS "Fecha de entrega",
+CONCAT(direccionB1.calle, ", ", direccionB1.localidad, ", ", direccionB1.ciudad, ", C.P. ", direccionB1.codigo_postal) AS "Direccion",
+paquetes.peso AS "Peso",
+paquetes.altura AS "Altura",
+paquetes.profundidad AS "Profundidad",
+paquetes.precio AS "Precio"
+FROM paquetes
+INNER JOIN datos_personales AS datos_personalesA1 ON datos_personalesA1.id_datos_personales = paquetes.id_nombre_emisor
+INNER JOIN datos_personales AS datos_personalesA2 ON datos_personalesA2.id_datos_personales = paquetes.id_nombre_receptor
+INNER JOIN direccion AS direccionB1 ON direccionB1.clave_domicilio = paquetes.id_direccion
+WHERE paquetes.fecha_ent="PENDIENTE" AND CONCAT (datos_personalesA2.nombre, " ", datos_personalesA2.apeP, " ", datos_personalesA2.apeM) LIKE "%Pan%";
+
+/*5.- CONSULTA PARA BUSCAR POR DIRECCION EN LOS PAQUETES RECIBIDOS*/
+SELECT paquetes.num_guia AS "Numero de guia",
+CONCAT(datos_personalesA1.nombre, " ", datos_personalesA1.apeP, " ", datos_personalesA1.apeM) AS "Emisor",
+paquetes.fecha_recp AS "Fecha de recepcion",
+CONCAT(datos_personalesA2.nombre, " ", datos_personalesA2.apeP, " ", datos_personalesA2.apeM) AS "Receptor",
+paquetes.fecha_ent AS "Fecha de entrega",
+CONCAT(direccionB1.calle, ", ", direccionB1.localidad, ", ", direccionB1.ciudad, ", C.P. ", direccionB1.codigo_postal) AS "Direccion",
+paquetes.peso AS "Peso",
+paquetes.altura AS "Altura",
+paquetes.profundidad AS "Profundidad",
+paquetes.precio AS "Precio"
+FROM paquetes
+INNER JOIN datos_personales AS datos_personalesA1 ON datos_personalesA1.id_datos_personales = paquetes.id_nombre_emisor
+INNER JOIN datos_personales AS datos_personalesA2 ON datos_personalesA2.id_datos_personales = paquetes.id_nombre_receptor
+INNER JOIN direccion AS direccionB1 ON direccionB1.clave_domicilio = paquetes.id_direccion
+WHERE paquetes.fecha_ent="PENDIENTE" AND CONCAT(direccionB1.calle, ", ", direccionB1.localidad, ", ", direccionB1.ciudad, ", C.P. ", direccionB1.codigo_postal) LIKE "%515%";
+
