@@ -223,7 +223,9 @@ public class Recibidos extends javax.swing.JPanel
             String ancho = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 8));
             String profundidad = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 9));
             String precio = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 10));
-
+            
+            
+            
             Modificaciones mod = new Modificaciones(num_guia, peso, altura, ancho, profundidad, precio);
             mod.setModal(true);
             mod.setVisible(true);

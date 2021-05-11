@@ -27,6 +27,63 @@ public class MetodosBD
     private static PreparedStatement sentencia = null; //la usaremos para manejar las consultas provenientes de la BD
     private static ResultSet resultado = null;
 
+    
+    /**
+     * opc == 1 nombre opc == 2 direccion
+     *
+     * @param opc Selecciona la tabla que quiere
+     * @param id Busca el la PK en la tabla escogido en OPC
+     * @return Cadena con el nombre o la direccion segun opc, si hay algun error
+     * te retornara el valos -666
+     */
+    public static int obtener_PK_Datos(int opc, String cad)
+    {
+        int iD = -666;
+        String consulta;
+        PreparedStatement sent;
+        ResultSet res;
+        Connection con;
+        try
+        {
+            con = ConexionBD.getConection();
+            switch (opc)
+            {
+                case 1: //Caso 1, te retorna un nombre
+                    consulta = "SELECT id_datos_personales FROM datos_personales WHERE CONCAT(datos_personales.nombre,\" \",datos_personales.apeP,\" \",datos_personales.apeM) = ?";
+                    sent = con.prepareStatement(consulta);
+                    sent.setString(1, cad);
+                    res = sent.executeQuery();
+                    if (res.next())
+                    {
+                        iD = res.getInt("id_datos_personales");
+                    }
+                    break;
+                case 2: //Caso 2, Te retornara una direccion
+                    consulta = "SELECT clave_domicilio FROM direccion WHERE CONCAT(direccion.calle, \", \", direccion.localidad, \", \", direccion.ciudad, \", \", direccion.codigo_postal) = ?";
+                    sentencia = con.prepareStatement(consulta);
+                    sentencia.setString(1, cad);
+                    res = sentencia.executeQuery();
+                    if (res.next())
+                    {
+                        iD = res.getInt("clave_domicilio");
+                    }
+                    break;
+            }
+            con.close();
+            return iD;
+        } catch (SQLException e)
+        {
+            System.out.println("Obtener datos Error!!! " + e.toString());
+            try
+            {
+                conexionBD.close();
+            } catch (SQLException ec)
+            {
+            }
+        }
+        return s;
+    }
+    
     /**
      * Recibe objeto de tipo Paqs de para realizar la modificacion en la base de
      * datos, OBJ ya debe tener dentro del numero de guia
