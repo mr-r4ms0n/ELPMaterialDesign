@@ -96,36 +96,6 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="vTextFileModPeso" pref="124" max="32767" attributes="0"/>
-                                              <Component id="vLabelErrModPeso" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="vTextFileModAltura" pref="0" max="32767" attributes="0"/>
-                                              <Component id="vLabelErrModAltura" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="vTextFileModAncho" pref="133" max="32767" attributes="0"/>
-                                              <Component id="vLabelErrModAncho" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="vTextFileModProfundidad" pref="178" max="32767" attributes="0"/>
-                                              <Component id="vLabelErrModProfundidad" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="123" pref="123" max="-2" attributes="0"/>
-                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-                                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                      </Group>
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -140,6 +110,37 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="rSTFNumeroGuia2" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="vTextFileModPeso" min="-2" pref="124" max="-2" attributes="0"/>
+                                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="vLabelErrModPeso" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="vTextFileModAltura" pref="0" max="32767" attributes="0"/>
+                                                  <Component id="vLabelErrModAltura" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="vTextFileModAncho" min="-2" pref="133" max="-2" attributes="0"/>
+                                                      <Component id="vLabelErrModAncho" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="vTextFileModProfundidad" min="-2" pref="178" max="-2" attributes="0"/>
+                                                      <Component id="vLabelErrModProfundidad" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -189,15 +190,19 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="vTextFileModPeso" min="-2" max="-2" attributes="0"/>
                               <Component id="vTextFileModAltura" min="-2" max="-2" attributes="0"/>
-                              <Component id="vTextFileModAncho" min="-2" max="-2" attributes="0"/>
-                              <Component id="vTextFileModProfundidad" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="vTextFileModAncho" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="vTextFileModProfundidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="vLabelErrModPeso" min="-2" pref="18" max="-2" attributes="0"/>
                               <Component id="vLabelErrModAltura" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="vLabelErrModAncho" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="vLabelErrModProfundidad" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="vLabelErrModAncho" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="vLabelErrModProfundidad" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnGuardarMod1" min="-2" pref="55" max="-2" attributes="0"/>
@@ -396,7 +401,7 @@
                     <Property name="phColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
-                    <Property name="placeholder" type="java.lang.String" value="Ingrese el peso"/>
+                    <Property name="placeholder" type="java.lang.String" value="Ingrese la calle"/>
                   </Properties>
                   <Events>
                     <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileModPesoFocusLost"/>
@@ -425,7 +430,7 @@
                     <Property name="phColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
-                    <Property name="placeholder" type="java.lang.String" value="Ingrese la altura"/>
+                    <Property name="placeholder" type="java.lang.String" value="Ingrese la localidad"/>
                   </Properties>
                   <Events>
                     <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileModAlturaFocusLost"/>

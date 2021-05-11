@@ -77,7 +77,6 @@ public class ModificacionesEmisor extends javax.swing.JDialog
         rSTFNumeroGuia = new RSMaterialComponent.RSTextFieldOne();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btnCerrarAltas = new RSMaterialComponent.RSButtonIconOne();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -124,19 +123,6 @@ public class ModificacionesEmisor extends javax.swing.JDialog
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Modificar datos de paquete");
 
-        btnCerrarAltas.setBackground(new java.awt.Color(0, 153, 204));
-        btnCerrarAltas.setToolTipText("Cerrar Formulario");
-        btnCerrarAltas.setBackgroundHover(new java.awt.Color(103, 177, 202));
-        btnCerrarAltas.setIcons(rojeru_san.efectos.ValoresEnum.ICONS.CANCEL);
-        btnCerrarAltas.setRound(15);
-        btnCerrarAltas.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnCerrarAltasActionPerformed(evt);
-            }
-        });
-
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Datos del emisor");
@@ -165,11 +151,9 @@ public class ModificacionesEmisor extends javax.swing.JDialog
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(154, 154, 154)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCerrarAltas8, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnCerrarAltas, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -177,20 +161,15 @@ public class ModificacionesEmisor extends javax.swing.JDialog
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCerrarAltas8, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCerrarAltas, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCerrarAltas8, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -282,30 +261,29 @@ public class ModificacionesEmisor extends javax.swing.JDialog
         rSPanelPaqueteLayout.setHorizontalGroup(
             rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel17)
-                            .addComponent(vLabelErrModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(vTextFileModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(vTextFileModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(vLabelErrModPeso))))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rSTFNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(vLabelErrModPeso1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelPaqueteLayout.createSequentialGroup()
-                    .addContainerGap(567, Short.MAX_VALUE)
-                    .addComponent(btnGuardarMod1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(86, 86, 86)))
+            .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
+                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel17)
+                            .addComponent(vTextFileModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(vTextFileModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(vLabelErrModPeso)
+                            .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
+                                .addComponent(vLabelErrModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnGuardarMod1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(23, 23, 23))))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         rSPanelPaqueteLayout.setVerticalGroup(
             rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -328,13 +306,10 @@ public class ModificacionesEmisor extends javax.swing.JDialog
                 .addGap(6, 6, 6)
                 .addComponent(vTextFileModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(vLabelErrModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
-            .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelPaqueteLayout.createSequentialGroup()
-                    .addContainerGap(484, Short.MAX_VALUE)
-                    .addComponent(btnGuardarMod1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(14, 14, 14)))
+                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(vLabelErrModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGuardarMod1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout jPInteracturadorLayout = new javax.swing.GroupLayout(jPInteracturador);
@@ -369,11 +344,6 @@ public class ModificacionesEmisor extends javax.swing.JDialog
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnCerrarAltasActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCerrarAltasActionPerformed
-    {//GEN-HEADEREND:event_btnCerrarAltasActionPerformed
-        dispose();
-    }//GEN-LAST:event_btnCerrarAltasActionPerformed
 
     private void btnCerrarAltas8ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCerrarAltas8ActionPerformed
     {//GEN-HEADEREND:event_btnCerrarAltas8ActionPerformed
@@ -536,7 +506,6 @@ public class ModificacionesEmisor extends javax.swing.JDialog
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private RSMaterialComponent.RSButtonIconOne btnCerrarAltas;
     private RSMaterialComponent.RSButtonIconOne btnCerrarAltas8;
     private RSMaterialComponent.RSButtonIconOne btnGuardarMod1;
     private javax.swing.JLabel jLabel1;

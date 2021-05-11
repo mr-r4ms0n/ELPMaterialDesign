@@ -6,6 +6,7 @@
 package vista.paquetes;
 
 import configuracion.Paqs;
+import java.awt.Color;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
@@ -45,17 +46,16 @@ public class ModificacionesReceptor extends javax.swing.JDialog
         vtn = this;
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
         vtn.setShape(forma);
-        rSTFNumeroGuia.setText(num_guia);
-        vTextFileModPeso.setText(peso);
-        vTextFileModAltura.setText(altura);
-        vTextFileModAncho.setText(ancho);
-        vTextFileModProfundidad.setText(profundidad);
+       // rSTFNumeroGuia.setText(num_guia);
+       // vTextFileModPeso.setText(peso);
+       // vTextFileModAltura.setText(altura);
+        //vTextFileModAncho.setText(ancho);
+        //vTextFileModProfundidad.setText(profundidad);
        
-        vLabelErrModPeso.setVisible(false);
-        vLabelErrModAltura.setVisible(false);
-        vLabelErrModAncho.setVisible(false);
-    
-        vLabelErrModProfundidad.setVisible(false);
+        vLabelErrModPeso.setForeground(Color.WHITE);
+        vLabelErrModAltura.setForeground(Color.WHITE);
+        vLabelErrModAncho.setForeground(Color.WHITE);
+        vLabelErrModProfundidad.setForeground(Color.WHITE);
     }
 
     public ModificacionesReceptor()
@@ -218,7 +218,7 @@ public class ModificacionesReceptor extends javax.swing.JDialog
         vTextFileModPeso.setBorderColor(new java.awt.Color(103, 177, 202));
         vTextFileModPeso.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
         vTextFileModPeso.setPhColor(new java.awt.Color(0, 0, 0));
-        vTextFileModPeso.setPlaceholder("Ingrese el peso");
+        vTextFileModPeso.setPlaceholder("Ingrese la calle");
         vTextFileModPeso.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusLost(java.awt.event.FocusEvent evt)
@@ -241,7 +241,7 @@ public class ModificacionesReceptor extends javax.swing.JDialog
         vTextFileModAltura.setBorderColor(new java.awt.Color(103, 177, 202));
         vTextFileModAltura.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
         vTextFileModAltura.setPhColor(new java.awt.Color(0, 0, 0));
-        vTextFileModAltura.setPlaceholder("Ingrese la altura");
+        vTextFileModAltura.setPlaceholder("Ingrese la localidad");
         vTextFileModAltura.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusLost(java.awt.event.FocusEvent evt)
@@ -372,30 +372,6 @@ public class ModificacionesReceptor extends javax.swing.JDialog
                         .addGap(12, 12, 12)
                         .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(vTextFileModPeso, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                                    .addComponent(vLabelErrModPeso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(vTextFileModAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                    .addComponent(vLabelErrModAltura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(vTextFileModAncho, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
-                                    .addComponent(vLabelErrModAncho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(vTextFileModProfundidad, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                                    .addComponent(vLabelErrModProfundidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(123, 123, 123)
-                                .addComponent(jLabel5)
-                                .addGap(86, 86, 86)
-                                .addComponent(jLabel13)
-                                .addGap(106, 106, 106)
-                                .addComponent(jLabel15))
-                            .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addComponent(rSTFNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -406,7 +382,30 @@ public class ModificacionesReceptor extends javax.swing.JDialog
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
-                                    .addComponent(rSTFNumeroGuia2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(rSTFNumeroGuia2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
+                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(vTextFileModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4)
+                                    .addComponent(vLabelErrModPeso))
+                                .addGap(18, 18, 18)
+                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(vTextFileModAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                        .addComponent(vLabelErrModAltura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(18, 18, 18)
+                                .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13)
+                                    .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
+                                        .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(vTextFileModAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(vLabelErrModAncho))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel15)
+                                            .addComponent(vTextFileModProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(vLabelErrModProfundidad))))))))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelPaqueteLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -442,14 +441,16 @@ public class ModificacionesReceptor extends javax.swing.JDialog
                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(vTextFileModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(vTextFileModAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vTextFileModAncho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vTextFileModProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(vTextFileModAncho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(vTextFileModProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(6, 6, 6)
                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(vLabelErrModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(vLabelErrModAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vLabelErrModAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vLabelErrModProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(vLabelErrModAncho, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(vLabelErrModProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(btnGuardarMod1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())

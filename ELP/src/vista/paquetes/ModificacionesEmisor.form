@@ -91,23 +91,6 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                      <Component id="vLabelErrModCosto" min="-2" pref="180" max="-2" attributes="0"/>
-                                      <Component id="vTextFileModPeso" min="-2" pref="384" max="-2" attributes="0"/>
-                                      <Component id="vTextFileModCosto" alignment="0" min="-2" pref="384" max="-2" attributes="0"/>
-                                      <Component id="vLabelErrModPeso" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="rSTFNumeroGuia" min="-2" pref="422" max="-2" attributes="0"/>
@@ -116,12 +99,27 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
-                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="567" max="32767" attributes="0"/>
-                              <Component id="btnGuardarMod1" min="-2" pref="56" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                      <Component id="vTextFileModPeso" min="-2" pref="384" max="-2" attributes="0"/>
+                                      <Component id="vTextFileModCosto" alignment="0" min="-2" pref="384" max="-2" attributes="0"/>
+                                      <Component id="vLabelErrModPeso" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="vLabelErrModCosto" min="-2" pref="180" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="btnGuardarMod1" min="-2" pref="56" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -146,15 +144,11 @@
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Component id="vTextFileModCosto" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Component id="vLabelErrModCosto" min="-2" pref="18" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="484" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="vLabelErrModCosto" min="-2" pref="18" max="-2" attributes="0"/>
                               <Component id="btnGuardarMod1" min="-2" pref="55" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -200,11 +194,9 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
                               <Component id="jLabel1" min="-2" pref="304" max="-2" attributes="0"/>
-                              <EmptySpace pref="102" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnCerrarAltas8" min="-2" pref="56" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnCerrarAltas" min="-2" pref="56" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
@@ -213,25 +205,17 @@
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabel8" min="-2" pref="158" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="90" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel1" min="-2" pref="79" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btnCerrarAltas8" min="-2" pref="55" max="-2" attributes="0"/>
-                                          <Component id="btnCerrarAltas" min="-2" pref="55" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="jLabel1" min="-2" pref="79" max="-2" attributes="0"/>
+                                  <Component id="btnCerrarAltas8" min="-2" pref="55" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -255,24 +239,6 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Modificar datos de paquete"/>
                       </Properties>
-                    </Component>
-                    <Component class="RSMaterialComponent.RSButtonIconOne" name="btnCerrarAltas">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="cc" green="99" red="0" type="rgb"/>
-                        </Property>
-                        <Property name="toolTipText" type="java.lang.String" value="Cerrar Formulario"/>
-                        <Property name="backgroundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ca" green="b1" red="67" type="rgb"/>
-                        </Property>
-                        <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
-                          <Value id="CANCEL"/>
-                        </Property>
-                        <Property name="round" type="int" value="15"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCerrarAltasActionPerformed"/>
-                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel6">
                       <Properties>
