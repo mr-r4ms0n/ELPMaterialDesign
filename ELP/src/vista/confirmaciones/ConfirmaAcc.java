@@ -227,7 +227,7 @@ public class ConfirmaAcc extends javax.swing.JDialog
     {//GEN-HEADEREND:event_btnIngresarActionPerformed
         if (tipo.equals("modificar"))
         {
-            Modificaciones.confirmacion = 1;
+            ModificacionesPaq.confirmacion = 1;
         } else
         {
             if (tipo.equals("eliminar"))

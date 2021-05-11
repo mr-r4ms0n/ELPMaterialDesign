@@ -226,7 +226,7 @@ public class Recibidos extends javax.swing.JPanel
             
             
             
-            Modificaciones mod = new Modificaciones(num_guia, peso, altura, ancho, profundidad, precio);
+            ModificacionesPaq mod = new ModificacionesPaq(num_guia, peso, altura, ancho, profundidad, precio);
             mod.setModal(true);
             mod.setVisible(true);
         } catch (Exception e)
