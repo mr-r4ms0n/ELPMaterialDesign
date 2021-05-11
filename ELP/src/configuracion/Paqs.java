@@ -12,20 +12,29 @@ package configuracion;
 public class Paqs
 {
 
-    private int num_guia;
+    //Datos del emisor
+    private int eId_datos_personales;
     private String eNombre;
     private String eApP;
     private String eApM;
-    private String fchRecp;
+
+    //Datos del receptor
+    private int rId_datos_personales;
     private String rNombre;
     private String rApP;
     private String rApM;
+
+    //Datos del paquete
+    private int num_guia;
+    private String fchRecp;
     private String fchEnt;
     private double peso;
     private double altura;
     private double ancho;
     private double profundidad;
     private double precio;
+    //Datos de la direccion
+    private int id_direccion;
     private String calle;
     private String localidad;
     private int cp;
@@ -39,14 +48,16 @@ public class Paqs
                 "Nombre Emisor == " + eNombre
                 + "\nApellido Paterno Emisor == " + eApP
                 + "\nApellido Materno Emisor == " + eApM
-                + "\nNombre Receptor == " + rNombre
+                + "\n\nNombre Receptor == " + rNombre
                 + "\nApellido Paterno Receptor == " + rApP
                 + "\nApellido Materno Receptor == " + rApM
+                + "\n\nDatos del paquete"
                 + "\nAltura == " + altura
                 + "\nAncho == " + ancho
                 + "\nProfundidad == " + profundidad
                 + "\nPeso == " + peso
                 + "\nPrecio == " + precio
+                + "\n\nDireccion"
                 + "\nCalle == " + calle
                 + "\nLocalidad == " + localidad
                 + "\nCiudad == " + ciudad
@@ -370,6 +381,54 @@ public class Paqs
     public void setNum_guia(int num_guia)
     {
         this.num_guia = num_guia;
+    }
+
+    /**
+     * @return the eId_datos_personales
+     */
+    public int geteId_datos_personales()
+    {
+        return eId_datos_personales;
+    }
+
+    /**
+     * @param eId_datos_personales the eId_datos_personales to set
+     */
+    public void seteId_datos_personales(int eId_datos_personales)
+    {
+        this.eId_datos_personales = eId_datos_personales;
+    }
+
+    /**
+     * @return the rId_datos_personales
+     */
+    public int getrId_datos_personales()
+    {
+        return rId_datos_personales;
+    }
+
+    /**
+     * @param rId_datos_personales the rId_datos_personales to set
+     */
+    public void setrId_datos_personales(int rId_datos_personales)
+    {
+        this.rId_datos_personales = rId_datos_personales;
+    }
+
+    /**
+     * @return the id_direccion
+     */
+    public int getId_direccion()
+    {
+        return id_direccion;
+    }
+
+    /**
+     * @param id_direccion the id_direccion to set
+     */
+    public void setId_direccion(int id_direccion)
+    {
+        this.id_direccion = id_direccion;
     }
 
 }

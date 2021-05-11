@@ -63,8 +63,8 @@ public class MetodosBD
                     {
                         System.out.println("Modificaciones del paquete NO REALIZADOS");
                     }
-                    //2do modificacion de los nombres del paquete
-
+                    //2do modificacion del nombre del emisor
+                    sentencia = conexionBD.prepareStatement("UPDATE paquetes SET peso = ?, altura = ?, ancho = ?, profundidad = ?, precio = ? WHERE num_guia = ?");
                     break;
                 case 2: //Caso de enviar un paquete recibido
                     sentencia = conexionBD.prepareStatement("UPDATE paquetes SET fecha_ent = ? WHERE num_guia = ?");
