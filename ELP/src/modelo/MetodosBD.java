@@ -81,7 +81,7 @@ public class MetodosBD
             {
             }
         }
-        return s;
+        return iD;
     }
     
     /**
