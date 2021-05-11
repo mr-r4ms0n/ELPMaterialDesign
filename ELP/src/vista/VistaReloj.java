@@ -9,7 +9,6 @@ import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
-import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import reloj.Reloj;
 
