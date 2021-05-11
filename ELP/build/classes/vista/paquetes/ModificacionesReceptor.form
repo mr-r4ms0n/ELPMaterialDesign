@@ -19,7 +19,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-31,0,0,2,-110"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,29,0,0,2,-109"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -34,7 +34,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="-1" height="-1"/>
+          <AbsoluteConstraints x="0" y="0" width="-1" height="540"/>
         </Constraint>
       </Constraints>
 
@@ -64,12 +64,18 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="rSPanelPaquete" min="-2" pref="636" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="rSPanelPaquete" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="rSPanelPaquete" alignment="1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="rSPanelPaquete" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -91,67 +97,80 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="vLabelErrModNombreRecpt" min="-2" pref="177" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="vLabelErrModApePRecpt" min="-2" pref="175" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="vLabelErrModLocalidad" min="-2" max="-2" attributes="0"/>
+                              <Component id="rSTF_Localidad" min="-2" pref="263" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="260" max="-2" attributes="0"/>
+                                  <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="rSTF_Calle" pref="124" max="32767" attributes="0"/>
-                                              <Component id="vLabelErrModPeso" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="vLabelErrModCalle" min="-2" pref="124" max="-2" attributes="0"/>
+                                              <Component id="rSTF_Calle" min="-2" pref="261" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="rSTF_Localidad" pref="0" max="32767" attributes="0"/>
-                                              <Component id="vLabelErrModAltura" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="rSTF_CP" min="-2" pref="231" max="-2" attributes="0"/>
+                                                  <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="vLabelErrModCiudad" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
+                                                  <Component id="rSTF_Ciudad" alignment="1" min="-2" pref="231" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="vLabelErrModCP" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="rSTF_Ciudad" pref="133" max="32767" attributes="0"/>
-                                              <Component id="vLabelErrModAncho" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="rSTF_CP" pref="178" max="32767" attributes="0"/>
-                                              <Component id="vLabelErrModProfundidad" max="32767" attributes="0"/>
-                                          </Group>
+                                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                          <Component id="btnGuardarMod1" min="-2" pref="56" max="-2" attributes="0"/>
                                       </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="123" pref="123" max="-2" attributes="0"/>
-                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-                                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="rSTF_Nombre_Receptor" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="rSTF_ApeP_Receptor" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                              <Component id="rSTF_ApeP_Receptor" min="-2" pref="204" max="-2" attributes="0"/>
+                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="rSTF_ApeM_Receptor" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                              <Component id="rSTF_ApeM_Receptor" pref="0" max="32767" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="vLabelErrModApeMRecpt" min="-2" pref="175" max="-2" attributes="0"/>
+                                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="0" pref="41" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnGuardarMod1" min="-2" pref="56" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -159,49 +178,75 @@
                       <Group type="102" attributes="0">
                           <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel2" min="-2" pref="18" max="-2" attributes="0"/>
-                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="rSTF_Nombre_Receptor" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel2" min="-2" pref="18" max="-2" attributes="0"/>
+                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="rSTF_Nombre_Receptor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="rSTF_ApeP_Receptor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="vLabelErrModNombreRecpt" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
+                                          <Component id="vLabelErrModApePRecpt" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="rSTF_ApeM_Receptor" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="jLabel3" min="-2" pref="18" max="-2" attributes="0"/>
-                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="rSTF_ApeP_Receptor" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel9" min="-2" pref="18" max="-2" attributes="0"/>
-                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="rSTF_ApeM_Receptor" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel3" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
+                                      <Component id="jLabel9" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                  <Component id="vLabelErrModApeMRecpt" min="-2" pref="18" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel10" min="-2" pref="9" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel4" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel5" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                                  <Component id="jLabel13" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                                  <Component id="jLabel15" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel13" min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="rSTF_Calle" min="-2" max="-2" attributes="0"/>
-                              <Component id="rSTF_Localidad" min="-2" max="-2" attributes="0"/>
                               <Component id="rSTF_Ciudad" min="-2" max="-2" attributes="0"/>
-                              <Component id="rSTF_CP" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="vLabelErrModPeso" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="vLabelErrModAltura" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="vLabelErrModAncho" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="vLabelErrModProfundidad" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="vLabelErrModCalle" min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="vLabelErrModCiudad" alignment="0" min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnGuardarMod1" min="-2" pref="55" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel5" min="-2" pref="18" max="-2" attributes="0"/>
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="rSTF_Localidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rSTF_CP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="vLabelErrModLocalidad" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
+                                      <Component id="vLabelErrModCP" alignment="3" min="-2" pref="18" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel15" min="-2" pref="18" max="-2" attributes="0"/>
+                                  <EmptySpace pref="42" max="32767" attributes="0"/>
+                                  <Component id="btnGuardarMod1" min="-2" pref="55" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -217,22 +262,24 @@
                 </Component>
                 <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTF_Nombre_Receptor">
                   <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ca" green="b1" red="67" type="rgb"/>
                     </Property>
-                    <Property name="focusable" type="boolean" value="false"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Semibold" size="16" style="1"/>
                     </Property>
                     <Property name="phColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
-                    <Property name="placeholder" type="java.lang.String" value=""/>
+                    <Property name="placeholder" type="java.lang.String" value="Ingrese el nombre"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_Nombre_ReceptorKeyReleased"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_Nombre_ReceptorKeyTyped"/>
+                  </Events>
                 </Component>
                 <Container class="javax.swing.JPanel" name="jPanel1">
                   <Properties>
@@ -247,9 +294,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
                               <Component id="jLabel1" min="-2" pref="304" max="-2" attributes="0"/>
-                              <EmptySpace pref="102" max="32767" attributes="0"/>
-                              <Component id="btnCerrarAltas8" min="-2" pref="56" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnCerrarAltas" min="-2" pref="56" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           </Group>
@@ -274,10 +319,7 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btnCerrarAltas8" min="-2" pref="55" max="-2" attributes="0"/>
-                                          <Component id="btnCerrarAltas" min="-2" pref="55" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="btnCerrarAltas" min="-2" pref="55" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -354,24 +396,6 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="RSMaterialComponent.RSButtonIconOne" name="btnCerrarAltas8">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="cc" green="99" red="0" type="rgb"/>
-                        </Property>
-                        <Property name="toolTipText" type="java.lang.String" value="Cerrar Formulario"/>
-                        <Property name="backgroundHover" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ca" green="b1" red="67" type="rgb"/>
-                        </Property>
-                        <Property name="icons" type="rojeru_san.efectos.ValoresEnum$ICONS" editor="org.netbeans.modules.form.editors.EnumEditor">
-                          <Value id="CANCEL"/>
-                        </Property>
-                        <Property name="round" type="int" value="15"/>
-                      </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCerrarAltas8ActionPerformed"/>
-                      </Events>
-                    </Component>
                   </SubComponents>
                 </Container>
                 <Component class="javax.swing.JLabel" name="jLabel4">
@@ -396,10 +420,11 @@
                     <Property name="phColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
-                    <Property name="placeholder" type="java.lang.String" value="Ingrese el peso"/>
+                    <Property name="placeholder" type="java.lang.String" value="Ingrese la calle"/>
                   </Properties>
                   <Events>
                     <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="rSTF_CalleFocusLost"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_CalleKeyReleased"/>
                     <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_CalleKeyTyped"/>
                   </Events>
                 </Component>
@@ -425,14 +450,15 @@
                     <Property name="phColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
-                    <Property name="placeholder" type="java.lang.String" value="Ingrese la altura"/>
+                    <Property name="placeholder" type="java.lang.String" value="Ingrese la localidad"/>
                   </Properties>
                   <Events>
                     <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="rSTF_LocalidadFocusLost"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_LocalidadKeyReleased"/>
                     <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_LocalidadKeyTyped"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="vLabelErrModPeso">
+                <Component class="javax.swing.JLabel" name="vLabelErrModCalle">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
@@ -443,7 +469,7 @@
                     <Property name="text" type="java.lang.String" value="Error, verifique calle"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="vLabelErrModAltura">
+                <Component class="javax.swing.JLabel" name="vLabelErrModLocalidad">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
@@ -468,10 +494,11 @@
                     <Property name="phColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
-                    <Property name="placeholder" type="java.lang.String" value="Ingrese el ancho"/>
+                    <Property name="placeholder" type="java.lang.String" value="Ingrese la ciudad"/>
                   </Properties>
                   <Events>
                     <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="rSTF_CiudadFocusLost"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_CiudadKeyReleased"/>
                     <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_CiudadKeyTyped"/>
                   </Events>
                 </Component>
@@ -483,7 +510,7 @@
                     <Property name="text" type="java.lang.String" value="Ciudad"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="vLabelErrModAncho">
+                <Component class="javax.swing.JLabel" name="vLabelErrModCiudad">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
@@ -508,10 +535,11 @@
                     <Property name="phColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
-                    <Property name="placeholder" type="java.lang.String" value="Ingrese la profundidad"/>
+                    <Property name="placeholder" type="java.lang.String" value="Ingrese el codigo postal"/>
                   </Properties>
                   <Events>
                     <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="rSTF_CPFocusLost"/>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_CPKeyReleased"/>
                     <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_CPKeyTyped"/>
                   </Events>
                 </Component>
@@ -523,7 +551,7 @@
                     <Property name="text" type="java.lang.String" value="Codigo Postal"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="vLabelErrModProfundidad">
+                <Component class="javax.swing.JLabel" name="vLabelErrModCP">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
@@ -555,22 +583,24 @@
                 </Component>
                 <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTF_ApeP_Receptor">
                   <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ca" green="b1" red="67" type="rgb"/>
                     </Property>
-                    <Property name="focusable" type="boolean" value="false"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Semibold" size="16" style="1"/>
                     </Property>
                     <Property name="phColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
-                    <Property name="placeholder" type="java.lang.String" value=""/>
+                    <Property name="placeholder" type="java.lang.String" value="Ingrese el apellido paterno"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_ApeP_ReceptorKeyReleased"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_ApeP_ReceptorKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
@@ -582,22 +612,24 @@
                 </Component>
                 <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTF_ApeM_Receptor">
                   <Properties>
-                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="borderColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ca" green="b1" red="67" type="rgb"/>
                     </Property>
-                    <Property name="focusable" type="boolean" value="false"/>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Semibold" size="16" style="1"/>
                     </Property>
                     <Property name="phColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
-                    <Property name="placeholder" type="java.lang.String" value=""/>
+                    <Property name="placeholder" type="java.lang.String" value="Ingrese el apellido materno"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_ApeM_ReceptorKeyReleased"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_ApeM_ReceptorKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel9">
                   <Properties>
@@ -605,6 +637,53 @@
                       <Font name="Segoe UI Semibold" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Apellido Materno"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="vLabelErrModNombreRecpt">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Semibold" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Error, verifique nombre"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="vLabelErrModApePRecpt">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Semibold" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Error, verifique apellido paterno"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="vLabelErrModApeMRecpt">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Semibold" size="12" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" id="red" palette="1" red="ff" type="palette"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Error, verifique apellido materno"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel10">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="cc" green="99" red="0" type="rgb"/>
+                    </Property>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                        <MatteColorBorder bottom="2" left="0" right="0" top="0">
+                          <Color PropertyName="color" blue="cc" green="99" red="0" type="rgb"/>
+                        </MatteColorBorder>
+                      </Border>
+                    </Property>
                   </Properties>
                 </Component>
               </SubComponents>

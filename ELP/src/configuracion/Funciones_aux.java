@@ -9,6 +9,7 @@ import RSMaterialComponent.RSTableMetroCustom;
 import RSMaterialComponent.RSTextFieldOne;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -153,6 +154,44 @@ public class Funciones_aux
                 break;
             default:
                 throw new AssertionError();
+        }
+    }
+
+    public static boolean mValidarFormu(RSTextFieldOne field, JLabel error, String tipo, String leyenda)
+    {
+        switch (tipo)
+        {
+            case "required":
+                if (field.getText().trim().isEmpty())
+                {
+                    error.setText(leyenda);
+                    error.setForeground(Color.RED);
+                } else
+                {
+                    error.setForeground(Color.WHITE);
+                    return true;
+                }
+                break;
+        }
+        return false;
+    }
+
+    public static void mEntradaLetrasNum(KeyEvent evt, int type)
+    {
+        switch (type)
+        {
+            case 1:
+                if (!Character.isLetter(evt.getKeyChar()) && !Character.isWhitespace(evt.getKeyChar()))
+                {
+                    evt.consume();
+                }
+                break;
+            case 2:
+                if (!Character.isDigit(evt.getKeyChar()))
+                {
+                    evt.consume();
+                }
+                break;
         }
     }
 }

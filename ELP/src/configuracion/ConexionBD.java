@@ -22,10 +22,10 @@ public class ConexionBD
     {
         try
         {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             //CONEXION REMOTA = "jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"
             //CONEXION LOCAL =  "jdbc:mysql://localhost/prisasdb", "root", ""
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/elprisas", "root", "#5OLzHG091"); 
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/elprisas", "root", "r4ms0n"); 
             return conexion;
         } catch (ClassNotFoundException | SQLException ex)
         {
