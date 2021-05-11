@@ -5,12 +5,15 @@
  */
 package vista.paquetes;
 
+import configuracion.Paqs;
 import java.awt.Shape;
 import java.awt.Window;
 import java.awt.geom.RoundRectangle2D;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import modelo.MetodosBD;
 import rojeru_san.complementos.RSUtilities;
+import vista.confirmaciones.ConfirmaAcc;
 
 /**
  *
@@ -21,7 +24,7 @@ public class ModificacionesPaq extends javax.swing.JDialog
 
     private Window vtn;
     public static int confirmacion = -1;
-    int num_guia;
+    
 
     /**
      * Creates new form Altas
@@ -35,7 +38,6 @@ public class ModificacionesPaq extends javax.swing.JDialog
      */
     public ModificacionesPaq(String num_guia, String peso, String altura, String ancho, String profundidad, String precio)
     {
-        System.out.println("Modificar Paquete con numero de guia == " + num_guia);
         initComponents();
         RSUtilities.setOpaqueWindow(this, false);
         RSUtilities.setOpacityComponent(this.jPFondo, 150);
@@ -54,8 +56,6 @@ public class ModificacionesPaq extends javax.swing.JDialog
         vLabelErrModAncho.setVisible(false);
         vLabelErrModCosto.setVisible(false);
         vLabelErrModProfundidad.setVisible(false);
-        
-        //Necesitamos el numero de guia para saber el ID emisor y receptor y como esta es la interfaz principal pues la guardamos aqui para mandarla a las demas ventas de modificacion*/
     }
 
     public ModificacionesPaq()
@@ -553,7 +553,7 @@ public class ModificacionesPaq extends javax.swing.JDialog
     private void btnGuardarModActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnGuardarModActionPerformed
     {//GEN-HEADEREND:event_btnGuardarModActionPerformed
         //Cargamos los datos del emisor
-       new ModificacionesEmisor(num, null, null, null, null, null).setVisible(true);
+       new ModificacionesEmisor(null, null, null, null, null, null).setVisible(true);
     }//GEN-LAST:event_btnGuardarModActionPerformed
 
     private void btnCerrarAltas8ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCerrarAltas8ActionPerformed

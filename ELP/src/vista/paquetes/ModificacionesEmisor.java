@@ -35,10 +35,9 @@ public class ModificacionesEmisor extends javax.swing.JDialog
      * @param profundidad
      * @param precio
      */
-    public ModificacionesEmisor(String num_guia)
+    public ModificacionesEmisor(String num_guia, String peso, String altura, String ancho, String profundidad, String precio)
     {
         initComponents();
-        System.out.println("Modificar Emisor con num_guia == " + num_guia);
         setModal(true);
         RSUtilities.setOpaqueWindow(this, false);
         RSUtilities.setOpacityComponent(this.jPFondo, 150);
@@ -46,10 +45,10 @@ public class ModificacionesEmisor extends javax.swing.JDialog
         vtn = this;
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
         vtn.setShape(forma);
-        rSTFNombreEmisor.setText(num_guia);
-        vTextFileApeP.setText(peso);
+        rSTFNumeroGuia.setText(num_guia);
+        vTextFileModPeso.setText(peso);
 
-        vTextFileApeM.setText(precio);
+        vTextFileModCosto.setText(precio);
         vLabelErrModPeso.setVisible(false);
 
         vLabelErrModCosto.setVisible(false);
@@ -75,7 +74,7 @@ public class ModificacionesEmisor extends javax.swing.JDialog
         jPInteracturador = new javax.swing.JPanel();
         rSPanelPaquete = new RSMaterialComponent.RSPanelBorder();
         jLabel2 = new javax.swing.JLabel();
-        rSTFNombreEmisor = new RSMaterialComponent.RSTextFieldOne();
+        rSTFNumeroGuia = new RSMaterialComponent.RSTextFieldOne();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnCerrarAltas = new RSMaterialComponent.RSButtonIconOne();
@@ -84,9 +83,9 @@ public class ModificacionesEmisor extends javax.swing.JDialog
         jLabel8 = new javax.swing.JLabel();
         btnCerrarAltas8 = new RSMaterialComponent.RSButtonIconOne();
         jLabel4 = new javax.swing.JLabel();
-        vTextFileApeP = new RSMaterialComponent.RSTextFieldOne();
+        vTextFileModPeso = new RSMaterialComponent.RSTextFieldOne();
         vLabelErrModPeso = new javax.swing.JLabel();
-        vTextFileApeM = new RSMaterialComponent.RSTextFieldOne();
+        vTextFileModCosto = new RSMaterialComponent.RSTextFieldOne();
         jLabel17 = new javax.swing.JLabel();
         vLabelErrModCosto = new javax.swing.JLabel();
         btnGuardarMod1 = new RSMaterialComponent.RSButtonIconOne();
@@ -111,13 +110,13 @@ public class ModificacionesEmisor extends javax.swing.JDialog
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel2.setText("Nombre del emisor");
 
-        rSTFNombreEmisor.setEditable(false);
-        rSTFNombreEmisor.setForeground(new java.awt.Color(0, 0, 0));
-        rSTFNombreEmisor.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTFNombreEmisor.setFocusable(false);
-        rSTFNombreEmisor.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTFNombreEmisor.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTFNombreEmisor.setPlaceholder("");
+        rSTFNumeroGuia.setEditable(false);
+        rSTFNumeroGuia.setForeground(new java.awt.Color(0, 0, 0));
+        rSTFNumeroGuia.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTFNumeroGuia.setFocusable(false);
+        rSTFNumeroGuia.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTFNumeroGuia.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTFNumeroGuia.setPlaceholder("");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 204));
 
@@ -203,23 +202,23 @@ public class ModificacionesEmisor extends javax.swing.JDialog
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel4.setText("Apellido Paterno");
 
-        vTextFileApeP.setForeground(new java.awt.Color(0, 0, 0));
-        vTextFileApeP.setBorderColor(new java.awt.Color(103, 177, 202));
-        vTextFileApeP.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        vTextFileApeP.setPhColor(new java.awt.Color(0, 0, 0));
-        vTextFileApeP.setPlaceholder("Ingrese el peso");
-        vTextFileApeP.addFocusListener(new java.awt.event.FocusAdapter()
+        vTextFileModPeso.setForeground(new java.awt.Color(0, 0, 0));
+        vTextFileModPeso.setBorderColor(new java.awt.Color(103, 177, 202));
+        vTextFileModPeso.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        vTextFileModPeso.setPhColor(new java.awt.Color(0, 0, 0));
+        vTextFileModPeso.setPlaceholder("Ingrese el peso");
+        vTextFileModPeso.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusLost(java.awt.event.FocusEvent evt)
             {
-                vTextFileApePFocusLost(evt);
+                vTextFileModPesoFocusLost(evt);
             }
         });
-        vTextFileApeP.addKeyListener(new java.awt.event.KeyAdapter()
+        vTextFileModPeso.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                vTextFileApePKeyTyped(evt);
+                vTextFileModPesoKeyTyped(evt);
             }
         });
 
@@ -227,23 +226,23 @@ public class ModificacionesEmisor extends javax.swing.JDialog
         vLabelErrModPeso.setForeground(java.awt.Color.red);
         vLabelErrModPeso.setText("Error, verifique apellido paterno");
 
-        vTextFileApeM.setForeground(new java.awt.Color(0, 0, 0));
-        vTextFileApeM.setBorderColor(new java.awt.Color(103, 177, 202));
-        vTextFileApeM.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        vTextFileApeM.setPhColor(new java.awt.Color(0, 0, 0));
-        vTextFileApeM.setPlaceholder("Ingrese costo de envio");
-        vTextFileApeM.addFocusListener(new java.awt.event.FocusAdapter()
+        vTextFileModCosto.setForeground(new java.awt.Color(0, 0, 0));
+        vTextFileModCosto.setBorderColor(new java.awt.Color(103, 177, 202));
+        vTextFileModCosto.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        vTextFileModCosto.setPhColor(new java.awt.Color(0, 0, 0));
+        vTextFileModCosto.setPlaceholder("Ingrese costo de envio");
+        vTextFileModCosto.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusLost(java.awt.event.FocusEvent evt)
             {
-                vTextFileApeMFocusLost(evt);
+                vTextFileModCostoFocusLost(evt);
             }
         });
-        vTextFileApeM.addKeyListener(new java.awt.event.KeyAdapter()
+        vTextFileModCosto.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                vTextFileApeMKeyTyped(evt);
+                vTextFileModCostoKeyTyped(evt);
             }
         });
 
@@ -291,14 +290,14 @@ public class ModificacionesEmisor extends javax.swing.JDialog
                             .addComponent(jLabel4)
                             .addComponent(jLabel17)
                             .addComponent(vLabelErrModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(vTextFileApeP, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(vTextFileApeM, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(vTextFileModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(vTextFileModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(vLabelErrModPeso))))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSTFNombreEmisor, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSTFNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(vLabelErrModPeso1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -315,19 +314,19 @@ public class ModificacionesEmisor extends javax.swing.JDialog
                 .addGap(27, 27, 27)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(rSTFNombreEmisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rSTFNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(vLabelErrModPeso1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(vTextFileApeP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(vTextFileModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addComponent(vLabelErrModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(vTextFileApeM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(vTextFileModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addComponent(vLabelErrModCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61))
@@ -381,33 +380,33 @@ public class ModificacionesEmisor extends javax.swing.JDialog
         dispose();
     }//GEN-LAST:event_btnCerrarAltas8ActionPerformed
 
-    private void vTextFileApePKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileApePKeyTyped
-    {//GEN-HEADEREND:event_vTextFileApePKeyTyped
+    private void vTextFileModPesoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModPesoKeyTyped
+    {//GEN-HEADEREND:event_vTextFileModPesoKeyTyped
         if (!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9' || evt.getKeyChar() == '.'))
         {
             evt.consume();
         }
-    }//GEN-LAST:event_vTextFileApePKeyTyped
+    }//GEN-LAST:event_vTextFileModPesoKeyTyped
 
-    private void vTextFileApePFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileApePFocusLost
-    {//GEN-HEADEREND:event_vTextFileApePFocusLost
-        mValidarNumerosDouble(vTextFileApeP, vLabelErrModPeso, 1);
+    private void vTextFileModPesoFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModPesoFocusLost
+    {//GEN-HEADEREND:event_vTextFileModPesoFocusLost
+        mValidarNumerosDouble(vTextFileModPeso, vLabelErrModPeso, 1);
 
-    }//GEN-LAST:event_vTextFileApePFocusLost
+    }//GEN-LAST:event_vTextFileModPesoFocusLost
 
-    private void vTextFileApeMKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileApeMKeyTyped
-    {//GEN-HEADEREND:event_vTextFileApeMKeyTyped
+    private void vTextFileModCostoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModCostoKeyTyped
+    {//GEN-HEADEREND:event_vTextFileModCostoKeyTyped
         if (!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9' || evt.getKeyChar() == '.'))
         {
             evt.consume();
         }
-    }//GEN-LAST:event_vTextFileApeMKeyTyped
+    }//GEN-LAST:event_vTextFileModCostoKeyTyped
 
-    private void vTextFileApeMFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileApeMFocusLost
-    {//GEN-HEADEREND:event_vTextFileApeMFocusLost
-        mValidarNumerosDouble(vTextFileApeM, vLabelErrModCosto, 0);
+    private void vTextFileModCostoFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModCostoFocusLost
+    {//GEN-HEADEREND:event_vTextFileModCostoFocusLost
+        mValidarNumerosDouble(vTextFileModCosto, vLabelErrModCosto, 0);
 
-    }//GEN-LAST:event_vTextFileApeMFocusLost
+    }//GEN-LAST:event_vTextFileModCostoFocusLost
 
     private void rSPanelPaqueteMouseMoved(java.awt.event.MouseEvent evt)//GEN-FIRST:event_rSPanelPaqueteMouseMoved
     {//GEN-HEADEREND:event_rSPanelPaqueteMouseMoved
@@ -551,11 +550,11 @@ public class ModificacionesEmisor extends javax.swing.JDialog
     private javax.swing.JPanel jPInteracturador;
     private javax.swing.JPanel jPanel1;
     private RSMaterialComponent.RSPanelBorder rSPanelPaquete;
-    private RSMaterialComponent.RSTextFieldOne rSTFNombreEmisor;
+    private RSMaterialComponent.RSTextFieldOne rSTFNumeroGuia;
     private javax.swing.JLabel vLabelErrModCosto;
     private javax.swing.JLabel vLabelErrModPeso;
     private javax.swing.JLabel vLabelErrModPeso1;
-    private RSMaterialComponent.RSTextFieldOne vTextFileApeM;
-    private RSMaterialComponent.RSTextFieldOne vTextFileApeP;
+    private RSMaterialComponent.RSTextFieldOne vTextFileModCosto;
+    private RSMaterialComponent.RSTextFieldOne vTextFileModPeso;
     // End of variables declaration//GEN-END:variables
 }
