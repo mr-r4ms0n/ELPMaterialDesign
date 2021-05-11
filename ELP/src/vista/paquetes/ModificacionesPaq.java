@@ -13,7 +13,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import modelo.MetodosBD;
 import rojeru_san.complementos.RSUtilities;
-import vista.confirmaciones.ConfirmaAcc;
 
 /**
  *
@@ -24,8 +23,13 @@ public class ModificacionesPaq extends javax.swing.JDialog
 
     private Window vtn;
     public static int confirmacion = -1;
-    
+    /*Este objeto contendrá la informacion del paquete que 
+    se usará nada mas para modificar la direccion y los nombre del emisor y receptor*/
+    public static Paqs general;
 
+    /*public String nombreEmisor;
+    public String nombreReceptor;
+    public String direccion;*/
     /**
      * Creates new form Altas
      *
@@ -35,8 +39,11 @@ public class ModificacionesPaq extends javax.swing.JDialog
      * @param ancho
      * @param profundidad
      * @param precio
+     * @param nombreEmisor
+     * @param nombreReceptor
+     * @param direccion
      */
-    public ModificacionesPaq(String num_guia, String peso, String altura, String ancho, String profundidad, String precio)
+    public ModificacionesPaq(String num_guia, String peso, String altura, String ancho, String profundidad, String precio, String nombreEmisor, String nombreReceptor, String direccion)
     {
         initComponents();
         RSUtilities.setOpaqueWindow(this, false);
@@ -56,6 +63,10 @@ public class ModificacionesPaq extends javax.swing.JDialog
         vLabelErrModAncho.setVisible(false);
         vLabelErrModCosto.setVisible(false);
         vLabelErrModProfundidad.setVisible(false);
+
+        /*El método a continuacion colocará la informacion del emisor, receptor y direccion
+        del paquete para que sea manipulable en las demas interfaces de modificacion*/
+        this.general = MetodosBD.aux_Modificar_Datos(nombreEmisor, nombreReceptor, direccion);
     }
 
     public ModificacionesPaq()
@@ -553,7 +564,7 @@ public class ModificacionesPaq extends javax.swing.JDialog
     private void btnGuardarModActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnGuardarModActionPerformed
     {//GEN-HEADEREND:event_btnGuardarModActionPerformed
         //Cargamos los datos del emisor
-       new ModificacionesEmisor(null, null, null, null, null, null).setVisible(true);
+        new ModificacionesEmisor(this.general).setVisible(true);
     }//GEN-LAST:event_btnGuardarModActionPerformed
 
     private void btnCerrarAltas8ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCerrarAltas8ActionPerformed

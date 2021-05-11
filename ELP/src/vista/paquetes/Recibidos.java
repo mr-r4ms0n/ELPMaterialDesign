@@ -218,15 +218,16 @@ public class Recibidos extends javax.swing.JPanel
         {
             int row = tabContenidoRec.tblPaquetesRec.getSelectedRow();
             String num_guia = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 0));
+            String nombreEmisor = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 1));
+            String nombreReceptor = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 3));
+            String direccion = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 4));
             String peso = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 6));
             String altura = String.valueOf((tabContenidoRec.tblPaquetesRec.getValueAt(row, 7)));
             String ancho = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 8));
             String profundidad = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 9));
             String precio = String.valueOf(tabContenidoRec.tblPaquetesRec.getValueAt(row, 10));
-            
-            
-            
-            ModificacionesPaq mod = new ModificacionesPaq(num_guia, peso, altura, ancho, profundidad, precio);
+
+            ModificacionesPaq mod = new ModificacionesPaq(num_guia, peso, altura, ancho, profundidad, precio, nombreEmisor, nombreReceptor, direccion);
             mod.setModal(true);
             mod.setVisible(true);
         } catch (Exception e)

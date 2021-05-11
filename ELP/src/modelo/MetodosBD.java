@@ -13,6 +13,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -27,14 +29,178 @@ public class MetodosBD
     private static PreparedStatement sentencia = null; //la usaremos para manejar las consultas provenientes de la BD
     private static ResultSet resultado = null;
 
-    
     /**
-     * opc == 1 nombre opc == 2 direccion
+     * Recibe objeto de tipo Paqs de para realizar la modificacion en la base de
+     * datos, OBJ ya debe tener dentro el id_Direccion
+     *
+     * @param obj Contiene todos los datos que se van modificar de la direccion
+     */
+    public static void modificacion_Direccion(Paqs obj)
+    {
+        String consulta = "UPDATE direccion SET calle = ?, localidad = ?, codigo_postal = ?, ciudad = ? WHERE clave_domicilio= ?";
+        conexionBD = ConexionBD.getConection();
+        try
+        {
+            sentencia = conexionBD.prepareStatement(consulta);
+            sentencia.setString(1, obj.getCalle());
+            sentencia.setString(2, obj.getLocalidad());
+            sentencia.setInt(3, obj.getCp());
+            sentencia.setString(4, obj.getCiudad());
+            sentencia.setInt(5, obj.getId_direccion());
+
+            int f = sentencia.executeUpdate();
+            if (f > 0)
+            {
+                System.out.println("Modificacion de direccion guardados con exito");
+            } else
+            {
+                System.err.println("Modificacion de direccion NO REALIZADOS");
+            }
+        } catch (SQLException e)
+        {
+            System.err.println("Error!! modificacion_Direccion "
+                    + "\n" + e);
+        }
+    }
+
+    /**
+     * Recibe objeto de tipo Paqs de para realizar la modificacion en la base de
+     * datos, OBJ ya debe tener dentro el id_datos_personales que le
+     * corresponda, ya sea emisor o receptor
+     *
+     * @param obj Contiene todos los datos que se van modificar
+     * @param opc OPC 1 == Modifica el nombre del emisor * OPC 2 == Modifica el
+     * nombre del receptor
+     */
+    public static void modificacion_Datos_Personales(Paqs obj, int opc)
+    {
+        String consulta = "UPDATE datos_personales SET nombre = ?, apeP = ?, apeM = ? WHERE id_datos_personales = ?";
+        conexionBD = ConexionBD.getConection();
+        try
+        {
+            sentencia = conexionBD.prepareStatement(consulta);
+            switch (opc)
+            {
+                case 1: //Modificar emisor
+                    sentencia.setString(1, obj.geteNombre());
+                    sentencia.setString(2, obj.geteApP());
+                    sentencia.setString(3, obj.geteApM());
+                    sentencia.setInt(4, obj.geteId_datos_personales());
+                    break;
+                case 2: //Modificar receptor
+                    sentencia.setString(1, obj.getrNombre());
+                    sentencia.setString(2, obj.getrApP());
+                    sentencia.setString(3, obj.getrApM());
+                    sentencia.setInt(4, obj.getrId_datos_personales());
+                    break;
+            }
+            int f = sentencia.executeUpdate();
+            if (f > 0)
+            {
+                System.out.println("Modificacion de datos_personales guardados con exito");
+            } else
+            {
+                System.err.println("Modificacion de datos_personales NO REALIZADOS");
+            }
+        } catch (SQLException e)
+        {
+            System.err.println("Error!! modificacion_Datos_Personales "
+                    + "\n" + e);
+        }
+    }
+
+    /**
+     * Este metodo es un auxiliar y se emplea en modificacionesPaq
+     *
+     * @param nombreEmisor
+     * @param nombreReceptor
+     * @param direccion
+     * @return
+     */
+    public static Paqs aux_Modificar_Datos(String nombreEmisor, String nombreReceptor, String direccion)
+    {
+        //Variables para realizar la consulta a la base de datos
+        String consulta;
+        PreparedStatement sent;
+        ResultSet res;
+        Connection con;
+        Paqs obj = new Paqs();
+        //Obtenemos el id_nombre_emisor
+        int id_nombre_emisor = obtener_PK_Datos(1, nombreEmisor);
+        obj.seteId_datos_personales(id_nombre_emisor);
+        //Obtenemos el id_nombre_receptor
+        int id_nombre_receptor = obtener_PK_Datos(1, nombreReceptor);
+        obj.setrId_datos_personales(id_nombre_receptor);
+        //Obtenemos el clave_domicilio
+        int clave_domicilio = obtener_PK_Datos(2, direccion);
+        obj.setId_direccion(clave_domicilio);
+        //Conexion a la BD para extraer la información del paquete
+        con = ConexionBD.getConection();
+        //Extraigo primero los datos del emisor y los coloco en el objeto de tipo Paqs
+        try
+        {
+            consulta = "SELECT * FROM datos_personales WHERE id_datos_personales = ?";
+            sent = con.prepareStatement(consulta);
+            sent.setInt(1, id_nombre_emisor);
+            res = sent.executeQuery();
+            if (res.next())
+            {
+                obj.seteNombre(res.getString("nombre"));
+                obj.seteApP(res.getString("apeP"));
+                obj.seteApM(res.getString("apeM"));
+            }
+            //Extraigo la informacion del receptor
+            try
+            {
+                consulta = "SELECT * FROM datos_personales WHERE id_datos_personales = ?";
+                sent = con.prepareStatement(consulta);
+                sent.setInt(1, id_nombre_receptor);
+                res = sent.executeQuery();
+                if (res.next())
+                {
+                    obj.setrNombre(res.getString("nombre"));
+                    obj.setrApP(res.getString("apeP"));
+                    obj.setrApM(res.getString("apeM"));
+                }
+                //Extraigo las columnas de las direccion
+                try
+                {
+                    consulta = "SELECT * FROM direccion WHERE clave_domicilio = ?";
+                    sent = con.prepareStatement(consulta);
+                    sent.setInt(1, clave_domicilio);
+                    res = sent.executeQuery();
+                    if (res.next())
+                    {
+                        obj.setCalle(res.getString("calle"));
+                        obj.setLocalidad(res.getString("localidad"));
+                        obj.setCp(res.getInt("codigo_postal"));
+                        obj.setCiudad(res.getString("ciudad"));
+                    }
+                } catch (SQLException e)
+                {
+                    System.err.println("ERROR!! Al extraer las columnas de direccion en aux_Modificar_Datos"
+                            + "\n" + e);
+                }
+            } catch (SQLException e)
+            {
+                System.err.println("ERROR!! Al extraer las columnas del receptor en aux_Modificar_Datos"
+                        + "\n" + e);
+            }
+        } catch (SQLException ex)
+        {
+            System.err.println("ERROR!! Al extraer las columnas del emisor en aux_Modificar_Datos"
+                    + "\n" + ex);
+        }
+        return obj;
+    }
+
+    /**
+     * opc == 1 nombre opc == 2 direccion Este metodo es utilizado en las
+     * modificaciones del paquete
      *
      * @param opc Selecciona la tabla que quiere
-     * @param id Busca el la PK en la tabla escogido en OPC
      * @return Cadena con el nombre o la direccion segun opc, si hay algun error
-     * te retornara el valos -666
+     * te retornara el valor -666
      */
     public static int obtener_PK_Datos(int opc, String cad)
     {
@@ -59,7 +225,7 @@ public class MetodosBD
                     }
                     break;
                 case 2: //Caso 2, Te retornara una direccion
-                    consulta = "SELECT clave_domicilio FROM direccion WHERE CONCAT(direccion.calle, \", \", direccion.localidad, \", \", direccion.ciudad, \", \", direccion.codigo_postal) = ?";
+                    consulta = "SELECT clave_domicilio FROM direccion WHERE CONCAT(direccion.calle, \", \", direccion.localidad, \", \", direccion.ciudad, \" \", direccion.codigo_postal) = ?";
                     sentencia = con.prepareStatement(consulta);
                     sentencia.setString(1, cad);
                     res = sentencia.executeQuery();
@@ -83,7 +249,7 @@ public class MetodosBD
         }
         return iD;
     }
-    
+
     /**
      * Recibe objeto de tipo Paqs de para realizar la modificacion en la base de
      * datos, OBJ ya debe tener dentro del numero de guia
