@@ -1,39 +1,20 @@
-/*Integrantes---
---Kevin Benítez Valentín  
---Sandro de Jesús Hernández del Ángel  
-David Vergara Gómez*/
--- --------------------------------------------------------
--- Host:                         localhost
--- Versión del servidor:         5.7.24 - MySQL Community Server (GPL)
--- SO del servidor:              Win64
--- HeidiSQL Versión:             10.2.0.5599
--- --------------------------------------------------------
+-- Integrantes
+-- Kevin Benítez Valentín  
+-- Sandro de Jesús Hernández del Ángel  
+-- David Vergara Gómez*/
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
-
--- Volcando estructura de base de datos para elprisas
-CREATE DATABASE IF NOT EXISTS `elprisas` /*!40100 DEFAULT CHARACTER SET latin1 */;
+-- Creacion de la base de datos para elprisas
+CREATE DATABASE IF NOT EXISTS `elprisas`;
 USE `elprisas`;
 
--- Volcando estructura para tabla elprisas.admins
+-- Creacion Tabla elprisas.admins
 CREATE TABLE IF NOT EXISTS `admins` (
   `usuario` varchar(50) NOT NULL,
   `contraseña` varchar(50) NOT NULL,
   PRIMARY KEY (`usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Tabla donde se almacenaran los usuarios que ingresaran al sistema';
 
--- Volcando datos para la tabla elprisas.admins: ~1 rows (aproximadamente)
-/*!40000 ALTER TABLE `admins` DISABLE KEYS */;
-INSERT INTO `admins` (`usuario`, `contraseña`) VALUES
-	('r4ms0n', '123');
-/*!40000 ALTER TABLE `admins` ENABLE KEYS */;
-
--- Volcando estructura para tabla elprisas.datos_personales
+-- Creacion Tabla elprisas.datos_personales
 CREATE TABLE IF NOT EXISTS `datos_personales` (
   `id_datos_personales` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
@@ -42,19 +23,7 @@ CREATE TABLE IF NOT EXISTS `datos_personales` (
   PRIMARY KEY (`id_datos_personales`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COMMENT='Tabla donde se almacenara el nombre completo del remitente y destinarario\r\n';
 
--- Volcando datos para la tabla elprisas.datos_personales: ~7 rows (aproximadamente)
-/*!40000 ALTER TABLE `datos_personales` DISABLE KEYS */;
-INSERT INTO `datos_personales` (`id_datos_personales`, `nombre`, `ApeP`, `ApeM`) VALUES
-	(11, 'David', 'Vergara', 'Gomez'),
-	(12, 'Sandro', 'Hernandez', 'Del Angel'),
-	(13, 'Teodoro', 'Martinez', 'Sotelo'),
-	(14, 'Panfilo', 'Domingez', 'Pakuzo'),
-	(15, 'Sandro De Jesus', 'Hernandez', 'Del Angel'),
-	(16, 'Marcial', 'Torres', 'Trujillo'),
-	(17, 'Pancho', 'Rodriguez', 'Martinez');
-/*!40000 ALTER TABLE `datos_personales` ENABLE KEYS */;
-
--- Volcando estructura para tabla elprisas.direccion
+-- Creacion Tabla elprisas.direccion
 CREATE TABLE IF NOT EXISTS `direccion` (
   `clave_domicilio` int(11) NOT NULL AUTO_INCREMENT,
   `calle` varchar(50) NOT NULL,
@@ -63,16 +32,6 @@ CREATE TABLE IF NOT EXISTS `direccion` (
   `ciudad` varchar(50) NOT NULL,
   PRIMARY KEY (`clave_domicilio`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COMMENT='Tabla donde se almacenaran las direcciones correspondientes a los paquetes recibidos\r\n';
-
--- Volcando datos para la tabla elprisas.direccion: ~5 rows (aproximadamente)
-/*!40000 ALTER TABLE `direccion` DISABLE KEYS */;
-INSERT INTO `direccion` (`clave_domicilio`, `calle`, `localidad`, `codigo_postal`, `ciudad`) VALUES
-	(5, 'Tamarindo', 'Xona', 50010, 'Toluca'),
-	(6, 'Cincuenta Arrobas S/n', 'Cincuenta Arrobas', 51530, 'Amatepec'),
-	(7, 'La Rayuela', 'La Rayuela', 51550, 'Tlatlaya'),
-	(8, 'El Limon', 'San Pedro Limon', 51550, 'Tlatlaya'),
-	(9, 'El Naranjo', 'El Pantalon', 51530, 'Amatepec');
-/*!40000 ALTER TABLE `direccion` ENABLE KEYS */;
 
 -- Volcando estructura para tabla elprisas.paquetes
 CREATE TABLE IF NOT EXISTS `paquetes` (
@@ -96,19 +55,36 @@ CREATE TABLE IF NOT EXISTS `paquetes` (
   CONSTRAINT `FK_paquetes_direccion` FOREIGN KEY (`id_direccion`) REFERENCES `direccion` (`clave_domicilio`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COMMENT='Tabla donde se almacenaran los paquetes recibidos\r\n';
 
--- Volcando datos para la tabla elprisas.paquetes: ~5 rows (aproximadamente)
-/*!40000 ALTER TABLE `paquetes` DISABLE KEYS */;
+-- Insercion de datos en las tablas
+-- elprisas.admins
+INSERT INTO `admins` (`usuario`, `contraseña`) VALUES
+	('r4ms0n', '123');
+
+-- elprisas.datos_personales
+INSERT INTO `datos_personales` (`id_datos_personales`, `nombre`, `ApeP`, `ApeM`) VALUES
+	(11, 'David', 'Vergara', 'Gomez'),
+	(12, 'Sandro', 'Hernandez', 'Del Angel'),
+	(13, 'Teodoro', 'Martinez', 'Sotelo'),
+	(14, 'Panfilo', 'Domingez', 'Pakuzo'),
+	(15, 'Sandro De Jesus', 'Hernandez', 'Del Angel'),
+	(16, 'Marcial', 'Torres', 'Trujillo'),
+	(17, 'Pancho', 'Rodriguez', 'Martinez');
+
+-- elprisas.direccion
+INSERT INTO `direccion` (`clave_domicilio`, `calle`, `localidad`, `codigo_postal`, `ciudad`) VALUES
+	(5, 'Tamarindo', 'Xona', 50010, 'Toluca'),
+	(6, 'Cincuenta Arrobas S/n', 'Cincuenta Arrobas', 51530, 'Amatepec'),
+	(7, 'La Rayuela', 'La Rayuela', 51550, 'Tlatlaya'),
+	(8, 'El Limon', 'San Pedro Limon', 51550, 'Tlatlaya'),
+	(9, 'El Naranjo', 'El Pantalon', 51530, 'Amatepec');
+
+-- elprisas.paquetes
 INSERT INTO `paquetes` (`num_guia`, `fecha_recp`, `fecha_ent`, `peso`, `altura`, `ancho`, `profundidad`, `precio`, `id_nombre_emisor`, `id_nombre_receptor`, `id_direccion`) VALUES
 	(2, '10/05/2021', 'PENDIENTE', 12, 20, 20, 20, 20, 11, 12, 5),
 	(3, '11/05/2021', 'PENDIENTE', 0.5, 14, 12, 5, 150, 11, 13, 6),
 	(4, '15/08/2021', 'PENDIENTE', 3, 50, 50, 20, 157, 11, 14, 7),
 	(5, '12/05/2021', 'PENDIENTE', 9, 20, 20, 20, 360, 15, 16, 8),
 	(6, '12/12/2021', 'PENDIENTE', 10, 10, 10, 10, 40, 11, 17, 9);
-/*!40000 ALTER TABLE `paquetes` ENABLE KEYS */;
-
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 
 /*1.- CONSULTA PARA PAQUETES RECIBIDOS*/
 SELECT paquetes.num_guia AS "Numero de guia",
