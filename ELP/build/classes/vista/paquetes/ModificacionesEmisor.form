@@ -99,8 +99,8 @@
                                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                                       <Component id="vLabelErrModCosto" min="-2" pref="180" max="-2" attributes="0"/>
-                                      <Component id="vTextFileModPeso" min="-2" pref="384" max="-2" attributes="0"/>
-                                      <Component id="vTextFileModCosto" alignment="0" min="-2" pref="384" max="-2" attributes="0"/>
+                                      <Component id="vTextFileApeP" min="-2" pref="384" max="-2" attributes="0"/>
+                                      <Component id="vTextFileApeM" alignment="0" min="-2" pref="384" max="-2" attributes="0"/>
                                       <Component id="vLabelErrModPeso" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -110,7 +110,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="rSTFNumeroGuia" min="-2" pref="422" max="-2" attributes="0"/>
+                              <Component id="rSTFNombreEmisor" min="-2" pref="422" max="-2" attributes="0"/>
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <Component id="vLabelErrModPeso1" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
                           </Group>
@@ -132,19 +132,19 @@
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" pref="18" max="-2" attributes="0"/>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Component id="rSTFNumeroGuia" min="-2" max="-2" attributes="0"/>
+                          <Component id="rSTFNombreEmisor" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="vLabelErrModPeso1" min="-2" pref="18" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" pref="18" max="-2" attributes="0"/>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Component id="vTextFileModPeso" min="-2" max="-2" attributes="0"/>
+                          <Component id="vTextFileApeP" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Component id="vLabelErrModPeso" min="-2" pref="18" max="-2" attributes="0"/>
                           <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
                           <Component id="jLabel17" min="-2" pref="18" max="-2" attributes="0"/>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          <Component id="vTextFileModCosto" min="-2" max="-2" attributes="0"/>
+                          <Component id="vTextFileApeM" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Component id="vLabelErrModCosto" min="-2" pref="18" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
@@ -168,7 +168,7 @@
                     <Property name="text" type="java.lang.String" value="Nombre del emisor"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFNumeroGuia">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFNombreEmisor">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -335,7 +335,7 @@
                     <Property name="text" type="java.lang.String" value="Apellido Paterno"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFileModPeso">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFileApeP">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -352,8 +352,8 @@
                     <Property name="placeholder" type="java.lang.String" value="Ingrese el peso"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileModPesoFocusLost"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileModPesoKeyTyped"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileApePFocusLost"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileApePKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="vLabelErrModPeso">
@@ -367,7 +367,7 @@
                     <Property name="text" type="java.lang.String" value="Error, verifique apellido paterno"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFileModCosto">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFileApeM">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -384,8 +384,8 @@
                     <Property name="placeholder" type="java.lang.String" value="Ingrese costo de envio"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileModCostoFocusLost"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileModCostoKeyTyped"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileApeMFocusLost"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileApeMKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel17">
