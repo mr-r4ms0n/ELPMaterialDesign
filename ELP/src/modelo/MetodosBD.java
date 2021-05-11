@@ -213,7 +213,7 @@ public class MetodosBD
                                 while (resultado.next())
                                 {
                                     String nomb = MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")).toUpperCase();
-                                    if (nomb.startsWith(busq.toUpperCase()))
+                                    if (nomb.contains(busq.toUpperCase()))
                                     {
                                         mdl.addRow(new Object[]
                                         {
@@ -231,7 +231,7 @@ public class MetodosBD
                                 while (resultado.next())
                                 {
                                     String nomb = MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")).toUpperCase();
-                                    if (nomb.startsWith(busq.toUpperCase()))
+                                    if (nomb.contains(busq.toUpperCase()))
                                     {
                                         mdl.addRow(new Object[]
                                         {
@@ -306,7 +306,7 @@ public class MetodosBD
                                 while (resultado.next())
                                 {
                                     String nomb = MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_emisor")).toUpperCase();
-                                    if (nomb.startsWith(busq.toUpperCase()))
+                                    if (nomb.contains(busq.toUpperCase()))
                                     {
                                         mdl.addRow(new Object[]
                                         {
@@ -324,7 +324,7 @@ public class MetodosBD
                                 while (resultado.next())
                                 {
                                     String nomb = MetodosBD.obtenerDatos(1, resultado.getInt("id_nombre_receptor")).toUpperCase();
-                                    if (nomb.startsWith(busq.toUpperCase()))
+                                    if (nomb.contains(busq.toUpperCase()))
                                     {
                                         mdl.addRow(new Object[]
                                         {
