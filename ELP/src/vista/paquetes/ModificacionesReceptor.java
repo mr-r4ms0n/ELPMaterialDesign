@@ -22,6 +22,7 @@ import vista.confirmaciones.ConfirmaAcc;
 public class ModificacionesReceptor extends javax.swing.JDialog
 {
 
+    Paqs auxObj;
     private Window vtn;
     public static int confirmacion = -1;
 
@@ -35,7 +36,7 @@ public class ModificacionesReceptor extends javax.swing.JDialog
      * @param profundidad
      * @param precio
      */
-    public ModificacionesReceptor(String num_guia, String peso, String altura, String ancho, String profundidad, String precio)
+    public ModificacionesReceptor(Paqs obj)
     {
         initComponents();
         setModal(true);
@@ -45,17 +46,25 @@ public class ModificacionesReceptor extends javax.swing.JDialog
         vtn = this;
         Shape forma = new RoundRectangle2D.Double(0, 0, this.getBounds().width, this.getBounds().height, 30, 30);
         vtn.setShape(forma);
-        rSTFNumeroGuia.setText(num_guia);
-        vTextFileModPeso.setText(peso);
-        vTextFileModAltura.setText(altura);
-        vTextFileModAncho.setText(ancho);
-        vTextFileModProfundidad.setText(profundidad);
-       
+        
+        rSTF_Calle.setText(obj.getCalle());
+        rSTF_Localidad.setText(obj.getLocalidad());
+        rSTF_Ciudad.setText(obj.getCiudad());
+        rSTF_CP.setText(String.valueOf(obj.getCp()));
+
         vLabelErrModPeso.setVisible(false);
         vLabelErrModAltura.setVisible(false);
         vLabelErrModAncho.setVisible(false);
-    
+
         vLabelErrModProfundidad.setVisible(false);
+        
+        //Colocamos la informacion del emisor del paquete
+        rSTF_Nombre_Receptor.setText(obj.getrNombre());
+        rSTF_ApeP_Receptor.setText(obj.getrApP());
+        rSTF_ApeM_Receptor.setText(obj.getrApM());
+        vLabelErrModPeso.setVisible(false);
+        //vLabelErrModCosto.setVisible(false);
+        this.auxObj = obj;
     }
 
     public ModificacionesReceptor()
@@ -77,7 +86,7 @@ public class ModificacionesReceptor extends javax.swing.JDialog
         jPInteracturador = new javax.swing.JPanel();
         rSPanelPaquete = new RSMaterialComponent.RSPanelBorder();
         jLabel2 = new javax.swing.JLabel();
-        rSTFNumeroGuia = new RSMaterialComponent.RSTextFieldOne();
+        rSTF_Nombre_Receptor = new RSMaterialComponent.RSTextFieldOne();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnCerrarAltas = new RSMaterialComponent.RSButtonIconOne();
@@ -86,21 +95,21 @@ public class ModificacionesReceptor extends javax.swing.JDialog
         jLabel8 = new javax.swing.JLabel();
         btnCerrarAltas8 = new RSMaterialComponent.RSButtonIconOne();
         jLabel4 = new javax.swing.JLabel();
-        vTextFileModPeso = new RSMaterialComponent.RSTextFieldOne();
+        rSTF_Calle = new RSMaterialComponent.RSTextFieldOne();
         jLabel5 = new javax.swing.JLabel();
-        vTextFileModAltura = new RSMaterialComponent.RSTextFieldOne();
+        rSTF_Localidad = new RSMaterialComponent.RSTextFieldOne();
         vLabelErrModPeso = new javax.swing.JLabel();
         vLabelErrModAltura = new javax.swing.JLabel();
-        vTextFileModAncho = new RSMaterialComponent.RSTextFieldOne();
+        rSTF_Ciudad = new RSMaterialComponent.RSTextFieldOne();
         jLabel13 = new javax.swing.JLabel();
         vLabelErrModAncho = new javax.swing.JLabel();
-        vTextFileModProfundidad = new RSMaterialComponent.RSTextFieldOne();
+        rSTF_CP = new RSMaterialComponent.RSTextFieldOne();
         jLabel15 = new javax.swing.JLabel();
         vLabelErrModProfundidad = new javax.swing.JLabel();
         btnGuardarMod1 = new RSMaterialComponent.RSButtonIconOne();
-        rSTFNumeroGuia1 = new RSMaterialComponent.RSTextFieldOne();
+        rSTF_ApeP_Receptor = new RSMaterialComponent.RSTextFieldOne();
         jLabel3 = new javax.swing.JLabel();
-        rSTFNumeroGuia2 = new RSMaterialComponent.RSTextFieldOne();
+        rSTF_ApeM_Receptor = new RSMaterialComponent.RSTextFieldOne();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -122,13 +131,13 @@ public class ModificacionesReceptor extends javax.swing.JDialog
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel2.setText("Nombre ");
 
-        rSTFNumeroGuia.setEditable(false);
-        rSTFNumeroGuia.setForeground(new java.awt.Color(0, 0, 0));
-        rSTFNumeroGuia.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTFNumeroGuia.setFocusable(false);
-        rSTFNumeroGuia.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTFNumeroGuia.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTFNumeroGuia.setPlaceholder("");
+        rSTF_Nombre_Receptor.setEditable(false);
+        rSTF_Nombre_Receptor.setForeground(new java.awt.Color(0, 0, 0));
+        rSTF_Nombre_Receptor.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTF_Nombre_Receptor.setFocusable(false);
+        rSTF_Nombre_Receptor.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTF_Nombre_Receptor.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTF_Nombre_Receptor.setPlaceholder("");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 204));
 
@@ -214,46 +223,46 @@ public class ModificacionesReceptor extends javax.swing.JDialog
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel4.setText("Calle");
 
-        vTextFileModPeso.setForeground(new java.awt.Color(0, 0, 0));
-        vTextFileModPeso.setBorderColor(new java.awt.Color(103, 177, 202));
-        vTextFileModPeso.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        vTextFileModPeso.setPhColor(new java.awt.Color(0, 0, 0));
-        vTextFileModPeso.setPlaceholder("Ingrese el peso");
-        vTextFileModPeso.addFocusListener(new java.awt.event.FocusAdapter()
+        rSTF_Calle.setForeground(new java.awt.Color(0, 0, 0));
+        rSTF_Calle.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTF_Calle.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTF_Calle.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTF_Calle.setPlaceholder("Ingrese el peso");
+        rSTF_Calle.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusLost(java.awt.event.FocusEvent evt)
             {
-                vTextFileModPesoFocusLost(evt);
+                rSTF_CalleFocusLost(evt);
             }
         });
-        vTextFileModPeso.addKeyListener(new java.awt.event.KeyAdapter()
+        rSTF_Calle.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                vTextFileModPesoKeyTyped(evt);
+                rSTF_CalleKeyTyped(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel5.setText("Localidad");
 
-        vTextFileModAltura.setForeground(new java.awt.Color(0, 0, 0));
-        vTextFileModAltura.setBorderColor(new java.awt.Color(103, 177, 202));
-        vTextFileModAltura.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        vTextFileModAltura.setPhColor(new java.awt.Color(0, 0, 0));
-        vTextFileModAltura.setPlaceholder("Ingrese la altura");
-        vTextFileModAltura.addFocusListener(new java.awt.event.FocusAdapter()
+        rSTF_Localidad.setForeground(new java.awt.Color(0, 0, 0));
+        rSTF_Localidad.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTF_Localidad.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTF_Localidad.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTF_Localidad.setPlaceholder("Ingrese la altura");
+        rSTF_Localidad.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusLost(java.awt.event.FocusEvent evt)
             {
-                vTextFileModAlturaFocusLost(evt);
+                rSTF_LocalidadFocusLost(evt);
             }
         });
-        vTextFileModAltura.addKeyListener(new java.awt.event.KeyAdapter()
+        rSTF_Localidad.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                vTextFileModAlturaKeyTyped(evt);
+                rSTF_LocalidadKeyTyped(evt);
             }
         });
 
@@ -265,23 +274,23 @@ public class ModificacionesReceptor extends javax.swing.JDialog
         vLabelErrModAltura.setForeground(java.awt.Color.red);
         vLabelErrModAltura.setText("Error, verifique localidad");
 
-        vTextFileModAncho.setForeground(new java.awt.Color(0, 0, 0));
-        vTextFileModAncho.setBorderColor(new java.awt.Color(103, 177, 202));
-        vTextFileModAncho.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        vTextFileModAncho.setPhColor(new java.awt.Color(0, 0, 0));
-        vTextFileModAncho.setPlaceholder("Ingrese el ancho");
-        vTextFileModAncho.addFocusListener(new java.awt.event.FocusAdapter()
+        rSTF_Ciudad.setForeground(new java.awt.Color(0, 0, 0));
+        rSTF_Ciudad.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTF_Ciudad.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTF_Ciudad.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTF_Ciudad.setPlaceholder("Ingrese el ancho");
+        rSTF_Ciudad.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusLost(java.awt.event.FocusEvent evt)
             {
-                vTextFileModAnchoFocusLost(evt);
+                rSTF_CiudadFocusLost(evt);
             }
         });
-        vTextFileModAncho.addKeyListener(new java.awt.event.KeyAdapter()
+        rSTF_Ciudad.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                vTextFileModAnchoKeyTyped(evt);
+                rSTF_CiudadKeyTyped(evt);
             }
         });
 
@@ -292,23 +301,23 @@ public class ModificacionesReceptor extends javax.swing.JDialog
         vLabelErrModAncho.setForeground(java.awt.Color.red);
         vLabelErrModAncho.setText("Error, verifique ciudad");
 
-        vTextFileModProfundidad.setForeground(new java.awt.Color(0, 0, 0));
-        vTextFileModProfundidad.setBorderColor(new java.awt.Color(103, 177, 202));
-        vTextFileModProfundidad.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        vTextFileModProfundidad.setPhColor(new java.awt.Color(0, 0, 0));
-        vTextFileModProfundidad.setPlaceholder("Ingrese la profundidad");
-        vTextFileModProfundidad.addFocusListener(new java.awt.event.FocusAdapter()
+        rSTF_CP.setForeground(new java.awt.Color(0, 0, 0));
+        rSTF_CP.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTF_CP.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTF_CP.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTF_CP.setPlaceholder("Ingrese la profundidad");
+        rSTF_CP.addFocusListener(new java.awt.event.FocusAdapter()
         {
             public void focusLost(java.awt.event.FocusEvent evt)
             {
-                vTextFileModProfundidadFocusLost(evt);
+                rSTF_CPFocusLost(evt);
             }
         });
-        vTextFileModProfundidad.addKeyListener(new java.awt.event.KeyAdapter()
+        rSTF_CP.addKeyListener(new java.awt.event.KeyAdapter()
         {
             public void keyTyped(java.awt.event.KeyEvent evt)
             {
-                vTextFileModProfundidadKeyTyped(evt);
+                rSTF_CPKeyTyped(evt);
             }
         });
 
@@ -339,24 +348,24 @@ public class ModificacionesReceptor extends javax.swing.JDialog
             }
         });
 
-        rSTFNumeroGuia1.setEditable(false);
-        rSTFNumeroGuia1.setForeground(new java.awt.Color(0, 0, 0));
-        rSTFNumeroGuia1.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTFNumeroGuia1.setFocusable(false);
-        rSTFNumeroGuia1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTFNumeroGuia1.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTFNumeroGuia1.setPlaceholder("");
+        rSTF_ApeP_Receptor.setEditable(false);
+        rSTF_ApeP_Receptor.setForeground(new java.awt.Color(0, 0, 0));
+        rSTF_ApeP_Receptor.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTF_ApeP_Receptor.setFocusable(false);
+        rSTF_ApeP_Receptor.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTF_ApeP_Receptor.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTF_ApeP_Receptor.setPlaceholder("");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel3.setText("Apellido Paterno");
 
-        rSTFNumeroGuia2.setEditable(false);
-        rSTFNumeroGuia2.setForeground(new java.awt.Color(0, 0, 0));
-        rSTFNumeroGuia2.setBorderColor(new java.awt.Color(103, 177, 202));
-        rSTFNumeroGuia2.setFocusable(false);
-        rSTFNumeroGuia2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
-        rSTFNumeroGuia2.setPhColor(new java.awt.Color(0, 0, 0));
-        rSTFNumeroGuia2.setPlaceholder("");
+        rSTF_ApeM_Receptor.setEditable(false);
+        rSTF_ApeM_Receptor.setForeground(new java.awt.Color(0, 0, 0));
+        rSTF_ApeM_Receptor.setBorderColor(new java.awt.Color(103, 177, 202));
+        rSTF_ApeM_Receptor.setFocusable(false);
+        rSTF_ApeM_Receptor.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
+        rSTF_ApeM_Receptor.setPhColor(new java.awt.Color(0, 0, 0));
+        rSTF_ApeM_Receptor.setPlaceholder("");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
         jLabel9.setText("Apellido Materno");
@@ -373,19 +382,19 @@ public class ModificacionesReceptor extends javax.swing.JDialog
                         .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(vTextFileModPeso, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                                    .addComponent(rSTF_Calle, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
                                     .addComponent(vLabelErrModPeso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(vTextFileModAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(rSTF_Localidad, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                     .addComponent(vLabelErrModAltura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(vTextFileModAncho, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                                    .addComponent(rSTF_Ciudad, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
                                     .addComponent(vLabelErrModAncho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(vTextFileModProfundidad, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                                    .addComponent(rSTF_CP, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
                                     .addComponent(vLabelErrModProfundidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                                 .addComponent(jLabel4)
@@ -398,15 +407,15 @@ public class ModificacionesReceptor extends javax.swing.JDialog
                             .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
-                                    .addComponent(rSTFNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(rSTF_Nombre_Receptor, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
-                                    .addComponent(rSTFNumeroGuia1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(rSTF_ApeP_Receptor, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
-                                    .addComponent(rSTFNumeroGuia2, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(rSTF_ApeM_Receptor, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rSPanelPaqueteLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -422,15 +431,15 @@ public class ModificacionesReceptor extends javax.swing.JDialog
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(rSTFNumeroGuia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(rSTF_Nombre_Receptor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(rSTFNumeroGuia1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(rSTF_ApeP_Receptor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(rSPanelPaqueteLayout.createSequentialGroup()
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
-                        .addComponent(rSTFNumeroGuia2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(rSTF_ApeM_Receptor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(57, 57, 57)
                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -440,10 +449,10 @@ public class ModificacionesReceptor extends javax.swing.JDialog
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(6, 6, 6)
                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(vTextFileModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vTextFileModAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vTextFileModAncho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vTextFileModProfundidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rSTF_Calle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSTF_Localidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSTF_Ciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSTF_CP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(rSPanelPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(vLabelErrModPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -498,61 +507,61 @@ public class ModificacionesReceptor extends javax.swing.JDialog
         dispose();
     }//GEN-LAST:event_btnCerrarAltas8ActionPerformed
 
-    private void vTextFileModPesoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModPesoKeyTyped
-    {//GEN-HEADEREND:event_vTextFileModPesoKeyTyped
+    private void rSTF_CalleKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_rSTF_CalleKeyTyped
+    {//GEN-HEADEREND:event_rSTF_CalleKeyTyped
         if (!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9' || evt.getKeyChar() == '.'))
         {
             evt.consume();
         }
-    }//GEN-LAST:event_vTextFileModPesoKeyTyped
+    }//GEN-LAST:event_rSTF_CalleKeyTyped
 
-    private void vTextFileModPesoFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModPesoFocusLost
-    {//GEN-HEADEREND:event_vTextFileModPesoFocusLost
-        mValidarNumerosDouble(vTextFileModPeso, vLabelErrModPeso, 1);
+    private void rSTF_CalleFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_rSTF_CalleFocusLost
+    {//GEN-HEADEREND:event_rSTF_CalleFocusLost
+        mValidarNumerosDouble(rSTF_Calle, vLabelErrModPeso, 1);
 
-    }//GEN-LAST:event_vTextFileModPesoFocusLost
+    }//GEN-LAST:event_rSTF_CalleFocusLost
 
-    private void vTextFileModAlturaKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModAlturaKeyTyped
-    {//GEN-HEADEREND:event_vTextFileModAlturaKeyTyped
+    private void rSTF_LocalidadKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_rSTF_LocalidadKeyTyped
+    {//GEN-HEADEREND:event_rSTF_LocalidadKeyTyped
         if (!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9' || evt.getKeyChar() == '.'))
         {
             evt.consume();
         }
-    }//GEN-LAST:event_vTextFileModAlturaKeyTyped
+    }//GEN-LAST:event_rSTF_LocalidadKeyTyped
 
-    private void vTextFileModAlturaFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModAlturaFocusLost
-    {//GEN-HEADEREND:event_vTextFileModAlturaFocusLost
-        mValidarNumerosDouble(vTextFileModAltura, vLabelErrModAltura, 2);
+    private void rSTF_LocalidadFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_rSTF_LocalidadFocusLost
+    {//GEN-HEADEREND:event_rSTF_LocalidadFocusLost
+        mValidarNumerosDouble(rSTF_Localidad, vLabelErrModAltura, 2);
 
-    }//GEN-LAST:event_vTextFileModAlturaFocusLost
+    }//GEN-LAST:event_rSTF_LocalidadFocusLost
 
-    private void vTextFileModAnchoKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModAnchoKeyTyped
-    {//GEN-HEADEREND:event_vTextFileModAnchoKeyTyped
+    private void rSTF_CiudadKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_rSTF_CiudadKeyTyped
+    {//GEN-HEADEREND:event_rSTF_CiudadKeyTyped
         if (!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9' || evt.getKeyChar() == '.'))
         {
             evt.consume();
         }
-    }//GEN-LAST:event_vTextFileModAnchoKeyTyped
+    }//GEN-LAST:event_rSTF_CiudadKeyTyped
 
-    private void vTextFileModAnchoFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModAnchoFocusLost
-    {//GEN-HEADEREND:event_vTextFileModAnchoFocusLost
-        mValidarNumerosDouble(vTextFileModAncho, vLabelErrModAncho, 2);
+    private void rSTF_CiudadFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_rSTF_CiudadFocusLost
+    {//GEN-HEADEREND:event_rSTF_CiudadFocusLost
+        mValidarNumerosDouble(rSTF_Ciudad, vLabelErrModAncho, 2);
 
-    }//GEN-LAST:event_vTextFileModAnchoFocusLost
+    }//GEN-LAST:event_rSTF_CiudadFocusLost
 
-    private void vTextFileModProfundidadKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_vTextFileModProfundidadKeyTyped
-    {//GEN-HEADEREND:event_vTextFileModProfundidadKeyTyped
+    private void rSTF_CPKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_rSTF_CPKeyTyped
+    {//GEN-HEADEREND:event_rSTF_CPKeyTyped
         if (!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9' || evt.getKeyChar() == '.'))
         {
             evt.consume();
         }
-    }//GEN-LAST:event_vTextFileModProfundidadKeyTyped
+    }//GEN-LAST:event_rSTF_CPKeyTyped
 
-    private void vTextFileModProfundidadFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_vTextFileModProfundidadFocusLost
-    {//GEN-HEADEREND:event_vTextFileModProfundidadFocusLost
-        mValidarNumerosDouble(vTextFileModProfundidad, vLabelErrModProfundidad, 2);
+    private void rSTF_CPFocusLost(java.awt.event.FocusEvent evt)//GEN-FIRST:event_rSTF_CPFocusLost
+    {//GEN-HEADEREND:event_rSTF_CPFocusLost
+        mValidarNumerosDouble(rSTF_CP, vLabelErrModProfundidad, 2);
 
-    }//GEN-LAST:event_vTextFileModProfundidadFocusLost
+    }//GEN-LAST:event_rSTF_CPFocusLost
 
     private void rSPanelPaqueteMouseMoved(java.awt.event.MouseEvent evt)//GEN-FIRST:event_rSPanelPaqueteMouseMoved
     {//GEN-HEADEREND:event_rSPanelPaqueteMouseMoved
@@ -569,7 +578,16 @@ public class ModificacionesReceptor extends javax.swing.JDialog
 
     private void btnGuardarMod1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnGuardarMod1ActionPerformed
     {//GEN-HEADEREND:event_btnGuardarMod1ActionPerformed
-        // TODO add your handling code here:
+        auxObj.setrNombre(rSTF_Nombre_Receptor.getText());
+        auxObj.setrApP(rSTF_ApeP_Receptor.getText());
+        auxObj.setrApM(rSTF_ApeM_Receptor.getText());
+        auxObj.setCalle(rSTF_Calle.getText());
+        auxObj.setLocalidad(rSTF_Localidad.getText());
+        auxObj.setCp(Integer.parseInt(rSTF_CP.getText()));
+        auxObj.setCiudad(rSTF_Ciudad.getText());
+        MetodosBD.modificacion_Datos_Personales(auxObj, 2);
+        MetodosBD.modificacion_Direccion(auxObj);
+        ModificacionesPaq.general = auxObj;
     }//GEN-LAST:event_btnGuardarMod1ActionPerformed
 
     private boolean vActivarVerificadorPaneMod = false;
@@ -580,7 +598,7 @@ public class ModificacionesReceptor extends javax.swing.JDialog
      */
     protected void mHabilitaBtnModNext()
     {
-        
+
     }
 
     /**
@@ -589,13 +607,12 @@ public class ModificacionesReceptor extends javax.swing.JDialog
      */
     protected void mHabilitaBtnModNextMouseEntered()
     {
-        vTextFileModAlturaFocusLost(null);
+        /*vTextFileModAlturaFocusLost(null);
         vTextFileModAnchoFocusLost(null);
-        
-        vTextFileModPesoFocusLost(null);
-        vTextFileModProfundidadFocusLost(null);
 
-       
+        vTextFileModPesoFocusLost(null);
+        vTextFileModProfundidadFocusLost(null);*/
+
     }
 
     /**
@@ -685,7 +702,7 @@ public class ModificacionesReceptor extends javax.swing.JDialog
             vLabelErrModAltura.setText("Error, verifique altura");
             vLabelErrModAncho.setText("Error, verifique ancho");
             vLabelErrModProfundidad.setText("Error, verifique profundidad");
-            
+
             vLabelErr.setVisible(true);
         }
     }
@@ -709,16 +726,16 @@ public class ModificacionesReceptor extends javax.swing.JDialog
     private javax.swing.JPanel jPInteracturador;
     private javax.swing.JPanel jPanel1;
     private RSMaterialComponent.RSPanelBorder rSPanelPaquete;
-    private RSMaterialComponent.RSTextFieldOne rSTFNumeroGuia;
-    private RSMaterialComponent.RSTextFieldOne rSTFNumeroGuia1;
-    private RSMaterialComponent.RSTextFieldOne rSTFNumeroGuia2;
+    private RSMaterialComponent.RSTextFieldOne rSTF_ApeM_Receptor;
+    private RSMaterialComponent.RSTextFieldOne rSTF_ApeP_Receptor;
+    private RSMaterialComponent.RSTextFieldOne rSTF_CP;
+    private RSMaterialComponent.RSTextFieldOne rSTF_Calle;
+    private RSMaterialComponent.RSTextFieldOne rSTF_Ciudad;
+    private RSMaterialComponent.RSTextFieldOne rSTF_Localidad;
+    private RSMaterialComponent.RSTextFieldOne rSTF_Nombre_Receptor;
     private javax.swing.JLabel vLabelErrModAltura;
     private javax.swing.JLabel vLabelErrModAncho;
     private javax.swing.JLabel vLabelErrModPeso;
     private javax.swing.JLabel vLabelErrModProfundidad;
-    private RSMaterialComponent.RSTextFieldOne vTextFileModAltura;
-    private RSMaterialComponent.RSTextFieldOne vTextFileModAncho;
-    private RSMaterialComponent.RSTextFieldOne vTextFileModPeso;
-    private RSMaterialComponent.RSTextFieldOne vTextFileModProfundidad;
     // End of variables declaration//GEN-END:variables
 }

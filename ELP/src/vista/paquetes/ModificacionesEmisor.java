@@ -423,8 +423,6 @@ public class ModificacionesEmisor extends javax.swing.JDialog
         auxObj.seteApP(rSTF_ApeP_Emisor.getText());
         auxObj.seteApM(rSTF_ApeM_Emisor.getText());
         MetodosBD.modificacion_Datos_Personales(auxObj, 1);
-        MetodosBD.modificacion_Datos_Personales(auxObj, 2);
-        MetodosBD.modificacion_Direccion(auxObj);
         ModificacionesPaq.general = auxObj;
     }//GEN-LAST:event_btnGuardarMod1ActionPerformed
 

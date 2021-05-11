@@ -673,7 +673,7 @@ public class ModificacionesPaq extends javax.swing.JDialog
 
     private void btnGuardarMod2ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnGuardarMod2ActionPerformed
     {//GEN-HEADEREND:event_btnGuardarMod2ActionPerformed
-        new ModificacionesReceptor(null, null, null, null, null, null).setVisible(true);
+        new ModificacionesReceptor(general).setVisible(true);
     }//GEN-LAST:event_btnGuardarMod2ActionPerformed
 
     private boolean vActivarVerificadorPaneMod = false;

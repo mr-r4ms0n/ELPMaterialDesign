@@ -98,22 +98,22 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="vTextFileModPeso" pref="124" max="32767" attributes="0"/>
+                                              <Component id="rSTF_Calle" pref="124" max="32767" attributes="0"/>
                                               <Component id="vLabelErrModPeso" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="vTextFileModAltura" pref="0" max="32767" attributes="0"/>
+                                              <Component id="rSTF_Localidad" pref="0" max="32767" attributes="0"/>
                                               <Component id="vLabelErrModAltura" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="vTextFileModAncho" pref="133" max="32767" attributes="0"/>
+                                              <Component id="rSTF_Ciudad" pref="133" max="32767" attributes="0"/>
                                               <Component id="vLabelErrModAncho" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="vTextFileModProfundidad" pref="178" max="32767" attributes="0"/>
+                                              <Component id="rSTF_CP" pref="178" max="32767" attributes="0"/>
                                               <Component id="vLabelErrModProfundidad" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -129,17 +129,17 @@
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="rSTFNumeroGuia" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                              <Component id="rSTF_Nombre_Receptor" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="rSTFNumeroGuia1" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                              <Component id="rSTF_ApeP_Receptor" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="rSTFNumeroGuia2" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
+                                              <Component id="rSTF_ApeM_Receptor" alignment="0" min="-2" pref="175" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -163,17 +163,17 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel2" min="-2" pref="18" max="-2" attributes="0"/>
                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="rSTFNumeroGuia" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rSTF_Nombre_Receptor" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel3" min="-2" pref="18" max="-2" attributes="0"/>
                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="rSTFNumeroGuia1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rSTF_ApeP_Receptor" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel9" min="-2" pref="18" max="-2" attributes="0"/>
                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="rSTFNumeroGuia2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="rSTF_ApeM_Receptor" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
@@ -187,10 +187,10 @@
                           </Group>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="vTextFileModPeso" min="-2" max="-2" attributes="0"/>
-                              <Component id="vTextFileModAltura" min="-2" max="-2" attributes="0"/>
-                              <Component id="vTextFileModAncho" min="-2" max="-2" attributes="0"/>
-                              <Component id="vTextFileModProfundidad" min="-2" max="-2" attributes="0"/>
+                              <Component id="rSTF_Calle" min="-2" max="-2" attributes="0"/>
+                              <Component id="rSTF_Localidad" min="-2" max="-2" attributes="0"/>
+                              <Component id="rSTF_Ciudad" min="-2" max="-2" attributes="0"/>
+                              <Component id="rSTF_CP" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -215,7 +215,7 @@
                     <Property name="text" type="java.lang.String" value="Nombre "/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFNumeroGuia">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTF_Nombre_Receptor">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -382,7 +382,7 @@
                     <Property name="text" type="java.lang.String" value="Calle"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFileModPeso">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTF_Calle">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -399,8 +399,8 @@
                     <Property name="placeholder" type="java.lang.String" value="Ingrese el peso"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileModPesoFocusLost"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileModPesoKeyTyped"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="rSTF_CalleFocusLost"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_CalleKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel5">
@@ -411,7 +411,7 @@
                     <Property name="text" type="java.lang.String" value="Localidad"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFileModAltura">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTF_Localidad">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -428,8 +428,8 @@
                     <Property name="placeholder" type="java.lang.String" value="Ingrese la altura"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileModAlturaFocusLost"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileModAlturaKeyTyped"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="rSTF_LocalidadFocusLost"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_LocalidadKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="vLabelErrModPeso">
@@ -454,7 +454,7 @@
                     <Property name="text" type="java.lang.String" value="Error, verifique localidad"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFileModAncho">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTF_Ciudad">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -471,8 +471,8 @@
                     <Property name="placeholder" type="java.lang.String" value="Ingrese el ancho"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileModAnchoFocusLost"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileModAnchoKeyTyped"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="rSTF_CiudadFocusLost"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_CiudadKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel13">
@@ -494,7 +494,7 @@
                     <Property name="text" type="java.lang.String" value="Error, verifique ciudad"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="vTextFileModProfundidad">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTF_CP">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -511,8 +511,8 @@
                     <Property name="placeholder" type="java.lang.String" value="Ingrese la profundidad"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="vTextFileModProfundidadFocusLost"/>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vTextFileModProfundidadKeyTyped"/>
+                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="rSTF_CPFocusLost"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="rSTF_CPKeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel15">
@@ -553,7 +553,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarMod1ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFNumeroGuia1">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTF_ApeP_Receptor">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -580,7 +580,7 @@
                     <Property name="text" type="java.lang.String" value="Apellido Paterno"/>
                   </Properties>
                 </Component>
-                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTFNumeroGuia2">
+                <Component class="RSMaterialComponent.RSTextFieldOne" name="rSTF_ApeM_Receptor">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
