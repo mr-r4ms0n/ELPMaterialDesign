@@ -409,6 +409,8 @@ public class ModificacionesEmisor extends javax.swing.JDialog
         auxObj.seteApM(rSTF_ApeM_Emisor.getText());
         MetodosBD.modificacion_Datos_Personales(auxObj, 1);
         ModificacionesPaq.general = auxObj;
+        tabContenidoRec.listarPaquetes(tabContenidoRec.tblPaquetesRec);
+        dispose();
     }//GEN-LAST:event_btnGuardarMod1ActionPerformed
 
     private void rSTF_Nombre_EmisorKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_rSTF_Nombre_EmisorKeyTyped

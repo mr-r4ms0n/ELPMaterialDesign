@@ -652,6 +652,8 @@ public class ModificacionesReceptor extends javax.swing.JDialog
         MetodosBD.modificacion_Datos_Personales(auxObj, 2);
         MetodosBD.modificacion_Direccion(auxObj);
         ModificacionesPaq.general = auxObj;
+        tabContenidoRec.listarPaquetes(tabContenidoRec.tblPaquetesRec);
+        dispose();
     }//GEN-LAST:event_btnGuardarMod1ActionPerformed
 
     private void rSTF_Nombre_ReceptorKeyTyped(java.awt.event.KeyEvent evt)//GEN-FIRST:event_rSTF_Nombre_ReceptorKeyTyped
