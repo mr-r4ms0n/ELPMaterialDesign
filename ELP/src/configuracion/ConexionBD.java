@@ -10,7 +10,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,7 +25,7 @@ public class ConexionBD
             Class.forName("com.mysql.cj.jdbc.Driver");
             //CONEXION REMOTA = "jdbc:mysql://tecnologinc.ath.cx:3306/prisasdb", "db", "Db1"
             //CONEXION LOCAL =  "jdbc:mysql://localhost/prisasdb", "root", ""
-            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/elprisas", "root", "#5OLzHG091"); 
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/elprisas", "root", "#5OLzHG091");
             return conexion;
         } catch (ClassNotFoundException | SQLException ex)
         {
@@ -34,4 +33,5 @@ public class ConexionBD
         }
         return null;
     }
+    
 }
